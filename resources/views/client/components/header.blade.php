@@ -64,9 +64,9 @@
                 <li class="nav-item {{ activeMenu('lien-he') }}">
                   <a class="nav-link"  href="{{ route('contact') }}">Contact</a>
                 </li>
-                <li class="nav-item {{ activeMenu('dang-nhap') }}">
+                {{-- <li class="nav-item {{ activeMenu('dang-nhap') }}">
                   <a class="nav-link"  href="{{ route('login') }}">User</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                   <a href="#" class="nav-link search" id="search">
                     <i class="ti-search"></i>

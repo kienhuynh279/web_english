@@ -1,25 +1,4 @@
-<section class="banner_area">
-      <div class="banner_inner d-flex align-items-center">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-6">
-              <div class="banner_content text-center">
-                <h2></h2>
-                <div class="page_link">
-                  <a href="index.html">Home</a>
-                  <a href="blog.html">Blog</a>
-                  <a href="single-blog.html">Blog Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================End Home Banner Area =================-->
-
-    <!--================Blog Area =================-->
+<!--================Blog Area =================-->
     <section class="blog_area single-post-area section_gap">
         <div class="container">
             <div class="row">
@@ -27,7 +6,7 @@
                     <div class="single-post row">
                         <div class="col-lg-12">
                             <div class="feature-img">
-                                <img class="img-fluid" src="img/blog/feature-img1.jpg" alt="">
+                                <img class="img-fluid" src="{{ asset('dist/img/blog/feature-img1.jpg') }}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-3  col-md-3">
@@ -109,14 +88,14 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                                 <div class="thumb">
-                                    <a href="#"><img class="img-fluid" src="img/blog/prev.jpg" alt=""></a>
+                                    <a href="{{ route('newsDetail') }}"><img class="img-fluid" src="{{ asset('dist/img/blog/prev.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="arrow">
-                                    <a href="#"><i class="text-white ti-arrow-left"></i></a>
+                                    <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-left"></i></a>
                                 </div>
                                 <div class="detials">
                                     <p>Prev Post</p>
-                                    <a href="#">
+                                    <a href="">
                                         <h4>Space The Final Frontier</h4>
                                     </a>
                                 </div>
@@ -124,142 +103,60 @@
                             <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                                 <div class="detials">
                                     <p>Next Post</p>
-                                    <a href="#">
+                                    <a href="">
                                         <h4>Telescopes 101</h4>
                                     </a>
                                 </div>
                                 <div class="arrow">
-                                    <a href="#"><i class="text-white ti-arrow-right"></i></a>
+                                    <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-right"></i></a>
                                 </div>
                                 <div class="thumb">
-                                    <a href="#"><img class="img-fluid" src="img/blog/next.jpg" alt=""></a>
+                                    <a href="{{ route('newsDetail') }}"><img class="img-fluid" src="{{ asset('dist/img/blog/next.jpg') }}" alt=""></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="comments-area">
-                        <h4>05 Comments</h4>
-                        <div class="comment-list">
-                            <div class="single-comment justify-content-between d-flex">
-                                <div class="user justify-content-between d-flex">
-                                    <div class="thumb">
-                                        <img src="img/blog/c1.jpg" alt="">
-                                    </div>
-                                    <div class="desc">
-                                        <h5><a href="#">Emilly Blunt</a></h5>
-                                        <p class="date">December 4, 2017 at 3:12 pm </p>
-                                        <p class="comment">
-                                            Never say goodbye till the end comes!
-                                        </p>
-                                    </div>
+                   
+                         <div class="pt-5 mt-5">
+                            <h3 class="mb-5">6 Comments</h3>
+                            <ul class="comment-list">
+                                <li class="comment">
+                                <div class="comment-body">
+                                <h3>John Doe</h3>
+                                <div class="meta">October 03, 2018 at 2:21pm</div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                                <p><a href="#" class="reply">Reply</a></p>
                                 </div>
-                                <div class="reply-btn">
-                                    <a href="" class="btn-reply text-uppercase">reply</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment-list left-padding">
-                            <div class="single-comment justify-content-between d-flex">
-                                <div class="user justify-content-between d-flex">
-                                    <div class="thumb">
-                                        <img src="img/blog/c2.jpg" alt="">
+
+                                <ul class="children">
+                                <li class="comment">
+                                    <div class="comment-body">
+                                    <h3>John Doe</h3>
+                                    <div class="meta">October 03, 2018 at 2:21pm</div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                                    <p><a href="#" class="reply">Reply</a></p>
                                     </div>
-                                    <div class="desc">
-                                        <h5><a href="#">Elsie Cunningham</a></h5>
-                                        <p class="date">December 4, 2017 at 3:12 pm </p>
-                                        <p class="comment">
-                                            Never say goodbye till the end comes!
-                                        </p>
-                                    </div>
+                                </li>
+                                </ul>
+                            </li>
+                            
+                            </ul>
+                            <!-- END comment-list -->
+                            
+                            <div class="comment-form-wrap pt-5">
+                            <form action="#" class="p-5 bg-light">
+                                <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
                                 </div>
-                                <div class="reply-btn">
-                                    <a href="" class="btn-reply text-uppercase">reply</a>
+                                <div class="form-group">
+                                <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="comment-list left-padding">
-                            <div class="single-comment justify-content-between d-flex">
-                                <div class="user justify-content-between d-flex">
-                                    <div class="thumb">
-                                        <img src="img/blog/c3.jpg" alt="">
-                                    </div>
-                                    <div class="desc">
-                                        <h5><a href="#">Annie Stephens</a></h5>
-                                        <p class="date">December 4, 2017 at 3:12 pm </p>
-                                        <p class="comment">
-                                            Never say goodbye till the end comes!
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="reply-btn">
-                                    <a href="" class="btn-reply text-uppercase">reply</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment-list">
-                            <div class="single-comment justify-content-between d-flex">
-                                <div class="user justify-content-between d-flex">
-                                    <div class="thumb">
-                                        <img src="img/blog/c4.jpg" alt="">
-                                    </div>
-                                    <div class="desc">
-                                        <h5><a href="#">Maria Luna</a></h5>
-                                        <p class="date">December 4, 2017 at 3:12 pm </p>
-                                        <p class="comment">
-                                            Never say goodbye till the end comes!
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="reply-btn">
-                                    <a href="" class="btn-reply text-uppercase">reply</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment-list">
-                            <div class="single-comment justify-content-between d-flex">
-                                <div class="user justify-content-between d-flex">
-                                    <div class="thumb">
-                                        <img src="img/blog/c5.jpg" alt="">
-                                    </div>
-                                    <div class="desc">
-                                        <h5><a href="#">Ina Hayes</a></h5>
-                                        <p class="date">December 4, 2017 at 3:12 pm </p>
-                                        <p class="comment">
-                                            Never say goodbye till the end comes!
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="reply-btn">
-                                    <a href="" class="btn-reply text-uppercase">reply</a>
-                                </div>
+                            </form>
                             </div>
                         </div>
                     </div>
-                    <div class="comment-form">
-                        <h4>Leave a Reply</h4>
-                        <form>
-                            <div class="form-group form-inline">
-                                <div class="form-group col-lg-6 col-md-6 name">
-                                    <input type="text" class="form-control" id="name" placeholder="Enter Name" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Enter Name'">
-                                </div>
-                                <div class="form-group col-lg-6 col-md-6 email">
-                                    <input type="email" class="form-control" id="email" placeholder="Enter email address"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject" onfocus="this.placeholder = ''"
-                                    onblur="this.placeholder = 'Subject'">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control mb-10" rows="5" name="message" placeholder="Messege"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-                            </div>
-                            <a href="#" class="primary-btn">Post Comment</a>
-                        </form>
-                    </div>
-                </div>
+               
                 <div class="col-lg-4">
                         <div class="blog_right_sidebar">
                             <aside class="single_sidebar_widget search_widget">
@@ -289,7 +186,7 @@
                             <aside class="single_sidebar_widget popular_post_widget">
                                 <h3 class="widget_title">Popular Posts</h3>
                                 <div class="media post_item">
-                                    <img src="img/blog/popular-post/post1.jpg" alt="post">
+                                    <img src="{{ asset('dist/img/blog/popular-post/post1.jpg') }}" alt="post">
                                     <div class="media-body">
                                         <a href="blog-details.html">
                                             <h3>Space The Final Frontier</h3>
@@ -298,7 +195,7 @@
                                     </div>
                                 </div>
                                 <div class="media post_item">
-                                    <img src="img/blog/popular-post/post2.jpg" alt="post">
+                                    <img src="{{ asset('dist/img/blog/popular-post/post2.jpg') }}" alt="post">
                                     <div class="media-body">
                                         <a href="blog-details.html">
                                             <h3>The Amazing Hubble</h3>
@@ -307,7 +204,7 @@
                                     </div>
                                 </div>
                                 <div class="media post_item">
-                                    <img src="img/blog/popular-post/post3.jpg" alt="post">
+                                    <img src="{{ asset('dist/img/blog/popular-post/post3.jpg') }}" alt="post">
                                     <div class="media-body">
                                         <a href="blog-details.html">
                                             <h3>Astronomy Or Astrology</h3>
@@ -316,7 +213,7 @@
                                     </div>
                                 </div>
                                 <div class="media post_item">
-                                    <img src="img/blog/popular-post/post4.jpg" alt="post">
+                                    <img src="{{ asset('dist/img/blog/popular-post/post4.jpg') }}" alt="post">
                                     <div class="media-body">
                                         <a href="blog-details.html">
                                             <h3>Asteroids telescope</h3>
@@ -326,10 +223,7 @@
                                 </div>
                                 <div class="br"></div>
                             </aside>
-                            <aside class="single_sidebar_widget ads_widget">
-                                <a href="#"><img class="img-fluid" src="img/blog/add.jpg" alt=""></a>
-                                <div class="br"></div>
-                            </aside>
+                          
                             <aside class="single_sidebar_widget post_category_widget">
                                 <h4 class="widget_title">Post Catgories</h4>
                                 <ul class="list cat-list">
@@ -419,3 +313,121 @@
             </div>
         </div>
     </section>
+ <div class="popular_courses">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">News - Tips Relate</h2>            
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- single course -->
+
+          <div class="col-lg-12">
+            <div class="owl-carousel active_course">
+              <div class="single_course">
+                <div class="course_head">
+                  <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
+                </div>
+                <div class="course_content">
+                  <span class="tag mb-4 d-inline-block">Tips</span>
+                  <h4 class="mb-3">
+                    <a href="course-details.html">Learn English with 6 tip</a>
+                  </h4>
+                  <p>
+                    Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
+                  </p>
+                  <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                    <div class="authr_meta">
+                      <span class="d-inline-block ml-2">
+                        <i class="ti-time mr-2">20/10</i>
+                      </span>
+                    </div>
+                    <div class="mt-lg-0 mt-3">
+                      <span class="meta_info">
+                        <a href="#"><i class="ti-heart mr-2"></i></a>
+                      </span>
+                      <span class="meta_info">
+                        <a href="#"><i class="ti-comment mr-2"></i></a>
+                      </span>
+                      <span class="meta_info">
+                        <a href="#"><i class="ti-share mr-2"></i></a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="single_course">
+                <div class="course_head">
+                  <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
+                </div>
+                <div class="course_content">
+                  <span class="tag mb-4 d-inline-block">News</span>
+                  <h4 class="mb-3">
+                    <a href="course-details.html">Learn English with 6 tip</a>
+                  </h4>
+                  <p>
+                    Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
+                  </p>
+                  <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                    <div class="authr_meta">
+                      <span class="d-inline-block ml-2">
+                        <i class="ti-time mr-2">20/10</i>
+                      </span>
+                    </div>
+                    <div class="mt-lg-0 mt-3">
+                      <span class="meta_info">
+                        <a href="#"><i class="ti-heart mr-2"></i></a>
+                      </span>
+                      <span class="meta_info">
+                        <a href="#"><i class="ti-comment mr-2"></i></a>
+                      </span>
+                      <span class="meta_info">
+                        <a href="#"><i class="ti-share mr-2"></i></a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="single_course">
+                <div class="course_head">
+                  <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
+                </div>
+                <div class="course_content">
+                  <span class="tag mb-4 d-inline-block">News</span>
+                  <h4 class="mb-3">
+                    <a href="course-details.html">Test</a>
+                  </h4>
+                  <p>
+                    Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
+                  </p>
+                  <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                    <div class="authr_meta">
+                      <span class="d-inline-block ml-2">
+                        <i class="ti-time mr-2">20/10</i>
+                      </span>
+                    </div>
+                    <div class="mt-lg-0 mt-3">
+                      <span class="meta_info">
+                        <a href="#"><i class="ti-heart mr-2"></i></a>
+                      </span>
+                      <span class="meta_info">
+                        <a href="#"><i class="ti-comment mr-2"></i></a>
+                      </span>
+                      <span class="meta_info">
+                        <a href="#"><i class="ti-share mr-2"></i></a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

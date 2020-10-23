@@ -22,6 +22,43 @@ theme.
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 /*---------------------------------------------------- */
+
+.tags {
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -1rem;
+  }
+  .tags-item {
+    font-size: 14px;
+  padding: 0.3rem;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: var(--secondary);
+  background-color: #f6d2c9;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  }
+  .tags-text {
+  white-space: nowrap;
+  max-width: 10rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.4;
+  }
+  .tags-remove {
+  cursor: pointer;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+  }
+
+.see-file{
+  border: #000 1px solid;
+  height: 40rem;
+}
+
 .rating {
   display: flex;
   flex-direction: row-reverse;
@@ -621,10 +658,11 @@ button:focus {
 
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
-.section_gap {
+.section_gap {  
   padding: 130px 0; }
   @media (max-width: 991px) {
     .section_gap {
+      
       padding: 70px 0; } }
 
 .section_gap_top {
@@ -637,7 +675,7 @@ button:focus {
   padding-bottom: 130px; }
   @media (max-width: 991px) {
     .section_gap_bottom {
-      padding-bottom: 70px; } }
+      padding-bottom: 100px; } }
 
 /* Main Title Area css
 ============================================================================================ */
@@ -1024,6 +1062,7 @@ button:focus {
   padding-bottom: 100px; }
   @media (max-width: 991px) {
     .feature_area {
+      margin-top: 0;
       padding-bottom: 40px; } }
 
 .single_feature {
@@ -1714,9 +1753,9 @@ button:focus {
   .blog_right_sidebar .widget_title {
     font-size: 18px;
     line-height: 25px;
-    background: #002347;
+    background: #ea695f;
     text-align: center;
-    color: #fff;
+    color: black;
     padding: 8px 0px;
     margin-bottom: 30px; }
   .blog_right_sidebar .search_widget .input-group .form-control {
@@ -1725,19 +1764,19 @@ button:focus {
     border: 0px;
     width: 100%;
     font-weight: 300;
-    color: #fff;
+    color: black;
     padding-left: 20px;
     border-radius: 45px;
     z-index: 0;
-    background: #002347; }
+    background: white; }
     .blog_right_sidebar .search_widget .input-group .form-control.placeholder {
-      color: #fff; }
+      color: rgb(0, 0, 0); }
     .blog_right_sidebar .search_widget .input-group .form-control:-moz-placeholder {
-      color: #fff; }
+      color: rgb(0, 0, 0); }
     .blog_right_sidebar .search_widget .input-group .form-control::-moz-placeholder {
-      color: #fff; }
+      color: rgb(0, 0, 0); }
     .blog_right_sidebar .search_widget .input-group .form-control::-webkit-input-placeholder {
-      color: #fff; }
+      color: rgb(0, 0, 0); }
     .blog_right_sidebar .search_widget .input-group .form-control:focus {
       box-shadow: none; }
   .blog_right_sidebar .search_widget .input-group .btn-default {
@@ -1747,7 +1786,7 @@ button:focus {
     border: 0px;
     box-shadow: none;
     font-size: 14px;
-    color: #fff;
+    color: rgb(0, 0, 0);
     padding: 0px;
     top: 50%;
     transform: translateY(-50%);
@@ -1771,7 +1810,7 @@ button:focus {
         .blog_right_sidebar .author_widget .social_icon a + a {
           margin-left: 20px; }
         .blog_right_sidebar .author_widget .social_icon a:hover {
-          color: #fdc632; }
+          color: #ffd86c; }
   .blog_right_sidebar .popular_post_widget .post_item .media-body {
     justify-content: center;
     align-self: center;
@@ -1783,7 +1822,7 @@ button:focus {
       margin-bottom: 4px;
       transition: all 0.3s linear; }
       .blog_right_sidebar .popular_post_widget .post_item .media-body h3:hover {
-        color: #fdc632; }
+        color: #eeca69; }
     .blog_right_sidebar .popular_post_widget .post_item .media-body p {
       font-size: 12px;
       line-height: 21px;
@@ -1840,7 +1879,7 @@ button:focus {
         outline: none;
         box-shadow: none; }
     .blog_right_sidebar .newsletter_widget .bbtns {
-      background: #fdc632;
+      background:#ea695f;
       color: #fff;
       font-size: 12px;
       line-height: 38px;
@@ -2418,7 +2457,7 @@ button:focus {
   background: #fff; }
 
 .section-top-border {
-  padding: 50px 0;
+  padding: 100px 0;
   border-top: 1px dotted #eee; }
 
 .switch-wrap {

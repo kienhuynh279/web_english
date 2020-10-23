@@ -6,17 +6,17 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">TOEIC</p>
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">TOEFL</p>
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">IELTS</p>
               </a>
             </div>
@@ -31,12 +31,12 @@
           </div>
           <div class="row">
             <div class="col-sm-6">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">English specialist</p>
               </a>
             </div>
             <div class="col-sm-6">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">No Greater Brother</p>
               </a>
             </div>
@@ -50,12 +50,12 @@
           </div>
           <div class="row">
             <div class="col-sm-6">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 <p style="font-weight: bold; margin-top: 20px;color:#edc664; text-align:center; font-size: 36px">ĐẠI HỌC</p>
               </a>
             </div>
             <div class="col-sm-6">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 <p style="font-weight: bold; margin-top: 5px;color:#edc664; text-align:center; font-size: 36px">ĐH</p>
                 <p style="font-weight: bold; margin-top: 5px;color:#edc664; text-align:center; font-size: 18px">(chuyên ngành anh)</p>
               </a>
@@ -203,7 +203,7 @@
     <div class="section_gap registration_area">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-7">
+          <div class="col-lg-6">
             <div class="row clock_sec clockdiv" id="clockdiv">
               <div class="col-lg-12">
                   <h2 style="color:#2d142c " class="mb-3">Personal Results</h1>
@@ -212,11 +212,11 @@
                   If you talk to him in his language, that goes to his heart"
                 </p>
               </div>
-              <div class="col clockinner ">
+              <div class="col clockinner1 clockinner ">
                 <h1 style='color:#2d142c' class="amount">10</h1>
                 <span style='color:#2d142c' class="smalltext">Access</span>
               </div>
-              <div class="col clockinner">
+              <div class="col clockinner1 clockinner">
                 <h1 style='color:#2d142c' class="amount">05</h1>
                 <span style='color:#2d142c' class="smalltext">Exercise</span>
               </div>
@@ -230,7 +230,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 offset-lg-1">
+          <div class="col-lg-5 offset-lg-1">
             <h2 style="color: #2d142c;text-align:center;">Ranking</h2>
             <br>
             <ul class="nav nav-tabs">
@@ -285,12 +285,78 @@
               </div>
               <div id="month" class="container tab-pane fade"><br>
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
-                  
+                  <thead>
+                    <tr>
+                      <th>Rank</th>
+                      <th>Full Name</th>
+                      <th>Exercises</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                    </tr><tr>
+                      <td>1</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                    </tr>
+                    
+                  </tbody>
                 </table>
               </div>
               <div id="year" class="container tab-pane fade"><br>
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
-                  
+                  <thead>
+                    <tr>
+                      <th>Rank</th>
+                      <th>Full Name</th>
+                      <th>Exercises</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                    </tr><tr>
+                      <td>1</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                    </tr>
+                    
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -367,7 +433,7 @@
                 <div class="course_content">
                   <span class="tag mb-4 d-inline-block">Tips</span>
                   <h4 class="mb-3">
-                    <a href="course-details.html">Learn English with 6 tip</a>
+                    <a href="{{ route('newsDetail') }}">Learn English with 6 tip</a>
                   </h4>
                   <p>
                     Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
@@ -400,7 +466,7 @@
                 <div class="course_content">
                   <span class="tag mb-4 d-inline-block">News</span>
                   <h4 class="mb-3">
-                    <a href="course-details.html">Learn English with 6 tip</a>
+                    <a href="{{ route('newsDetail') }}">Learn English with 6 tip</a>
                   </h4>
                   <p>
                     Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
@@ -433,7 +499,7 @@
                 <div class="course_content">
                   <span class="tag mb-4 d-inline-block">News</span>
                   <h4 class="mb-3">
-                    <a href="course-details.html">Test</a>
+                    <a href="{{ route('newsDetail') }}">Test</a>
                   </h4>
                   <p>
                     Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
@@ -452,7 +518,7 @@
                         <a href="#"><i class="ti-comment mr-2"></i></a>
                       </span>
                       <span class="meta_info">
-                        <a href="#"><i class="ti-share mr-2"></i></a>
+                        <a href=""><i class="ti-share mr-2"></i></a>
                       </span>
                     </div>
                   </div>

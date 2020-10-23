@@ -75,7 +75,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="simple-card">
-                    <a href="#">
+                    <a href="{{ route('courseDetail') }}"">
                         <div class="simple-card-image">
                             <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
                         </div>
@@ -92,7 +92,7 @@
             </div>
              <div class="col-sm-4">
                 <div class="simple-card">
-                    <a href="#">
+                    <a href="{{ route('courseDetail') }}"">
                         <div class="simple-card-image">
                             <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
                         </div>
@@ -110,7 +110,7 @@
             </div>
              <div class="col-sm-4">
                 <div class="simple-card">
-                    <a href="#">
+                    <a href="{{ route('courseDetail') }}">
                         <div class="simple-card-image">
                             <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
                         </div>
@@ -161,7 +161,7 @@
             </div>
              <div class="col-sm-4">
                 <div class="simple-card">
-                    <a href="#">
+                    <a href="{{ route('courseDetail') }}"">
                         <div class="simple-card-image">
                             <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
                         </div>
@@ -179,7 +179,7 @@
             </div>
              <div class="col-sm-4">
                 <div class="simple-card">
-                    <a href="#">
+                    <a href="{{ route('courseDetail') }}"">
                         <div class="simple-card-image">
                             <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
                         </div>
@@ -221,7 +221,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="simple-card">
-                    <a href="#">
+                    <a href="{{ route('courseDetail') }}"">
                         <div class="simple-card-image">
                             <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
                         </div>
@@ -238,7 +238,7 @@
             </div>
              <div class="col-sm-4">
                 <div class="simple-card">
-                    <a href="#">
+                    <a href="{{ route('courseDetail') }}">
                         <div class="simple-card-image">
                             <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
                         </div>
@@ -255,7 +255,7 @@
             </div>
              <div class="col-sm-4">
                 <div class="simple-card">
-                    <a href="#">
+                    <a href="{{ route('courseDetail') }}"">
                         <div class="simple-card-image">
                             <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
                         </div>

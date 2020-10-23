@@ -25,6 +25,8 @@
                             the most prevalent
                             being the telescope.
                         </div>
+                        <div class="see-file">
+                        </div>
                         <div class="pt-5 mt-5">
                             <h3 class="mb-5">6 Comments</h3>
                             <ul class="comment-list">
@@ -91,7 +93,6 @@
                     <div class="content">
                         <div class="review-top row pt-40">
                             <div class="col-lg-12">
-                                <h6 class="mb-15">Provide Your Rating</h6>
                                 <div class="rating"> 
                                     <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> 
                                     <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
@@ -100,6 +101,38 @@
                                     <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="title">Tags</h4>
+                    <div class="tags">
+                        <div class="tags-item">
+                            <span class="tags-text">Ielts</span>
+                            <i class="ti-close tags-remove"></i>
+                        </div>
+                        <div class="tags-item">
+                            <span class="tags-text">Toeic</span>
+                            <i class="ti-close tags-remove"></i>
+                        </div>
+                        <div class="tags-item">
+                            <span class="tags-text">Toelf</span>
+                            <i class="ti-close tags-remove"></i>
+                        </div>
+                        <div class="tags-item">
+                            <span class="tags-text">Ket</span>
+                            <i class="ti-close tags-remove"></i>
+                        </div>
+                        <div class="tags-item">
+                            <span class="tags-text">Pet</span>
+                            <i class="ti-close tags-remove"></i>
+                        </div>
+                        <div class="tags-item">
+                            <span class="tags-text">Study</span>
+                            <i class="ti-close tags-remove"></i>
+                        </div>
+                        <div class="tags-item">
+                            <span class="tags-text">Learn</span>
+                            <i class="ti-close tags-remove"></i>
                         </div>
                     </div>
 
@@ -158,3 +191,72 @@
         </div>
     </div>
 </section>
+
+<section class="my-section-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10">
+                <h2 class="my-title">Relate Docs</h2>
+            </div>
+            <div class="col-sm-2">
+                <a href="{{ route('course') }}" class="btn-arrow"><div class="arrow"></div>View more</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="simple-card">
+                    <a href="#">
+                        <div class="simple-card-image">
+                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
+                        </div>
+                        <div class="simple-card-content">
+                            <h3 class="simple-card-title">Applying for a Design Job</h3>
+                     </a>
+                            <p class="simple-card-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio cupiditate, eius illo sapiente repellat recusandae quo tempora totam corrupti.</p>
+                            <a class="" href="">
+                                <button type="submit" class="download-form-submit">Download</button>
+                            </a>
+                            <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
+                        </div>
+                </div>
+            </div>
+             <div class="col-sm-4">
+                <div class="simple-card">
+                    <a href="#">
+                        <div class="simple-card-image">
+                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
+                        </div>
+                        <div class="simple-card-content">
+                            <h3 class="simple-card-title">Applying for a Design Job</h3>
+                     </a>
+                            <p class="simple-card-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio cupiditate, eius illo sapiente repellat recusandae quo tempora totam corrupti.</p>
+                            <a class="" href="">
+                                <button type="submit" class="download-form-submit">Download</button>
+                            </a>
+                            <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
+                        </div>
+                   
+                </div>
+            </div>
+             <div class="col-sm-4">
+                <div class="simple-card">
+                    <a href="#">
+                        <div class="simple-card-image">
+                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
+                        </div>
+                        <div class="simple-card-content">
+                            <h3 class="simple-card-title">Applying for a Design Job</h3>
+                     </a>
+                            <p class="simple-card-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio cupiditate, eius illo sapiente repellat recusandae quo tempora totam corrupti.</p>
+                            <a class="" href="">
+                                <button type="submit" class="download-form-submit">Download</button>
+                            </a>
+                            <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
+                        </div>
+                   
+                </div>
+            </div>
+        </div>
+    <div>
+</div>
+</div>
