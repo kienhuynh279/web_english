@@ -72,6 +72,35 @@
                     <i class="ti-search"></i>
                   </a>
                 </li>
+                
+                <ul class="topbar-items">
+                  @if (!Auth::check())
+                  <li class="login-item">
+                       <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                  </li>
+                  <li class="login-item">
+                       <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Đăng ký</a>
+                  </li>
+                  @else
+                  <li class="dropdown">
+                       <span class="d-flex ouline-none text-light justify-content-center align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a data-toggle="dropdown" href="#" aria-expanded="false">
+                                 <img height="17px" src="{{ asset(Auth::user()['avatar']) }}" class="img-circle" alt="User Image">
+                            </a>
+                            <span class="font-weight-bold">&nbsp; {{ Auth::user()['username'] }}</span>
+                       </span>
+                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a href="{{ route('logout') }}" class="dropdown-item dropdown-footer text-danger">
+                                 <i class="fas fa-sign-out-alt mr-2"></i>
+                                 Đăng Xuất
+                            </a>
+                       </div>
+                  </li>
+                  @endif
+             </ul>
+
+
+
               </ul>
             </div>
           </div>

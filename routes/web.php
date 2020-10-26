@@ -30,3 +30,39 @@ Route::get('/tin-tuc/chi-tiet','App\Http\Controllers\Client\NewsController@detai
 
 //login
 Route::get('/dang-nhap','App\Http\Controllers\Client\LoginController@index')->name('login');
+
+
+//Register
+Route::group(['namespace'=>'App\Http\Controllers'],function(){
+    Route::group(['prefix' => 'register'], function () {
+        Route::get('/', 'RegisterController@index')->name('registerView');
+        Route::post('/', 'RegisterController@register')->name('register');
+    });
+});
+
+
+//Admin
+Route::group(['namespace'=>'App\Http\Controllers\Admin'],function(){
+    Route::group(['prefix'=>'login','middleware'=>'CheckLogedIn'],function(){
+        Route::get('/','LoginController@getLogin')->name('login');
+        Route::post('/','LoginController@postLogin');
+    });
+
+    Route::get('logout','HomeController@getLogout')->name('logout');
+
+    Route::group(['prefix'=>'admin','middleware'=>'CheckLogedOut','middleware'=>'App\Http\Middleware\RequireAuth'],function(){
+        Route::get('home','HomeController@getHome');
+
+        Route::group(['prefix'=>'user'], function(){
+            Route::get('/','UserController@getUser');
+
+            Route::get('add','UserController@getAddUser');
+            Route::post('add','UserController@postAddUser');
+
+            Route::get('edit/{id}','UserController@getEditUser');
+            Route::post('edit/{id}','UserController@postEditUser');
+
+            Route::get('delete/{id}','UserController@getDeleteUser');
+         });
+    });
+});
