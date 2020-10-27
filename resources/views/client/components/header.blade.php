@@ -64,28 +64,16 @@
                 <li class="nav-item {{ activeMenu('lien-he') }}">
                   <a class="nav-link"  href="{{ route('contact') }}">Contact</a>
                 </li>
-                {{-- <li class="nav-item {{ activeMenu('dang-nhap') }}">
-                  <a class="nav-link"  href="{{ route('login') }}">User</a>
-                </li> --}}
-                <li class="nav-item">
-                  <a href="#" class="nav-link search" id="search">
-                    <i class="ti-search"></i>
-                  </a>
-                </li>
-                
-                <ul class="topbar-items">
+               
                   @if (!Auth::check())
-                  <li class="login-item">
-                       <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
-                  </li>
-                  <li class="login-item">
-                       <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Đăng ký</a>
+                  <li style="margin-top: 20px" class="nav-item">
+                       <a class="btn btn-register" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
                   </li>
                   @else
-                  <li class="dropdown">
+                  <li class="dropdown" style="margin-top: 24px" class="nav-item">
                        <span class="d-flex ouline-none text-light justify-content-center align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <a data-toggle="dropdown" href="#" aria-expanded="false">
-                                 <img height="17px" src="{{ asset(Auth::user()['avatar']) }}" class="img-circle" alt="User Image">
+                            <a  data-toggle="dropdown" href="#" aria-expanded="false">
+                                 <img style="width: 2rem;height: 2rem; border-radius: 5rem;flex-shrink: 0;object-fit: cover;" height="17px" src="{{ asset(Auth::user()['avatar']) }}" class="img-circle" alt="User Image">
                             </a>
                             <span class="font-weight-bold">&nbsp; {{ Auth::user()['username'] }}</span>
                        </span>
@@ -97,7 +85,19 @@
                        </div>
                   </li>
                   @endif
-             </ul>
+                
+                {{-- <li class="nav-item {{ activeMenu('dang-nhap') }}">
+                  <a class="nav-link"  href="{{ route('login') }}">User</a>
+                </li> --}}
+                <li class="nav-item">
+                  <a href="#" class="nav-link search" id="search">
+                    <i class="ti-search"></i>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                 
+             </li>
 
 
 
