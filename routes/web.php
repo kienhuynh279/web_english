@@ -28,9 +28,10 @@ Route::get('/lien-he','App\Http\Controllers\Client\ContactController@index')->na
 Route::get('/tin-tuc','App\Http\Controllers\Client\NewsController@index')->name('news');
 Route::get('/tin-tuc/chi-tiet','App\Http\Controllers\Client\NewsController@detail')->name('newsDetail');
 
+//test
+Route::get('/test','App\Http\Controllers\client\ExamController@index')->name('test');
 //login
 Route::get('/dang-nhap','App\Http\Controllers\Client\LoginController@index')->name('login');
-
 
 //Register
 Route::group(['namespace'=>'App\Http\Controllers'],function(){
@@ -39,7 +40,6 @@ Route::group(['namespace'=>'App\Http\Controllers'],function(){
         Route::post('/', 'RegisterController@register')->name('register');
     });
 });
-
 
 //Admin
 Route::group(['namespace'=>'App\Http\Controllers\Admin'],function(){

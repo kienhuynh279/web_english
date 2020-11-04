@@ -2,7 +2,7 @@
       <div class="container border" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px">
         <div class="container">
           <div class="row justify-content-center">  
-                  <div class="my-banner-title"><span>CERTIFICATE</span></div>
+                  <div class="my-banner-title"><span>CHỨNG CHỈ</span></div>
           </div>
           <div class="row">
             <div class="col-sm-4">
@@ -21,43 +21,103 @@
               </a>
             </div>
           </div>
-          <div class="line"></div>
+          
         </div>
         
 
         <div class="container">
           <div class="row justify-content-center">  
-            <div  class="my-banner-title"><span>PUT IT TO CLASS 10</span></div>
+            <div  class="my-banner-title"><span>ÔN THI LỚP 10</span></div>
           </div>
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">English specialist</p>
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p>
               </a>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">No Greater Brother</p>
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p>
+              </a>
+            </div>
+            <div class="col-sm-4">
+              <a href="{{ route('course') }}">
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p>
               </a>
             </div>
           </div>
-          <div class="line"></div>
+          
         </div>
 
         <div class="container">
           <div class="row justify-content-center">  
-                  <div  class="my-banner-title"><span>HIGH SCHOOL GRADUATION</span></div>
+                  <div  class="my-banner-title"><span>Ôn thi THPT</span></div>
           </div>
           <div class="row">
-            <div class="col-sm-6">
+           <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#edc664; text-align:center; font-size: 36px">ĐẠI HỌC</p>
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p>
               </a>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 5px;color:#edc664; text-align:center; font-size: 36px">ĐH</p>
-                <p style="font-weight: bold; margin-top: 5px;color:#edc664; text-align:center; font-size: 18px">(chuyên ngành anh)</p>
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p>
+              </a>
+            </div>
+            <div class="col-sm-4">
+              <a href="{{ route('course') }}">
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="row justify-content-center">  
+                  <div  class="my-banner-title"><span>Ôn thi Đại học</span></div>
+          </div>
+          <div class="row">
+           <div class="col-sm-4">
+              <a href="{{ route('course') }}">
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p>
+              </a>
+            </div>
+            <div class="col-sm-4">
+              <a href="{{ route('course') }}">
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p>
+              </a>
+            </div>
+            <div class="col-sm-4">
+              <a href="{{ route('course') }}">
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row justify-content-center">  
+                  <div  class="my-banner-title"><span>Tiếng Anh Chuyên Nghành</span></div>
+          </div>
+          <div class="row">
+           <div class="col-sm-3">
+              <a href="{{ route('course') }}">
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Điện lạnh</p>
+              </a>
+            </div>
+            <div class="col-sm-3">
+              <a href="{{ route('course') }}">
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Điện dân dụng</p>
+              </a>
+            </div>
+            <div class="col-sm-3">
+              <a href="{{ route('course') }}">
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Thư tín, thương mại</p>
+              </a>
+            </div>
+            <div class="col-sm-3">
+              <a href="{{ route('course') }}">
+                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">NH-KS</p>
               </a>
             </div>
           </div>
@@ -65,59 +125,7 @@
       </div>
     </section>
     <!--Socical Contact-->
-      <section style="padding-top:0; padding-bottom:20px" class="feature_area section_gap">
-      <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5">
-              <div class="main_title">
-                <h3 class="mb-3">Social Contact</h3>
-              </div>
-            </div>
-          </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div style="background-color:#fff" class="single_feature">
-              <div class="icon">
-                <span>
-                  <img src="{{ asset('dist/img/social/facebook.png') }}" width="15%" height="15%">
-                  <a style="color:#2d142c" href=""> Trung Kiên</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div style="background-color:#fff" class="single_feature">
-              <div class="icon">
-                <span>
-                  <img src="{{ asset('dist/img/social/instagram.png') }}" width="15%" height="15%">
-                  <a style="color:#2d142c" href=""> Trung Kiên</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div style="background-color:#fff" class="single_feature">
-              <div class="icon">
-                <span>
-                  <img src="{{ asset('dist/img/social/telephone.png') }}" width="15%" height="15%">
-                  <a style="color:#2d142c" href=""> Trung Kiên</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div style="background-color:#fff" class="single_feature">
-              <div class="icon">
-                <span>
-                  <img src="{{ asset('dist/img/social/twitter.png') }}" width="15%" height="15%">
-                  <a style="color:#2d142c" href="">Trung Kiên</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
+      
     <!--Socical Contact End-->
    
 
@@ -127,39 +135,39 @@
         <div class="row justify-content-center">
           <div class="col-lg-5">
             <div class="main_title">
-              <h2 class="mb-3">Outstanding Document</h2>
+              <h2 class="mb-3">Đề Thi Mới Nhất</h2>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6">
+
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title"><span class="badge badge-primary">Trainer</span> Toeic Test (New)</h4>
+                <h4 class="card-title"><span class="badge badge-primary">Kiểm tra</span> Kiểm tra Toeic (New)</h4>
                 <div class="row">
                   <div class="col-sm-6">
-                    <p>Number of verses: 40 sentences</p>
+                    <p>Số câu: 40 câu</p>
                   </div>
                   <div class="col-sm-6">
-                    <p>Duration: 60 minutes</p>
+                    <p>Thời gian: 60 phút</p>
                   </div>
                 </div>
-                <a href="#" class="btn btn-success">Get Started</a>
+                <a href="#" class="btn btn-success">Bắt đầu</a>
               </div>
-
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title"><span class="badge badge-primary">Trainer</span> Toeic Test (New)</h4>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p>Number of verses: 40 sentences</p>
-                    </div>
-                    <div class="col-sm-6">
-                      <p>Duration: 60 minutes</p>
-                    </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title"><span class="badge badge-primary">Kiểm tra</span> Kiểm tra Toeic (New)</h4>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p>Số câu: 40 câu</p>
                   </div>
-                  <a href="#" class="btn btn-success">Get Started</a>
+                  <div class="col-sm-6">
+                    <p>Thời gian: 60 phút</p>
+                  </div>
                 </div>
+                <a href="#" class="btn btn-success">Bắt đầu</a>
               </div>
             </div>
           </div>
@@ -167,32 +175,33 @@
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title"><span class="badge badge-danger">Test</span> Toeic Test (New)</h4>
+                <h4 class="card-title"><span class="badge badge-primary">Kiểm tra</span> Kiểm tra Toeic (New)</h4>
                 <div class="row">
                   <div class="col-sm-6">
-                    <p>Number of verses: 40 sentences</p>
+                    <p>Số câu: 40 câu</p>
                   </div>
                   <div class="col-sm-6">
-                    <p>Duration: 60 minutes</p>
+                    <p>Thời gian: 60 phút</p>
                   </div>
                 </div>
-                <a href="#" class="btn btn-success">Get Started</a>
+                <a href="#" class="btn btn-success">Bắt đầu</a>
               </div>
-              <div class="card">
-              <div class="card-body">
-                <h4 class="card-title"><span class="badge badge-danger">Test</span> Toeic Test (New)</h4>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <p>Number of verses: 40 sentences</p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"><span class="badge badge-primary">Kiểm tra</span> Kiểm tra Toeic (New)</h4>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p>Số câu: 40 câu</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <p>Thời gian: 60 phút</p>
+                    </div>
                   </div>
-                  <div class="col-sm-6">
-                    <p>Duration: 60 minutes</p>
-                  </div>
+                  <a href="#" class="btn btn-success">Bắt đầu</a>
                 </div>
-                <a href="#" class="btn btn-success">Get Started</a>
-              </div>
             </div>
-            </div>
+          </div>
         </div>
         </div>
       </div>
@@ -200,7 +209,7 @@
     <!--================ End Popular Courses Area =================-->
 
     <!--================ Start Registration Area =================-->
-    <div class="section_gap registration_area">
+    {{-- <div class="section_gap registration_area">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
@@ -364,11 +373,11 @@
         </div>
       </div>
     </div>
-    <br>
+    <br> --}}
     <!--================ End Registration Area =================-->
 
      <!--================ Start Feature Area =================-->
-    <section class="feature_area section_gap">
+    {{-- <section class="feature_area section_gap">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-6">
@@ -408,7 +417,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
     <!--================ End Feature Area =================-->
 
     <!--================ Start Trainers Area =================-->
@@ -417,13 +426,12 @@
         <div class="row justify-content-center">
           <div class="col-lg-5">
             <div class="main_title">
-              <h2 class="mb-3">News - Tips</h2>            
+              <h2 class="mb-3">Mẹo & Tin Tức</h2>            
             </div>
           </div>
         </div>
         <div class="row">
           <!-- single course -->
-
           <div class="col-lg-12">
             <div class="owl-carousel active_course">
               <div class="single_course">
@@ -431,12 +439,12 @@
                   <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
                 </div>
                 <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">Tips</span>
+                  <span class="tag mb-4 d-inline-block">Mẹo</span>
                   <h4 class="mb-3">
-                    <a href="{{ route('newsDetail') }}">Learn English with 6 tip</a>
+                    <a href="{{ route('newsDetail') }}">6 Mẹo học anh văn nhanh nhất</a>
                   </h4>
                   <p>
-                    Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
+                    Ngay bây giờ học thật tốt anh văn với 6 mẹ sau
                   </p>
                   <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
                     <div class="authr_meta">
@@ -464,12 +472,12 @@
                   <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
                 </div>
                 <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">News</span>
+                  <span class="tag mb-4 d-inline-block">Mẹo</span>
                   <h4 class="mb-3">
-                    <a href="{{ route('newsDetail') }}">Learn English with 6 tip</a>
+                    <a href="{{ route('newsDetail') }}">6 Mẹo học anh văn nhanh nhất</a>
                   </h4>
                   <p>
-                    Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
+                    Ngay bây giờ học thật tốt anh văn với 6 mẹ sau
                   </p>
                   <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
                     <div class="authr_meta">
@@ -497,12 +505,12 @@
                   <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
                 </div>
                 <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">News</span>
+                  <span class="tag mb-4 d-inline-block">Mẹo</span>
                   <h4 class="mb-3">
-                    <a href="{{ route('newsDetail') }}">Test</a>
+                    <a href="{{ route('newsDetail') }}">6 Mẹo học anh văn nhanh nhất</a>
                   </h4>
                   <p>
-                    Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
+                    Ngay bây giờ học thật tốt anh văn với 6 mẹ sau
                   </p>
                   <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
                     <div class="authr_meta">
@@ -518,7 +526,7 @@
                         <a href="#"><i class="ti-comment mr-2"></i></a>
                       </span>
                       <span class="meta_info">
-                        <a href=""><i class="ti-share mr-2"></i></a>
+                        <a href="#"><i class="ti-share mr-2"></i></a>
                       </span>
                     </div>
                   </div>
@@ -530,18 +538,56 @@
       </div>
     </div>
 
-    <div style="padding: 0 0 0 0" class="section_gap banner_area ">
-        <div class="row align-items-center">
-            <img src="{{ asset('dist/img/banner/bc.pg') }}">
+    <section style="padding-top:0; padding-bottom:20px" class="feature_area section_gap">
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+              <div class="main_title">
+                <h3 class="mb-3">Liên hệ</h3>
+              </div>
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div style="background-color:#fff" class="single_feature text-center">
+              <div class="icon">
+                <span>
+                  <img src="{{ asset('dist/img/social/facebook.png') }}" width="15%" height="15%">
+                  <a style="color:#2d142c" href="">Account FB</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div style="background-color:#fff" class="single_feature text-center">
+              <div class="icon">
+                <span>
+                  <img src="{{ asset('dist/img/social/instagram.png') }}" width="15%" height="15%">
+                  <a style="color:#2d142c" href="">Account Ins</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div style="background-color:#fff" class="single_feature text-center">
+              <div class="icon">
+                <span>
+                  <img src="{{ asset('dist/img/social/telephone.png') }}" width="15%" height="15%">
+                  <a style="color:#2d142c" href=""> Account Mail</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
+
 
 <section class="my-section">
 <div class="container">
 <div class="row justify-content-center">
           <div class="col-lg-5">
             <div class="main_title">
-              <h2 class="mb-3">User Shared</h2>            
+              <h2 class="mb-3">Đánh giá</h2>            
             </div>
           </div>
         </div>
@@ -606,5 +652,4 @@
     </div>
   </div>
 </section>
-
 

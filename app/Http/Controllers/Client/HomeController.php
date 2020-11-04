@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         return view('client.index',[
             'title' => 'Trang Chủ',
-            'page' => 'home'
+            'page' => 'home.index'
         ]);
     }
 }

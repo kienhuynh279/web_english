@@ -13,4 +13,3 @@
     <link rel="stylesheet" href={{ asset('dist/vendors/nice-select/css/nice-select.css') }} />
     <!-- main css -->
     <link rel="stylesheet" href={{ asset('dist/css/style.css') }} />
-    {{-- <script data-ad-client="ca-pub-1234567890123456" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}

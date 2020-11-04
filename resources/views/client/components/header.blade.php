@@ -1,119 +1,99 @@
 <div class="header_area">
-<div class="main_menu">
+    <div class="main_menu" id="navbar">
         <div class="search_input" id="search_input_box">
-          <div class="container">
-            <form class="d-flex justify-content-between" method="" action="">
-              <input
-                type="text"
-                class="form-control"
-                id="search_input"
-                placeholder="Search Here"
-              />
-              <button type="submit" class="btn"></button>
-              <span
-                class="ti-close"
-                id="close_search"
-                title="Close Search"
-              ></span>
-            </form>
-          </div>
-        </div>
-        
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <a style="font-weight: bold; color:   #fdc632" class="navbar-brand logo_h" href="{{ route('home') }}">
-              <img src="{{ asset('dist/img/logo_new.png') }}" weight="60px" height="60px">
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="icon-bar"></span> <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div
-              class="collapse navbar-collapse offset"
-              id="navbarSupportedContent"
-            >
-              <?php 
-                function activeMenu($uri = '') {
-                  $active = '';
-                  if (Request::segment(1) == $uri) {
-                      $active = 'active';
-                  }
-                  return $active;
-                }
-              ?>
-              <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item {{ activeMenu('') }}">
-                  <a  class="nav-link"  href="{{ route('home') }}">Home</a>
-                </li>
-                <li class="nav-item {{ activeMenu('tin-tuc') }}">
-                  <a  class="nav-link "  href="{{ route('news') }}">Blogs</a>
-                </li>
-                <li class="nav-item {{ activeMenu('khoa-hoc') }}">
-                  <a class="nav-link"  href="{{ route('courseList') }}">Docs</a>
-                </li>
-                <li class="nav-item {{ activeMenu('lien-he') }}">
-                  <a class="nav-link"  href="{{ route('contact') }}">Contact</a>
-                </li>
-               
-                  @if (!Auth::check())
-                  <li style="margin-top: 20px" class="nav-item">
-                       <a class="btn btn-register" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
-                  </li>
-                  @else
-                  <li class="dropdown" style="margin-top: 24px" class="nav-item">
-                       <span class="d-flex ouline-none text-light justify-content-center align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <a  data-toggle="dropdown" href="#" aria-expanded="false">
-                                 <img style="width: 2rem;height: 2rem; border-radius: 5rem;flex-shrink: 0;object-fit: cover;" height="17px" src="{{ asset(Auth::user()['avatar']) }}" class="img-circle" alt="User Image">
-                            </a>
-                            <span class="font-weight-bold">&nbsp; {{ Auth::user()['username'] }}</span>
-                       </span>
-                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a href="{{ route('logout') }}" class="dropdown-item dropdown-footer text-danger">
-                                 <i class="fas fa-sign-out-alt mr-2"></i>
-                                 Đăng Xuất
-                            </a>
-                       </div>
-                  </li>
-                  @endif
-                
-                {{-- <li class="nav-item {{ activeMenu('dang-nhap') }}">
-                  <a class="nav-link"  href="{{ route('login') }}">User</a>
-                </li> --}}
-                <li class="nav-item">
-                  <a href="#" class="nav-link search" id="search">
-                    <i class="ti-search"></i>
-                  </a>
-                </li>
-                
-                <li class="nav-item">
-                 
-             </li>
-
-
-
-              </ul>
+            <div class="container">
+                <form class="d-flex justify-content-between" method="" action="">
+                    <input type="text" class="form-control" id="search_input" placeholder="Search Here" />
+                    <button type="submit" class="btn"></button>
+                    <span class="ti-close" id="close_search" title="Close Search . . ."></span>
+                </form>
             </div>
-          </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a style="font-weight: bold; color:   #fdc632" class="navbar-brand logo_h" href="{{ route('home') }}">
+                    <img src="{{ asset('dist/img/logo_new.png') }}" weight="60px" height="60px">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="icon-bar"></span> <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link " href="{{ route('home') }}">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                        
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
+                              Ôn thi chứng chỉ
+                            </a>
+                             <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('courseList') }}">KET</a>
+                                <a class="dropdown-item" href="{{ route('courseList') }}">PET</a>
+                                <a class="dropdown-item" href="{{ route('courseList') }}">TOEIC</a>
+                                <a class="dropdown-item" href="{{ route('courseList') }}">IELTS</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{ route('courseList') }}" id="navbardrop" data-toggle="dropdown">
+                              Ôn thi vào lớp 10
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('course') }}">Luyện đề thi</a>
+                                <a class="dropdown-item" href="{{ route('course') }}">Luyện theo dạng bài</a>
+                                <a class="dropdown-item" href="{{ route('course') }}">Luyện theo chuyên đề</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{ route('courseList') }}" id="navbardrop" data-toggle="dropdown">
+                              Ôn thi THPT
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('course') }}">Luyện đề thi</a>
+                                <a class="dropdown-item" href="{{ route('course') }}">Luyện theo dạng bài</a>
+                                <a class="dropdown-item" href="{{ route('course') }}">Luyện theo chuyên đề</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{ route('courseList') }}" id="navbardrop" data-toggle="dropdown">
+                              Ôn thi vào ĐH
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('course') }}">Luyện đề thi</a>
+                                <a class="dropdown-item" href="{{ route('course') }}">Luyện theo dạng bài</a>
+                                <a class="dropdown-item" href="{{ route('course') }}">Luyện theo chuyên đề</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{ route('courseList') }}" id="navbardrop" data-toggle="dropdown">
+                        Tiếng Anh Chuyên Ngành
+                      </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('courseList') }}">Điện lạnh</a>
+                                <a class="dropdown-item" href="{{ route('courseList') }}">Điện công nghiệp và dân dụng</a>
+                                <a class="dropdown-item" href="{{ route('courseList') }}">Thư tín thương mại</a>
+                                <a class="dropdown-item" href="{{ route('courseList') }}">Nhà hàng khách sạn</a>
+                            </div>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i>Đăng nhập</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link " id="search">
+                                <i class="ti-search"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
         </nav>
-      </div>
-      </div>
-
-      <script>
-        var url = window.location.href;
-
-        var myMenuLinks = $('#menu');
-
-        myMenuLinks.filter(function() {
-          return this.href == url;
-          }).addClass('active');
-      </script>
+    </div>
+</div>
