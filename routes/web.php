@@ -65,4 +65,25 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin'],function(){
             Route::get('delete/{id}','UserController@getDeleteUser');
          });
     });
+
+    Route::group(['prefix' => 'news'], function () {
+
+        Route::get('/', 'NewController@index')->name('adminNew');
+
+        Route::get('/add', 'NewController@getAdd')->name('adminNewGetAdd');
+
+        Route::post('/add', 'NewController@postAdd')->name('adminNewPostAdd');
+
+        Route::get('/edit/{id}', 'NewController@getEdit')
+             ->name('adminNewGetEdit')
+             ->where(['id' => '[0-9]+']);
+
+        Route::post('/edit/{id}', 'NewController@putEdit')
+             ->name('adminNewPutEdit')
+             ->where(['id' => '[0-9]+']);
+
+        Route::get('/delete/{id}', 'NewController@delete')
+             ->name('adminNewDelete')
+             ->where(['id' => '[0-9]+']);
+   });
 });

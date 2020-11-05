@@ -81,7 +81,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i>Đăng nhập</a>
+                            <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>Đăng nhập</a>
                         </li>
 
 

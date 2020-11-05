@@ -235,6 +235,15 @@
               </p>
             </a>
           </li>
+           <li class="nav-item">
+            <a href="{{ route('adminNew') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Quản Lý Blogs
+                <span class="right badge badge-danger">Admin</span>
+              </p>
+            </a>
+          </li>
           {{-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
