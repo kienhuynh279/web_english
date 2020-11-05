@@ -21,12 +21,123 @@
                   <span class="icon-bar"></span>
                 </button>
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <ul class="menu-hover clearfix" >
+                            <li ><a href="{{ route('home') }}" class="nav-link">Trang chủ</a> </li>
+                            <li>
+                                <a href="#">Ôn thi</a> 
+                                <ul class="menu-sub" >
+                                <li><a href="{{ route('courseList') }}">Ôn thi chứng chỉ</a>
+                                    <ul class="menu-sub" >
+                                        <li><a href="{{ route('courseList') }}" >KET</a> </li>
+                                        <li><a href="{{ route('courseList') }}" >PET</a> </li>
+                                        <li><a href="{{ route('courseList') }}" >TOEIC</a> </li>
+                                        <li><a href="{{ route('courseList') }}" >IELTS</a> </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{ route('courseList') }}" >Ôn thi vào lớp 10</a> 
+                                    <ul class="menu-sub" >
+                                        <li><a href="{{ route('course') }}" >Luyện đề thi</a> </li>
+                                        <li><a href="{{ route('course') }}" >Luyện theo dạng đề</a> </li>
+                                        <li><a href="{{ route('course') }}" >Luyện theo chuyên đề</a> </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{ route('courseList') }}" >Ôn thi THPT</a> 
+                                    <ul class="menu-sub" >
+                                        <li><a href="{{ route('course') }}" >Luyện đề thi</a> </li>
+                                        <li><a href="{{ route('course') }}" >Luyện theo dạng đề</a> </li>
+                                        <li><a href="{{ route('course') }}" >Luyện theo chuyên đề</a> </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{ route('courseList') }}" >Ôn thi ĐH</a> 
+                                    <ul class="menu-sub" >
+                                        <li><a href="{{ route('course') }}" >Luyện đề thi</a> </li>
+                                        <li><a href="{{ route('course') }}" >Luyện theo dạng đề</a> </li>
+                                        <li><a href="{{ route('course') }}" >Luyện theo chuyên đề</a> </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{ route('courseList') }}" >Tiếng anh chuyên ngành</a> 
+                                    <ul class="menu-sub" >
+                                        <li><a href="{{ route('course') }}" >Điện lạnh</a> </li>
+                                        <li><a href="{{ route('course') }}" >Điện công nghiệp & dân dụng</a> </li>
+                                        <li><a href="{{ route('course') }}" >Thư tín thương mại</a> </li>
+                                        <li><a href="{{ route('course') }}" >Nhà hàng khách sạn</a> </li>
+                                    </ul>
+                                </li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ route('news') }}" >Tin tức</a> </li>
+                            <li><a href="{{ route('contact') }}" >Liên hệ</a> </li>
+                            <li><a href="{{ route('login') }}" >Đăng nhập</a> </li>
+                            <li>
+                                <a href="#" id="search">
+                                    <i class="ti-search"></i>
+                                </a>
+                            </li>
+                </ul>
+
+                    {{-- <ul class="nav navbar-nav menu_nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link " href="{{ route('home') }}">Trang Chủ</a>
                         </li>
+
+                        <div class="dropdown">
+                            <li class="nav-item dropdown-toggle" type="button" data-toggle="dropdown"><a class="nav-link">Ôn thi</a><span class="caret"></span></li>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a class="test" class="dropdown-item" href="#">Ôn thi chứng chỉ<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">KET</a></li>
+                                        <li><a href="#">PET</a></li>
+                                        <li><a href="#">TOEIC</a></li>
+                                        <li><a href="#">IELTS</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a class="test" href="#">Ôn thi vào lớp 10<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Luyện đ</a></li>
+                                        <li><a href="#">PET</a></li>
+                                        <li><a href="#">TOEIC</a></li>
+                                        <li><a href="#">IELTS</a></li>
+                                    </ul>
+                                </li>
+                                <li><a tabindex="-1" href="#">Ôn thi chứng chỉ</a></li>
+                                <li><a tabindex="-1" href="#">CSS</a></li>
+                                <li class="dropdown-submenu">
+                                    <a class="test" tabindex="-1" href="#">Ngôn ngữ lập trình <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">C#</a></li>
+                                        <li><a tabindex="-1" href="#">PHP</a></li>
+                                        <li class="dropdown-submenu">
+                                            <a class="test" href="#">Ngôn ngữ khác <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Java</a></li>
+                                                <li><a href="#">Python</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                         <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
+                              Ôn thi
+                            </a>
+                             <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('courseList') }}">KET</a>
+                                <a class="dropdown-item" href="{{ route('courseList') }}">PET</a>
+                                <a class="dropdown-item" href="{{ route('courseList') }}">TOEIC</a>
+                                <a class="dropdown-item" href="{{ route('courseList') }}">IELTS</a>
+                            </div>
+                        </li>
                         <li class="nav-item dropdown">
-                        
+
                             <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
                               Ôn thi chứng chỉ
                             </a>
@@ -91,7 +202,7 @@
                             </a>
                         </li>
 
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </nav>
