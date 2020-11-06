@@ -184,11 +184,11 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('/storage/app/upload/img/user/'.Auth::user()->avatar)}}" class="img-circle elevation-2" alt="User Image">
-          {{-- <img src="{{asset('library/storage/app/upload/img/user/'.$user->avatar)}}" class="thumbnail"> --}}
+          <img src="{{Storage::url('public/upload/img/user/'.Auth::user()->avatar)}}" class="img-circle elevation-2" alt="User Image">
+          {{-- {{Storage::url('upload/img/user/'.$user->avatar)}} --}}
         </div>
         <div class="info">
-          <a href="#" class="d-block">  {{Auth::user()->username}}</a>
+          <a class="d-block"> {{Auth::user()->username}}</a>
         </div>
       </div>
 
@@ -232,6 +232,15 @@
               <p>
                 Quản Lý User 
                 <span class="right badge badge-danger">Admin</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{asset('admin/banner')}}" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Quản Lý Banner 
+                <span class="right badge badge-danger">Banner</span>
               </p>
             </a>
           </li>

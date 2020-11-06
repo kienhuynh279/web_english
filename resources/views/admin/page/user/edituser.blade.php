@@ -41,7 +41,7 @@
                                                 <div class="form-group">
                                                     <label>Hình đại diện :</label>
                                                     <input id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-                                                    <img id="img" class="thumbnail" width="300px" src="{{asset('/storage/app/upload/img/user/'.$user->avatar)}}">
+                                                    <img id="img" class="thumbnail" width="100px" src="{{Storage::url   ('public/upload/img/user/'.$user->avatar)}}">
                                                 </div>
 
                                             </div>

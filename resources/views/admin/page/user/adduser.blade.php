@@ -39,7 +39,7 @@
                                             <div class="form-group" >
                                                 <label>Hình đại diện :</label>
                                                 <input required id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-                                                <img id="avatar" class="thumbnail" width="300px" src="{{asset('/dist/img/male.jpg')}}">
+                                                <img id="avatar" class="thumbnail" width="100px" src="{{asset('/dist/img/male.jpg')}}">
                                             </div>                                                                                                                                          
                                         </div>
                                    </div>
@@ -55,3 +55,9 @@
 <!--/.row-->
 </div>
 @stop
+<script>
+     $('#password').on('input',function(){
+       // console.log(this.value);
+       this.value=this.value.replace(/[^([a-zA-Z0-9)]+/g, '');
+     });
+</script>

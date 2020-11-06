@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,7 +52,7 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin'],function(){
     Route::get('logout','HomeController@getLogout')->name('logout');
 
     Route::group(['prefix'=>'admin','middleware'=>'CheckLogedOut','middleware'=>'App\Http\Middleware\RequireAuth'],function(){
-        Route::get('home','HomeController@getHome');
+        Route::get('/','HomeController@getHome');
 
         Route::group(['prefix'=>'user'], function(){
             Route::get('/','UserController@getUser');
@@ -63,6 +64,18 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin'],function(){
             Route::post('edit/{id}','UserController@postEditUser');
 
             Route::get('delete/{id}','UserController@getDeleteUser');
+         });
+
+         Route::group(['prefix'=>'banner'], function(){
+            Route::get('/','BannerController@getBanner');
+
+            Route::get('add','BannerController@getAddBanner');
+            Route::post('add','BannerController@postAddBanner');
+
+            Route::get('edit/{id}','BannerController@getEditBanner');
+            Route::post('edit/{id}','BannerController@postEditBanner');
+
+            Route::get('delete/{id}','BannerController@getDeleteBanner');
          });
     });
 });

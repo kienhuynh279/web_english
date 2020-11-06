@@ -10,35 +10,35 @@
          <table id="dataTable" class="table table-striped table-bordered" style="width:100%">
               <thead>
                    <tr>
-                        <th>ID User :</th>
-                        <th>Tên Người Dùng : </th>
+                        <th>ID Banner :</th>
+                        {{-- <th>Tên Người Dùng : </th>
                         <th>Email Người Dùng : </th>
-                        <th>Ảnh : </th>
+                        <th>Ảnh : </th> --}}
                         <th>Tùy Chỉnh</th>
                    </tr>
               </thead>
               <tbody>
-                   @foreach ($userlist as $user)
+                   {{-- @foreach ($userlist as $user)
                    <tr>
                         <td>{{$user->id}}</td>
                         <td>{{$user->username}}</td>
                         <td>{{$user->email}}</td>
                         <td>
-                        <img width="100px" src="{{Storage::url('public/upload/img/user/'.$user->avatar)}}" class="thumbnail">
+                              <img width="200px" src="{{asset('storage/app/upload/img/user/'.$user->avatar)}}" class="thumbnail">
                         </td>
                         <td>
                              <a href="{{asset('admin/user/edit/'.$user->id)}}" class="btn btn-warning"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Sửa</a>
                              <a onclick="return confirm('Bạn có chắc chắn muốn xóa !')" href="{{asset('admin/user/delete/'.$user->id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                         </td>
                    </tr>
-                   @endforeach
+                   @endforeach --}}
               </tbody>
               <tfoot>
                    <tr>
-                    <th>ID User :</th>
-                    <th>Tên Người Dùng : </th>
+                    <th>ID Banner :</th>
+                    {{-- <th>Tên Người Dùng : </th>
                     <th>Email Người Dùng : </th>
-                    <th>Ảnh : </th>
+                    <th>Ảnh : </th> --}}
                     <th>Tùy Chỉnh</th>
                    </tr>
               </tfoot>

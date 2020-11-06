@@ -84,9 +84,9 @@
                   @else
                   <li class="dropdown">
                        <span class="d-flex ouline-none text-light justify-content-center align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <a data-toggle="dropdown" href="#" aria-expanded="false">
-                                 <img height="17px" src="{{ asset(Auth::user()['avatar']) }}" class="img-circle" alt="User Image">
-                            </a>
+                            {{-- <a data-toggle="dropdown" href="#" aria-expanded="false"> --}}
+                                 <img  src="{{asset('/storage/app/upload/img/user/'.Auth::user()->avatar)}}" class="img-circle" alt="User Image">
+                            {{-- </a> --}}
                             <span class="font-weight-bold">&nbsp; {{ Auth::user()['username'] }}</span>
                        </span>
                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

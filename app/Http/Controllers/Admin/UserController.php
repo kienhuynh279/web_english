@@ -26,7 +26,7 @@ class UserController extends Controller
             $user->password = bcrypt($request->password);
             $user->level = $request->level;
             $user->avatar = $filename;
-            $request->img->storeAs('upload/img/user',$filename);         
+            $request->img->storeAs('public/upload/img/user',$filename);         
             $user->save();
             return back();
 
@@ -44,7 +44,7 @@ class UserController extends Controller
         if($request->hasFile('img')){
             $img = $request->img->getClientOriginalName();
             $arr['avatar'] = $img;
-            $request->img->storeAs('upload'.$img);
+            $request->img->storeAs('public/upload/img/user'.$img);
         }
         $user::where('id',$id)->update($arr);
         return redirect('admin/user');
