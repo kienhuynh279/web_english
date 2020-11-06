@@ -13,4 +13,56 @@
     <link rel="stylesheet" href={{ asset('dist/vendors/nice-select/css/nice-select.css') }} />
     <!-- main css -->
     <link rel="stylesheet" href={{ asset('dist/css/style.css') }} />
-    <script data-ad-client="ca-pub-1234567890123456" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<style>
+
+  *{margin:0;padding:0;}
+  .clearfix:before,.clearfix:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+  .menu-hover{
+    position:relative;
+    right:-25%;
+    margin: 0 auto;
+    list-style: none;
+    background-color: #c47e2e;
+  }
+  .menu-hover > li{
+    float: left;
+  }
+  .menu-hover > li a{
+    font-size: 14px;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+  }
+  .menu-hover > li:last-child a{
+    border-right: 0;
+  }
+  .menu-hover li{
+    position: relative;
+  }
+  .menu-hover li .menu-sub{
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    box-shadow: 0px 1px 8px -4px #333;
+    background-color: #c47e2e;
+    display: none;
+  }
+  .menu-hover li .menu-sub ul{
+    top: 0;
+    left: 100%;
+  }
+  .menu-hover li:hover > ul{
+    display: block;
+  }
+  .menu-hover li:hover > a {
+    background: #b36c22;
+  }
+</style>

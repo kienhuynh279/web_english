@@ -29,9 +29,10 @@ Route::get('/lien-he','App\Http\Controllers\Client\ContactController@index')->na
 Route::get('/tin-tuc','App\Http\Controllers\Client\NewsController@index')->name('news');
 Route::get('/tin-tuc/chi-tiet','App\Http\Controllers\Client\NewsController@detail')->name('newsDetail');
 
+//test
+Route::get('/test','App\Http\Controllers\client\ExamController@index')->name('test');
 //login
 Route::get('/dang-nhap','App\Http\Controllers\Client\LoginController@index')->name('login');
-
 
 //Register
 Route::group(['namespace'=>'App\Http\Controllers'],function(){
@@ -40,7 +41,6 @@ Route::group(['namespace'=>'App\Http\Controllers'],function(){
         Route::post('/', 'RegisterController@register')->name('register');
     });
 });
-
 
 //Admin
 Route::group(['namespace'=>'App\Http\Controllers\Admin'],function(){
@@ -78,4 +78,29 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin'],function(){
             Route::get('delete/{id}','BannerController@getDeleteBanner');
          });
     });
+<<<<<<< HEAD
 });
+=======
+
+    Route::group(['prefix' => 'news'], function () {
+
+        Route::get('/', 'NewController@index')->name('adminNew');
+
+        Route::get('/add', 'NewController@getAdd')->name('adminNewGetAdd');
+
+        Route::post('/add', 'NewController@postAdd')->name('adminNewPostAdd');
+
+        Route::get('/edit/{id}', 'NewController@getEdit')
+             ->name('adminNewGetEdit')
+             ->where(['id' => '[0-9]+']);
+
+        Route::post('/edit/{id}', 'NewController@putEdit')
+             ->name('adminNewPutEdit')
+             ->where(['id' => '[0-9]+']);
+
+        Route::get('/delete/{id}', 'NewController@delete')
+             ->name('adminNewDelete')
+             ->where(['id' => '[0-9]+']);
+   });
+});
+>>>>>>> 5d346ffa82622703a501ef1a563754f293af0491

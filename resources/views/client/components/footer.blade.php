@@ -28,8 +28,7 @@
           <div class="col-lg-3 col-md-6 single-footer-widget">
             <h4>Contact</h4>
             <ul>
-              <li><a style="color:  #002347" href="#"><i class="ti-location-pin"></i> xx, TP HCM</a><li>
-              <li><a style="color:  #002347" href="#"><i class="ti-mobile"></i> +xxx xxxx xxx</a></li>
+              <li><a style="color:  #002347" href="#"><i class="ti-instagram"></i> Instagram</i></a></li>
               <li><a style="color:  #002347" href="#"><i class="ti-google"></i> gmail@gmail.com</i></a></li>
               <li><a style="color:  #002347" href="#"><i class="ti-facebook"></i> Account FB</i></a></li>
             </ul>

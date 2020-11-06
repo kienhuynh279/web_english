@@ -26,8 +26,11 @@
      @case('login.index')
      @include('client.page.login.index')
      @break
+     @case('exam.index')
+     @include('client.page.exam.index')
+     @break
      @default
-     @include('client.page.home.index')
+     @include('client.page.exam.index')
      @endswitch
 </div>
 
