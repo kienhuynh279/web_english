@@ -10,7 +10,7 @@
 
     <base href="{{asset('/dist/admin')}}/">
 
-    <title>@yield('title')</title>
+    <title>Admin - @yield('title')</title>
 
     @include('admin.components.head')
 </head>
@@ -21,7 +21,10 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @yield('main')
+        @include('admin.components.page-header')
+        <div class="container-fluid">
+            @yield('main')
+        </div>
     </div>
 
     <!-- /.content-wrapper -->

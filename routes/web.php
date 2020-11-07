@@ -77,6 +77,48 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
 
             Route::get('delete/{id}', 'BannerController@getDeleteBanner');
         });
+
+        Route::group(['prefix' => 'test'], function () {
+
+            Route::get('/', 'TestController@index')->name('adminTest');
+
+            Route::get('/add', 'TestController@getAdd')->name('adminTestGetAdd');
+
+            Route::post('/add', 'TestController@postAdd')->name('adminTestPostAdd');
+
+            Route::get('/edit/{id}', 'TestController@getEdit')
+                ->name('adminTestGetEdit')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', 'TestController@postEdit')
+                ->name('adminTestPostEdit')
+                ->where(['id' => '[0-9]+']);
+
+            Route::get('/delete/{id}', 'TestController@delete')
+                ->name('adminTestDelete')
+                ->where(['id' => '[0-9]+']);
+        });
+
+        Route::group(['prefix' => 'test-category'], function () {
+
+            Route::get('/', 'TestCategoryController@index')->name('adminTestCategory');
+
+            Route::get('/add', 'TestCategoryController@getAdd')->name('adminTestCategoryGetAdd');
+
+            Route::post('/add', 'TestCategoryController@postAdd')->name('adminTestCategoryPostAdd');
+
+            Route::get('/edit/{id}', 'TestCategoryController@getEdit')
+                ->name('adminTestCategoryGetEdit')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', 'TestCategoryController@postEdit')
+                ->name('adminTestCategoryPostEdit')
+                ->where(['id' => '[0-9]+']);
+
+            Route::get('/delete/{id}', 'TestCategoryController@delete')
+                ->name('adminTestCategoryDelete')
+                ->where(['id' => '[0-9]+']);
+        });
     });
 
     Route::group(['prefix' => 'news'], function () {

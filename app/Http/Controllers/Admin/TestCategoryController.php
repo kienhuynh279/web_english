@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Test;
 use Illuminate\Http\Request;
 
-class TestController extends Controller
+class TestCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class TestController extends Controller
      */
     public function index()
     {
-        return view('admin.page.test.index');
+        return view('admin.page.test-category.index');
     }
 
     /**
@@ -25,7 +24,7 @@ class TestController extends Controller
      */
     public function getAdd()
     {
-        return view('admin.page.test.add');
+        return view('admin.page.test-category.add');
     }
 
     /**
@@ -47,7 +46,7 @@ class TestController extends Controller
      */
     public function getEdit($id)
     {
-        return view('admin.page.test.edit');
+        return view('admin.page.test-category.edit');
     }
 
     /**

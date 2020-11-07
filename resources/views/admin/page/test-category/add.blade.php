@@ -1,4 +1,4 @@
 @extends('admin.master')
-@section('title','Danh sách câu hỏi')
+@section('title','Thêm loại câu hỏi')
 @section('main')
 @stop
