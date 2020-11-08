@@ -36,12 +36,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bs-custom-file-input/1.3.4/bs-custom-file-input.min.js"></script>
 <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('plugins/editor/ckeditor/ckeditor.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+
+
+{{-- Plugins --}}
+<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('plugins/editor/ckeditor/ckeditor.js') }}"></script>
 <script src="{{ asset('plugins/editor/ckfinder/ckfinder.js') }}"></script>
-<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('plugins/Datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-<script src="https://cdn.datatables.net/fixedcolumns/3.3.2/js/dataTables.fixedColumns.min.js"></script>
 <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">

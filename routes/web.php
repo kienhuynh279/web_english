@@ -141,11 +141,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
 
         Route::post('/add', 'NewController@postAdd')->name('adminNewPostAdd');
 
-        Route::get('/edit/{id}', 'NewController@getEdit')
+        Route::get('/edit', 'NewController@getEdit')
             ->name('adminNewGetEdit')
             ->where(['id' => '[0-9]+']);
 
-        Route::post('/edit/{id}', 'NewController@putEdit')
+        Route::post('/edit', 'NewController@putEdit')
             ->name('adminNewPutEdit')
             ->where(['id' => '[0-9]+']);
 
