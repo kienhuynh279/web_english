@@ -41,6 +41,11 @@
 <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css"/>
+<link type="text/javascript" src="{{ asset('plugins/datatable/datatables.min.css') }}"></link>
+ 
+
+
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -215,7 +220,7 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
+             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="./index.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
@@ -338,6 +343,8 @@ $.widget.bridge('uibutton', $.ui.button)
 <!--Ckeditor-->
 <script src="{{ asset('plugins/editor/ckeditor/ckeditor.js')}}"></script>
 <script src="{{ asset('plugins/editor/ckfinder/ckfinder.js')}}"></script>
+
+<script type="text/javascript" src="{{ asset('plugins/datatable/datatables.min.js') }}"></script>
 
 {{-- datatable --}}
 
