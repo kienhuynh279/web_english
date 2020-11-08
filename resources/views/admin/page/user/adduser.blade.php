@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title','Trang Chủ Admin')
+@section('title','Thêm Người Dùng Admin')
 @section('main')
 <!--/.row-->
 <div class="row">

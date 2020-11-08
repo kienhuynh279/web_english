@@ -44,7 +44,7 @@ class UserController extends Controller
         if($request->hasFile('img')){
             $img = $request->img->getClientOriginalName();
             $arr['avatar'] = $img;
-            $request->img->storeAs('public/upload/img/user'.$img);
+            $request->img->storeAs('public/upload/img/user',$img);
         }
         $user::where('id',$id)->update($arr);
         return redirect('admin/user');

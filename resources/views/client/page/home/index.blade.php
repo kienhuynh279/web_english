@@ -7,17 +7,43 @@
           <div class="row">
             <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">TOEIC</p>
+                @if(!empty($banner))
+                  @foreach($banner as $item )
+                    @if($item->status == 1)
+                      @if($item->id == 89)
+                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      @endif
+                    @endif
+                  @endforeach
+                @endif
               </a>
             </div>
             <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">TOEFL</p>
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">TOEFL</p> --}}
+                @if(!empty($banner))
+                  @foreach($banner as $item )
+                    @if($item->status == 1)
+                      @if($item->id == 90)
+                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      @endif
+                    @endif
+                  @endforeach
+                @endif
               </a>
             </div>
             <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">IELTS</p>
+                @if(!empty($banner))
+                  @foreach($banner as $item )
+                    @if($item->status == 1)
+                      @if($item->id == 91)
+                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      @endif
+                    @endif
+                  @endforeach
+                @endif
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">IELTS</p> --}}
               </a>
             </div>
           </div>
@@ -32,17 +58,44 @@
           <div class="row">
             <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p>
+                @if(!empty($banner))
+                  @foreach($banner as $item )
+                    @if($item->status == 1)
+                      @if($item->id == 92)
+                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      @endif
+                    @endif
+                  @endforeach
+                @endif
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
               </a>
             </div>
             <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p>
+                @if(!empty($banner))
+                  @foreach($banner as $item )
+                    @if($item->status == 1)
+                      @if($item->id == 93)
+                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      @endif
+                    @endif
+                  @endforeach
+                @endif
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
               </a>
             </div>
             <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p>
+                @if(!empty($banner))
+                  @foreach($banner as $item )
+                    @if($item->status == 1)
+                      @if($item->id == 94)
+                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      @endif
+                    @endif
+                  @endforeach
+                @endif
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
               </a>
             </div>
           </div>
@@ -56,17 +109,44 @@
           <div class="row">
            <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p>
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
+                @if(!empty($banner))
+                  @foreach($banner as $item )
+                    @if($item->status == 1)
+                      @if($item->id == 95)
+                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      @endif
+                    @endif
+                  @endforeach
+                @endif
               </a>
             </div>
             <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p>
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
+                @if(!empty($banner))
+                @foreach($banner as $item )
+                  @if($item->status == 1)
+                    @if($item->id == 96)
+                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                    @endif
+                  @endif
+                @endforeach
+              @endif
               </a>
             </div>
             <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p>
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
+                @if(!empty($banner))
+                @foreach($banner as $item )
+                  @if($item->status == 1)
+                    @if($item->id == 97)
+                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                    @endif
+                  @endif
+                @endforeach
+              @endif
               </a>
             </div>
           </div>
@@ -79,17 +159,44 @@
           <div class="row">
            <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p>
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
+                @if(!empty($banner))
+                @foreach($banner as $item )
+                  @if($item->status == 1)
+                    @if($item->id == 98)
+                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                    @endif
+                  @endif
+                @endforeach
+              @endif
               </a>
             </div>
             <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p>
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
+                @if(!empty($banner))
+                @foreach($banner as $item )
+                  @if($item->status == 1)
+                    @if($item->id == 99)
+                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                    @endif
+                  @endif
+                @endforeach
+              @endif
               </a>
             </div>
             <div class="col-sm-4">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p>
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
+                @if(!empty($banner))
+                @foreach($banner as $item )
+                  @if($item->status == 1)
+                    @if($item->id == 100)
+                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                    @endif
+                  @endif
+                @endforeach
+              @endif
               </a>
             </div>
           </div>
@@ -102,22 +209,58 @@
           <div class="row">
            <div class="col-sm-3">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Điện lạnh</p>
+                @if(!empty($banner))
+                @foreach($banner as $item )
+                  @if($item->status == 1)
+                    @if($item->id == 101)
+                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                    @endif
+                  @endif
+                @endforeach
+              @endif
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Điện lạnh</p> --}}
               </a>
             </div>
             <div class="col-sm-3">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Điện dân dụng</p>
+                @if(!empty($banner))
+                @foreach($banner as $item )
+                  @if($item->status == 1)
+                    @if($item->id == 102)
+                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                    @endif
+                  @endif
+                @endforeach
+              @endif
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Điện dân dụng</p> --}}
               </a>
             </div>
             <div class="col-sm-3">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Thư tín, thương mại</p>
+                @if(!empty($banner))
+                @foreach($banner as $item )
+                  @if($item->status == 1)
+                    @if($item->id == 103)
+                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                    @endif
+                  @endif
+                @endforeach
+              @endif
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Thư tín, thương mại</p> --}}
               </a>
             </div>
             <div class="col-sm-3">
               <a href="{{ route('course') }}">
-                <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">NH-KS</p>
+                @if(!empty($banner))
+                @foreach($banner as $item )
+                  @if($item->status == 1)
+                    @if($item->id == 104)
+                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                    @endif
+                  @endif
+                @endforeach
+              @endif
+                {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">NH-KS</p> --}}
               </a>
             </div>
           </div>

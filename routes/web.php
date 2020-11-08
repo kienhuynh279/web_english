@@ -29,6 +29,8 @@ Route::get('/lien-he','App\Http\Controllers\Client\ContactController@index')->na
 Route::get('/tin-tuc','App\Http\Controllers\Client\NewsController@index')->name('news');
 Route::get('/tin-tuc/chi-tiet','App\Http\Controllers\Client\NewsController@detail')->name('newsDetail');
 
+
+
 //test
 Route::get('/test','App\Http\Controllers\client\ExamController@index')->name('test');
 //login
@@ -52,6 +54,7 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin'],function(){
     Route::get('logout','HomeController@getLogout')->name('logout');
 
     Route::group(['prefix'=>'admin','middleware'=>'CheckLogedOut','middleware'=>'App\Http\Middleware\RequireAuth'],function(){
+        
         Route::get('/','HomeController@getHome');
 
         Route::group(['prefix'=>'user'], function(){
@@ -67,20 +70,27 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin'],function(){
          });
 
          Route::group(['prefix'=>'banner'], function(){
-            Route::get('/','BannerController@getBanner');
+            Route::get('/','BannerController@getBanner')->name('adminBanner');
 
-            Route::get('add','BannerController@getAddBanner');
-            Route::post('add','BannerController@postAddBanner');
+            Route::get('add','BannerController@getAddBanner')
+            ->name('adminBannerGetAdd');
+            Route::post('add','BannerController@postAddBanner')
+            ->name('adminBannerPostAdd');
 
-            Route::get('edit/{id}','BannerController@getEditBanner');
-            Route::post('edit/{id}','BannerController@postEditBanner');
+            Route::get('edit/{id}','BannerController@getEditBanner')
+            ->name('adminBannerGetEdit')
+            ->where(['id' => '[0-9]+']);
 
-            Route::get('delete/{id}','BannerController@getDeleteBanner');
+            Route::post('edit/{id}','BannerController@postEditBanner')
+            ->name('adminBannerPostEdit')
+            ->where(['id' => '[0-9]+']);
+
+            Route::get('delete/{id}','BannerController@getDeleteBanner')
+            ->name('adminBannerDelete')
+            ->where(['id' => '[0-9]+']);
          });
+    
     });
-<<<<<<< HEAD
-});
-=======
 
     Route::group(['prefix' => 'news'], function () {
 
@@ -103,4 +113,3 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin'],function(){
              ->where(['id' => '[0-9]+']);
    });
 });
->>>>>>> 5d346ffa82622703a501ef1a563754f293af0491
