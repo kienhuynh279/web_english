@@ -29,6 +29,8 @@ Route::get('/lien-he', 'App\Http\Controllers\Client\ContactController@index')->n
 Route::get('/tin-tuc', 'App\Http\Controllers\Client\NewsController@index')->name('news');
 Route::get('/tin-tuc/chi-tiet', 'App\Http\Controllers\Client\NewsController@detail')->name('newsDetail');
 
+
+
 //test
 Route::get('/test', 'App\Http\Controllers\client\ExamController@index')->name('test');
 //login
@@ -52,6 +54,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     Route::get('logout', 'HomeController@getLogout')->name('logout');
 
     Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedOut', 'middleware' => 'App\Http\Middleware\RequireAuth'], function () {
+
         Route::get('/', 'HomeController@getHome');
 
         Route::group(['prefix' => 'user'], function () {
@@ -64,18 +67,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
             Route::post('edit/{id}', 'UserController@postEditUser');
 
             Route::get('delete/{id}', 'UserController@getDeleteUser');
-        });
-
-        Route::group(['prefix' => 'banner'], function () {
-            Route::get('/', 'BannerController@getBanner');
-
-            Route::get('add', 'BannerController@getAddBanner');
-            Route::post('add', 'BannerController@postAddBanner');
-
-            Route::get('edit/{id}', 'BannerController@getEditBanner');
-            Route::post('edit/{id}', 'BannerController@postEditBanner');
-
-            Route::get('delete/{id}', 'BannerController@getDeleteBanner');
         });
 
         Route::group(['prefix' => 'test'], function () {
@@ -117,6 +108,27 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
 
             Route::get('/delete/{id}', 'TestCategoryController@delete')
                 ->name('adminTestCategoryDelete')
+                ->where(['id' => '[0-9]+']);
+        });
+
+        Route::group(['prefix' => 'banner'], function () {
+            Route::get('/', 'BannerController@getBanner')->name('adminBanner');
+
+            Route::get('add', 'BannerController@getAddBanner')
+                ->name('adminBannerGetAdd');
+            Route::post('add', 'BannerController@postAddBanner')
+                ->name('adminBannerPostAdd');
+
+            Route::get('edit/{id}', 'BannerController@getEditBanner')
+                ->name('adminBannerGetEdit')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('edit/{id}', 'BannerController@postEditBanner')
+                ->name('adminBannerPostEdit')
+                ->where(['id' => '[0-9]+']);
+
+            Route::get('delete/{id}', 'BannerController@getDeleteBanner')
+                ->name('adminBannerDelete')
                 ->where(['id' => '[0-9]+']);
         });
     });

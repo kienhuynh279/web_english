@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title','Trang Chủ Admin')
+@section('title','Chỉnh Sửa Người Dùng Admin')
 @section('main')
 <div style="padding-left: 10px">
     <div class="row">
@@ -41,7 +41,7 @@
                                                 <div class="form-group">
                                                     <label>Hình đại diện :</label>
                                                     <input id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-                                                    <img id="img" class="thumbnail" width="100px" src="{{Storage::url   ('public/upload/img/user/'.$user->avatar)}}">
+                                                    <img id="avatar" class="thumbnail" width="100px" src="{{Storage::url('public/upload/img/user/'.$user->avatar)}}">
                                                 </div>
 
                                             </div>

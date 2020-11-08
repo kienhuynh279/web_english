@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title','Trang Chủ Admin')
+@section('title','Người Dùng Admin')
 @section('main')
 
 <div class="card">
@@ -24,7 +24,7 @@
                         <td>{{$user->username}}</td>
                         <td>{{$user->email}}</td>
                         <td>
-                        <img width="100px" src="{{Storage::url('public/upload/img/user/'.$user->avatar)}}" class="thumbnail">
+                        <img width="100px" src="{{Storage::url('upload/img/user/'.$user->avatar)}}" class="thumbnail">
                         </td>
                         <td>
                              <a href="{{asset('admin/user/edit/'.$user->id)}}" class="btn btn-warning"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Sửa</a>

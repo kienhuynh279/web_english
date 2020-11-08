@@ -4,7 +4,7 @@
     <base href="{{asset('/dist/admin')}}/">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Registration Page</title>
+  <title>Web Tiếng Anh Trực Tuyến | Register</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -69,28 +69,11 @@
                 </div>
             </div>
             </div>
-            {{-- <div class="input-group mb-3">
-            <input type="password" id="passwordAgain" name="passwordAgain" class="form-control" placeholder="Retype password">
-            <div class="input-group-append">
-                <div class="input-group-text">
-                <span class="fas fa-lock"></span>
-                </div>
-            </div>
-            </div> --}}
+     
             <div class="row">
-            {{-- <div class="col-8">
-                <div class="icheck-primary">
-                <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-                <label for="agreeTerms">
-                I agree to the <a href="#">terms</a>
-                </label>
-                </div>
-            </div> --}}
-            <!-- /.col -->
             <div class="col-12">
                 <button type="submit" class="btn btn-primary btn-block">Đăng Ký</button>
             </div>
-            <!-- /.col -->
             {{csrf_field()}}
             </div>
       </form>
