@@ -17,8 +17,6 @@ class TestCategoryController extends Controller
     {
         $data = TestCategory::where(["del_flg" => "0"])->orderBy("id", "desc")->paginate(10);
 
-        // dd($data);
-
         return view('admin.page.test-category.index', [
             "data" => $data
         ]);
@@ -93,6 +91,8 @@ class TestCategoryController extends Controller
      */
     public function delete($id)
     {
-        //
+        $testCategory = TestCategory::find($id);
+        $testCategory->update(['del_flg' => '1']);
+        return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Xóa thành công"]]);
     }
 }

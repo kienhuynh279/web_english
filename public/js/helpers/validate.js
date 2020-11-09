@@ -14,7 +14,7 @@ function validateData(formSelector, constraints) {
     }
 
     var inputsText = document.querySelectorAll("input, textarea")
-    for (var i = 0; i < inputs.length; ++i) {
+    for (var i = 0; i < inputsText.length; ++i) {
         inputsText.item(i).addEventListener("input", function (ev) {
             var errors = validate(form, constraints) || {};
             showErrorsForInput(this, errors[this.name])

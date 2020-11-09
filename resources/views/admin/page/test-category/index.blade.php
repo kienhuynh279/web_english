@@ -32,9 +32,8 @@
                         <a href="{{ route('adminTestCategoryGetEdit', $item['id']) }}" class="btn btn-sm btn-primary">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <form class="d-inline" action={{ route('adminTestCategoryDelete', $item['id']) }} method="post">
+                        <form class="d-inline" action={{ route('adminTestCategoryDelete', $item['id']) }} method="POST">
                             @csrf
-                            @method('delete')
                             <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i>
                             </button>
                         </form>
@@ -54,6 +53,7 @@
         scrollX: true,
         search: false,
         paging: false,
+        aaSorting: [],
         searching: false,
         bInfo : false,
         fixedColumns: {
