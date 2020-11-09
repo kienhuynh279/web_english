@@ -44,6 +44,26 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{asset('admin/postcats')}}" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                            Quản Lý Danh Mục Bài Viết
+                            {{-- <span class="right badge badge-danger">Banner</span> --}}
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{asset('admin/posts')}}" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                            Quản Lý Tài Liệu Bài Viết
+                            {{-- <span class="right badge badge-danger">Banner</span> --}}
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('adminNew') }}" class="nav-link">
                         <i class="nav-icon fas fa-blog"></i>
                         <p>

@@ -1,13 +1,12 @@
 @extends('admin.master')
 @section('title','Trang Chủ Admin')
 @section('main')
-
 {{-- Messenger khi đăng nhập thành công --}}
 @if (session('status'))
 <div class="alert alert-info" style="font-weight: bold">Chào {{Auth::user()->username}}, bạn đã {{session('status')}}</div>
 @endif
 
-<div class="content-header">
+{{-- <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
@@ -21,7 +20,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <section class="content">
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
@@ -70,23 +69,24 @@
                     <a href="{{asset('admin/user')}}" class="small-box-footer">Chi Tiết <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>{{ $data['count']['banner'] ?? '' }}</h3>
+  
+                  <p>Banner</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="#" class="small-box-footer">Chi Tiết <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+              <!-- ./col -->
+          </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>{{ $data['count']['banner'] ?? '' }}</h3>
-
-                <p>Banner</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">Chi Tiết <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-            <!-- ./col -->
-        </div>
+          
         <!-- /.row -->
         <!-- Main row -->
         <div class="row">
