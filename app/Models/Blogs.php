@@ -5,30 +5,34 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class News_Cat extends Model
+class Blogs extends Model
 {
-    protected $table = 'blog_cats';
+    protected $table = 'blogs';
     protected $primaryKey = 'id';
     protected $guarded = [];
     protected $fillable =
     [
          'title',
          'title_en',
+         'id_blog_cat',
          'avatar',
          'summary',
          'summary_en',
+         'content',
+         'content_en',
          'meta_description',
          'meta_title',
+         'checked',
+         'del_Flg',
+         'hight_Flg',
          'status',
-         'del_flg',
-         'create_at',
-         'vi_tri',
-         'position',
-         'slug'
+         'created_at',
+         'slug',
+         'position'
     ];
 
-    public function News()
+    public function Blog_Cats()
     {
-        return $this->belongsTo('App\Models\Blog', 'id','id');
+        return $this->hasMany('App\Models\Blogs_Cat', 'id_blog_cat','id');
     }
 }

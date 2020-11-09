@@ -135,21 +135,21 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
 
     Route::group(['prefix' => 'news'], function () {
 
-        Route::get('/', 'NewController@index')->name('adminNew');
+        Route::get('/', 'BlogsController@index')->name('adminNew');
 
-        Route::get('/add', 'NewController@getAdd')->name('adminNewGetAdd');
+        Route::get('/add', 'BlogsController@getAdd')->name('adminNewGetAdd');
 
-        Route::post('/add', 'NewController@postAdd')->name('adminNewPostAdd');
+        Route::post('/add', 'BlogsController@postAdd')->name('adminNewPostAdd');
 
-        Route::get('/edit', 'NewController@getEdit')
+        Route::get('/edit/{id}', 'BlogsController@getEdit')
             ->name('adminNewGetEdit')
             ->where(['id' => '[0-9]+']);
 
-        Route::post('/edit', 'NewController@putEdit')
+        Route::post('/edit', 'BlogsController@putEdit')
             ->name('adminNewPutEdit')
             ->where(['id' => '[0-9]+']);
 
-        Route::get('/delete/{id}', 'NewController@delete')
+        Route::get('/delete/{id}', 'BlogsController@delete')
             ->name('adminNewDelete')
             ->where(['id' => '[0-9]+']);
     });
