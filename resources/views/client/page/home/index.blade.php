@@ -349,221 +349,7 @@
         </div>
       </div>
     </div>
-    <!--================ End Popular Courses Area =================-->
-
-    <!--================ Start Registration Area =================-->
-    {{-- <div class="section_gap registration_area">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="row clock_sec clockdiv" id="clockdiv">
-              <div class="col-lg-12">
-                  <h2 style="color:#2d142c " class="mb-3">Personal Results</h1>
-                <p style="color:#2d142c">
-                 "If you talk to a man in a language he understands, that goes to his head. 
-                  If you talk to him in his language, that goes to his heart"
-                </p>
-              </div>
-              <div class="col clockinner1 clockinner ">
-                <h1 style='color:#2d142c' class="amount">10</h1>
-                <span style='color:#2d142c' class="smalltext">Access</span>
-              </div>
-              <div class="col clockinner1 clockinner">
-                <h1 style='color:#2d142c' class="amount">05</h1>
-                <span style='color:#2d142c' class="smalltext">Exercise</span>
-              </div>
-              <div class="col clockinner ">
-                <h1 style='color:#2d142c' class="amount">70%</h1>
-                <span style='color:#2d142c' class="smalltext">Finish</span>
-              </div>
-              <div class="col clockinner">
-                <h1 style='color:#2d142c' class="amount">20</h1>
-                <span style='color:#2d142c' class="smalltext">Ranking</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-5 offset-lg-1">
-            <h2 style="color: #2d142c;text-align:center;">Ranking</h2>
-            <br>
-            <ul class="nav nav-tabs">
-              <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#week">Week</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#month">Month</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#year">Year</a>
-              </li>
-            </ul>
-            <div class="tab-content">
-              <div id="week" class="container tab-pane active"><br>
-                  <table id="example" class="table table-hover table-bordered" style="width:100%">
-                  <thead>
-                    <tr>
-                      <th>Rank</th>
-                      <th>Full Name</th>
-                      <th>Exercises</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr><tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-              </div>
-              <div id="month" class="container tab-pane fade"><br>
-                <table id="example" class="table table-striped table-bordered" style="width:100%">
-                  <thead>
-                    <tr>
-                      <th>Rank</th>
-                      <th>Full Name</th>
-                      <th>Exercises</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr><tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-              </div>
-              <div id="year" class="container tab-pane fade"><br>
-                <table id="example" class="table table-striped table-bordered" style="width:100%">
-                  <thead>
-                    <tr>
-                      <th>Rank</th>
-                      <th>Full Name</th>
-                      <th>Exercises</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr><tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br> --}}
-    <!--================ End Registration Area =================-->
-
-     <!--================ Start Feature Area =================-->
-    {{-- <section class="feature_area section_gap">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="icon"><span class="flaticon-student"></span></div>
-              <div class="desc">
-                <h4 class="mt-3 mb-2">Question and Answer</h4>
-                <p>
-                  It corresponds by the outstanding versatility to the all-round also in business sites and blogs.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="icon"><span class="flaticon-book"></span></div>
-              <div class="desc">
-                <h4 class="mt-3 mb-2">Teaching Tips</h4>
-                <p>
-                  By using the plug-in "VK All in One Expansion Unit (free)", you can use the various functions and rich widgets.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="icon"><span class="flaticon-earth"></span></div>
-              <div class="desc">
-                <h4 class="mt-3 mb-2">Quizzes and Games</h4>
-                <p>
-                  Lightning is includes to a variety of ideas for making it easier to business site. Please experience the ease of use of the Lightning.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> --}}
-    <!--================ End Feature Area =================-->
-
-    <!--================ Start Trainers Area =================-->
+    
     <div class="popular_courses">
       <div class="container">
         <div class="row justify-content-center">
@@ -748,7 +534,16 @@
                   <div class="carousel-item active">
                     <div class="row">
                       <div class="col-sm-4">
-                        <img class="img-ratting" src="{{ asset('dist/img/banner/banner-2.jpg') }}" alt="Los Angeles" width="100%" height="100%">
+                        @if(!empty($banner))
+                        @foreach($banner as $item )
+                          @if($item->status == 1)
+                            @if($item->id == 105)
+                              <img class="img-ratting"  src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}"  width="100%" height="100%" alt="">
+                            @endif
+                          @endif
+                        @endforeach
+                      @endif
+                        {{-- <img class="img-ratting" src="{{ asset('dist/img/banner/banner-2.jpg') }}" alt="Los Angeles" width="100%" height="100%"> --}}
                       </div>
                        <div class="col-sm-8">
                         <p class="ratting-content">"Từ khi tự học ở Web, con thấy tự tin hơn trong giao tiếp vì có nhiều cơ hội trò chuyện với thầy cô người nước ngoài. Thầy cô bản ngữ nên luôn được chỉnh sửa khi có lỗi phát âm.

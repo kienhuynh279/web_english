@@ -1,9 +1,8 @@
 
-
     <!--================Contact Area =================-->
     <section class="contact_area section_gap">
       <div class="container">
-        <div
+        {{-- <div
           id="mapBox"
           class="mapBox"
           data-lat="40.701083"
@@ -12,7 +11,9 @@
           data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
           data-mlat="40.701083"
           data-mlon="-74.1522848"
-        ></div>
+        ></div> --}}
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.248977484024!2d106.7090975148434!3d10.792233161852732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528b2715d085f%3A0xe0a24427fccf63bf!2zOTggxJDGsOG7nW5nIE5nw7QgVOG6pXQgVOG7kSwgUGjGsOG7nW5nIDE5LCBCw6xuaCBUaOG6oW5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1604838179235!5m2!1svi!2s" width="1110" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <br>
         <div class="row">
           <div class="col-lg-3">
             <div class="contact_info">

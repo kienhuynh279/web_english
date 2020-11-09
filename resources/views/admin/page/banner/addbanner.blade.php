@@ -58,9 +58,9 @@
                                             <label>Type :</label>
                                             <select required name="status" class="form-control">
                                                 <option value="1">Trang Chủ</option>
-                                                <option value="1">Trang 2</option>
-                                                <option value="2">Trang 3</option>
-                                                <option value="3">Trang 4</option>
+                                                <option value="2">Trang Ôn Thi</option>
+                                                <option value="3">Trang Tin Tức</option>
+                                                <option value="4">Trang Liên Hệ</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
