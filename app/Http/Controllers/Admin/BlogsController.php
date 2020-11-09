@@ -30,28 +30,29 @@ class BlogsController extends Controller
     public function postAdd(BlogsRequest $request)
     {
 
+        $blog = new Blogs();
+
         $request->validated();
 
-        Blogs::create([
-            'title' => $request->get("Title"),
-            'title_en' => $request->get("Title_en"),
-            'id_blog_cat' => $request->get("Cate_Id"),
-            'avatar' => $request->get("Avatar"),
-            'summary' => $request->get("Summary"),
-            'summary_en' => $request->get("Summary_en"),
-            'content' => $request->get("Content"),
-            'content_en' => $request->get("Content_en"),
-            'checked' => $request->get("Checked"),
-            'meta_description' => $request->get("Meta_Desc"),
-            'meta_title' => $request->get("Meta_Title"),
-            'del_flg' => $request->get("Del_Flg"),
-            'hight_flg' => $request->get("High_Flg"),
-            'status' => 1,
-            'slug' => $request->get("Slug"),
-            'position' => $request->get("Position"),
-        ]);
+        $blog->title = $request->get("Title");
+        $blog->title_en = $request->get("Title_en");
+        $blog->id_blog_cat = $request->get("Cate_Id");
+        $blog->avatar = $request->get("Avatar");
+        $blog->summary = $request->get("Summary");
+        $blog->summary_en = $request->get("Summary_en");
+        $blog->content = $request->get("Content");
+        $blog->content_en = $request->get("Content_en");
+        $blog->checked = $request->get("Checked");
+        $blog->meta_description = $request->get("Meta_Desc");
+        $blog->meta_title = $request->get("Meta_Title");
+        $blog->del_flg = $request->get("Del_Flg");
+        $blog->hight_flg = $request->get("Hight_Flg");
+        $blog->status = 1;
+        $blog->slug = $request->get("Slug");
+        $blog->position = $request->get("Position");
+        $blog->save();
 
-        return redirect()->route("adminNew");
+        return back();
     }
 
     public function getEdit($id)
@@ -65,9 +66,33 @@ class BlogsController extends Controller
         ]);
     }
 
-    public function putEdit($id)
+    public function putEdit(BlogsRequest $request,$id)
     {
-        # code...
+        $blog = Blogs::findOrFail($id);
+
+        $request->validated();
+
+        $blog->title = $request->get("Title");
+        $blog->title_en = $request->get("Title_en");
+        $blog->id_blog_cat = $request->get("Cate_Id");
+        $blog->avatar = $request->get("Avatar");
+        $blog->summary = $request->get("Summary");
+        $blog->summary_en = $request->get("Summary_en");
+        $blog->content = $request->get("Content");
+        $blog->content_en = $request->get("Content_en");
+        $blog->checked = $request->get("Checked");
+        $blog->meta_description = $request->get("Meta_Desc");
+        $blog->meta_title = $request->get("Meta_Title");
+        $blog->del_flg = $request->get("Del_Flg");
+        $blog->hight_flg = $request->get("Hight_Flg");
+        $blog->status = 1;
+        $blog->slug = $request->get("Slug");
+        $blog->position = $request->get("Position");
+        $blog->save();
+
+        return redirect()->route("adminNew")->withErrors([
+            "success" => "Chỉnh sửa dịch vụ thành công"
+        ]);
     }
 
     public function delete($id)

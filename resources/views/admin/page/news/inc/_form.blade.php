@@ -7,10 +7,10 @@
     :value="$blog->title_en ?? ''" />
 </div>
 
-<div class="form-group">
+{{-- <div class="form-group">
   <x-input-form type="text" label="Tiêu đề English:" name="Status" classGroup="col-md" class="" placeholder="Tiêu đề"
     :value="$blog->status ?? ''" />
-</div>
+</div> --}}
 
 <div class="form-group">
   <label for="example-select">Chọn loại tin tức</label>
@@ -23,7 +23,7 @@
 
 <div class="form-group">
   <label>Ảnh Đại Diện :</label>
-  <input required id="img" type="file" name="Image" class="form-control hidden" onchange="changeImg(this)">
+  <input required id="img" type="file" name="Avatar" class="form-control hidden" onchange="changeImg(this)">
   <img id="avatar" class="thumbnail" width="200px" src="{{ asset('/dist/img/imgdefault.png') }}">
 </div>
 
