@@ -107,3 +107,7 @@ $(document).ready(function() {
         $('input#slug').val(slug);
     });
 </script>
+
+@if(Session::has("toastrInfo"))
+@include('errors.toastr')
+@endif
