@@ -85,7 +85,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->name('adminTestPostEdit')
                 ->where(['id' => '[0-9]+']);
 
-            Route::get('/delete/{id}', 'TestController@delete')
+            Route::post('/delete/{id}', 'TestController@delete')
                 ->name('adminTestDelete')
                 ->where(['id' => '[0-9]+']);
         });
@@ -106,7 +106,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->name('adminTestCategoryPostEdit')
                 ->where(['id' => '[0-9]+']);
 
-            Route::get('/delete/{id}', 'TestCategoryController@delete')
+            Route::post('/delete/{id}', 'TestCategoryController@delete')
                 ->name('adminTestCategoryDelete')
                 ->where(['id' => '[0-9]+']);
         });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\TestCategory;
 use Illuminate\Http\Request;
 
 class TestCategoryController extends Controller
@@ -14,7 +15,11 @@ class TestCategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.page.test-category.index');
+        $data = TestCategory::where(["del_flg" => "0"])->orderBy("id", "desc")->paginate(10);
+
+        return view('admin.page.test-category.index', [
+            "data" => $data
+        ]);
     }
 
     /**
@@ -35,7 +40,13 @@ class TestCategoryController extends Controller
      */
     public function postAdd(Request $request)
     {
-        //
+        $testCategory = new TestCategory($request->input());
+
+        if ($request->input('status') == null) $testCategory['status'] = "off";
+
+        $testCategory->save();
+
+        return redirect()->route("adminTestCategory");
     }
 
     /**
@@ -46,7 +57,11 @@ class TestCategoryController extends Controller
      */
     public function getEdit($id)
     {
-        return view('admin.page.test-category.edit');
+        $testCategoryData = TestCategory::find($id);
+
+        if ($testCategoryData === null) return abort(404);
+
+        return view('admin.page.test-category.edit', ["data" => $testCategoryData]);
     }
 
     /**
@@ -58,7 +73,14 @@ class TestCategoryController extends Controller
      */
     public function postEdit(Request $request, $id)
     {
-        //
+
+        $testCategory = TestCategory::find($id);
+
+        if ($request->input('status') == null) $request->merge(['status' => "off"]);;
+
+        $testCategory->update($request->input());
+
+        return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Lưu thành công"]]);
     }
 
     /**
@@ -69,6 +91,8 @@ class TestCategoryController extends Controller
      */
     public function delete($id)
     {
-        //
+        $testCategory = TestCategory::find($id);
+        $testCategory->update(['del_flg' => '1']);
+        return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Xóa thành công"]]);
     }
 }

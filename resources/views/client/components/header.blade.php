@@ -32,8 +32,36 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    
                     <ul class="menu-hover clearfix">
-                        <li><a href="{{ route('home') }}" class="nav-link">Trang chủ</a> </li>
+                        @if(!empty($postcats))
+                            @foreach($postcats as $cats)
+                                <li>
+                                    @if($cats->status == 1)
+                                        @if($cats->vi_tri == 0)
+                                            {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
+                                            <a href="#">{{$cats->title}}</a>
+                                        @endif  
+                                    <ul class="menu-sub">
+                                        @foreach($postcats as $child)
+                                            @if($cats->id == $child->vi_tri)
+                                                <li><a href="#">{{$child->title}}</a>
+                                            @endif
+                                                <ul class="menu-sub">
+                                                    @foreach($postcats as $child2)
+                                                        @if($child->id == $child2->vi_tri)
+                                                            <li><a href="#">{{$child2->title}}</a> </li>
+                                                        @endif
+                                                    @endforeach 
+                                                </ul>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                @endif
+                            @endforeach
+                        @endif
+                        {{-- <li><a href="{{ route('home') }}" class="nav-link">Trang chủ</a> </li>
                         <li>
                             <a href="#">Ôn thi</a>
                             <ul class="menu-sub">
@@ -81,7 +109,7 @@
                             </ul>
                         </li>
                         <li><a href="{{ route('news') }}">Tin tức</a> </li>
-                        <li><a href="{{ route('contact') }}">Liên hệ</a> </li>
+                        <li><a href="{{ route('contact') }}">Liên hệ</a> </li> --}}
                         {{-- <li><a href="{{ route('login') }}">Đăng nhập</a> </li>
                         --}}
                         <li>

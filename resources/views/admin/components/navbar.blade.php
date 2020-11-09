@@ -116,9 +116,9 @@
             </a>
         </li> --}}
         <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)">
+            <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="fas fa-user-alt"></i>&nbsp;&nbsp;
-                <span class="text-info"> {{Auth::user()->username}}</span>
+                <span class="text-info">{{Auth::user()->username}}</span>
                 &nbsp;&nbsp;<i class="fas fa-angle-down"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
