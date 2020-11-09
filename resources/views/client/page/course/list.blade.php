@@ -17,13 +17,40 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src="{{ asset('dist/img/banner/banner-2.jpg') }}" alt="" width="100%" height="100%">
+                    {{-- <img src="{{ asset('dist/img/banner/banner-2.jpg') }}" alt="" width="100%" height="100%"> --}}
+                    @if(!empty($banner))
+                        @foreach($banner as $item )
+                            @if($item->status == 1)
+                                @if($item->id == 108)
+                                    <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="100%" height="100%" alt="">
+                                @endif
+                            @endif
+                        @endforeach
+                    @endif
                 </div>
                 <div class="carousel-item">
-                <img src="{{ asset('dist/img/banner/banner-2.jpg') }}" alt="" width="100%" height="100%">
+                    {{-- <img src="{{ asset('dist/img/banner/banner-2.jpg') }}" alt="" width="100%" height="100%"> --}}
+                    @if(!empty($banner))
+                        @foreach($banner as $item )
+                            @if($item->status == 1)
+                                @if($item->id == 109)
+                                    <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="100%" height="100%" alt="">
+                                @endif
+                            @endif
+                        @endforeach
+                    @endif
                 </div>
                 <div class="carousel-item">
-                <img src="{{ asset('dist/img/banner/banner-2.jpg') }}" alt="" width="100%" height="100%">
+                    @if(!empty($banner))
+                    @foreach($banner as $item )
+                        @if($item->status == 1)
+                            @if($item->id == 110)
+                                <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="100%" height="100%" alt="">
+                            @endif
+                        @endif
+                    @endforeach
+                @endif
+                    {{-- <img src="{{ asset('dist/img/banner/banner-2.jpg') }}" alt="" width="100%" height="100%"> --}}
                 </div>
             </div>
             

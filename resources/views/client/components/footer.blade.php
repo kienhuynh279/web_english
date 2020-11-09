@@ -1,5 +1,16 @@
     <footer class="footer-area section_gap">
       <div class="container">
+        @if(!empty($banner))
+        @foreach($banner as $item )
+            @if($item->status == 1)
+                @if($item->id == 107)
+                    <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" weight="60px" height="60px" alt="">
+                @endif
+            @endif
+            @endforeach
+        @endif
+      <br>
+      <br>
         <div class="row">
           <div class="col-lg-3 col-md-6 single-footer-widget">
             <h4>Abouts Us</h4>

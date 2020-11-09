@@ -12,8 +12,19 @@ class News_Cat extends Model
     protected $guarded = [];
     protected $fillable =
     [
-         'Title',
-         'Slug'
+         'title',
+         'title_en',
+         'avatar',
+         'summary',
+         'summary_en',
+         'meta_description',
+         'meta_title',
+         'status',
+         'del_flg',
+         'create_at',
+         'vi_tri',
+         'position',
+         'slug'
     ];
 
     public function News()

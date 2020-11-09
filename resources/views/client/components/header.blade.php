@@ -14,7 +14,16 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <a style="font-weight: bold; color:   #fdc632" class="navbar-brand logo_h" href="{{ route('home') }}">
-                    <img src="{{ asset('dist/img/logo_new.png') }}" weight="60px" height="60px">
+                    {{-- <img src="{{ asset('dist/img/logo_new.png') }}" weight="60px" height="60px"> --}}
+                    @if(!empty($banner))
+                        @foreach($banner as $item )
+                            @if($item->status == 1)
+                                @if($item->id == 106)
+                                    <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" weight="60px" height="60px" alt="">
+                                @endif
+                            @endif
+                        @endforeach
+                    @endif
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -23,8 +32,36 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    
                     <ul class="menu-hover clearfix">
-                        <li><a href="{{ route('home') }}" class="nav-link">Trang chủ</a> </li>
+                        @if(!empty($postcats))
+                            @foreach($postcats as $cats)
+                                <li>
+                                    @if($cats->status == 1)
+                                        @if($cats->vi_tri == 0)
+                                            {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
+                                            <a href="#">{{$cats->title}}</a>
+                                        @endif  
+                                    <ul class="menu-sub">
+                                        @foreach($postcats as $child)
+                                            @if($cats->id == $child->vi_tri)
+                                                <li><a href="#">{{$child->title}}</a>
+                                            @endif
+                                                <ul class="menu-sub">
+                                                    @foreach($postcats as $child2)
+                                                        @if($child->id == $child2->vi_tri)
+                                                            <li><a href="#">{{$child2->title}}</a> </li>
+                                                        @endif
+                                                    @endforeach 
+                                                </ul>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                @endif
+                            @endforeach
+                        @endif
+                        {{-- <li><a href="{{ route('home') }}" class="nav-link">Trang chủ</a> </li>
                         <li>
                             <a href="#">Ôn thi</a>
                             <ul class="menu-sub">
@@ -72,7 +109,7 @@
                             </ul>
                         </li>
                         <li><a href="{{ route('news') }}">Tin tức</a> </li>
-                        <li><a href="{{ route('contact') }}">Liên hệ</a> </li>
+                        <li><a href="{{ route('contact') }}">Liên hệ</a> </li> --}}
                         {{-- <li><a href="{{ route('login') }}">Đăng nhập</a> </li>
                         --}}
                         <li>
