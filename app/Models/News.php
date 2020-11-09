@@ -12,16 +12,22 @@ class News extends Model
     protected $guarded = [];
     protected $fillable =
     [
-         'Title',
-         'Id_Blog_Cat',
-         'Avatar',
-         'Summary',
-         'Content',
-         'Checked',
-         'Del_Flg',
-         'Hight_Flg',
-         'Status',
-         'Slug'
+         'title',
+         'title_en',
+         'id_blog_cat',
+         'avatar',
+         'summary',
+         'summary_en',
+         'content',
+         'content_en',
+         'meta_description',
+         'meta_title',
+         'checked',
+         'create_at',
+         'del_Flg',
+         'hight_Flg',
+         'status',
+         'slug'
     ];
 
     public function News_Cat()
