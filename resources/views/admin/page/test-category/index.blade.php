@@ -1,9 +1,9 @@
 @extends('admin.master')
-@section('title','Danh sách tin tuc')
+@section('title','Danh sách loại câu hỏi')
 @section('main')
 <div class="card">
     <div class="card-header">
-        <a href="{{ route('adminNewGetAdd') }}" class="btn btn-sm btn-primary">Thêm tin tức</a>
+        <a href="{{ route('adminTestGetAdd') }}" class="btn btn-sm btn-primary">Thêm câu hỏi</a>
     </div>
     <div class="card-body">
         <table id="dataTable" class="table table-striped table-bordered" style="width:100%">
@@ -18,30 +18,18 @@
                     <th>Salary</th>
                     <th>Extn.</th>
                     <th>E-mail</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-               <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                    <th>Extn.</th>
-                    <th>E-mail</th>
                     <th>
-                        <button class="btn btn-sm btn-secondary">
-                            <a href="{{ route("adminNewGetEdit") }}"><i class="fas fa-edit"></i></a> 
+                        <button disabled class="btn btn-sm btn-secondary">
+                            <i class="fas fa-edit"></i>
                         </button>
                         <button disabled class="btn btn-sm btn-secondary">
                             <i class="fas fa-trash"></i>
                         </button>
                     </th>
                 </tr>
-                
+            </thead>
+            <tbody>
+                {{-- <tr> --}}
                 {{-- <td>Ashton</td>
                     <td>Cox</td>
                     <td>Junior Technical Author</td>
@@ -62,7 +50,7 @@
                     </button>
                 </form>
                 </td>
-                </tr> -}}
+                </tr> --}}
                 {{-- @foreach ($data['street_list'] as $item)
                 <tr>
                     <td>{{ $item->StreetId }}</td>

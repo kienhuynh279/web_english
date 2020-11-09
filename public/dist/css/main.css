@@ -1,0 +1,7 @@
+table thead th {
+    white-space: nowrap
+}
+
+table tr td {
+    max-width: 500px;
+}
