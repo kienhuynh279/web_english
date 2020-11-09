@@ -14,7 +14,16 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <a style="font-weight: bold; color:   #fdc632" class="navbar-brand logo_h" href="{{ route('home') }}">
-                    <img src="{{ asset('dist/img/logo_new.png') }}" weight="60px" height="60px">
+                    {{-- <img src="{{ asset('dist/img/logo_new.png') }}" weight="60px" height="60px"> --}}
+                    @if(!empty($banner))
+                        @foreach($banner as $item )
+                            @if($item->status == 1)
+                                @if($item->id == 106)
+                                    <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" weight="60px" height="60px" alt="">
+                                @endif
+                            @endif
+                        @endforeach
+                    @endif
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

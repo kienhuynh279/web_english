@@ -70,20 +70,20 @@
                     <a href="{{asset('admin/user')}}" class="small-box-footer">Chi Tiết <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-danger">
-                    <div class="inner">
-                        <h3>65</h3>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>{{ $data['count']['banner'] ?? '' }}</h3>
 
-                        <p>Tổng Quát</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">Chi Tiết <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
+                <p>Banner</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">Chi Tiết <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             <!-- ./col -->
         </div>
