@@ -153,4 +153,14 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
             ->name('adminNewDelete')
             ->where(['id' => '[0-9]+']);
     });
+
+    Route::group(['prefix' => 'make-test'], function () {
+
+        Route::get('/', 'MakeTestController@index')->name('adminMakeTest');
+
+        Route::get('/make', 'MakeTestController@getMake')->name('adminMakeTestGetAdd');
+
+        Route::post('/add', 'MakeTestController@postAdd')->name('adminMakeTestPostAdd');
+
+    });
 });
