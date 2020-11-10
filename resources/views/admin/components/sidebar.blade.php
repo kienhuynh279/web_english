@@ -99,10 +99,10 @@
 
                 <li class="nav-item">
                     <a href="{{ route("adminMakeTest") }}" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Tạo Bài Kiểm Tra
-                            {{-- <span class="right badge badge-danger">Admin</span> --}}
+                        <i class="nav-icon fas fa-question"></i>
+                        <p> 
+                            Quản Lý Bài Kiểm Tra
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                 </li>
