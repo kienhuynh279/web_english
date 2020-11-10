@@ -16,9 +16,11 @@ class TestCategoryController extends Controller
     public function index()
     {
         $data = TestCategory::where(["del_flg" => "0"])->orderBy("id", "desc")->paginate(10);
+        $categoryList = TestCategory::where(["del_flg" => "0"])->get();
 
         return view('admin.page.test-category.index', [
-            "data" => $data
+            "data" => $data,
+            "category_list" => $categoryList
         ]);
     }
 
@@ -29,7 +31,11 @@ class TestCategoryController extends Controller
      */
     public function getAdd()
     {
-        return view('admin.page.test-category.add');
+        $categoryList = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
+
+        return view('admin.page.test-category.add', [
+            "category_list" => $categoryList
+        ]);
     }
 
     /**
@@ -58,10 +64,14 @@ class TestCategoryController extends Controller
     public function getEdit($id)
     {
         $testCategoryData = TestCategory::find($id);
+        $categoryList = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
 
         if ($testCategoryData === null) return abort(404);
 
-        return view('admin.page.test-category.edit', ["data" => $testCategoryData]);
+        return view('admin.page.test-category.edit', [
+            "data" => $testCategoryData,
+            "category_list" => $categoryList
+        ]);
     }
 
     /**

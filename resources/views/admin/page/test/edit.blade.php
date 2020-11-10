@@ -15,9 +15,18 @@
                 <div class="w-100">
                     <select class="form-control" name="code" id="code">
                         <option value="" aria-readonly="true">Ấn để chọn</option>
-                        @foreach ($TestCategoryData as $item)
+                        {{-- @foreach ($TestCategoryData as $item)
                         <option value="{{ $item['id'] }}" aria-readonly="true" {{ ($item['id'] == $data['code']) ? "selected" : "" }}>{{ $item['title'] }}</option>
+                        @endforeach --}}
+                        @isset($TestCategoryData)
+                        @foreach ($TestCategoryData as $item)
+                        <optgroup label="{{ $item->title }}">
+                            @foreach($item->child as $child_item)
+                            <option value="{{ $item->id.$child_item->id.$data->id }}" {{ ($item->id.$child_item->id.$data->id == $data['code']) ? "selected" : "" }}>{{ $child_item->title }}</option>
+                            @endforeach
+                        </optgroup>
                         @endforeach
+                        @endisset
                     </select>
                 </div>
                 <div class="col-lg-12 messages text-danger"></div>
@@ -114,10 +123,17 @@
                 </div>
                 <div class=" col-lg-12 messages text-danger"></div>
             </div>
-            <div class="form-group col-md-12 px-3">
+            <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="content" style="padding-top: 7px;">Nội dung</label>
                 <div class="md-form">
                     <textarea id="content" name="content" class="md-textarea form-control">{{ $data['content'] }}</textarea>
+                </div>
+                <div class=" col-lg-12 messages text-danger"></div>
+            </div>
+            <div class="form-group col-md-6 px-3">
+                <label class="w-100" for="content_en" style="padding-top: 7px;">Nội dung bằng tiếng anh</label>
+                <div class="md-form">
+                    <textarea id="content_en" name="content_en" class="md-textarea form-control">{{ $data['content_en'] }}</textarea>
                 </div>
                 <div class=" col-lg-12 messages text-danger"></div>
             </div>
@@ -136,6 +152,7 @@
     CKEDITOR.replace('summary', { height: '150px' });
     CKEDITOR.replace('summary_en', { height: '150px' });
     CKEDITOR.replace('content', { height: '300px' });
+    CKEDITOR.replace('content_en', { height: '300px' });
     CKEDITOR.replace('result', { height: '300px' });
     // let summaryEditor = CKEDITOR.instances.summary;
     // let summaryEnEditor = CKEDITOR.instances.summary_en;

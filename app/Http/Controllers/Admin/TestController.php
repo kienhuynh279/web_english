@@ -30,7 +30,10 @@ class TestController extends Controller
      */
     public function getAdd()
     {
-        $TestCategoryData = TestCategory::all();
+        $TestCategoryData = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
+        foreach ($TestCategoryData as $item) $item->child = TestCategory::where(["del_flg" => "0", "parent_id" =>  $item->id])->get();
+
+        // dd($TestCategoryData);
 
         return view('admin.page.test.add', [
             "TestCategoryData" => $TestCategoryData
@@ -57,7 +60,7 @@ class TestController extends Controller
 
         $test->save();
 
-        // $test->update(["code" => $test->code . $test->id]);
+        $test->update(["code" => $test->code . $test->id]);
 
         return redirect()->route("adminTest");
     }
@@ -70,10 +73,12 @@ class TestController extends Controller
      */
     public function getEdit($id)
     {
-        $TestCategoryData = TestCategory::all();
+        $TestCategoryData = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
         $testData = Test::find($id);
 
         if ($testData === null) return abort(404);
+
+        foreach ($TestCategoryData as $item) $item->child = TestCategory::where(["del_flg" => "0", "parent_id" =>  $item->id])->get();
 
         return view('admin.page.test.edit', [
             "TestCategoryData" => $TestCategoryData,
