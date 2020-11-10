@@ -11,6 +11,7 @@
                 <tr>
                     <th>Tiêu đề</th>
                     <th>Tiêu Đề bằng tiếng anh</th>
+                    <th>Danh mục cha</th>
                     <th>Trạng thái</th>
                     <th>
                         <button disabled class="btn btn-sm btn-secondary">
@@ -27,6 +28,16 @@
                 <tr>
                     <td>{{ $item['title'] }}</td>
                     <td>{{ $item['title_en'] }}</td>
+                    @if ($item->parent_id == 0)
+                    <td>Không thuộc danh mục nào</td>
+                    @else
+                    @foreach ($category_list as $sub_item)
+                    @if ($item->parent_id == $sub_item->id)
+                    <td>{{ $sub_item->title }}</td>
+                    @break
+                    @endif
+                    @endforeach
+                    @endif
                     <td class="text-{{ $item['status'] == "on" ? "success" : "danger" }}">{{ $item['status'] == "on" ? "Hiện" : "Ẩn" }}</td>
                     <td>
                         <a href="{{ route('adminTestCategoryGetEdit', $item['id']) }}" class="btn btn-sm btn-primary">

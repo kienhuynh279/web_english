@@ -10,6 +10,23 @@
             <a href="{{ route('adminTestCategory') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
         </div>
         <div class="card-body d-flex flex-wrap">
+            <div class="form-group col-md-12 px-3">
+                <label class="col-sm-2" for="ParentId" style="padding-top: 7px;">Danh mục cha</label>
+                <div class="w-100">
+                    <select class="form-control" name="parent_id" id="ParentId">
+                        <option value="0" selected>Không thuộc danh mục nào</option>
+                        @isset($category_list)
+                        @foreach ($category_list as $item)
+                        @if ($item->id == ($data->id ?? ''))
+                        @continue
+                        @endif
+                        <option value="{{ $item->id }}" {{ $item->id == $data->parent_id ? 'selected' : '' }}>{{ $item->title }}</option>
+                        @endforeach
+                        @endisset
+                    </select>
+                </div>
+                <div class="col-lg-12 messages text-danger"></div>
+            </div>
             <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="title">Title</label>
                 <div class="w-100">

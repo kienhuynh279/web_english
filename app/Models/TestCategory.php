@@ -16,6 +16,7 @@ class TestCategory extends Model
     protected $primaryKey = "id";
     protected $guarded = [];
     protected $fillable = [
+        'parent_id',
         'title',
         'title_en',
         'summary',
