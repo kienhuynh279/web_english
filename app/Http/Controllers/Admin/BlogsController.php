@@ -27,17 +27,16 @@ class BlogsController extends Controller
         ]);
     }
 
-    public function postAdd(BlogsRequest $request)
+    public function postAdd(Request $request)
     {
-
+        $filename = $request->Avatar->getClientOriginalName();
         $blog = new Blogs();
 
-        $request->validated();
+        // $request->validated();
 
         $blog->title = $request->get("Title");
         $blog->title_en = $request->get("Title_en");
         $blog->id_blog_cat = $request->get("Cate_Id");
-        $blog->avatar = $request->get("Avatar");
         $blog->summary = $request->get("Summary");
         $blog->summary_en = $request->get("Summary_en");
         $blog->content = $request->get("Content");
@@ -50,6 +49,8 @@ class BlogsController extends Controller
         $blog->status = 1;
         $blog->slug = $request->get("Slug");
         $blog->position = $request->get("Position");
+        $blog->avatar = $filename;
+        $request->Avatar->storeAs('public/upload/img/banner',$filename);  
         $blog->save();
 
         return back();
@@ -66,12 +67,12 @@ class BlogsController extends Controller
         ]);
     }
 
-    public function putEdit(BlogsRequest $request,$id)
+    public function putEdit(Request $request,$id)
     {
         $blog = Blogs::findOrFail($id);
 
-        $request->validated();
-
+        // $request->validated();
+        $filename = $request->img->getClientOriginalName();
         $blog->title = $request->get("Title");
         $blog->title_en = $request->get("Title_en");
         $blog->id_blog_cat = $request->get("Cate_Id");

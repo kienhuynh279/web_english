@@ -6,7 +6,7 @@ Trang sửa tin tức
 
 @section('main')
 
-<form action="{{route("adminNewPutEdit",$blog->id)}}" method="post">
+<form enctype="multipart/form-data" action="{{route("adminNewPutEdit",$blog->id)}}" method="post">
     <div class="card">
         <div class="card-header">
             <button class="btn btn-success" type="submit" name="submit"><i
