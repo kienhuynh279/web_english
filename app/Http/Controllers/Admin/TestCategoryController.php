@@ -31,7 +31,7 @@ class TestCategoryController extends Controller
      */
     public function getAdd()
     {
-        $categoryList = TestCategory::where(["del_flg" => "0"])->get();
+        $categoryList = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
 
         return view('admin.page.test-category.add', [
             "category_list" => $categoryList
@@ -64,7 +64,7 @@ class TestCategoryController extends Controller
     public function getEdit($id)
     {
         $testCategoryData = TestCategory::find($id);
-        $categoryList = TestCategory::where(["del_flg" => "0"])->get();
+        $categoryList = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
 
         if ($testCategoryData === null) return abort(404);
 

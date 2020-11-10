@@ -15,9 +15,15 @@
                 <div class="w-100">
                     <select class="form-control" name="code" id="code">
                         <option value="" aria-readonly="true">Ấn để chọn</option>
+                        @isset($TestCategoryData)
                         @foreach ($TestCategoryData as $item)
-                        <option value="{{ $item['id'] }}" aria-readonly="true">{{ $item['title'] }}</option>
+                        <optgroup label="{{ $item->title }}">
+                            @foreach($item->child as $child_item)
+                            <option value="{{ $item->id.$child_item->id }}">{{ $child_item->title }}</option>
+                            @endforeach
+                        </optgroup>
                         @endforeach
+                        @endisset
                     </select>
                 </div>
                 <div class="col-lg-12 messages text-danger"></div>
