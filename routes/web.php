@@ -23,7 +23,7 @@ Route::get('/trang-chu', 'App\Http\Controllers\Client\HomeController@index')->na
 //Course
 Route::get('/on-thi', 'App\Http\Controllers\Client\CourseController@list')->name('courseList');
 // Route::get('/on-thi/{slug}', 'App\Http\Controllers\Client\CourseController@getOnthicc')->name('onthiccList');
-Route::get('/on-thi/{slug}/{slug2}', 'App\Http\Controllers\Client\CourseController@getOnthicc')->name('onthiccList');
+Route::get('/on-thi/{slug2}/{slug3}', 'App\Http\Controllers\Client\CourseController@getListPost')->name('onthiccList');
 
 
 Route::get('/khoa-hoc/danh-muc', 'App\Http\Controllers\Client\CourseController@index')->name('course');
@@ -188,7 +188,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     
             Route::post('/add', 'BlogsController@postAdd')->name('adminNewPostAdd');
     
+<<<<<<< HEAD
+            Route::get('/edit', 'BlogsController@getEdit')
+=======
             Route::get('/edit/{id}', 'BlogsController@getEdit')
+>>>>>>> 1c3dec6f881cd1df1e1983d9128a8b02691ab776
                 ->name('adminNewGetEdit')
                 ->where(['id' => '[0-9]+']);
     
@@ -196,7 +200,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->name('adminNewPutEdit')
                 ->where(['id' => '[0-9]+']);
     
+<<<<<<< HEAD
+            Route::get('/delete/{id}', 'BlogsController@delete')
+=======
             Route::post('/delete/{id}', 'BlogsController@delete')
+>>>>>>> 1c3dec6f881cd1df1e1983d9128a8b02691ab776
                 ->name('adminNewDelete')
                 ->where(['id' => '[0-9]+']);
         });
@@ -213,4 +221,38 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     }); 
 });
 
+<<<<<<< HEAD
+    Route::group(['prefix' => 'news'], function () {
+
+        Route::get('/', 'BlogsController@index')->name('adminNew');
+
+        Route::get('/add', 'BlogsController@getAdd')->name('adminNewGetAdd');
+
+        Route::post('/add', 'BlogsController@postAdd')->name('adminNewPostAdd');
+
+        Route::get('/edit/{id}', 'BlogsController@getEdit')
+            ->name('adminNewGetEdit')
+            ->where(['id' => '[0-9]+']);
+
+        Route::post('/edit', 'BlogsController@putEdit')
+            ->name('adminNewPutEdit')
+            ->where(['id' => '[0-9]+']);
+
+        Route::get('/delete/{id}', 'BlogsController@delete')
+            ->name('adminNewDelete')
+            ->where(['id' => '[0-9]+']);
+    });
+
+    Route::group(['prefix' => 'make-test'], function () {
+
+        Route::get('/', 'App\Http\Controllers\Admin\MakeTestController@index')->name('adminMakeTest');
+
+        Route::get('/make-test', 'App\Http\Controllers\Admin\MakeTestController@create')->name('adminMakeTestGetAdd');
+
+        Route::post('/add', 'App\Http\Controllers\Admin\MakeTestController@postAdd')->name('adminMakeTestPostAdd');
+
+    });
+
+=======
    
+>>>>>>> 1c3dec6f881cd1df1e1983d9128a8b02691ab776
