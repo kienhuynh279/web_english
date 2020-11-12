@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Banner;
 use App\Models\PostCats;
+use App\Models\Post;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -30,5 +31,9 @@ class AppServiceProvider extends ServiceProvider
 
          $data['postcats'] = PostCats::all();
          view ()->share($data);
+
+         $data['post'] = Post::all();
+         view ()->share($data);
+
     }
 }

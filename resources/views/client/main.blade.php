@@ -5,6 +5,7 @@
      @case('home.index')
      @include('client.page.home.index')
      @break
+
      @case('course.index')
      @include('client.page.course.index')
      @break
@@ -14,6 +15,10 @@
      @case('course.list')
      @include('client.page.course.list')
      @break
+     @case('course.onthicc')
+     @include('client.page.course.onthicc')
+     @break
+
      @case('contact.index')
      @include('client.page.contact.index')
      @break

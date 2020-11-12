@@ -16,11 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 //Home
 Route::get('/', 'App\Http\Controllers\Client\HomeController@index')->name('home');
+Route::get('/trang-chu', 'App\Http\Controllers\Client\HomeController@index')->name('home');
+//Ôn Thi 
+// Route::get('{slug}.html','App\Http\Controllers\Client\CourseController@getKET');
 
 //Course
-Route::get('/khoa-hoc', 'App\Http\Controllers\Client\CourseController@list')->name('courseList');
+Route::get('/on-thi', 'App\Http\Controllers\Client\CourseController@list')->name('courseList');
+// Route::get('/on-thi/{slug}', 'App\Http\Controllers\Client\CourseController@getOnthicc')->name('onthiccList');
+Route::get('/on-thi/{slug}/{slug2}', 'App\Http\Controllers\Client\CourseController@getOnthicc')->name('onthiccList');
+
+
 Route::get('/khoa-hoc/danh-muc', 'App\Http\Controllers\Client\CourseController@index')->name('course');
 Route::get('/khoa-hoc/danh-muc/chi-tiet', 'App\Http\Controllers\Client\CourseController@detail')->name('courseDetail');
+
 
 //Contact
 Route::get('/lien-he', 'App\Http\Controllers\Client\ContactController@index')->name('contact');
@@ -29,12 +37,11 @@ Route::get('/lien-he', 'App\Http\Controllers\Client\ContactController@index')->n
 Route::get('/tin-tuc', 'App\Http\Controllers\Client\NewsController@index')->name('news');
 Route::get('/tin-tuc/chi-tiet', 'App\Http\Controllers\Client\NewsController@detail')->name('newsDetail');
 
-
-
 //test
 Route::get('/test', 'App\Http\Controllers\client\ExamController@index')->name('test');
 //login
 Route::get('/dang-nhap', 'App\Http\Controllers\Client\LoginController@index')->name('login');
+
 
 //Register
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
@@ -43,6 +50,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         Route::post('/', 'RegisterController@register')->name('register');
     });
 });
+
 
 //Admin
 Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
@@ -171,6 +179,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->name('adminPostsDelete')
                 ->where(['id' => '[0-9]+']);
         });
+
         Route::group(['prefix' => 'news'], function () {
 
             Route::get('/', 'NewController@index')->name('adminNew');

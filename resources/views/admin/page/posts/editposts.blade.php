@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title', 'Chỉnh Sửa Danh Mục ')
+@section('title', 'Chỉnh Sửa Tài Liệu Danh Mục ')
 @section('main')
     <!--/.row-->
     <div class="row">
@@ -13,65 +13,90 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Lưu</button>
-                                        <a href="{{ asset('admin/postcats') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+                                        <a href="{{ asset('admin/posts') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label>Tên Danh Mục : </label>
-                                            <input required type="text" id="title" name="title" class="form-control" value="{{$postcats->title}}">
+                                            <label>Tên Tài Liệu : </label>
+                                            <input required type="text" id="title" name="title" class="form-control" value="{{$post->title}}">
+                                            
                                         </div>
                                         <div class="form-group">
-                                            <label>English Category Name : </label>
-                                            <input required type="text" id="title_en" name="title_en" class="form-control" value="{{$postcats->title_en}}">
+                                            <label>English Document Name : </label>
+                                            <input required type="text" id="title_en" name="title_en" class="form-control" value="{{$post->title_en}}">
                                         </div>
                                         <div class="form-group">
                                             <label>Slug : </label>
-                                            <input required type="text" id="slug" name="slug" class="form-control" value="{{$postcats->slug}}">
+                                            <input required type="text" id="slug" name="slug" class="form-control" value="{{$post->slug}}">
                                         </div>
                                         <div class="form-group">
-                                            <label>Vị Trí : </label>
+                                            <label>Thuộc Danh Mục : </label>
                                             {{-- <input id="vi_tri" required type="text" name="vi_tri" class="form-control" value="{{$postcats->vi_tri}}"> --}}
-                                            <select required name="vi_tri" class="form-control">
-                                                <option value="{{$postcats->vi_tri}}">Không thuộc mục nào</option>
-                                                @foreach ($vtpostcats as $vt)
-                                                    <option value="{{$vt->id}}" @if($postcats->vi_tri == $vt->id) selected @endif >{{$vt->title}}</option>
+                                            <select required name="id_thepost_cat" class="form-control">
+                                                <option value="{{$post->id_thepost_cat}}">Không thuộc mục nào</option>
+                                                @foreach ($listpostcats as $vt)
+                                                    <option value="{{$vt->id}}" @if($post->id_thepost_cat == $vt->id) selected @endif >{{$vt->title}}</option>
                                                 @endforeach
-                                                
                                             </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Địa Chỉ : </label>
+                                            <input required type="text" id="address" name="address" class="form-control" value="{{$post->address}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Giá: </label>
+                                            <input required type="number" id="price" name="price" class="form-control" value="{{$post->price}}">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Meta-Title : </label>
+                                            <input required type="text" name="meta_title" class="form-control" value="{{$post->meta_title}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Meta-Description : </label>
+                                            <input required type="text" name="meta_description" class="form-control"  value="{{$post->meta_description}}">
                                         </div>
 
                                         <div class="form-group">
                                             <label>Del_flg (Admin)</label>
                                             <select required name="del_flg" class="form-control">
-                                                <option value="1" @if($postcats->del_flg==1) checked @endif>Bật</option>
-											    <option value="0" @if($postcats->del_flg==0) checked @endif>Tắt</option>
+                                                <option value="1" @if($post->del_flg==1) checked @endif>Bật</option>
+											    <option value="0" @if($post->del_flg==0) checked @endif>Tắt</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Trạng thái (Client)</label>
                                             <select required name="status" class="form-control">
-                                                <option value="1" @if($postcats->status==1) checked @endif>Bật</option>
-											    <option value="0" @if($postcats->status==0) checked @endif>Tắt</option>
+                                                <option value="1" @if($post->status==1) checked @endif>Bật</option>
+											    <option value="0" @if($post->status==0) checked @endif>Tắt</option>
                                             </select>
                                         </div>
-
                                         
-                                        <div class="form-group">
-                                            <label>Meta-Title : </label>
-                                            <input required type="text" name="meta_title" class="form-control" value="{{$postcats->meta_title}}">
+                                        <div class="form-group" >
+                                            <label>Tài liệu nổi bật</label><br>
+                                            Có: <input type="radio" checked name="hight_flg" value="1" @if($post->hight_flg == 1) selected @endif>
+                                            Không: <input type="radio"  name="hight_flg" value="0" @if($post->hight_flg == 0) selected @endif>
+
                                         </div>
-                                        <div class="form-group">
-                                            <label>Meta-Description : </label>
-                                            <input required type="text" name="meta_description" class="form-control"  value="{{$postcats->meta_description}}">
-                                        </div>
+                                        
+                                       
                                         <div class="form-group">
                                             <label>Position : </label>
-                                            <input id="position" required type="text" name="position" class="form-control" value="{{$postcats->position}}">
+                                            <input id="position" required type="text" name="position" class="form-control" value="{{$post->position}}">
                                         </div>
                                         <div class="form-group">
+                                            <label>Rating : </label>
+                                            <input id="rating" required type="text" name="rating" class="form-control" value="{{$post->rating}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Giảm Giá : </label>
+                                            <input id="discount" required type="text" name="discount" class="form-control" value="{{$post->discount}}">
+                                        </div>
+
+                                        <div class="form-group">
                                             <label>Tóm Lược: </label>
-                                            <textarea required class="ckeditor" required name="summary"> {{$postcats->summary}}</textarea>
+                                            <textarea required class="ckeditor" required name="summary"> {{$post->summary}}</textarea>
                                             
                                             <script type="text/javascript">
                                                 var editor = CKEDITOR.replace('summary', {
@@ -93,7 +118,7 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label>Summary English : </label>
-                                            <textarea required class="ckeditor" required name="summary_en">{{$postcats->summary_en}}</textarea>
+                                            <textarea required class="ckeditor" required name="summary_en">{{$post->summary_en}}</textarea>
                                             <script type="text/javascript">
                                                 var editor = CKEDITOR.replace('summary_en', {
                                                     language: 'vi',
@@ -107,7 +132,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Nội Dung: </label>
-                                            <textarea required class="ckeditor" required name="content">{{$postcats->content}}</textarea>
+                                            <textarea required class="ckeditor" required name="content">{{$post->content}}</textarea>
                                             <script type="text/javascript">
                                                 var editor = CKEDITOR.replace('content', {
                                                     language: 'vi',
@@ -120,9 +145,23 @@
                                             </script>
                                         </div>
                                         <div class="form-group">
-                                            <label>Ảnh Banner :</label>
+                                            <label>Content English: </label>
+                                            <textarea required class="ckeditor" required name="content">{{$post->content_en}}</textarea>
+                                            <script type="text/javascript">
+                                                var editor = CKEDITOR.replace('content', {
+                                                    language: 'vi',
+                                                    filebrowserImageBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Images',
+                                                    filebrowserFlashBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Flash',
+                                                    filebrowserImageUploadUrl: '../../editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                                                    filebrowserFlashUploadUrl: '../../editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+                                                });
+
+                                            </script>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Ảnh Tài Liệu :</label>
                                             <input id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-                                            <img id="avatar" class="thumbnail" width="200px" src="{{Storage::url('public/upload/img/postcats/'.$postcats->avatar)}}">
+                                            <img id="avatar" class="thumbnail" width="200px" src="{{Storage::url('public/upload/img/posts/'.$post->avatar)}}">
                                         </div>
                                     </div>
                                 </div>

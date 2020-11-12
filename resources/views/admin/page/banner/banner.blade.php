@@ -1,7 +1,6 @@
 @extends('admin.master')
 @section('title','Quản Lý Banner')
 @section('main')
-
 <div class="card">
     <div class="card-header">
          <a href="{{asset('admin/banner/add')}}" class="btn btn-primary"><i class="fas fa-plus-square"></i> Thêm Banner</a>
@@ -48,18 +47,19 @@
          </table>
     </div>
 </div>
-@stop
 <script>
-    $("#dataTable").DataTable({
-         "responsive": true,
-         "autoWidth": true,
-         "columns": [
-              null,
-              null,
-              null,
-              null,
-              null,
-              { "width": "20%" }
-              ]
-    });
-</script>
+     $("#dataTable").DataTable({
+          "responsive": true,
+          "autoWidth": true,
+          "columns": [
+               null,
+               null,
+               null,
+               null,
+               null,
+               { "width": "20%" }
+               ]
+     });
+ </script>
+@stop
+
