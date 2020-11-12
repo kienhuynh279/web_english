@@ -322,18 +322,18 @@
             @foreach($blog as $item)
               <div class="single_course">
                 <div class="course_head">
-                  <img class="img-fluid" src="{{Storage::url('upload/img/blog/',$blog->avatar)}}" alt="" />
+                  <img class="img-fluid" style="height: 300px" src="{{Storage::url('upload/img/blog/'.$item->avatar)}}" alt="" />
                 </div>
                 <div class="course_content">
                   <span class="tag mb-4 d-inline-block">Mẹo</span>
                   <h4 class="mb-3">
-                    <a href="{{ route('newsDetail') }}">{{ $item->title }}</a>
+                    <a href="{{ asset($item->slug) }}">{{ $item->title }}</a>
                   </h4>
                   <p>{!! $item->summary !!}</p>
                   <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
                     <div class="authr_meta">
                       <span class="d-inline-block ml-2">
-                        <i class="ti-time mr-2">{{ $item->created_at->format('d/m/y') }}</i>
+                        <i class="ti-time mr-2">{{ $item->created_at->format('d/m/yy') }}</i>
                       </span>
                     </div>
                     <div class="mt-lg-0 mt-3">

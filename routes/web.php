@@ -35,7 +35,7 @@ Route::get('/lien-he', 'App\Http\Controllers\Client\ContactController@index')->n
 
 //News
 Route::get('/tin-tuc', 'App\Http\Controllers\Client\NewsController@index')->name('news');
-Route::get('/tin-tuc/chi-tiet', 'App\Http\Controllers\Client\NewsController@detail')->name('newsDetail');
+Route::get('/{slug}', 'App\Http\Controllers\Client\NewsController@detail')->name('newsDetail');
 
 //test
 Route::get('/test/{id}', 'App\Http\Controllers\client\ExamController@index')->name('test');
