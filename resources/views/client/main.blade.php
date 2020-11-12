@@ -15,9 +15,12 @@
      @case('course.list')
      @include('client.page.course.list')
      @break
-     @case('course.onthicc')
-     @include('client.page.course.onthicc')
+     @case('course.listpost')
+     @include('client.page.course.listpost')
      @break
+     {{-- @case('course.pet')
+     @include('client.page.course.pet')
+     @break --}}
 
      @case('contact.index')
      @include('client.page.contact.index')

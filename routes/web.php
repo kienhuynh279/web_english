@@ -23,7 +23,7 @@ Route::get('/trang-chu', 'App\Http\Controllers\Client\HomeController@index')->na
 //Course
 Route::get('/on-thi', 'App\Http\Controllers\Client\CourseController@list')->name('courseList');
 // Route::get('/on-thi/{slug}', 'App\Http\Controllers\Client\CourseController@getOnthicc')->name('onthiccList');
-Route::get('/on-thi/{slug}/{slug2}', 'App\Http\Controllers\Client\CourseController@getOnthicc')->name('onthiccList');
+Route::get('/on-thi/{slug2}/{slug3}', 'App\Http\Controllers\Client\CourseController@getListPost')->name('onthiccList');
 
 
 Route::get('/khoa-hoc/danh-muc', 'App\Http\Controllers\Client\CourseController@index')->name('course');
@@ -182,21 +182,21 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
 
         Route::group(['prefix' => 'news'], function () {
 
-            Route::get('/', 'NewController@index')->name('adminNew');
+            Route::get('/', 'BlogsController@index')->name('adminNew');
     
-            Route::get('/add', 'NewController@getAdd')->name('adminNewGetAdd');
+            Route::get('/add', 'BlogsController@getAdd')->name('adminNewGetAdd');
     
-            Route::post('/add', 'NewController@postAdd')->name('adminNewPostAdd');
+            Route::post('/add', 'BlogsController@postAdd')->name('adminNewPostAdd');
     
-            Route::get('/edit', 'NewController@getEdit')
+            Route::get('/edit', 'BlogsController@getEdit')
                 ->name('adminNewGetEdit')
                 ->where(['id' => '[0-9]+']);
     
-            Route::post('/edit', 'NewController@putEdit')
+            Route::post('/edit', 'BlogsController@putEdit')
                 ->name('adminNewPutEdit')
                 ->where(['id' => '[0-9]+']);
     
-            Route::get('/delete/{id}', 'NewController@delete')
+            Route::get('/delete/{id}', 'BlogsController@delete')
                 ->name('adminNewDelete')
                 ->where(['id' => '[0-9]+']);
         });
@@ -226,11 +226,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
 
     Route::group(['prefix' => 'make-test'], function () {
 
-        Route::get('/', 'MakeTestController@index')->name('adminMakeTest');
+        Route::get('/', 'App\Http\Controllers\Admin\MakeTestController@index')->name('adminMakeTest');
 
-        Route::get('/make-test', 'MakeTestController@create')->name('adminMakeTestGetAdd');
+        Route::get('/make-test', 'App\Http\Controllers\Admin\MakeTestController@create')->name('adminMakeTestGetAdd');
 
-        Route::post('/add', 'MakeTestController@postAdd')->name('adminMakeTestPostAdd');
+        Route::post('/add', 'App\Http\Controllers\Admin\MakeTestController@postAdd')->name('adminMakeTestPostAdd');
 
     });
 
