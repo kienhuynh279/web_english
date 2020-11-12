@@ -182,55 +182,35 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
 
         Route::group(['prefix' => 'news'], function () {
 
-            Route::get('/', 'NewController@index')->name('adminNew');
+            Route::get('/', 'BlogsController@index')->name('adminNew');
     
-            Route::get('/add', 'NewController@getAdd')->name('adminNewGetAdd');
+            Route::get('/add', 'BlogsController@getAdd')->name('adminNewGetAdd');
     
-            Route::post('/add', 'NewController@postAdd')->name('adminNewPostAdd');
+            Route::post('/add', 'BlogsController@postAdd')->name('adminNewPostAdd');
     
-            Route::get('/edit', 'NewController@getEdit')
+            Route::get('/edit/{id}', 'BlogsController@getEdit')
                 ->name('adminNewGetEdit')
                 ->where(['id' => '[0-9]+']);
     
-            Route::post('/edit', 'NewController@putEdit')
+            Route::post('/edit', 'BlogsController@putEdit')
                 ->name('adminNewPutEdit')
                 ->where(['id' => '[0-9]+']);
     
-            Route::get('/delete/{id}', 'NewController@delete')
+            Route::post('/delete/{id}', 'BlogsController@delete')
                 ->name('adminNewDelete')
                 ->where(['id' => '[0-9]+']);
         });
+    
+        Route::group(['prefix' => 'make-test'], function () {
+    
+            Route::get('/', 'MakeTestController@index')->name('adminMakeTest');
+    
+            Route::get('/make-test', 'MakeTestController@create')->name('adminMakeTestGetAdd');
+    
+            Route::post('/add', 'MakeTestController@store')->name('adminMakeTestPostAdd');
+    
+        });    
     }); 
 });
 
-    Route::group(['prefix' => 'news'], function () {
-
-        Route::get('/', 'BlogsController@index')->name('adminNew');
-
-        Route::get('/add', 'BlogsController@getAdd')->name('adminNewGetAdd');
-
-        Route::post('/add', 'BlogsController@postAdd')->name('adminNewPostAdd');
-
-        Route::get('/edit/{id}', 'BlogsController@getEdit')
-            ->name('adminNewGetEdit')
-            ->where(['id' => '[0-9]+']);
-
-        Route::post('/edit', 'BlogsController@putEdit')
-            ->name('adminNewPutEdit')
-            ->where(['id' => '[0-9]+']);
-
-        Route::post('/delete/{id}', 'BlogsController@delete')
-            ->name('adminNewDelete')
-            ->where(['id' => '[0-9]+']);
-    });
-
-    Route::group(['prefix' => 'make-test'], function () {
-
-        Route::get('/', 'MakeTestController@index')->name('adminMakeTest');
-
-        Route::get('/make-test', 'MakeTestController@create')->name('adminMakeTestGetAdd');
-
-        Route::post('/add', 'MakeTestController@store')->name('adminMakeTestPostAdd');
-
-    });
-
+   
