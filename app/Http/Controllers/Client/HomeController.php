@@ -11,7 +11,6 @@ use App\Models\Form;
 class HomeController extends Controller
 {
     public function index()
-<<<<<<< HEAD
     {   
         $form = Form::where('status', 1)->get();
         $data['banner'] = Banner::where('status',1)->get();
@@ -22,14 +21,7 @@ class HomeController extends Controller
             'form' => $form,
             $data,
             $datacats
-=======
     {
-        return view('client.index',[
-            'title' => 'Trang Chủ',
-            'page' => 'home.index'
->>>>>>> 858c4066334e699d30b45c52fcaf002e3ccf1e9d
-        ]);
-    }
 
     public function getCategory($id)
     {
