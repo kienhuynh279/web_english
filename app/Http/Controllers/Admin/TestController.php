@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Test;
+use App\Models\TestCategory;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -15,7 +16,11 @@ class TestController extends Controller
      */
     public function index()
     {
-        return view('admin.page.test.index');
+        $data = Test::where(["del_flg" => "0"])->orderBy("id", "desc")->paginate(10);
+
+        return view('admin.page.test.index', [
+            "data" => $data
+        ]);
     }
 
     /**
@@ -25,7 +30,14 @@ class TestController extends Controller
      */
     public function getAdd()
     {
-        return view('admin.page.test.add');
+        $TestCategoryData = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
+        foreach ($TestCategoryData as $item) $item->child = TestCategory::where(["del_flg" => "0", "parent_id" =>  $item->id])->get();
+
+        // dd($TestCategoryData);
+
+        return view('admin.page.test.add', [
+            "TestCategoryData" => $TestCategoryData
+        ]);
     }
 
     /**
@@ -36,7 +48,21 @@ class TestController extends Controller
      */
     public function postAdd(Request $request)
     {
-        //
+        $test = new Test($request->input());
+
+        if ($request->input('status') == null) $test['status'] = 0;
+        else $test['status'] = 1;
+
+        if ($request->input('high_flg') == null) $test['high_flg'] = 0;
+        else $test['high_flg'] = 1;
+
+        $test['del_flg'] = 0;
+
+        $test->save();
+
+        $test->update(["code" => $test->code . $test->id]);
+
+        return redirect()->route("adminTest");
     }
 
     /**
@@ -47,7 +73,17 @@ class TestController extends Controller
      */
     public function getEdit($id)
     {
-        return view('admin.page.test.edit');
+        $TestCategoryData = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
+        $testData = Test::find($id);
+
+        if ($testData === null) return abort(404);
+
+        foreach ($TestCategoryData as $item) $item->child = TestCategory::where(["del_flg" => "0", "parent_id" =>  $item->id])->get();
+
+        return view('admin.page.test.edit', [
+            "TestCategoryData" => $TestCategoryData,
+            "data" => $testData
+        ]);
     }
 
     /**
@@ -59,7 +95,17 @@ class TestController extends Controller
      */
     public function postEdit(Request $request, $id)
     {
-        //
+        $test = Test::find($id);
+
+        if ($request->input('status') == null) $request->merge(['status' => 0]);
+        else $request->merge(['status' => 1]);
+
+        if ($request->input('high_flg') == null) $request->merge(['status' => 0]);
+        else $request->merge(['high_flg' => 1]);
+
+        $test->update($request->input());
+
+        return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Lưu thành công"]]);
     }
 
     /**
@@ -70,6 +116,8 @@ class TestController extends Controller
      */
     public function delete($id)
     {
-        //
+        $test = Test::find($id);
+        $test->update(['del_flg' => '1']);
+        return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Xóa thành công"]]);
     }
 }

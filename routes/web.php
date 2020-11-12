@@ -93,7 +93,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->name('adminTestPostEdit')
                 ->where(['id' => '[0-9]+']);
 
-            Route::get('/delete/{id}', 'TestController@delete')
+            Route::post('/delete/{id}', 'TestController@delete')
                 ->name('adminTestDelete')
                 ->where(['id' => '[0-9]+']);
         });
@@ -114,7 +114,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->name('adminTestCategoryPostEdit')
                 ->where(['id' => '[0-9]+']);
 
-            Route::get('/delete/{id}', 'TestCategoryController@delete')
+            Route::post('/delete/{id}', 'TestCategoryController@delete')
                 ->name('adminTestCategoryDelete')
                 ->where(['id' => '[0-9]+']);
         });
@@ -203,4 +203,34 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     }); 
 });
 
-    
+    Route::group(['prefix' => 'news'], function () {
+
+        Route::get('/', 'BlogsController@index')->name('adminNew');
+
+        Route::get('/add', 'BlogsController@getAdd')->name('adminNewGetAdd');
+
+        Route::post('/add', 'BlogsController@postAdd')->name('adminNewPostAdd');
+
+        Route::get('/edit/{id}', 'BlogsController@getEdit')
+            ->name('adminNewGetEdit')
+            ->where(['id' => '[0-9]+']);
+
+        Route::post('/edit', 'BlogsController@putEdit')
+            ->name('adminNewPutEdit')
+            ->where(['id' => '[0-9]+']);
+
+        Route::get('/delete/{id}', 'BlogsController@delete')
+            ->name('adminNewDelete')
+            ->where(['id' => '[0-9]+']);
+    });
+
+    Route::group(['prefix' => 'make-test'], function () {
+
+        Route::get('/', 'MakeTestController@index')->name('adminMakeTest');
+
+        Route::get('/make-test', 'MakeTestController@create')->name('adminMakeTestGetAdd');
+
+        Route::post('/add', 'MakeTestController@postAdd')->name('adminMakeTestPostAdd');
+
+    });
+

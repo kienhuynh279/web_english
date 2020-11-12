@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model
+class Blogs extends Model
 {
     protected $table = 'blogs';
     protected $primaryKey = 'id';
@@ -23,15 +23,16 @@ class News extends Model
          'meta_description',
          'meta_title',
          'checked',
-         'create_at',
          'del_Flg',
          'hight_Flg',
          'status',
-         'slug'
+         'created_at',
+         'slug',
+         'position'
     ];
 
-    public function News_Cat()
+    public function Blog_Cats()
     {
-        return $this->hasMany('App\Models\Blog_Cat', 'Id_Blog_Cat','id');
+        return $this->hasMany('App\Models\Blogs_Cat', 'id_blog_cat','id');
     }
 }

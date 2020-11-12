@@ -1,31 +1,29 @@
 @extends('admin.master')
 
 @section('title')
-Trang tạo tin tức
+Trang tạo bài kiểm tra
 @endsection
 
 @section('main')
-<form enctype="multipart/form-data" action="{{route("adminNewPostAdd")}}" method="post">
+<form enctype="multipart/form-data" action="{{route("adminMakeTestGetAdd")}}" method="post">
     <div class="card">
         <div class="card-header">
             <button class="btn btn-success" type="submit" name="submit"><i
-                    class="fas fa-save"></i> Lưu tin tức</button>
-            <a href="{{ route('adminNew') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+                    class="fas fa-save"></i> Thêm</button>
+            <a href="{{ route('adminMakeTest') }}" class="btn btn-sm btn-danger"><i
+                    class="fas fa-cancel">Hủy</a>
         </div>
-        <div class="card-body d-flex flex-wrap">
              {{ csrf_field() }}
-            @include("admin.page.news.inc._form")
-        </div>
+            @include("admin.page.make-test.inc._form")
     </div>
  </form>
 
  <script>
-    
     // CKEditor
     CKEDITOR.replace('summary', { height: '150px' });
     CKEDITOR.replace('summary_en', { height: '150px' });
-    CKEDITOR.replace('content', { height: '150px' });
-    CKEDITOR.replace('content_en', { height: '150px' });
+    CKEDITOR.replace('content', { height: '300px' });
+    CKEDITOR.replace('content_en', { height: '300px' });
 
 
     // Validate
