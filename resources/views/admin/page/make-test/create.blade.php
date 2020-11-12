@@ -5,16 +5,17 @@ Trang tạo bài kiểm tra
 @endsection
 
 @section('main')
-<form enctype="multipart/form-data" action="{{route("adminMakeTestGetAdd")}}" method="post">
+<form enctype="multipart/form-data" action="{{route("adminMakeTestPostAdd")}}" method="post">
     <div class="card">
         <div class="card-header">
             <button class="btn btn-success" type="submit" name="submit"><i
-                    class="fas fa-save"></i> Thêm</button>
-            <a href="{{ route('adminMakeTest') }}" class="btn btn-sm btn-danger"><i
-                    class="fas fa-cancel">Hủy</a>
+                    class="fas fa-save"></i> Lưu đề thi</button>
+            <a href="{{ route('adminMakeTest') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
         </div>
-             {{ csrf_field() }}
-            @include("admin.page.make-test.inc._form")
+            <div class="card-body d-flex flex-wrap">
+                {{ csrf_field() }}
+                @include("admin.page.make-test.inc._form")
+            </div>
     </div>
  </form>
 

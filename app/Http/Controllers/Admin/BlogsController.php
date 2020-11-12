@@ -12,8 +12,7 @@ class BlogsController extends Controller
 {
     public function index()
     {
-        $filter = [];
-        $blogs = Blogs::where($filter)->paginate(20);
+        $blogs = Blogs::where(["del_flg" => "1"])->paginate(20);
         return view('admin.page.news.index', [
             "blogs" => $blogs
         ]);
@@ -29,9 +28,9 @@ class BlogsController extends Controller
 
     public function postAdd(Request $request)
     {
-        $filename = $request->Avatar->getClientOriginalName();
+       
         $blog = new Blogs();
-
+        $filename = $request->Avatar->getClientOriginalName();
         // $request->validated();
 
         $blog->title = $request->get("Title");
@@ -50,7 +49,7 @@ class BlogsController extends Controller
         $blog->slug = $request->get("Slug");
         $blog->position = $request->get("Position");
         $blog->avatar = $filename;
-        $request->Avatar->storeAs('public/upload/img/banner',$filename);  
+        $request->Avatar->storeAs('public/upload/img/blog',$filename);  
         $blog->save();
 
         return back();
@@ -98,6 +97,9 @@ class BlogsController extends Controller
 
     public function delete($id)
     {
-        # code...
+        $blog = Blogs::find($id);
+        $blog->del_flg = 0;
+        $blog->save();
+        return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Xóa thành công"]]);
     }
 }

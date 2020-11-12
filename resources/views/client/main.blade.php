@@ -29,6 +29,9 @@
      @case('exam.index')
      @include('client.page.exam.index')
      @break
+     @case('exam.detail')
+     @include('client.page.exam.detail')
+     @break
      @default
      @include('client.page.exam.index')
      @endswitch

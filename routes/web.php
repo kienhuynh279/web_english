@@ -32,7 +32,7 @@ Route::get('/tin-tuc/chi-tiet', 'App\Http\Controllers\Client\NewsController@deta
 
 
 //test
-Route::get('/test', 'App\Http\Controllers\client\ExamController@index')->name('test');
+Route::get('/test/{id}', 'App\Http\Controllers\client\ExamController@index')->name('test');
 //login
 Route::get('/dang-nhap', 'App\Http\Controllers\Client\LoginController@index')->name('login');
 
@@ -149,7 +149,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
             ->name('adminNewPutEdit')
             ->where(['id' => '[0-9]+']);
 
-        Route::get('/delete/{id}', 'BlogsController@delete')
+        Route::post('/delete/{id}', 'BlogsController@delete')
             ->name('adminNewDelete')
             ->where(['id' => '[0-9]+']);
     });
@@ -160,7 +160,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
 
         Route::get('/make-test', 'MakeTestController@create')->name('adminMakeTestGetAdd');
 
-        Route::post('/add', 'MakeTestController@postAdd')->name('adminMakeTestPostAdd');
+        Route::post('/add', 'MakeTestController@store')->name('adminMakeTestPostAdd');
 
     });
 });

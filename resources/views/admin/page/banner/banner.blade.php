@@ -24,13 +24,13 @@
                         <td>{{$banner->id}}</td>
                         <td>{{$banner->title}}</td>
                         <td>
-                              <img width="200px" src="{{Storage::url('/upload/img/banner/'.$banner->avatar)}}" class="thumbnail">
+                              <img width="200px" src="{{Storage::url('upload/img/banner/'.$banner->avatar)}}" class="thumbnail">
                         </td>
                         <td>{{$banner->status}}</td>
                         <td>{{$banner->del_flg}}</td>
                         <td>
                              <a href="{{asset('admin/banner/edit/'.$banner->id)}}" class="btn btn-warning"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Sửa</a>
-                             {{-- <a onclick="return confirm('Bạn có chắc chắn muốn xóa !')" href="{{asset('admin/banner/delete/'.$banner->id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a> --}}
+                             <a onclick="return confirm('Bạn có chắc chắn muốn xóa !')" href="{{asset('admin/banner/delete/'.$banner->id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a> --}}
                         </td>
                    </tr>
                    @endforeach

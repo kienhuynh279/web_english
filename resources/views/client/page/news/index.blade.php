@@ -7,18 +7,16 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog_left_sidebar">
+                        @foreach($blog as $item)
                         <article class="row blog_item">
                             <div class="col-md-3">
                                 <div class="blog_info text-right">
                                     <div class="post_tag">
-                                        <a href="#">Food,</a>
-                                        <a class="active" href="#">Technology,</a>
-                                        <a href="#">Politics,</a>
-                                        <a href="#">Lifestyle</a>
+                                        <a href="#"></a>
                                     </div>
                                     <ul class="blog_meta list">
                                         <li><a href="#">Mark wiens<i class="ti-user"></i></a></li>
-                                        <li><a href="#">12 Dec, 2017<i class="ti-calendar"></i></a></li>
+                                        <li><a href="#">{{ $item->created_at }}<i class="ti-calendar"></i></a></li>
                                         <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
                                         <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
                                     </ul>
@@ -29,118 +27,16 @@
                                     <img src="{{ asset('dist/img/blog/main-blog/m-blog-1.jpg') }}" alt="">
                                     <div class="blog_details">
                                         <a href="{{ route('newsDetail') }}">
-                                            <h2>Astronomy Binoculars A Great Alternative</h2>
+                                            <h2>{{ $item->title }}</h2>
                                         </a>
-                                        <p>MCSE boot camps have its supporters and its detractors. Some people do not
-                                            understand why you should have to spend money on boot camp when you can get
-                                            the MCSE study materials yourself at a fraction.</p>
+                                        <p>{!! $item->summary !!}</p>
                                        <a href="{{ route('newsDetail') }}" class="btn-arrow"><div class="arrow"></div>View more</a>
                                     </div>
                                 </div>
                             </div>
                         </article>
+                        @endforeach
 
-                         <article class="row blog_item">
-                            <div class="col-md-3">
-                                <div class="blog_info text-right">
-                                    <div class="post_tag">
-                                        <a href="#">Food,</a>
-                                        <a class="active" href="#">Technology,</a>
-                                        <a href="#">Politics,</a>
-                                        <a href="#">Lifestyle</a>
-                                    </div>
-                                    <ul class="blog_meta list">
-                                        <li><a href="#">Mark wiens<i class="ti-user"></i></a></li>
-                                        <li><a href="#">12 Dec, 2017<i class="ti-calendar"></i></a></li>
-                                        <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
-                                        <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog_post">
-                                    <img src="{{ asset('dist/img/blog/main-blog/m-blog-1.jpg') }}" alt="">
-                                    <div class="blog_details">
-                                        <a href="{{ route('newsDetail') }}">
-                                            <h2>Astronomy Binoculars A Great Alternative</h2>
-                                        </a>
-                                        <p>MCSE boot camps have its supporters and its detractors. Some people do not
-                                            understand why you should have to spend money on boot camp when you can get
-                                            the MCSE study materials yourself at a fraction.</p>
-                                       <a href="{{ route('newsDetail') }}" class="btn-arrow"><div class="arrow"></div>View more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                         <article class="row blog_item">
-                            <div class="col-md-3">
-                                <div class="blog_info text-right">
-                                    <div class="post_tag">
-                                        <a href="#">Food,</a>
-                                        <a class="active" href="#">Technology,</a>
-                                        <a href="#">Politics,</a>
-                                        <a href="#">Lifestyle</a>
-                                    </div>
-                                    <ul class="blog_meta list">
-                                        <li><a href="#">Mark wiens<i class="ti-user"></i></a></li>
-                                        <li><a href="#">12 Dec, 2017<i class="ti-calendar"></i></a></li>
-                                        <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
-                                        <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog_post">
-                                    <img src="{{ asset('dist/img/blog/main-blog/m-blog-1.jpg') }}" alt="">
-                                    <div class="blog_details">
-                                        <a href="{{ route('newsDetail') }}">
-                                            <h2>Astronomy Binoculars A Great Alternative</h2>
-                                        </a>
-                                        <p>MCSE boot camps have its supporters and its detractors. Some people do not
-                                            understand why you should have to spend money on boot camp when you can get
-                                            the MCSE study materials yourself at a fraction.</p>
-                                       <a href="{{ route('newsDetail') }}" class="btn-arrow"><div class="arrow"></div>View more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                         <article class="row blog_item">
-                            <div class="col-md-3">
-                                <div class="blog_info text-right">
-                                    <div class="post_tag">
-                                        <a href="#">Food,</a>
-                                        <a class="active" href="#">Technology,</a>
-                                        <a href="#">Politics,</a>
-                                        <a href="#">Lifestyle</a>
-                                    </div>
-                                    <ul class="blog_meta list">
-                                        <li><a href="#">Mark wiens<i class="ti-user"></i></a></li>
-                                        <li><a href="#">12 Dec, 2017<i class="ti-calendar"></i></a></li>
-                                        <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
-                                        <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog_post">
-                                    <img src="{{ asset('dist/img/blog/main-blog/m-blog-1.jpg') }}" alt="">
-                                    <div class="blog_details">
-                                        <a href="{{ route('newsDetail') }}">
-                                            <h2>Astronomy Binoculars A Great Alternative</h2>
-                                        </a>
-                                        <p>MCSE boot camps have its supporters and its detractors. Some people do not
-                                            understand why you should have to spend money on boot camp when you can get
-                                            the MCSE study materials yourself at a fraction.</p>
-                                       <a href="{{ route('newsDetail') }}" class="btn-arrow"><div class="arrow"></div>View more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>  
-                        
-                        
-                       
                         <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 <li class="page-item">

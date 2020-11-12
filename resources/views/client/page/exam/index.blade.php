@@ -1,46 +1,42 @@
-<div class="card">
-  <div class="card-header bg-white">
-    <div class="media align-items-center">
-      <div class="media-left">
-        <h4 class="mb-0"><strong>#9</strong></h4>
-       </div>
-      <div class="media-body">
-        <h4 class="card-title">Github command to deploy comits?</h4>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="form-group">
-      <label class="custom-control custom-checkbox mb-0">
-        <input type="checkbox" class="custom-control-input">
-        <span class="custom-control-indicator"></span>
-        <span class="custom-control-description">git push</span>
-      </label>
-    </div>
-    <div class="form-group">
-      <label class="custom-control custom-checkbox mb-0">
-        <input type="checkbox" class="custom-control-input">
-        <span class="custom-control-indicator"></span>
-        <span class="custom-control-description">git push</span>
-      </label>
-    </div>
-    <div class="form-group">
-      <label class="custom-control custom-checkbox mb-0">
-        <input type="checkbox" class="custom-control-input">
-        <span class="custom-control-indicator"></span>
-        <span class="custom-control-description">git push</span>
-      </label>
-    </div>
-    <div class="form-group">
-      <label class="custom-control custom-checkbox mb-0">
-        <input type="checkbox" class="custom-control-input">
-        <span class="custom-control-indicator"></span>
-        <span class="custom-control-description">git push</span>
-      </label>
-    </div>
-  </div>
-  <div class="card-footer">
-    <a href="#" class="btn btn-white">Skip</a>
-    <a href="#" class="btn btn-success float-right">Submit <i class="material-icons btn__icon--right">send</i></a>
+<div style="padding-top: 50px" class="container">
+  @foreach ($data['form'] as $item)
+     <h1 class="title has-text-centered">Chủ đề</h1>
+    @foreach(json_decode($item->content) as $i)
+        @foreach($data['test'] as $test)
+          @if($i == $test->id)
+           <section class="hero is-primary is-fullheight">
+              <div class="column is-half">
+                  <div class="has-text-centered">
+                      <h6 class="subtitle has-text-centered is-uppercase is-7 navigation">{{ $test->title }}</h6>
+                      <h2 class="subtitle has-text-centered is-5">{!! $test->content !!}</h2>
+                      <form action="#" method="GET">
+                          <p class="option has-text-grey-dark">
+                              <input type="radio" name="answer" value="a">
+                              <span class="has-text-weight-bold is-size-5">A</span>&nbsp;Đáp án a
+                          </p>
+                          <p class="option has-text-grey-dark">
+                              <input type="radio" name="answer" value="b">
+                              <span class="has-text-weight-bold is-size-5">B</span>&nbsp;Đáp án b
+                          </p>
+                          <p class="option has-text-grey-dark">
+                              <input type="radio" name="answer" value="c">
+                              <span class="has-text-weight-bold is-size-5">C</span>&nbsp;Đáp án c
+                          </p>
+                          <p class="option has-text-grey-dark">
+                              <input type="radio" name="answer" value="d">
+                              <span class="has-text-weight-bold is-size-5">D</span>&nbsp;Đáp án d
+                          </p>
+                      </form>
+                      <hr>
+                  </div>
+              </div>
+            </section>
+          @endif
+        @endforeach
+       
+    @endforeach
+  @endforeach 
+  <div class="text-center">
+    <a class="btn btn-success button">Nộp bài</a>
   </div>
 </div>

@@ -283,11 +283,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-6">
-
+            @foreach($form as $i)
+            <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title"><span class="badge badge-primary">Kiểm tra</span> Kiểm tra Toeic (New)</h4>
+                <h4 class="card-title"><span class="badge badge-primary">Kiểm tra</span> {{ $i->title }}</h4>
                 <div class="row">
                   <div class="col-sm-6">
                     <p>Số câu: 40 câu</p>
@@ -296,55 +296,11 @@
                     <p>Thời gian: 60 phút</p>
                   </div>
                 </div>
-                <a href="#" class="btn btn-success">Bắt đầu</a>
+                <a href="{{ route('test', $i->id) }}" class="btn btn-success">Bắt đầu</a>
               </div>
             </div>
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title"><span class="badge badge-primary">Kiểm tra</span> Kiểm tra Toeic (New)</h4>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <p>Số câu: 40 câu</p>
-                  </div>
-                  <div class="col-sm-6">
-                    <p>Thời gian: 60 phút</p>
-                  </div>
-                </div>
-                <a href="#" class="btn btn-success">Bắt đầu</a>
-              </div>
             </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title"><span class="badge badge-primary">Kiểm tra</span> Kiểm tra Toeic (New)</h4>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <p>Số câu: 40 câu</p>
-                  </div>
-                  <div class="col-sm-6">
-                    <p>Thời gian: 60 phút</p>
-                  </div>
-                </div>
-                <a href="#" class="btn btn-success">Bắt đầu</a>
-              </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title"><span class="badge badge-primary">Kiểm tra</span> Kiểm tra Toeic (New)</h4>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p>Số câu: 40 câu</p>
-                    </div>
-                    <div class="col-sm-6">
-                      <p>Thời gian: 60 phút</p>
-                    </div>
-                  </div>
-                  <a href="#" class="btn btn-success">Bắt đầu</a>
-                </div>
-            </div>
-          </div>
+            @endforeach
         </div>
         </div>
       </div>

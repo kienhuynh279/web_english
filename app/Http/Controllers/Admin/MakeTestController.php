@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Form;
+use App\Models\FormCategory;
 use Illuminate\Http\Request;
 
 class MakeTestController extends Controller
@@ -17,8 +18,10 @@ class MakeTestController extends Controller
     {
         $filter = [];
         $forms = Form::where($filter)->paginate(20);
+        $formcate  = FormCategory::all();
         return view('admin.page.make-test.index',[
             "forms" => $forms,
+            "cate" => $formcate
         ]);
     }
 
@@ -29,7 +32,10 @@ class MakeTestController extends Controller
      */
     public function create()
     {
-        return view('admin.page.make-test.create');
+        $formcate  = FormCategory::all();
+        return view('admin.page.make-test.create',[
+            "cate" => $formcate
+        ]);
     }
 
     /**
@@ -40,7 +46,31 @@ class MakeTestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$arr = [];
+        Form::create([
+            "title" => $request->get("Title"),
+            "title_en" => $request->get("Cate_Id"),
+            //"avatar" => $request->get("Avatar"),
+            "id_theforms_cat" => $request->get("Cate_Id"),
+            "summary" => $request->get("Summary"),
+            "summary_en" => $request->get("Summary_en"),
+            'content' => json_encode(explode("-",$request->get("Content"))),
+            //$arr = $request->get("Content"),
+            "meta_description" => $request->get("Meta_Desc"),
+            "meta_title" => $request->get("Meta_Title"),
+            //"checked" => $request->get("Checked"),
+            "del_flg" => $request->get("Del_Flg"),
+            "hight_flg" => $request->get("Hight_Flg"),
+            "slug" => $request->get("Slug"),
+            "position" => $request->get("Position"),
+            "rating" => $request->get("Rating"),
+            "discount" => $request->get("Discount"),
+            "status" => 1,
+        ]);
+
+        return redirect()->route("adminMakeTest")->withErrors([
+            "success" => "Tạo ứng dụng thành công",
+        ]);
     }
 
     /**
