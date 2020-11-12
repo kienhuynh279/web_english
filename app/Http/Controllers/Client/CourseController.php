@@ -11,7 +11,10 @@ class CourseController extends Controller
 {
     public function index()
     {
+        $arr = [];
+        $blogs = Blogs::where($arr)->paginate(12);
         return view('client.index',[
+            'blogs' => $blogs,
             'title' => 'Docs',
             'page' => 'course.index', 
         ]);
