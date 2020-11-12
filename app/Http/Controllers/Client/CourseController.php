@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Banner;
-use App\Models\Blogs;
-
+use App\Models\Post;
+use App\Models\PostCats;
 class CourseController extends Controller
 {
     public function index()
@@ -30,10 +30,32 @@ class CourseController extends Controller
 
     public function list()
     {
-        $data['banner'] = Banner::where('status',1)->get();
+        $cateName = PostCats::all();
         return view('client.index', [
             'title' => 'Docs',
-            'page' => 'course.list',$data
+            'page' => 'course.list',
+            'data' => [
+                'cateName' => $cateName
+           ]
         ]);
     }
+    
+    public function getOnthicc()
+    {
+        $hight_flg = Post::where('hight_flg',1)->orderBy('id','desc')->take(6)->get();
+        return view('client.index', [
+            'title' => 'Tài Liệu Ket',
+            'page' => 'course.onthicc',
+            'data' => [
+                'hight_flg' => $hight_flg
+           ]
+        ]);
+    }
+    // public function getKET($id)
+    // {
+    //     $data ['cateName'] = PostCats::find($id);
+    //     return view('client.index','client.page.course.KET',$data);
+    // }
+   
+   
 }

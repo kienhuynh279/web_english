@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title', 'Chỉnh Sửa Danh Mục ')
+@section('title', 'Thêm Tài Liệu Bài Viết ')
 @section('main')
     <!--/.row-->
     <div class="row">
@@ -7,72 +7,104 @@
             <div class="panel panel-primary">
                 <div class="panel-body">
                     @include('errors.note')
-                    <form method="post" enctype="multipart/form-data" role="form" >
+                    <form method="post" enctype="multipart/form-data" role="form" action="">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Lưu</button>
-                                        <a href="{{ asset('admin/postcats') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+                                        <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Thêm</button>
+                                        <a href="{{ asset('admin/posts') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label>Tên Danh Mục : </label>
-                                            <input required type="text" id="title" name="title" class="form-control" value="{{$postcats->title}}">
+                                            <label>Tên tài liệu : </label>
+                                            <input required type="text" id="title" name="title" class="form-control"
+                                                placeholder="Tên Tài Liệu...">
                                         </div>
                                         <div class="form-group">
-                                            <label>English Category Name : </label>
-                                            <input required type="text" id="title_en" name="title_en" class="form-control" value="{{$postcats->title_en}}">
+                                            <label>English Document Name : </label>
+                                            <input required type="text" id="title_en" name="title_en" class="form-control"
+                                                placeholder="English Document Name...">
                                         </div>
                                         <div class="form-group">
                                             <label>Slug : </label>
-                                            <input required type="text" id="slug" name="slug" class="form-control" value="{{$postcats->slug}}">
+                                            <input required type="text" id="slug" name="slug" class="form-control"
+                                                placeholder="Slug...">
                                         </div>
                                         <div class="form-group">
-                                            <label>Vị Trí : </label>
-                                            {{-- <input id="vi_tri" required type="text" name="vi_tri" class="form-control" value="{{$postcats->vi_tri}}"> --}}
-                                            <select required name="vi_tri" class="form-control">
-                                                <option value="{{$postcats->vi_tri}}">Không thuộc mục nào</option>
-                                                @foreach ($vtpostcats as $vt)
-                                                    <option value="{{$vt->id}}" @if($postcats->vi_tri == $vt->id) selected @endif >{{$vt->title}}</option>
+                                            <label>Thuộc Danh Mục : </label>
+                                            <select required name="id_thepost_cat" class="form-control">
+                                                <option value="0">Không thuộc mục nào</option>
+                                                @foreach ($postcatslist as $list)
+                                                    <option value="{{$list->id}}">{{$list->title}}</option>
                                                 @endforeach
-                                                
                                             </select>
                                         </div>
 
                                         <div class="form-group">
+                                            <label>Địa Chỉ: </label>
+                                            <input required type="text" name="address" class="form-control"
+                                                placeholder="Địa Chỉ...">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Giá: </label>
+                                            <input required type="number" name="price" class="form-control" placeholder="Giá...">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Meta-Title : </label>
+                                            <input required type="text" name="meta_title" class="form-control"
+                                                placeholder="Meta-Title...">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Meta-Description : </label>
+                                            <input required type="text" name="meta_description" class="form-control"
+                                                placeholder="Meta-Description ...">
+                                        </div>
+                                        
+                                        <div class="form-group">
                                             <label>Del_flg (Admin)</label>
                                             <select required name="del_flg" class="form-control">
-                                                <option value="1" @if($postcats->del_flg==1) checked @endif>Bật</option>
-											    <option value="0" @if($postcats->del_flg==0) checked @endif>Tắt</option>
+                                                <option value="1">Bật</option>
+                                                <option value="0">Tắt</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Trạng thái (Client)</label>
                                             <select required name="status" class="form-control">
-                                                <option value="1" @if($postcats->status==1) checked @endif>Bật</option>
-											    <option value="0" @if($postcats->status==0) checked @endif>Tắt</option>
+                                                <option value="1">Bật</option>
+                                                <option value="0">Tắt</option>
                                             </select>
                                         </div>
 
+                                        <div class="form-group" >
+                                            <label>Tài liệu nổi bật</label><br>
+                                            Có: <input type="radio" name="hight_flg" value="1">
+                                            Không: <input type="radio" checked name="hight_flg" value="0">
+                                        </div>
                                         
                                         <div class="form-group">
-                                            <label>Meta-Title : </label>
-                                            <input required type="text" name="meta_title" class="form-control" value="{{$postcats->meta_title}}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Meta-Description : </label>
-                                            <input required type="text" name="meta_description" class="form-control"  value="{{$postcats->meta_description}}">
-                                        </div>
-                                        <div class="form-group">
                                             <label>Position : </label>
-                                            <input id="position" required type="text" name="position" class="form-control" value="{{$postcats->position}}">
+                                            <input id="position" required type="text" name="position" class="form-control"
+                                                placeholder="Position...">
                                         </div>
+                                        <div class="form-group">
+                                            <label>Rating : </label>
+                                            <input id="rating" required type="text" name="rating" class="form-control"
+                                                placeholder="Rating...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Giảm Giá : </label>
+                                            <input id="discount" required type="text" name="discount" class="form-control"
+                                                placeholder="Discount...">
+                                        </div>
+                                   
                                         <div class="form-group">
                                             <label>Tóm Lược: </label>
-                                            <textarea required class="ckeditor" required name="summary"> {{$postcats->summary}}</textarea>
-                                            
+                                            <textarea required class="ckeditor" required name="summary"></textarea>
                                             <script type="text/javascript">
                                                 var editor = CKEDITOR.replace('summary', {
                                                     language: 'vi',
@@ -93,7 +125,7 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label>Summary English : </label>
-                                            <textarea required class="ckeditor" required name="summary_en">{{$postcats->summary_en}}</textarea>
+                                            <textarea required class="ckeditor" required name="summary_en"></textarea>
                                             <script type="text/javascript">
                                                 var editor = CKEDITOR.replace('summary_en', {
                                                     language: 'vi',
@@ -107,7 +139,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Nội Dung: </label>
-                                            <textarea required class="ckeditor" required name="content">{{$postcats->content}}</textarea>
+                                            <textarea required class="ckeditor" required name="content"></textarea>
                                             <script type="text/javascript">
                                                 var editor = CKEDITOR.replace('content', {
                                                     language: 'vi',
@@ -119,16 +151,34 @@
 
                                             </script>
                                         </div>
+
                                         <div class="form-group">
-                                            <label>Ảnh Banner :</label>
-                                            <input id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-                                            <img id="avatar" class="thumbnail" width="200px" src="{{Storage::url('public/upload/img/postcats/'.$postcats->avatar)}}">
+                                            <label>Content English: </label>
+                                            <textarea required class="ckeditor" required name="content_en"></textarea>
+                                            <script type="text/javascript">
+                                                var editor = CKEDITOR.replace('content_en', {
+                                                    language: 'vi',
+                                                    filebrowserImageBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Images',
+                                                    filebrowserFlashBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Flash',
+                                                    filebrowserImageUploadUrl: '../../editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                                                    filebrowserFlashUploadUrl: '../../editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+                                                });
+
+                                            </script>
+                                        </div>
+                                      
+                                        <div class="form-group">
+                                            <label>Ảnh Tài Liệu :</label>
+                                            <input required id="img" type="file" name="img" class="form-control hidden"
+                                                onchange="changeImg(this)">
+                                            <img id="avatar" class="thumbnail" width="200px" src="{{ asset('/dist/img/imgdefault.png') }}">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
-                        {{csrf_field()}}
+                        {{ csrf_field() }}
                     </form>
                     <div class="clearfix"></div>
                 </div>
