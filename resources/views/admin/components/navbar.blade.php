@@ -24,20 +24,18 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)">
-                <i class="fas fa-user-alt"></i>&nbsp;&nbsp;
-                <span class="text-info">{{Auth::user()->username}}</span>
-                &nbsp;&nbsp;<i class="fas fa-angle-down"></i>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">
+                <i class="fas fa-user-alt"></i> <span class="text-info">{{Auth::user()->username}}</span>
             </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" role="menu">
                 <div class="dropdown-divider"></div>
                 <a href="{{asset('logout')}}" class="dropdown-item text-danger">
                     <i class="fas fa-sign-out-alt"></i>
                     Logout
                 </a>
-            </div>
-        </li>
+            </ul>
+        </div>
     </ul>
 </nav>
 <!-- /.navbar -->

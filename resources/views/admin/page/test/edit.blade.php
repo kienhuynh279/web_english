@@ -15,14 +15,11 @@
                 <div class="w-100">
                     <select class="form-control" name="code" id="code">
                         <option value="" aria-readonly="true">Ấn để chọn</option>
-                        {{-- @foreach ($TestCategoryData as $item)
-                        <option value="{{ $item['id'] }}" aria-readonly="true" {{ ($item['id'] == $data['code']) ? "selected" : "" }}>{{ $item['title'] }}</option>
-                        @endforeach --}}
                         @isset($TestCategoryData)
                         @foreach ($TestCategoryData as $item)
                         <optgroup label="{{ $item->title }}">
                             @foreach($item->child as $child_item)
-                            <option value="{{ $item->id.$child_item->id.$data->id }}" {{ ($item->id.$child_item->id.$data->id == $data['code']) ? "selected" : "" }}>{{ $child_item->title }}</option>
+                            <option value="1{{ ($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id).$data->id }}" {{ ("1".($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id).$data->id == $data['code']) ? "selected" : "" }}>{{ $child_item->title }}</option>
                             @endforeach
                         </optgroup>
                         @endforeach

@@ -97,10 +97,11 @@ class TestController extends Controller
     {
         $test = Test::find($id);
 
-        if ($request->input('status') == null) $request->merge(['status' => 0]);
+
+        if ($request->status == null) $request->merge(['status' => 0]);
         else $request->merge(['status' => 1]);
 
-        if ($request->input('high_flg') == null) $request->merge(['status' => 0]);
+        if ($request->input('high_flg') == null) $request->merge(['high_flg' => 0]);
         else $request->merge(['high_flg' => 1]);
 
         $test->update($request->input());
