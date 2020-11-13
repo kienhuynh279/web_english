@@ -53,9 +53,8 @@ class MakeTestController extends Controller
         $blog->id_theforms_cat = $request->get("Cate_Id");
         $blog->summary = $request->get("Summary");
         $blog->summary_en = $request->get("Summary_en");
-        $blog->content = $request->json_encode(explode("-",$request->get("Content")));
-       
-     
+        
+        $blog->content = json_encode(explode("-",$request->get("Content")));
         $blog->meta_description = $request->get("Meta_Desc");
         $blog->meta_title = $request->get("Meta_Title");
         $blog->del_flg = $request->get("Del_Flg");

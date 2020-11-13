@@ -255,28 +255,27 @@
             </div>
              <div class="col-sm-6">
                 <div class="card">
-                            <div class="card-header bg-white">
-                                <div class="media">
-                                    <div class="media-left media-middle">
-                                        <a href="">
-                                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt="Card image cap" width="100" class="rounded"> 
-                                        </a>
-                                    </div>
-                                    <div class="media-body media-middle">
-                                        <h4 class="card-title"><a href="instructor-course-edit.html">Npm &amp; Gulp Advanced Workflow</a></h4>
-                                        {{-- <span class="badge badge-primary ">$4</span> <span class="badge badge-light ">12 SALES</span> --}}
-                                    </div>
-                                    <div class="media-right media-middle">
-                                        <a href="instructor-course-edit.html" class="btn btn-sm btn-white">Làm bài</a>
-                                    </div>
-                                </div>
+                    <div class="card-header bg-white">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="">
+                                    <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt="Card image cap" width="100" class="rounded"> 
+                                </a>
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4 class="card-title"><a href="instructor-course-edit.html">Npm &amp; Gulp Advanced Workflow</a></h4>
+                            </div>
+                            <div class="media-right media-middle">
+                                <a href="instructor-course-edit.html" class="btn btn-sm btn-white">Làm bài</a>
                             </div>
                         </div>
+                    </div>
+                </div>
             </div>
              <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header bg-white">
-                        <div class="media">
+                                <div class="media">
                                     <div class="media-left media-middle">
                                         <a href="">
                                             <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt="Card image cap" width="100" class="rounded"> 

@@ -54,7 +54,7 @@
     <label for="example-select">Nổi Bật (Client): </label>
       <select class="form-control" id="example-select" name="Del_Flg">
           <option value="1" {{ ($form->Del_flg ?? '') === 1 ? 'selected' : '' }}>Nổi bật</option>
-          <option value="1" {{ ($form->Del_flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
+          <option value="0" {{ ($form->Del_flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
       </select>
   </div>
 
@@ -62,7 +62,7 @@
     <label for="example-select">Nổi Bật (Admin): </label>
       <select class="form-control" id="example-select" name="Hight_Flg">
           <option value="1" {{ ($form->Hight_Flg ?? '') === 1 ? 'selected' : '' }}>Nổi bật</option>
-          <option value="1" {{ ($form->Hight_Flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
+          <option value="0" {{ ($form->Hight_Flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
       </select>
   </div>
 
