@@ -1,9 +1,10 @@
 
-  <div class="form-group col-sm-6">
-    <x-input-form type="text" id="title" label="Tiêu đề" name="Title" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->title ?? ''" />
-      <div class="col-lg-12 messages text-danger"></div>
-  </div>
+
+   <div class="form-group col-sm-6">
+                        <label>Tên tin tức : </label>
+                                            <input required type="text" id="title" name="Title" class="form-control"
+                                                placeholder="Tên tin tức">
+                                        </div>
   <div class="form-group col-sm-6">
     <x-input-form type="text" id="title_en" label="Tiêu đề English:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề"
       :value="$blog->title_en ?? ''" />
@@ -92,10 +93,11 @@
       :value="$blog->position ?? ''" />
   </div>
 
-  <div class="form-group col-sm-6">
-    <x-input-form type="text" label="Slug" id="slug" name="Slug" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->slug ?? ''" />
-  </div>
+                                       <div class="form-group col-sm-6">
+                                            <label>Slug : </label>
+                                            <input required type="text" id="slug" name="Slug" class="form-control"
+                                                placeholder="Slug...">
+                                        </div>
 </form>
 
  <script>
