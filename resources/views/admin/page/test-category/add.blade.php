@@ -47,7 +47,7 @@
             <div class="form-check col-md-6 px-3">
                 <label class="w-100" for="status">Trạng thái</label>
                 <div class="form-control d-flex gap-2 align-items-center" style="gap: 5px;">
-                    <input type="checkbox" id="status" name="status">
+                    <input type="checkbox" id="status" name="status" checked>
                     <label class="form-check-label flex-grow-1" for="status">Hiện</label>
                 </div>
             </div>

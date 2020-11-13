@@ -19,7 +19,7 @@
                         @foreach ($TestCategoryData as $item)
                         <optgroup label="{{ $item->title }}">
                             @foreach($item->child as $child_item)
-                            <option value="{{ $item->id.$child_item->id }}">{{ $child_item->title }}</option>
+                            <option value="1{{ ($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id) }}">{{ $child_item->title }}</option>
                             @endforeach
                         </optgroup>
                         @endforeach
@@ -124,6 +124,13 @@
                 <label class="w-100" for="content" style="padding-top: 7px;">Nội dung</label>
                 <div class="md-form">
                     <textarea id="content" name="content" class="md-textarea form-control"></textarea>
+                </div>
+                <div class=" col-lg-12 messages text-danger"></div>
+            </div>
+            <div class="form-group col-md-6 px-3">
+                <label class="w-100" for="content_en" style="padding-top: 7px;">Nội dung bằng tiếng anh</label>
+                <div class="md-form">
+                    <textarea id="content_en" name="content_en" class="md-textarea form-control"></textarea>
                 </div>
                 <div class=" col-lg-12 messages text-danger"></div>
             </div>

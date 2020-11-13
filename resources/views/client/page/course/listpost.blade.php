@@ -342,9 +342,15 @@
                                                 <h3 class="simple-card-title">{{ $item->title }}</h3>
                                         </a>
                                         <p class="simple-card-desc">{!! $item->summary !!}</p>
-                                        <a class="" href="downloads/test.zip">
-                                            <button class="download-form-submit">Tải về</button>
+                                        @if($item->dowload == 1)
+                                            <a class="" href="">
+                                                <button  class="download-form-submit">Tải về</button> 
+                                            </a>
+                                        @else
+                                        <a class="" href="">
+                                            <button disabled class="download-form-submit">Tải về</button> 
                                         </a>
+                                        @endif
                                         <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
                                     </div>
                                 </div>
@@ -356,7 +362,6 @@
     <!-- Không cho copy hình -->
     <script type="text/javascript" src="https://sites.google.com/site/bituotblog/disable-copy.js"></script>
     <style>
-    body
     {
     -moz-user-select: none !important;
     -webkit-touch-callout: none!important;
@@ -373,3 +378,4 @@
         {(message);return false;}}} if (document.layers) {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=defeatNS;} 
         else{document.onmouseup=defeatNS;document.oncontextmenu=defeatIE;} document.oncontextmenu=new Function("return false")
     </script>     
+
