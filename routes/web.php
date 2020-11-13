@@ -188,11 +188,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     
             Route::post('/add', 'BlogsController@postAdd')->name('adminNewPostAdd');
     
-<<<<<<< HEAD
             Route::get('/edit', 'BlogsController@getEdit')
-=======
-            Route::get('/edit/{id}', 'BlogsController@getEdit')
->>>>>>> 1c3dec6f881cd1df1e1983d9128a8b02691ab776
                 ->name('adminNewGetEdit')
                 ->where(['id' => '[0-9]+']);
     
@@ -200,16 +196,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->name('adminNewPutEdit')
                 ->where(['id' => '[0-9]+']);
     
-<<<<<<< HEAD
-            Route::get('/delete/{id}', 'BlogsController@delete')
-=======
             Route::post('/delete/{id}', 'BlogsController@delete')
->>>>>>> 1c3dec6f881cd1df1e1983d9128a8b02691ab776
-                ->name('adminNewDelete')
-                ->where(['id' => '[0-9]+']);
-        });
-    
-        Route::group(['prefix' => 'make-test'], function () {
+                ->name('adminNewDelete');
+        });   
+      
+                
+             Route::group(['prefix' => 'make-test'], function () {
     
             Route::get('/', 'MakeTestController@index')->name('adminMakeTest');
     
@@ -221,7 +213,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     }); 
 });
 
-<<<<<<< HEAD
     Route::group(['prefix' => 'news'], function () {
 
         Route::get('/', 'BlogsController@index')->name('adminNew');
@@ -253,6 +244,3 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
 
     });
 
-=======
-   
->>>>>>> 1c3dec6f881cd1df1e1983d9128a8b02691ab776

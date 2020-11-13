@@ -34,7 +34,7 @@
                                         <div class="form-group">
                                             <label>Thuộc Danh Mục : </label>
                                             <select required name="id_thepost_cat" class="form-control">
-                                                <option value="0">Không thuộc mục nào</option>
+                                                <option value="">Chọn danh mục tài liệu</option>
                                                 @foreach ($postcatslist as $list)
                                                     <option value="{{$list->id}}">{{$list->title}}</option>
                                                 @endforeach
