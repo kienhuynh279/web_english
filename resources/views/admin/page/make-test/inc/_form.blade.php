@@ -67,11 +67,11 @@
   </div>
 
    <div class="form-group col-sm-6">
-    <x-input-form type="text" label="Slug" name="Rating" classGroup="col-md" class="" placeholder="Tiêu đề"
+    <x-input-form type="text" label="Rating" name="Rating" classGroup="col-md" class="" placeholder="Tiêu đề"
       :value="$form->slug ?? ''" />
   </div>
    <div class="form-group col-sm-6">
-    <x-input-form type="text" label="Slug" name="Discount" classGroup="col-md" class="" placeholder="Tiêu đề"
+    <x-input-form type="text" label="Discout" name="Discount" classGroup="col-md" class="" placeholder="Tiêu đề"
       :value="$form->slug ?? ''" />
   </div>
 
