@@ -24,7 +24,8 @@ class FormCategory extends Model
         'create_at',
         'vi_tri',
         'position',
-        'slug'
+        'slug',
+        'parent_id'
     ];
 
     public function Form()

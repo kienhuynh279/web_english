@@ -1,33 +1,44 @@
 @extends('admin.master')
-@section('title','Danh sách bài kiểm tra')
+@section('title','Danh sách loại bài kiểm tra')
 @section('main')
 <div class="card">
     <div class="card-header">
-        <a href="{{ route('adminMakeTestGetAdd') }}" class="btn btn-sm btn-primary">Thêm tin tức</a>
+        <a href="{{ route('adminFormCateGetAdd') }}" class="btn btn-sm btn-primary">Thêm loại bài kiểm tra</a>
     </div>
     <div class="card-body">
         <table id="dataTable" class="table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
-                    <th>Tên Bài Kiểm Tra</th>
-                    <th>Mô tả ngắn</th>
+                    <th>Mã loại</th>
+                    <th>Tên Loại Bài Kiểm Tra</th>
+                    <th>Danh mục cha</th>
                     <th>Trạng thái</th>
                     <th>Ngày đăng</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-            @forelse ($forms as $form)
+            @forelse ($cates as $cate)
                 <tr>
-                    <th>{{ $form->title }}</th>
-                    <th>{{ $form->summary }}</th>
-                    <th>{{ $form->status }}</th>
-                    <th>{{ $form->created_at }}</th>
+                    <th>{{ $cate->id }}</th>
+                    <th>{{ $cate->title }}</th>
+                    @if ($cate->parent_id == 0)
+                    <td>Không thuộc danh mục nào</td>
+                    @else
+                    @foreach ($cates as $sub_item)
+                    @if ($cate->parent_id == $sub_item->id)
+                    <td>{{ $sub_item->title }}</td>
+                    @break
+                    @endif
+                    @endforeach
+                    @endif
+                    <th>{{ $cate->status }}</th>
+                    <th>{{ $cate->created_at }}</th>
                     <th>
-                        <a href="{{ route('adminMakeTestGetEdit', $form->id) }}" class="btn btn-sm btn-primary">
+                        <a href="{{ route('adminFormCateGetEdit', $cate->id) }}" class="btn btn-sm btn-primary">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <form class="d-inline" action={{ route('adminMakeTestDelete',$form->id) }} method="POST">
+                        <form class="d-inline" action={{ route('adminFormCateDelete',$cate->id) }} method="POST">
                             @csrf
                             <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i>
                             </button>

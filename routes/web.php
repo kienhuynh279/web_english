@@ -220,6 +220,27 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
             Route::post('/delete/{id}', 'MakeTestController@destroy')
                 ->name('adminMakeTestDelete')
                 ->where(['id' => '[0-9]+']);
-        });    
+        });
+
+        Route::group(['prefix' => 'form-category'], function () {
+    
+            Route::get('/', 'FormCategoryController@index')->name('adminFormCate');
+    
+            Route::get('/add-form-category', 'FormCategoryController@create')->name('adminFormCateGetAdd');
+    
+            Route::post('/add', 'FormCategoryController@store')->name('adminFormCatePostAdd');
+
+            Route::get('/edit/{id}', 'FormCategoryController@edit')
+                ->name('adminFormCateGetEdit')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', 'FormCategoryController@update')
+                ->name('adminFormCatePutEdit')
+                ->where(['id' => '[0-9]+']);
+    
+            Route::post('/delete/{id}', 'FormCategoryTestController@destroy')
+                ->name('adminFormCateDelete')
+                ->where(['id' => '[0-9]+']);
+        });
     }); 
 });
