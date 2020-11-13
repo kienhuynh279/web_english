@@ -1,16 +1,16 @@
 
   <div class="form-group col-sm-6">
     <x-input-form type="text" label="Tiêu đề" name="Title" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->title ?? ''" />
+      :value="$form->title ?? ''" />
   </div>
   <div class="form-group col-sm-6">
     <x-input-form type="text" label="Tiêu đề English:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->title_en ?? ''" />
+      :value="$form->title_en ?? ''" />
   </div>
 
   <div class="form-group col-sm-6">
     <x-input-form type="text" label="Tiêu đề English:" name="Cate_Id" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->title_en ?? ''" />
+      :value="$form->title_en ?? ''" />
   </div>
 
   <div class="form-group col-sm-6">
@@ -42,72 +42,50 @@
 
   <div class="form-group col-sm-6">
     <x-input-form type="text" label="Description Meta:" name="Meta_Desc" classGroup="col-md" class="" placeholder="Meta Description"
-      :value="$blog->meta_description ?? ''" />
+      :value="$form->meta_description ?? ''" />
   </div>
 
   <div class="form-group col-sm-6">
     <x-input-form type="text" label="Title Meta:" name="Meta_Title" classGroup="col-md" class="" placeholder="Meta Title"
-      :value="$blog->meta_title ?? ''" />
+      :value="$form->meta_title ?? ''" />
   </div>
 
   <div class="form-group col-sm-6">
     <label for="example-select">Nổi Bật (Client): </label>
       <select class="form-control" id="example-select" name="Del_Flg">
-          <option value="1" {{ ($blog->Del_flg ?? '') === 1 ? 'selected' : '' }}>Nổi bật</option>
-          <option value="1" {{ ($blog->Del_flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
+          <option value="1" {{ ($form->Del_flg ?? '') === 1 ? 'selected' : '' }}>Nổi bật</option>
+          <option value="1" {{ ($form->Del_flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
       </select>
   </div>
 
   <div class="form-group col-sm-6">
     <label for="example-select">Nổi Bật (Admin): </label>
       <select class="form-control" id="example-select" name="Hight_Flg">
-          <option value="1" {{ ($blog->Hight_Flg ?? '') === 1 ? 'selected' : '' }}>Nổi bật</option>
-          <option value="1" {{ ($blog->Hight_Flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
+          <option value="1" {{ ($form->Hight_Flg ?? '') === 1 ? 'selected' : '' }}>Nổi bật</option>
+          <option value="1" {{ ($form->Hight_Flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
       </select>
   </div>
 
    <div class="form-group col-sm-6">
     <x-input-form type="text" label="Slug" name="Rating" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->slug ?? ''" />
+      :value="$form->slug ?? ''" />
   </div>
    <div class="form-group col-sm-6">
     <x-input-form type="text" label="Slug" name="Discount" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->slug ?? ''" />
+      :value="$form->slug ?? ''" />
   </div>
 
   <div class="form-group col-sm-3">
     <x-input-form type="text" label="Checked" name="Checked" classGroup="col-md" class="" placeholder="Checked"
-      :value="$blog->checked ?? ''" />
+      :value="$form->checked ?? ''" />
   </div>
 
   <div class="form-group col-sm-3">
     <x-input-form type="text" label="Chức vụ" name="Position" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->position ?? ''" />
+      :value="$form->position ?? ''" />
   </div>
 
   <div class="form-group col-sm-6">
     <x-input-form type="text" label="Slug" name="Slug" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->slug ?? ''" />
+      :value="$form->slug ?? ''" />
   </div>
-
-  <script>
-    let form = [
-        { id: "form", content: "" },
-    ]
-
-    // get all question input
-    $('input[data-type^="form"]').each(function (index, item) {
-        item.addEventListener("input", function() {
-            let id = this.attributes['data-type'].value;
-
-            form.forEach(i => { if (i.id == id) i.content = this.value; });
-
-            let questionArr = [];
-            form.map(i => questionArr.push(i.content));
-
-            $('#question').val(JSON.stringify(questionArr));
-
-            pushQuestionDataToSelectAnswer();
-        });
-    });
-  </script>

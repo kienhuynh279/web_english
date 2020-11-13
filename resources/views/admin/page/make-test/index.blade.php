@@ -17,19 +17,21 @@
                 </tr>
             </thead>
             <tbody>
-            @forelse ($forms ?? [] as $form)
+            @forelse ($forms as $form)
                 <tr>
                     <th>{{ $form->title }}</th>
                     <th>{{ $form->summary }}</th>
                     <th>{{ $form->status }}</th>
                     <th>{{ $form->created_at }}</th>
                     <th>
-                        <button class="btn btn-sm btn-secondary">
-                            <a href="#"><i class="fas fa-edit"></i></a> 
-                        </button>
-                        <button disabled class="btn btn-sm btn-secondary">
-                            <i class="fas fa-trash"></i>
-                        </button>
+                        <a href="{{ route('adminMakeTestGetEdit', $form->id) }}" class="btn btn-sm btn-primary">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <form class="d-inline" action={{ route('adminMakeTestGetEdit',$form->id) }} method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i>
+                            </button>
+                        </form>
                     </th>
                 </tr>
             @empty 

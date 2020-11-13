@@ -15,7 +15,7 @@ class FormCategoryController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
