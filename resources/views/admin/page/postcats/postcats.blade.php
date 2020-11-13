@@ -14,6 +14,7 @@
                     <th>Têm Danh Mục : </th>
                     <th>Vị Trí (Danh Mục Con) : </th>
                     <th>Ảnh : </th>
+                   
                     <th>Status (Client) : </th>
                     <th>Del_Flag (Admin) : </th>
                     <th>Tùy Chọn : </th>
@@ -38,6 +39,7 @@
                     <td>
                         <img width="100px" src="{{Storage::url('/upload/img/postcats/'.$item->avatar)}}" class="thumbnail">
                     </td>
+                  
                     <td>{{$item->status}}</td>
                     <td>{{$item->del_flg}}</td>
                     <td>

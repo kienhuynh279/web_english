@@ -36,26 +36,26 @@
                                         <div class="form-group">
                                             <label>Del_flg (Admin)</label>
                                             <select required name="del_flg" class="form-control">
-                                                <option value="1" @if($banner->del_flg==1) checked @endif>Bật</option>
-											    <option value="0" @if($banner->del_flg==0) checked @endif>Tắt</option>
+                                                <option value="1" @if($banner->del_flg==1) selected @endif>Bật</option>
+											    <option value="0" @if($banner->del_flg==0) selected @endif>Tắt</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Trạng thái (Client)</label>
                                             <select required name="status" class="form-control">
-                                                <option value="1" @if($banner->status==1) checked @endif>Bật</option>
-											    <option value="0" @if($banner->status==0) checked @endif>Tắt</option>
+                                                <option value="1" @if($banner->status==1) selected @endif>Bật</option>
+											    <option value="0" @if($banner->status==0) selected @endif>Tắt</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Type :</label>
                                             <select required name="Type" class="form-control">
-                                                <option value="1" @if($banner->Type==0) checked @endif>Trang Chủ</option>
-                                                <option value="0" @if($banner->Type==1) checked @endif>Trang 2</option>
-                                                <option value="1" @if($banner->Type==2) checked @endif>Trang 3</option>
-											    <option value="0" @if($banner->Type==3) checked @endif>Trang 4</option>
+                                                <option value="1" @if($banner->Type==0) selected @endif>Trang Chủ</option>
+                                                <option value="0" @if($banner->Type==1) selected @endif>Trang 2</option>
+                                                <option value="1" @if($banner->Type==2) selected @endif>Trang 3</option>
+											    <option value="0" @if($banner->Type==3) selected @endif>Trang 4</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -77,10 +77,10 @@
                                             <script type="text/javascript">
                                                 var editor = CKEDITOR.replace('summary', {
                                                     language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
+                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
+                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
                                                 });
 
                                             </script>
@@ -98,10 +98,10 @@
                                             <script type="text/javascript">
                                                 var editor = CKEDITOR.replace('summary_en', {
                                                     language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
+                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
+                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
                                                 });
 
                                             </script>
@@ -112,10 +112,10 @@
                                             <script type="text/javascript">
                                                 var editor = CKEDITOR.replace('content', {
                                                     language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
+                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
+                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
                                                 });
 
                                             </script>
@@ -126,10 +126,10 @@
                                             <script type="text/javascript">
                                                 var editor = CKEDITOR.replace('content_en', {
                                                     language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
+                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
+                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
                                                 });
 
                                             </script>

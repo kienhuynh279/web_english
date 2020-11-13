@@ -46,6 +46,7 @@ class PostsController extends Controller
             $posts->position = $request->position;
             $posts->rating = $request->rating;
             $posts->discount = $request->discount;
+            $posts->dowload = $request->dowload;
             $posts->id_thepost_cat = $request->id_thepost_cat;
             $posts->avatar = $filename;
             $request->img->storeAs('public/upload/img/posts',$filename);         
@@ -77,6 +78,7 @@ class PostsController extends Controller
         $arr['position'] = $request->position;
         $arr['rating'] = $request->rating;
         $arr['discount'] = $request->discount;
+        $arr['dowload'] = $request->dowload;
         $arr['id_thepost_cat'] = $request->id_thepost_cat;
         if($request->hasFile('img')){
             $img = $request->img->getClientOriginalName();

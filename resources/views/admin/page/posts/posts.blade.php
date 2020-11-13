@@ -14,6 +14,7 @@
                         <th>Têm Tài Liệu : </th>
                         <th>Thuộc Danh Mục : </th>
                         <th>Ảnh : </th>
+                        <th>Dowload : </th>
                         <th>Status (Client) : </th>
                         <th>Del_Flag (Admin) : </th>
                         <th>Nổi Bật : </th>
@@ -36,6 +37,13 @@
                         <td>
                               <img width="100px" src="{{Storage::url('upload/img/posts/'.$item->avatar)}}" class="thumbnail">
                         </td>
+
+                         @if($item->dowload == 0 )
+                              <td>Không được Dowload</td>
+                         @else
+                              <td>Được Dowload</td>
+                         @endif
+
                         <td>{{$item->status}}</td>
                         <td>{{$item->del_flg}}</td>
                         <td>{{$item->hight_flg}}</td>
@@ -52,6 +60,7 @@
                          <th>Têm Tài Liệu : </th>
                          <th>Thuộc Danh Mục : </th>
                          <th>Ảnh : </th>
+                         <th>Dowload : </th>
                          <th>Status (Client) : </th>
                          <th>Del_Flag (Admin) : </th>
                          <th>Nổi Bật : </th>

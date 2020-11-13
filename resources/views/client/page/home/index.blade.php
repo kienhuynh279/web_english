@@ -319,22 +319,21 @@
           <!-- single course -->
           <div class="col-lg-12">
             <div class="owl-carousel active_course">
+            @foreach($blog as $item)
               <div class="single_course">
                 <div class="course_head">
-                  <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
+                  <img class="img-fluid" src="{{Storage::url('upload/img/blog/',$blog->avatar)}}" alt="" />
                 </div>
                 <div class="course_content">
                   <span class="tag mb-4 d-inline-block">Mẹo</span>
                   <h4 class="mb-3">
-                    <a href="{{ route('newsDetail') }}">6 Mẹo học anh văn nhanh nhất</a>
+                    <a href="{{ route('newsDetail') }}">{{ $item->title }}</a>
                   </h4>
-                  <p>
-                    Ngay bây giờ học thật tốt anh văn với 6 mẹ sau
-                  </p>
+                  <p>{!! $item->summary !!}</p>
                   <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
                     <div class="authr_meta">
                       <span class="d-inline-block ml-2">
-                        <i class="ti-time mr-2">20/10</i>
+                        <i class="ti-time mr-2">{{ $item->created_at->format('d/m/y') }}</i>
                       </span>
                     </div>
                     <div class="mt-lg-0 mt-3">
@@ -351,72 +350,7 @@
                   </div>
                 </div>
               </div>
-
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
-                </div>
-                <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">Mẹo</span>
-                  <h4 class="mb-3">
-                    <a href="{{ route('newsDetail') }}">6 Mẹo học anh văn nhanh nhất</a>
-                  </h4>
-                  <p>
-                    Ngay bây giờ học thật tốt anh văn với 6 mẹ sau
-                  </p>
-                  <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                    <div class="authr_meta">
-                      <span class="d-inline-block ml-2">
-                        <i class="ti-time mr-2">20/10</i>
-                      </span>
-                    </div>
-                    <div class="mt-lg-0 mt-3">
-                      <span class="meta_info">
-                        <a href="#"><i class="ti-heart mr-2"></i></a>
-                      </span>
-                      <span class="meta_info">
-                        <a href="#"><i class="ti-comment mr-2"></i></a>
-                      </span>
-                      <span class="meta_info">
-                        <a href="#"><i class="ti-share mr-2"></i></a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
-                </div>
-                <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">Mẹo</span>
-                  <h4 class="mb-3">
-                    <a href="{{ route('newsDetail') }}">6 Mẹo học anh văn nhanh nhất</a>
-                  </h4>
-                  <p>
-                    Ngay bây giờ học thật tốt anh văn với 6 mẹ sau
-                  </p>
-                  <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                    <div class="authr_meta">
-                      <span class="d-inline-block ml-2">
-                        <i class="ti-time mr-2">20/10</i>
-                      </span>
-                    </div>
-                    <div class="mt-lg-0 mt-3">
-                      <span class="meta_info">
-                        <a href="#"><i class="ti-heart mr-2"></i></a>
-                      </span>
-                      <span class="meta_info">
-                        <a href="#"><i class="ti-comment mr-2"></i></a>
-                      </span>
-                      <span class="meta_info">
-                        <a href="#"><i class="ti-share mr-2"></i></a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            @endforeach
             </div>
           </div>
         </div>

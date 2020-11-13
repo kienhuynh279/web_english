@@ -40,22 +40,17 @@ class CourseController extends Controller
         ]);
     }
     
-    public function getOnthicc()
+    public function getListPost( $slug1, $slug2)
     {
-        $hight_flg = Post::where('hight_flg',1)->orderBy('id','desc')->take(6)->get();
+        $postcat = PostCats::where('slug', $slug2)->first();
+        $post = Post::where(['id_thepost_cat' => $postcat->id])->get();
         return view('client.index', [
             'title' => 'Tài Liệu Ket',
-            'page' => 'course.onthicc',
+            'page' => 'course.listpost',
             'data' => [
-                'hight_flg' => $hight_flg
+                'postcat' => $postcat,
+                'post' => $post,
            ]
         ]);
-    }
-    // public function getKET($id)
-    // {
-    //     $data ['cateName'] = PostCats::find($id);
-    //     return view('client.index','client.page.course.KET',$data);
-    // }
-   
-   
+    } 
 }
