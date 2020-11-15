@@ -72,57 +72,6 @@
                         @endif
                         @endforeach
                         @endif
-                        {{-- <li><a href="{{ route('home') }}" class="nav-link">Trang chủ</a> </li>
-                        <li>
-                            <a href="#">Ôn thi</a>
-                            <ul class="menu-sub">
-                                <li><a href="{{ route('courseList') }}">Ôn thi chứng chỉ</a>
-                                    <ul class="menu-sub">
-                                        <li><a href="{{ route('courseList') }}">KET</a> </li>
-                                        <li><a href="{{ route('courseList') }}">PET</a> </li>
-                                        <li><a href="{{ route('courseList') }}">TOEIC</a> </li>
-                                        <li><a href="{{ route('courseList') }}">IELTS</a> </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="{{ route('courseList') }}">Ôn thi vào lớp 10</a>
-                                    <ul class="menu-sub">
-                                        <li><a href="{{ route('course') }}">Luyện đề thi</a> </li>
-                                        <li><a href="{{ route('course') }}">Luyện theo dạng đề</a> </li>
-                                        <li><a href="{{ route('course') }}">Luyện theo chuyên đề</a> </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="{{ route('courseList') }}">Ôn thi THPT</a>
-                                    <ul class="menu-sub">
-                                        <li><a href="{{ route('course') }}">Luyện đề thi</a> </li>
-                                        <li><a href="{{ route('course') }}">Luyện theo dạng đề</a> </li>
-                                        <li><a href="{{ route('course') }}">Luyện theo chuyên đề</a> </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="{{ route('courseList') }}">Ôn thi ĐH</a>
-                                    <ul class="menu-sub">
-                                        <li><a href="{{ route('course') }}">Luyện đề thi</a> </li>
-                                        <li><a href="{{ route('course') }}">Luyện theo dạng đề</a> </li>
-                                        <li><a href="{{ route('course') }}">Luyện theo chuyên đề</a> </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="{{ route('courseList') }}">Tiếng anh chuyên ngành</a>
-                                    <ul class="menu-sub">
-                                        <li><a href="{{ route('course') }}">Điện lạnh</a> </li>
-                                        <li><a href="{{ route('course') }}">Điện công nghiệp & dân dụng</a> </li>
-                                        <li><a href="{{ route('course') }}">Thư tín thương mại</a> </li>
-                                        <li><a href="{{ route('course') }}">Nhà hàng khách sạn</a> </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="{{ route('news') }}">Tin tức</a> </li>
-                        <li><a href="{{ route('contact') }}">Liên hệ</a> </li> --}}
-                        {{-- <li><a href="{{ route('login') }}">Đăng nhập</a> </li>
-                        --}}
                         <li>
                             <a href="#" id="search">
                                 <i class="ti-search"></i>

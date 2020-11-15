@@ -1,25 +1,26 @@
 
-
-   <div class="form-group col-sm-6">
-                        <label>Tên tin tức : </label>
-                                            <input required type="text" id="title" name="Title" class="form-control"
-                                                placeholder="Tên tin tức">
-                                        </div>
+  <div class="form-group col-sm-6">
+    <x-input-form type="text" id="title" label="Tiêu đề" name="Title" classGroup="col-md" class="" placeholder="Tiêu đề"
+      :value="$blog->title ?? ''" />
+      <div class="col-lg-12 messages text-danger"></div>
+  </div>
   <div class="form-group col-sm-6">
     <x-input-form type="text" id="title_en" label="Tiêu đề English:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề"
       :value="$blog->title_en ?? ''" />
   </div>
-
-  <div class="form-group col-sm-6">
-    <label for="example-select">Chọn loại tin tức</label>
-      <select class="form-control" id="example-select" name="Cate_Id">
-        @foreach ($cate as $cate)
-          <option value="{{ $cate->id_blog_cat }}"> {{ $cate->title }}</option>
-        @endforeach
-      </select>
-  </div>
-
-  <div class="form-group col-sm-6">
+  <div class="form-group col-md-12 px-3">
+                <label class="col-sm-2" for="ParentId" style="padding-top: 7px;">Danh mục cha</label>
+                <div class="w-100">
+                    <select class="form-control" name="parent_id" id="ParentId">
+                        <option value="0" selected>Không thuộc danh mục nào</option>
+                        @foreach ($cates as $cate)
+                            <option value="{{ $cate->id }}">{{ $cate->title }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-lg-12 messages text-danger"></div>
+            </div>
+  <div class="form-group col-sm-12">
     <label>Ảnh Đại Diện :</label>
     <input required id="img" type="file" name="Avatar" class="form-control hidden" onchange="changeImg(this)">
     <img id="avatar" class="thumbnail" width="200px" src="{{ asset('/dist/img/imgdefault.png') }}">
@@ -42,21 +43,6 @@
       <div class="col-lg-12 messages text-danger"></div>
     </div>
 
-    <div class="form-group col-sm-6 px-3">
-      <label class="w-100" for="summary" style="padding-top: 7px;">Nội dung bằng tiếng anh:</label>
-          <div class="md-form">
-            <textarea id="content" name="Content" class="md-textarea form-control">{{ $blog->content ?? old('content') }}</textarea>
-          </div>
-      <div class="col-lg-12 messages text-danger"></div>
-    </div>
-    <div class="form-group col-sm-6 px-3">
-      <label class="w-100" for="summary" style="padding-top: 7px;">Nội dung bằng tiếng anh:</label>
-          <div class="md-form">
-            <textarea id="content_en" name="Content_en" class="md-textarea form-control">{{ $blog->content_en ?? old('content_en') }}</textarea>
-          </div>
-      <div class="col-lg-12 messages text-danger"></div>
-    </div>
-
   <div class="form-group col-sm-6">
     <x-input-form type="text" label="Description Meta:" name="Meta_Desc" classGroup="col-md" class="" placeholder="Checked"
       :value="$blog->meta_description ?? ''" />
@@ -71,20 +57,12 @@
     <label for="example-select">Nổi Bật (Client): </label>
       <select class="form-control" id="example-select" name="Del_Flg">
           <option value="1" {{ ($blog->Del_flg ?? '') === 1 ? '' : '' }}>Nổi bật</option>
-          <option value="1" {{ ($blog->Del_flg ?? '') === 0 ? '' : '' }}>Không nổi bật</option>
-      </select>
-  </div>
-
-  <div class="form-group col-sm-6">
-    <label for="example-select">Nổi Bật (Admin): </label>
-      <select class="form-control" id="example-select" name="Hight_Flg">
-          <option value="1" {{ ($blog->Hight_Flg ?? '') === 1 ? '' : '' }}>Nổi bật</option>
-          <option value="1" {{ ($blog->Hight_Flg ?? '') === 0 ? '' : '' }}>Không nổi bật</option>
+          <option value="0" {{ ($blog->Del_flg ?? '') === 0 ? '' : '' }}>Không nổi bật</option>
       </select>
   </div>
 
   <div class="form-group col-sm-3">
-    <x-input-form type="text" label="Checked" name="Checked" classGroup="col-md" class="" placeholder="Checked"
+    <x-input-form type="text" label="Checked" name="vi-tri" classGroup="col-md" class="" placeholder="Checked"
       :value="$blog->checked ?? ''" />
   </div>
 
@@ -93,11 +71,10 @@
       :value="$blog->position ?? ''" />
   </div>
 
-                                       <div class="form-group col-sm-6">
-                                            <label>Slug : </label>
-                                            <input required type="text" id="slug" name="Slug" class="form-control"
-                                                placeholder="Slug...">
-                                        </div>
+  <div class="form-group col-sm-6">
+    <x-input-form type="text" label="Slug" id="slug" name="Slug" classGroup="col-md" class="" placeholder="Tiêu đề"
+      :value="$blog->slug ?? ''" />
+  </div>
 </form>
 
  <script>

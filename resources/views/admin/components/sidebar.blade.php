@@ -98,13 +98,27 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route("adminMakeTest") }}" class="nav-link">
+                    <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-question"></i>
                         <p> 
                             Quản Lý Bài Kiểm Tra
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('adminFormCate') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Loại Bài Kiểm Tra</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('adminMakeTest') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh Sách Bài Kiểm tra</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>

@@ -188,59 +188,59 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     
             Route::post('/add', 'BlogsController@postAdd')->name('adminNewPostAdd');
     
-            Route::get('/edit', 'BlogsController@getEdit')
+            Route::get('/edit/{id}', 'BlogsController@getEdit')
                 ->name('adminNewGetEdit')
                 ->where(['id' => '[0-9]+']);
     
-            Route::post('/edit', 'BlogsController@putEdit')
+            Route::post('/edit/{id}', 'BlogsController@putEdit')
                 ->name('adminNewPutEdit')
                 ->where(['id' => '[0-9]+']);
     
             Route::post('/delete/{id}', 'BlogsController@delete')
-                ->name('adminNewDelete');
-        });   
-      
-                
-             Route::group(['prefix' => 'make-test'], function () {
+                ->name('adminNewDelete')
+                ->where(['id' => '[0-9]+']);
+        });
+    
+        Route::group(['prefix' => 'make-test'], function () {
     
             Route::get('/', 'MakeTestController@index')->name('adminMakeTest');
     
             Route::get('/make-test', 'MakeTestController@create')->name('adminMakeTestGetAdd');
     
             Route::post('/add', 'MakeTestController@store')->name('adminMakeTestPostAdd');
+
+            Route::get('/edit/{id}', 'MakeTestController@edit')
+                ->name('adminMakeTestGetEdit')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', 'MakeTestController@update')
+                ->name('adminMakeTestPutEdit')
+                ->where(['id' => '[0-9]+']);
     
-        });    
+            Route::post('/delete/{id}', 'MakeTestController@destroy')
+                ->name('adminMakeTestDelete')
+                ->where(['id' => '[0-9]+']);
+        });
+
+        Route::group(['prefix' => 'form-category'], function () {
+    
+            Route::get('/', 'FormCategoryController@index')->name('adminFormCate');
+    
+            Route::get('/add-form-category', 'FormCategoryController@create')->name('adminFormCateGetAdd');
+    
+            Route::post('/add', 'FormCategoryController@store')->name('adminFormCatePostAdd');
+
+            Route::get('/edit/{id}', 'FormCategoryController@edit')
+                ->name('adminFormCateGetEdit')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', 'FormCategoryController@update')
+                ->name('adminFormCatePutEdit')
+                ->where(['id' => '[0-9]+']);
+    
+            Route::post('/delete/{id}', 'FormCategoryTestController@destroy')
+                ->name('adminFormCateDelete')
+                ->where(['id' => '[0-9]+']);
+        });
     }); 
 });
-
-    Route::group(['prefix' => 'news'], function () {
-
-        Route::get('/', 'BlogsController@index')->name('adminNew');
-
-        Route::get('/add', 'BlogsController@getAdd')->name('adminNewGetAdd');
-
-        Route::post('/add', 'BlogsController@postAdd')->name('adminNewPostAdd');
-
-        Route::get('/edit/{id}', 'BlogsController@getEdit')
-            ->name('adminNewGetEdit')
-            ->where(['id' => '[0-9]+']);
-
-        Route::post('/edit', 'BlogsController@putEdit')
-            ->name('adminNewPutEdit')
-            ->where(['id' => '[0-9]+']);
-
-        Route::get('/delete/{id}', 'BlogsController@delete')
-            ->name('adminNewDelete')
-            ->where(['id' => '[0-9]+']);
-    });
-
-    Route::group(['prefix' => 'make-test'], function () {
-
-        Route::get('/', 'App\Http\Controllers\Admin\MakeTestController@index')->name('adminMakeTest');
-
-        Route::get('/make-test', 'App\Http\Controllers\Admin\MakeTestController@create')->name('adminMakeTestGetAdd');
-
-        Route::post('/add', 'App\Http\Controllers\Admin\MakeTestController@postAdd')->name('adminMakeTestPostAdd');
-
-    });
-

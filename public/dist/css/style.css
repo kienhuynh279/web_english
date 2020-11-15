@@ -6037,3 +6037,55 @@ section {
     background-color: hsl(0, 0%, 97%);
     color: hsl(171, 100%, 41%);
 }
+
+.media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+}
+
+.media-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.card .media-left {
+    padding-right: .625rem
+}
+
+.card .media-right {
+    padding-left: .625rem
+}
+
+.media-right {
+    padding-left: 1.25rem
+}
+
+.media-left {
+    padding-right: 1.25rem
+}
+
+.media-body p:last-child {
+    margin-bottom: 0
+}
+
+.media {
+    margin-top: 0
+}
+
+.card-title {
+    font-size: 1.25rem
+}
+
+.card-title>a {
+    color: #373a3c
+}
+
+.card-title>a:hover {
+    color: #2196f3;
+    text-decoration: none
+}

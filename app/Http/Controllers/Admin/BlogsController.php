@@ -31,7 +31,6 @@ class BlogsController extends Controller
        
         $blog = new Blogs();
         $filename = $request->Avatar->getClientOriginalName();
-        // $request->validated();
 
         $blog->title = $request->get("Title");
         $blog->title_en = $request->get("Title_en");
@@ -70,7 +69,6 @@ class BlogsController extends Controller
     {
         $blog = Blogs::findOrFail($id);
 
-        // $request->validated();
         $filename = $request->img->getClientOriginalName();
         $blog->title = $request->get("Title");
         $blog->title_en = $request->get("Title_en");

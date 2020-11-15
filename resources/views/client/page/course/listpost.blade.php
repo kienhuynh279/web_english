@@ -96,77 +96,6 @@
         </div>
     </div>
 </section>
-{{-- <section class="my-section-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-10">
-                <h2 class="my-title">Luyện Đề Thi</h2>
-            </div>
-            <div class="col-sm-2">
-                <a href="{{ route('course') }}" class="btn-arrow"><div class="arrow"></div>Xem thêm</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="simple-card">
-                    <a href="{{ route('courseDetail') }}">
-                        <div class="simple-card-image">
-                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
-                        </div>
-                        <div class="simple-card-content">
-                            <h3 class="simple-card-title">Applying for a Design Job</h3>
-                     </a>
-                             <p>Số câu: 40 câu</p>
-                            <p>Thời gian: 60 phút</p>
-                            <a class="" href="">
-                                <button type="submit" class="download-form-submit">Làm bài</button>
-                            </a>
-                        
-                        </div>
-                </div>
-            </div>
-             <div class="col-sm-4">
-                <div class="simple-card">
-                    <a href="{{ route('courseDetail') }}">
-                        <div class="simple-card-image">
-                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
-                        </div>
-                        <div class="simple-card-content">
-                            <h3 class="simple-card-title">Applying for a Design Job</h3>
-                     </a>
-                            <p>Số câu: 40 câu</p>
-                            <p>Thời gian: 60 phút</p>
-                            <a class="" href="">
-                                <button type="submit" class="download-form-submit">Làm bài</button>
-                            </a>
-                        
-                        </div>
-                   
-                </div>
-            </div>
-             <div class="col-sm-4">
-                <div class="simple-card">
-                    <a href="{{ route('courseDetail') }}">
-                        <div class="simple-card-image">
-                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
-                        </div>
-                        <div class="simple-card-content">
-                            <h3 class="simple-card-title">Applying for a Design Job</h3>
-                     </a>
-                            <p>Số câu: 40 câu</p>
-                            <p>Thời gian: 60 phút</p>
-                            <a class="" href="">
-                                <button type="submit" class="download-form-submit">Làm bàiƯ</button>
-                            </a>
-                            <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
-                        </div>
-                   
-                </div>
-            </div>
-        </div>
-    <div>
-</div>
-</div>
 
 <section class="my-section-center">
     <div class="container">
@@ -179,145 +108,35 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4">
-                <div class="simple-card">
-                    <a href="#">
-                        <div class="simple-card-image">
-                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
+        {{-- @foreach($data['form'] as $item) --}}
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="">
+                                    <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt="Card image cap" width="100" class="rounded"> 
+                                </a>
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4 class="card-title"><a href="instructor-course-edit.html">Npm &amp; Gulp Advanced Workflow</a></h4>
+                            </div>
+                            <div class="media-right media-middle">
+                                <a href="instructor-course-edit.html" class="btn btn-sm btn-white">Làm bài</a>
+                            </div>  
                         </div>
-                        <div class="simple-card-content">
-                            <h3 class="simple-card-title">Applying for a Design Job</h3>
-                     </a>
-                             <p>Số câu: 40 câu</p>
-                            <p>Thời gian: 60 phút</p>
-                            <a class="" href="">
-                                <button type="submit" class="download-form-submit">Làm bài</button>
-                            </a>
-                        </div>
+                    </div>
                 </div>
             </div>
-             <div class="col-sm-4">
-                <div class="simple-card">
-                    <a href="{{ route('courseDetail') }}"">
-                        <div class="simple-card-image">
-                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
-                        </div>
-                        <div class="simple-card-content">
-                            <h3 class="simple-card-title">Applying for a Design Job</h3>
-                     </a>
-                            <p>Số câu: 40 câu</p>
-                            <p>Thời gian: 60 phút</p>
-                            <a class="" href="">
-                                <button type="submit" class="download-form-submit">Làm bài</button>
-                            </a>
-                            <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
-                        </div>
-                   
-                </div>
-            </div>
-             <div class="col-sm-4">
-                <div class="simple-card">
-                    <a href="{{ route('courseDetail') }}">
-                        <div class="simple-card-image">
-                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
-                        </div>
-                        <div class="simple-card-content">
-                            <h3 class="simple-card-title">Applying for a Design Job</h3>
-                     </a>
-                             <p>Số câu: 40 câu</p>
-                            <p>Thời gian: 60 phút</p>
-                            <a class="" href="">
-                                <button type="submit" class="download-form-submit">Làm bài</button>
-                            </a>
-                            <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
-                        </div>
-                   
-                </div>
-            </div>
+        {{-- @endforeach --}}
         </div>
     <div>
 </div>
 </div>
 </section>
 
-<section class="my-section-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-10">
-                <h2 class="my-title">Luyện Theo Chủ Điểm</h2>
-            </div>
-            <div class="col-sm-2">
-                <a href="{{ route('course') }}" class="btn-arrow"><div class="arrow"></div> Xem thêm</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="simple-card">
-                    <a href="#">
-                        <div class="simple-card-image">
-                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
-                        </div>
-                        <div class="simple-card-content">
-                            <h3 class="simple-card-title">Applying for a Design Job</h3>
-                     </a>
-                            <p>Số câu: 40 câu</p>
-                            <p>Thời gian: 60 phút</p>
-                            <a class="" href="">
-                                <button type="submit" class="download-form-submit">Làm bài</button>
-                            </a>
-                            <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
-                        </div>
-                </div>
-            </div>
-             <div class="col-sm-4">
-                <div class="simple-card">
-                    <a href="{{ route('courseDetail') }}"">
-                        <div class="simple-card-image">
-                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
-                        </div>
-                        <div class="simple-card-content">
-                            <h3 class="simple-card-title">Applying for a Design Job</h3>
-                     </a>
-                             <p>Số câu: 40 câu</p>
-                            <p>Thời gian: 60 phút</p>
-                            <a class="" href="">
-                                <button type="submit" class="download-form-submit">Làm bài</button>
-                            </a>
-                            <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
-                        </div>
-                   
-                </div>
-            </div>
-             <div class="col-sm-4">
-                <div class="simple-card">
-                    <a href="{{ route('courseDetail') }}"">
-                        <div class="simple-card-image">
-                            <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt=""/>
-                        </div>
-                        <div class="simple-card-content">
-                            <h3 class="simple-card-title">Applying for a Design Job</h3>
-                     </a>
-                            <p>Số câu: 40 câu</p>
-                            <p>Thời gian: 60 phút</p>
-                            <a class="" href="">
-                                <button type="submit" class="download-form-submit">Làm bài</button>
-                            </a>
-                            <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
-                        </div>
-                   
-                </div>
-            </div>
-        </div>
-    <div>
-</div>
-</div>
 
 
-<section class="my-section-center">
-    <div class="container">
-        <img src="{{ asset('dist/img/docs/text-1.jpeg') }}" width="100%" height="100%">
-    </div>
-</section> --}}
     <section class="my-section-center">
         <div class="container">
             <div class="row">
