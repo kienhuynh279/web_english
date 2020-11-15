@@ -24,21 +24,22 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'username'=>'unique:user,username',
-            'email'=>'unique:user,email',  
+            'username' => 'unique:users,username',
+            'email' => 'unique:users,email',
             'password' => 'required|min:8',
             // |regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/
             // 'passwordAgain' => 'required|same:password'
         ];
     }
+
     public function messages()
     {
-        return[
-            'username.unique'=>' Tên người dùng đã tồn tại, vui lòng nhập một tên khác...',
-            'email.unique'=>'Email đã tồn tại, vui lòng nhập một Email khác...',
-            'password.min'=> 'Mật khẩu phải ít nhất 8 ký tự',
+        return [
+            'username.unique' => ' Tên người dùng đã tồn tại, vui lòng nhập một tên khác...',
+            'email.unique' => 'Email đã tồn tại, vui lòng nhập một Email khác...',
+            'password.min' => 'Mật khẩu phải ít nhất 8 ký tự',
             // 'password.regex'=> 'Mật khẩu phải có 1 ký tự in hoa, theo bảng chữ cái , và có số',
             // 'passwordAgain.same' => 'Mật khẩu nhập lại chưa khớp'
-        ];        
+        ];
     }
 }
