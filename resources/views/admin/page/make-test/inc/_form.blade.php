@@ -1,16 +1,19 @@
 
-  <div class="form-group col-sm-6">
-    <x-input-form type="text" label="Tiêu đề" name="Title" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->title ?? ''" />
-  </div>
+   <div class="form-group col-sm-6">
+                        <label>Tên bài kiểm tra : </label>
+                                            <input required type="text" id="title" name="Title" class="form-control"
+                                                placeholder="Tên bài kiểm tra">
+                                        </div>
+
+                                           
   <div class="form-group col-sm-6">
     <x-input-form type="text" label="Tiêu đề English:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->title_en ?? ''" />
+      :value="$form->title_en ?? ''" />
   </div>
 
   <div class="form-group col-sm-6">
     <x-input-form type="text" label="Tiêu đề English:" name="Cate_Id" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->title_en ?? ''" />
+      :value="$form->title_en ?? ''" />
   </div>
 
   <div class="form-group col-sm-6">
@@ -42,72 +45,82 @@
 
   <div class="form-group col-sm-6">
     <x-input-form type="text" label="Description Meta:" name="Meta_Desc" classGroup="col-md" class="" placeholder="Meta Description"
-      :value="$blog->meta_description ?? ''" />
+      :value="$form->meta_description ?? ''" />
   </div>
 
   <div class="form-group col-sm-6">
     <x-input-form type="text" label="Title Meta:" name="Meta_Title" classGroup="col-md" class="" placeholder="Meta Title"
-      :value="$blog->meta_title ?? ''" />
+      :value="$form->meta_title ?? ''" />
   </div>
 
   <div class="form-group col-sm-6">
     <label for="example-select">Nổi Bật (Client): </label>
       <select class="form-control" id="example-select" name="Del_Flg">
-          <option value="1" {{ ($blog->Del_flg ?? '') === 1 ? 'selected' : '' }}>Nổi bật</option>
-          <option value="1" {{ ($blog->Del_flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
+          <option value="1" {{ ($form->Del_flg ?? '') === 1 ? 'selected' : '' }}>Nổi bật</option>
+          <option value="0" {{ ($form->Del_flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
       </select>
   </div>
 
   <div class="form-group col-sm-6">
     <label for="example-select">Nổi Bật (Admin): </label>
       <select class="form-control" id="example-select" name="Hight_Flg">
-          <option value="1" {{ ($blog->Hight_Flg ?? '') === 1 ? 'selected' : '' }}>Nổi bật</option>
-          <option value="1" {{ ($blog->Hight_Flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
+          <option value="1" {{ ($form->Hight_Flg ?? '') === 1 ? 'selected' : '' }}>Nổi bật</option>
+          <option value="0" {{ ($form->Hight_Flg ?? '') === 0 ? 'selected' : '' }}>Không nổi bật</option>
       </select>
   </div>
 
    <div class="form-group col-sm-6">
-    <x-input-form type="text" label="Slug" name="Rating" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->slug ?? ''" />
+    <x-input-form type="text" label="Rating" name="Rating" classGroup="col-md" class="" placeholder="Tiêu đề"
+      :value="$form->rating ?? ''" />
   </div>
-   <div class="form-group col-sm-6">
-    <x-input-form type="text" label="Slug" name="Discount" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->slug ?? ''" />
-  </div>
+                                       <div class="form-group col-sm-6">
+                                            <label>Slug : </label>
+                                            <input required type="text" id="slug" name="Slug" class="form-control"
+                                                placeholder="Slug...">
+                                        </div>
 
   <div class="form-group col-sm-3">
     <x-input-form type="text" label="Checked" name="Checked" classGroup="col-md" class="" placeholder="Checked"
-      :value="$blog->checked ?? ''" />
+      :value="$form->checked ?? ''" />
   </div>
 
   <div class="form-group col-sm-3">
-    <x-input-form type="text" label="Chức vụ" name="Position" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->position ?? ''" />
+    <x-input-form type="text" label="Chức vụ" name="Position" classGroup="col-md" class="" placeholder="Chức vụ"
+      :value="$form->position ?? ''" />
   </div>
-
-  <div class="form-group col-sm-6">
-    <x-input-form type="text" label="Slug" name="Slug" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->slug ?? ''" />
-  </div>
-
   <script>
-    let form = [
-        { id: "form", content: "" },
-    ]
+        $('input#title').keyup(function(event) {
+            /* Act on the event */  
+            var title, slug;
+            //Lấy text từ thẻ input title 
+            title = $(this).val();
+            //Đổi chữ hoa thành chữ thường
+            slug = title.toLowerCase();
 
-    // get all question input
-    $('input[data-type^="form"]').each(function (index, item) {
-        item.addEventListener("input", function() {
-            let id = this.attributes['data-type'].value;
-
-            form.forEach(i => { if (i.id == id) i.content = this.value; });
-
-            let questionArr = [];
-            form.map(i => questionArr.push(i.content));
-
-            $('#question').val(JSON.stringify(questionArr));
-
-            pushQuestionDataToSelectAnswer();
+            //Đổi ký tự có dấu thành không dấu
+            slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+            slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+            slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+            slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+            slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+            slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+            slug = slug.replace(/đ/gi, 'd');
+            //Xóa các ký tự đặt biệt
+            slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi,
+                '');
+            //Đổi khoảng trắng thành ký tự gạch ngang
+            slug = slug.replace(/ /gi, "-");
+            //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
+            //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
+            slug = slug.replace(/\-\-\-\-\-/gi, '-');
+            slug = slug.replace(/\-\-\-\-/gi, '-');
+            slug = slug.replace(/\-\-\-/gi, '-');
+            slug = slug.replace(/\-\-/gi, '-');
+            //Xóa các ký tự gạch ngang ở đầu và cuối
+            slug = '@' + slug + '@';
+            slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+            //In slug ra textbox có id “slug”
+            $('input#slug').val(slug);
         });
-    });
-  </script>
+
+    </script>

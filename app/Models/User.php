@@ -16,11 +16,40 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $table='user';
+    protected $table = 'users';
+    protected $primaryKey = "id";
+
+    protected $guarded = [];
 
     protected $fillable = [
         'email',
         'password',
+        'username',
+        'name',
+        'loaitaikhoan',
+        'avatar',
+        'callname',
+        'email',
+        'address',
+        'intro',
+        'gioithieu',
+        'phone',
+        'phone2',
+        'ngaysinh',
+        'gioitinh',
+        'del_flg',
+        'status',
+        'slug',
+        'active',
+        'position',
+        'sub',
+        'domain',
+        'type',
+        'nhom',
+        'diachi',
+        'makm',
+        'username',
+        'level',
     ];
 
     /**
@@ -41,4 +70,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getAuthPassword()
+    {
+        return $this->password;
+    }
 }

@@ -12,9 +12,8 @@ class ExamController extends Controller
 {
    public function index($id)
    {    
-       $form = [];
        $form = Form::where('id', '=', $id)->get();
-       $test = Test::all();
+       $test = Test::all(); 
         return view('client.index', [
             'title' => 'Test',
             'data' => [

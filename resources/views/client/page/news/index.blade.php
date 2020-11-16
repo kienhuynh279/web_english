@@ -26,7 +26,7 @@
                                 <div class="blog_post">
                                     <img src="{{ asset('dist/img/blog/main-blog/m-blog-1.jpg') }}" alt="">
                                     <div class="blog_details">
-                                        <a href="{{ route('newsDetail') }}">
+                                        <a href="{{ asset($item->slug) }}">
                                             <h2>{{ $item->title }}</h2>
                                         </a>
                                         <p>{!! $item->summary !!}</p>

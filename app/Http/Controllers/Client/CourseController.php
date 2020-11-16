@@ -9,6 +9,9 @@ use App\Models\Post;
 use App\Models\Blogs;
 
 use App\Models\PostCats;
+use App\Models\Form;
+use App\Models\FormCategory;
+
 class CourseController extends Controller
 {
     public function index()
@@ -39,19 +42,27 @@ class CourseController extends Controller
             'data' => [
                 'cateName' => $cateName
            ]
-        ]);
+        ]); 
     }
     
-    public function getListPost( $slug1, $slug2)
+    public function getListPost($slug1, $slug2)
     {
         $postcat = PostCats::where('slug', $slug2)->first();
         $post = Post::where(['id_thepost_cat' => $postcat->id])->get();
+
+        //test
+        // $formcat = FormCategory::where('slug', $slug1)->get();
+        // //dd($formcat);
+        // $form = Form::where(['id_theforms_cat' => $formcat->id])->get();
         return view('client.index', [
-            'title' => 'Tài Liệu Ket',
+            'title' => 'Ôn thi Ket',
             'page' => 'course.listpost',
             'data' => [
                 'postcat' => $postcat,
                 'post' => $post,
+                // 'formcat' => $formcat,
+                // 'form' => $form,
+                
            ]
         ]);
     } 

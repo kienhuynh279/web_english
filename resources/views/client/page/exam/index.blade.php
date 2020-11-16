@@ -3,7 +3,7 @@
      <h1 class="title has-text-centered">Chủ đề</h1>
     @foreach(json_decode($item->content) as $i)
         @foreach($data['test'] as $test)
-          @if($i == $test->id)
+          @if($i == substr($test->id,5))
            <section class="hero is-primary is-fullheight">
               <div class="column is-half">
                   <div class="has-text-centered">
