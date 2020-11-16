@@ -41,6 +41,11 @@
                                             </select>
                                         </div>
 
+                                        {{-- Mẫu --}}
+                                       
+                                         {{-- Mẫu --}}
+
+
                                         <div class="form-group">
                                             <label>Địa Chỉ: </label>
                                             <input required type="text" name="address" class="form-control"

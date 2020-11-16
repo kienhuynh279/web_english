@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Banner;
 use App\Models\Post;
+use App\Models\Blogs;
+
 use App\Models\PostCats;
 class CourseController extends Controller
 {

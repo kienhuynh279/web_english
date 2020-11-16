@@ -24,6 +24,8 @@ class PostsController extends Controller
     public function getAddPosts(){    
         $data['postcatslist'] = PostCats::all();
         return view('admin.page.posts.addposts',$data);
+
+       
     }
     public function postAddPosts(AddPostsRequest $request)
     {

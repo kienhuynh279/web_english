@@ -41,7 +41,7 @@
                                         @if($cats->vi_tri == 0)
                                             {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
                                             <a href="{{asset($cats->slug)}}">
-                                                <img src="{{Storage::url('/upload/img/postcats/'.$cats->avatar)}}" weight="20px" height="20px" alt="">
+                                                {{-- <img src="{{Storage::url('/upload/img/postcats/'.$cats->avatar)}}" weight="20px" height="20px" alt=""> --}}
                                                 {{$cats->title}}
                                             </a>
                                         @endif  
