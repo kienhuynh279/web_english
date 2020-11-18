@@ -112,11 +112,11 @@
             </div>
         </div>
         <div class="row">
-        @foreach($data['form'] as $item)
-        @foreach($data['formcat'] as $i)
+        {{-- @foreach($data['form'] as $item)
+        @foreach($data['formcat'] as $i) --}}
         {{-- @dd($i->id) --}}
         {{-- @dd(substr($item->id_theforms_cat,1,2)) --}}
-            @if(substr($item->id_theforms_cat,2,1) == $i->id)
+            {{-- @if(substr($item->id_theforms_cat,2,1) == $i->id) --}}
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header bg-white">
@@ -136,9 +136,9 @@
                     </div>
                 </div>
             </div>
-            @endif
-        @endforeach
-        @endforeach
+            {{-- @endif --}}
+        {{-- @endforeach
+        @endforeach --}}
         </div>
     <div>
 </div>
