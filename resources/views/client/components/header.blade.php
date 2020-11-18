@@ -12,9 +12,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <a style="font-weight: bold; color:   #fdc632" class="navbar-brand logo_h" href="{{route('home') }}">
-                    {{-- <img src="{{ asset('dist/img/logo_new.png') }}" weight="60px" height="60px"> --}}
                     @if(!empty($banner))
                     @foreach($banner as $item )
                     @if($item->status == 1)
@@ -31,34 +29,29 @@
                 </button>
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 
-                    <ul class="menu-hover clearfix">
+                    <ul class="menu-hover clearfix navbar-nav">
                         @if(!empty($postcats))
                         @foreach($postcats as $cats)
-                        <li>
+                        <li nav-item>
                             @if($cats->status == 1)
                             @if($cats->vi_tri == 0)
-                            {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
                         <a href="{{asset($cats->slug)}}">
-                            {{-- <img src="{{Storage::url('/upload/img/postcats/'.$cats->avatar)}}" weight="20px" height="20px" alt=""> --}}
                             {{$cats->title}}
                         </a>
                         @endif
-                        <ul class="menu-sub">
+                        <ul class="menu-sub ">
                             @foreach($postcats as $child)
                             @if($cats->id == $child->vi_tri)
-                            <li>
-                                <a href="#">
-                                    {{-- <img src="{{Storage::url('/upload/img/postcats/'.$child->avatar)}}" weight="20px" height="20px" alt=""> --}}
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-item" href="#">
                                     {{$child->title}}
                                 </a>
                                 @endif
-                                <ul class="menu-sub">
+                                <ul class="menu-sub nav-item dropdown">
                                     @foreach( $postcats as $child2)
                                     @if($child->id == $child2->vi_tri)
-                                    <li>
-                                        {{-- {{asset('danhmuc/'.$cats->id.'/'.$cats->slug.'/'.$child->slug.'/'.$child2->slug.'.html')}} --}}
-                                        <a href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">
-                                            {{-- <img src="{{Storage::url('/upload/img/postcats/'.$child2->avatar)}}" weight="20px" height="20px" alt=""> --}}
+                                    <li class="nav-item dropdown">
+                                        <a class="dropdown-item" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">
                                             {{$child2->title}}
                                         </a>
                                     </li>
@@ -77,7 +70,6 @@
                                 <i class="ti-search"></i>
                             </a>
                         </li>
-                        {{-- <li> --}}
                         @if (!Auth::check())
                         <li class="login-item">
                             <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
@@ -100,8 +92,6 @@
                             </div>
                         </li>
                         @endif
-                        {{-- </li> --}}
-
                     </ul>
                 </div>
             </div>
