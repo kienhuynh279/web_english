@@ -11,7 +11,7 @@
                   @foreach($banner as $item )
                     @if($item->status == 1)
                       @if($item->id == 89)
-                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                       @endif
                     @endif
                   @endforeach
@@ -25,7 +25,7 @@
                   @foreach($banner as $item )
                     @if($item->status == 1)
                       @if($item->id == 90)
-                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                       @endif
                     @endif
                   @endforeach
@@ -38,7 +38,7 @@
                   @foreach($banner as $item )
                     @if($item->status == 1)
                       @if($item->id == 91)
-                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                       @endif
                     @endif
                   @endforeach
@@ -57,12 +57,12 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a  href="{{ route('course') }}">
                 @if(!empty($banner))
                   @foreach($banner as $item )
                     @if($item->status == 1)
                       @if($item->id == 92)
-                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner"  src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="50%" alt="">
                       @endif
                     @endif
                   @endforeach
@@ -76,7 +76,7 @@
                   @foreach($banner as $item )
                     @if($item->status == 1)
                       @if($item->id == 93)
-                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                       @endif
                     @endif
                   @endforeach
@@ -90,7 +90,7 @@
                   @foreach($banner as $item )
                     @if($item->status == 1)
                       @if($item->id == 94)
-                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                       @endif
                     @endif
                   @endforeach
@@ -114,7 +114,7 @@
                   @foreach($banner as $item )
                     @if($item->status == 1)
                       @if($item->id == 95)
-                        <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                       @endif
                     @endif
                   @endforeach
@@ -128,7 +128,7 @@
                 @foreach($banner as $item )
                   @if($item->status == 1)
                     @if($item->id == 96)
-                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                     @endif
                   @endif
                 @endforeach
@@ -142,7 +142,7 @@
                 @foreach($banner as $item )
                   @if($item->status == 1)
                     @if($item->id == 97)
-                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                     @endif
                   @endif
                 @endforeach
@@ -164,7 +164,7 @@
                 @foreach($banner as $item )
                   @if($item->status == 1)
                     @if($item->id == 98)
-                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                     @endif
                   @endif
                 @endforeach
@@ -178,7 +178,7 @@
                 @foreach($banner as $item )
                   @if($item->status == 1)
                     @if($item->id == 99)
-                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                     @endif
                   @endif
                 @endforeach
@@ -192,7 +192,7 @@
                 @foreach($banner as $item )
                   @if($item->status == 1)
                     @if($item->id == 100)
-                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                     @endif
                   @endif
                 @endforeach
@@ -213,7 +213,7 @@
                 @foreach($banner as $item )
                   @if($item->status == 1)
                     @if($item->id == 101)
-                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                     @endif
                   @endif
                 @endforeach
@@ -227,7 +227,7 @@
                 @foreach($banner as $item )
                   @if($item->status == 1)
                     @if($item->id == 102)
-                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                     @endif
                   @endif
                 @endforeach
@@ -241,7 +241,7 @@
                 @foreach($banner as $item )
                   @if($item->status == 1)
                     @if($item->id == 103)
-                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                     @endif
                   @endif
                 @endforeach
@@ -255,7 +255,7 @@
                 @foreach($banner as $item )
                   @if($item->status == 1)
                     @if($item->id == 104)
-                      <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
                     @endif
                   @endif
                 @endforeach

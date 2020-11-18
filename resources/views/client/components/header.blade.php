@@ -28,7 +28,6 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-
                     <ul class="menu-hover clearfix navbar-nav">
                         @if(!empty($postcats))
                         @foreach($postcats as $cats)
@@ -39,7 +38,7 @@
                             {{$cats->title}}
                         </a>
                         @endif
-                        <ul class="menu-sub ">
+                        <ul class="menu-sub">
                             @foreach($postcats as $child)
                             @if($cats->id == $child->vi_tri)
                             <li class="nav-item dropdown">

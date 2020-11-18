@@ -2,9 +2,6 @@
     <div class="container">
         <div class="col-sm-12">
             <div class="row">
-                {{-- <a href="#">
-                    <p style="color:black">Trang chủ \ {{ $cateName->title }}</p>
-                </a> --}}
             </div>
         </div>
         <div class="row">
