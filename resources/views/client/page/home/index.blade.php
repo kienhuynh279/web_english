@@ -421,9 +421,9 @@
               
               <!-- The slideshow -->
               <div class="carousel-inner">
-                  <div class="carousel-item active">
+                  <div class="carousel-item mb-3 active">
                     <div class="row">
-                      <div class="col-sm-4">
+                      <div class="col-sm-4 text-center text-md-none">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                           @if($item->status == 1)
@@ -442,9 +442,9 @@
                       </div>
                     </div>
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item mb-3">
                      <div class="row">
-                      <div class="col-sm-4">
+                      <div class="col-sm-4 text-center text-md-none">
                         <img class="img-ratting" src="{{ asset('dist/img/banner/banner-2.jpg') }}" alt="Los Angeles" width="100%" height="100%">
                       </div>
                        <div class="col-sm-8">
@@ -454,9 +454,9 @@
                       </div>
                     </div>
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item mb-3">
                      <div class="row">
-                      <div class="col-sm-4">
+                      <div class="col-sm-4 text-center text-md-none">
                         <img class="img-ratting" src="{{ asset('dist/img/banner/banner-2.jpg') }}" alt="Los Angeles" width="100%" height="100%">
                       </div>
                        <div class="col-sm-8">
