@@ -13,10 +13,10 @@
           <form action="#" method="GET">
             @foreach(json_decode($test->question) as $ques)
             <div class="form-group">
-                  <p class="option form-inline">
-                    <input type="radio" name="answer" value="{{ $item->answer }}">
-                    {{$ques}}
-                  </p>
+              <p class="option form-inline">
+                <input type="radio" name="answer" value="{{ $item->answer }}">
+                {{$ques}}
+              </p>
             </div>
             @endforeach
           </form>
