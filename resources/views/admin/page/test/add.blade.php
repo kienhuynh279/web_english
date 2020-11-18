@@ -149,6 +149,7 @@
     CKEDITOR.replace('summary', { height: '150px' });
     CKEDITOR.replace('summary_en', { height: '150px' });
     CKEDITOR.replace('content', { height: '300px' });
+    CKEDITOR.replace('content_en', { height: '300px' });
     CKEDITOR.replace('result', { height: '300px' });
     // let summaryEditor = CKEDITOR.instances.summary;
     // let summaryEnEditor = CKEDITOR.instances.summary_en;

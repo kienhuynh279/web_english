@@ -150,31 +150,31 @@
                 </div>
             </div>
             <div class="row">
-                        @foreach($data['post'] as $item)
-                                <div class="col-sm-4">
-                                    <div class="simple-card">
-                                        <a href="#">
-                                            <div class="simple-card-image">
-                                                <img src="{{ Storage::url('/upload/img/posts/'.$item->avatar) }}" alt="" />
-                                            </div>
-                                            <div class="simple-card-content">
-                                                <h3 class="simple-card-title">{{ $item->title }}</h3>
-                                        </a>
-                                        <p class="simple-card-desc">{!! $item->summary !!}</p>
-                                        @if($item->dowload == 1)
-                                            <a class="" href="">
-                                                <button  class="download-form-submit">Tải về</button> 
-                                            </a>
-                                        @else
-                                        <a class="" href="">
-                                            <button disabled class="download-form-submit">Tải về</button> 
-                                        </a>
-                                        @endif
-                                        <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
-                                    </div>
+                @foreach($data['post'] as $item)
+                    <div class="col-sm-4">
+                        <div class="simple-card">
+                            <a href="#">
+                                <div class="simple-card-image">
+                                    <img src="{{ Storage::url('/upload/img/posts/'.$item->avatar) }}" alt="" />
                                 </div>
+                                <div class="simple-card-content">
+                                    <h3 class="simple-card-title">{{ $item->title }}</h3>
+                            </a>
+                            <p class="simple-card-desc">{!! $item->summary !!}</p>
+                            @if($item->dowload == 1)
+                                <a class="" href="">
+                                    <button  class="download-form-submit">Tải về</button> 
+                                </a>
+                            @else
+                            <a class="" href="">
+                                <button disabled class="download-form-submit">Tải về</button> 
+                            </a>
+                            @endif
+                            <span class="meta_info"><i style="color: red; padding-top: 17px" class="ti-share float-xl-right"></i></span>
                         </div>
-                        @endforeach
+                    </div>
+                </div>
+                @endforeach
            
         </div>
     </section>

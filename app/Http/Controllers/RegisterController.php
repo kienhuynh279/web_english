@@ -26,12 +26,7 @@ class RegisterController extends Controller
             'username'
         ])) {
 
-            //    $req->validate([
-            //         'email' => 'required',
-            //         'password' => 'required',
-            //         'passwordAgain' => 'required|same:password',
-            //         'username' => 'required',
-            //    ]);
+           
             return redirect()->route('registerView')->withInput();
         }
 
@@ -44,6 +39,7 @@ class RegisterController extends Controller
         try {
             $user->save();
         } catch (\Throwable $th) {
+            dd($th);
             return redirect()->route('registerView')->withInput()->with(['msg' => 'Đã có lỗi xảy ra khi đăng ký!']);
         }
 

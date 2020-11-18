@@ -6,7 +6,7 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 @if(!empty($banner))
                   @foreach($banner as $item )
                     @if($item->status == 1)
@@ -19,7 +19,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">TOEFL</p> --}}
                 @if(!empty($banner))
                   @foreach($banner as $item )
@@ -33,7 +33,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 @if(!empty($banner))
                   @foreach($banner as $item )
                     @if($item->status == 1)
@@ -57,7 +57,7 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 @if(!empty($banner))
                   @foreach($banner as $item )
                     @if($item->status == 1)
@@ -71,7 +71,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 @if(!empty($banner))
                   @foreach($banner as $item )
                     @if($item->status == 1)
@@ -85,7 +85,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 @if(!empty($banner))
                   @foreach($banner as $item )
                     @if($item->status == 1)
@@ -108,7 +108,7 @@
           </div>
           <div class="row">
            <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
                 @if(!empty($banner))
                   @foreach($banner as $item )
@@ -122,7 +122,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
                 @if(!empty($banner))
                 @foreach($banner as $item )
@@ -136,7 +136,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
                 @if(!empty($banner))
                 @foreach($banner as $item )
@@ -158,7 +158,7 @@
           </div>
           <div class="row">
            <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
                 @if(!empty($banner))
                 @foreach($banner as $item )
@@ -172,7 +172,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
                 @if(!empty($banner))
                 @foreach($banner as $item )
@@ -186,7 +186,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
                 @if(!empty($banner))
                 @foreach($banner as $item )
@@ -208,7 +208,7 @@
           </div>
           <div class="row">
            <div class="col-sm-3">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 @if(!empty($banner))
                 @foreach($banner as $item )
                   @if($item->status == 1)
@@ -222,7 +222,7 @@
               </a>
             </div>
             <div class="col-sm-3">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 @if(!empty($banner))
                 @foreach($banner as $item )
                   @if($item->status == 1)
@@ -236,7 +236,7 @@
               </a>
             </div>
             <div class="col-sm-3">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 @if(!empty($banner))
                 @foreach($banner as $item )
                   @if($item->status == 1)
@@ -250,7 +250,7 @@
               </a>
             </div>
             <div class="col-sm-3">
-              <a href="{{ route('course') }}">
+              <a href="#">
                 @if(!empty($banner))
                 @foreach($banner as $item )
                   @if($item->status == 1)

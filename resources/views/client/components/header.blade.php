@@ -36,38 +36,38 @@
                         @foreach($postcats as $cats)
                         <li>
                             @if($cats->status == 1)
-                            @if($cats->vi_tri == 0)
-                            {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
-                        <a href="{{asset($cats->slug)}}">
-                            <img src="{{Storage::url('/upload/img/postcats/'.$cats->avatar)}}" weight="20px" height="20px" alt="">
-                            {{$cats->title}}
-                        </a>
-                        @endif
-                        <ul class="menu-sub">
-                            @foreach($postcats as $child)
-                            @if($cats->id == $child->vi_tri)
-                            <li>
-                                <a href="#">
-                                    <img src="{{Storage::url('/upload/img/postcats/'.$child->avatar)}}" weight="20px" height="20px" alt="">
-                                    {{$child->title}}
-                                </a>
+                                @if($cats->vi_tri == 0)
+                                {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
+                                    <a href="{{asset($cats->slug)}}">
+                                        <img src="{{Storage::url('/upload/img/postcats/'.$cats->avatar)}}" weight="20px" height="20px" alt="">
+                                        {{$cats->title}}
+                                    </a>
                                 @endif
-                                <ul class="menu-sub">
-                                    @foreach( $postcats as $child2)
-                                    @if($child->id == $child2->vi_tri)
-                                    <li>
-                                        {{-- {{asset('danhmuc/'.$cats->id.'/'.$cats->slug.'/'.$child->slug.'/'.$child2->slug.'.html')}} --}}
-                                        <a href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">
-                                            <img src="{{Storage::url('/upload/img/postcats/'.$child2->avatar)}}" weight="20px" height="20px" alt="">
-                                            {{$child2->title}}
-                                        </a>
-                                    </li>
+                            <ul class="menu-sub">
+                                @foreach($postcats as $child)
+                                @if($cats->id == $child->vi_tri)
+                                <li>
+                                    <a href="#">
+                                        <img src="{{Storage::url('/upload/img/postcats/'.$child->avatar)}}" weight="20px" height="20px" alt="">
+                                        {{$child->title}}
+                                    </a>
                                     @endif
-                                    @endforeach
-                                </ul>
-                            </li>
-                            @endforeach
-                        </ul>
+                                    <ul class="menu-sub">
+                                        @foreach( $postcats as $child2)
+                                        @if($child->id == $child2->vi_tri)
+                                        <li>
+                                            {{-- {{asset('danhmuc/'.$cats->id.'/'.$cats->slug.'/'.$child->slug.'/'.$child2->slug.'.html')}} --}}
+                                            <a href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">
+                                                <img src="{{Storage::url('/upload/img/postcats/'.$child2->avatar)}}" weight="20px" height="20px" alt="">
+                                                {{$child2->title}}
+                                            </a>
+                                        </li>
+                                        @endif
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                @endforeach
+                            </ul>
                         </li>
                         @endif
                         @endforeach
