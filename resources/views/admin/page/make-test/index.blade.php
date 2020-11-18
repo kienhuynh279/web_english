@@ -3,7 +3,7 @@
 @section('main')
 <div class="card">
     <div class="card-header">
-        <a href="{{ route('adminMakeTestGetAdd') }}" class="btn btn-sm btn-primary">Thêm tin tức</a>
+        <a href="{{ route('adminMakeTestGetAdd') }}" class="btn btn-sm btn-primary">Thêm bài kiểm tra</a>
     </div>
     <div class="card-body">
         <table id="dataTable" class="table table-striped table-bordered" style="width:100%">

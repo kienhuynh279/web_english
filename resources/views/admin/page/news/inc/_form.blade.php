@@ -93,11 +93,11 @@
       :value="$blog->position ?? ''" />
   </div>
 
-                                       <div class="form-group col-sm-6">
-                                            <label>Slug : </label>
-                                            <input required type="text" id="slug" name="Slug" class="form-control"
-                                                placeholder="Slug...">
-                                        </div>
+  <div class="form-group col-sm-6">
+    <label>Slug : </label>
+    <input required type="text" id="slug" name="Slug" class="form-control"
+      placeholder="Slug...">
+  </div>
 </form>
 
  <script>

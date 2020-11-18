@@ -71,6 +71,7 @@
                     </a>
                 </div>
             </div>
+            @if (!Auth::check())
             <div class="col-sm-4">
                 <h2 class="main_title">Login</h2>
                 <form action="/action_page.php">
@@ -93,6 +94,12 @@
                     </div>
                 </div>
             </div>
+            @else
+            <div class="col-sm-4">
+                <h1 class="text-center">Thông tin thanh toán</h1>
+            </div>
+            @endif
+            
         </div>
     </div>
 </section>

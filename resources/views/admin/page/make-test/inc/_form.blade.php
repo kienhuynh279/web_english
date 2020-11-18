@@ -1,21 +1,33 @@
 
    <div class="form-group col-sm-6">
-                        <label>Tên bài kiểm tra : </label>
-                                            <input required type="text" id="title" name="Title" class="form-control"
-                                                placeholder="Tên bài kiểm tra">
-                                        </div>
+      <label>Tên bài kiểm tra : </label>
+      <input required type="text" id="title" name="Title" class="form-control"
+      placeholder="Tên bài kiểm tra">
+    </div>
+    <div class="form-group col-sm-6">
+      <x-input-form type="text" label="Tiêu đề English:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề"
+        :value="$form->title_en ?? ''" />
+    </div>
 
-                                           
-  <div class="form-group col-sm-6">
-    <x-input-form type="text" label="Tiêu đề English:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$form->title_en ?? ''" />
+    <div class="form-group col-md-6 px-3">
+      <label class="w-100" for="code">Loại đề thi</label>
+      <div class="w-100">
+          <select class="form-control" name="code" id="code">
+              <option value="" aria-readonly="true">Ấn để chọn</option>
+              @isset($FormCategoryData)
+              @foreach ($FormCategoryData as $item)
+              <optgroup label="{{ $item->title }}">
+                @foreach($item->child as $child_item)
+                  <option value="1{{ ($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id)}}">{{ $child_item->title }}</option>
+                @endforeach
+              </optgroup>
+              @endforeach
+              @endisset
+          </select>
+      </div>
+      <div class="col-lg-12 messages text-danger"></div>
   </div>
-
-  <div class="form-group col-sm-6">
-    <x-input-form type="text" label="Tiêu đề English:" name="Cate_Id" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$form->title_en ?? ''" />
-  </div>
-
+  
   <div class="form-group col-sm-6">
     <label>Ảnh Đại Diện: </label>
     <input required id="img" type="file" name="Avatar" class="form-control hidden" onchange="changeImg(this)">
@@ -40,7 +52,7 @@
 
     <div class="form-group col-sm-12">
         <label class="w-100" for="content" style="padding-top: 7px;">Nhập ID câu hỏi:</label>
-        <input data-type="form" type="text" name="Content" placeholder="Nhập ID câu hỏi">
+        <input data-type="form" class="form-control" type="text" name="Content" placeholder="Nhập ID câu hỏi">
     </div>
 
   <div class="form-group col-sm-6">
@@ -73,11 +85,7 @@
     <x-input-form type="text" label="Rating" name="Rating" classGroup="col-md" class="" placeholder="Tiêu đề"
       :value="$form->rating ?? ''" />
   </div>
-                                       <div class="form-group col-sm-6">
-                                            <label>Slug : </label>
-                                            <input required type="text" id="slug" name="Slug" class="form-control"
-                                                placeholder="Slug...">
-                                        </div>
+
 
   <div class="form-group col-sm-3">
     <x-input-form type="text" label="Checked" name="Checked" classGroup="col-md" class="" placeholder="Checked"
@@ -87,6 +95,12 @@
   <div class="form-group col-sm-3">
     <x-input-form type="text" label="Chức vụ" name="Position" classGroup="col-md" class="" placeholder="Chức vụ"
       :value="$form->position ?? ''" />
+  </div>
+
+  <div class="form-group col-sm-12">
+    <label>Slug: </label>
+     <input required type="text" id="slug" name="Slug" class="form-control"
+        placeholder="Slug">
   </div>
   <script>
         $('input#title').keyup(function(event) {

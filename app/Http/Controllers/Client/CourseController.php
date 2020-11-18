@@ -18,10 +18,10 @@ class CourseController extends Controller
     {
         $arr = [];
         $blogs = Blogs::where($arr)->paginate(12);
-        return view('client.index',[
+        return view('client.index', [
             'blogs' => $blogs,
             'title' => 'Docs',
-            'page' => 'course.index', 
+            'page' => 'course.index',
         ]);
     }
 
@@ -42,7 +42,7 @@ class CourseController extends Controller
             'data' => [
                 'cateName' => $cateName
            ]
-        ]); 
+        ]);
     }
     
     public function getListPost($slug1, $slug2)
@@ -52,8 +52,9 @@ class CourseController extends Controller
 
         //test
         // $formcat = FormCategory::where('slug', $slug1)->get();
-        // //dd($formcat);
+        // // dd($formcat);
         // $form = Form::where(['id_theforms_cat' => $formcat->id])->get();
+        // dd($form);
         return view('client.index', [
             'title' => 'Ôn thi Ket',
             'page' => 'course.listpost',
@@ -65,5 +66,5 @@ class CourseController extends Controller
                 
            ]
         ]);
-    } 
+    }
 }

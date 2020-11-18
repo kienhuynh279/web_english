@@ -29,7 +29,11 @@ class FormCategoryController extends Controller
     public function create()
     {
         $data = FormCategory::where(["del_flg" => "0"])->paginate(10);
-        $categoryList = FormCategory::where(["del_flg" => "1", "parent_id" => "0"])->get();
+        $categoryList = FormCategory::where(["del_flg" => "1"])->get();
+
+        // $FormCategoryData = FormCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
+
+        // foreach ($FormCategoryData as $item) $item->child = Category::where(["del_flg" => "0", "parent_id" =>  $item->id])->get();
         return view('admin.page.form-category.create',[
             'data' => $data,
             'cates' => $categoryList
