@@ -13,6 +13,8 @@
 <!-- main css -->
 <link rel="stylesheet" href={{ asset('dist/css/style.css') }} />
 
+<link rel="stylesheet" href="{{asset("dist/css/responsive.css")}}">
+
 <style>
     * {
         margin: 0;
