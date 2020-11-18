@@ -1,25 +1,24 @@
-
-  <div class="form-group col-sm-6">
-    <x-input-form type="text" id="title" label="Tiêu đề" name="Title" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->title ?? ''" />
-      <div class="col-lg-12 messages text-danger"></div>
-  </div>
+<div class="form-group col-sm-6">
+  <label>Tên loại bài kiểm tra: </label>
+  <input required type="text" id="title" name="Title" class="form-control"
+  placeholder="Tên loại bài kiểm tra">
+</div>
   <div class="form-group col-sm-6">
     <x-input-form type="text" id="title_en" label="Tiêu đề English:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề"
       :value="$blog->title_en ?? ''" />
   </div>
   <div class="form-group col-md-12 px-3">
-                <label class="col-sm-2" for="ParentId" style="padding-top: 7px;">Danh mục cha</label>
-                <div class="w-100">
-                    <select class="form-control" name="parent_id" id="ParentId">
-                        <option value="0" selected>Không thuộc danh mục nào</option>
-                        @foreach ($cates as $cate)
-                            <option value="{{ $cate->id }}">{{ $cate->title }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col-lg-12 messages text-danger"></div>
-            </div>
+    <label class="col-sm-2" for="ParentId" style="padding-top: 7px;">Danh mục cha</label>
+    <div class="w-100">
+      <select class="form-control" name="parent_id" id="ParentId">
+        <option value="0" selected>Không thuộc danh mục nào</option>
+          @foreach ($cates as $cate)
+            <option value="{{ $cate->id }}">{{ $cate->title }}</option>
+          @endforeach
+      </select>
+      </div>
+     <div class="col-lg-12 messages text-danger"></div>
+  </div>
   <div class="form-group col-sm-12">
     <label>Ảnh Đại Diện :</label>
     <input required id="img" type="file" name="Avatar" class="form-control hidden" onchange="changeImg(this)">
@@ -71,9 +70,10 @@
       :value="$blog->position ?? ''" />
   </div>
 
-  <div class="form-group col-sm-6">
-    <x-input-form type="text" label="Slug" id="slug" name="Slug" classGroup="col-md" class="" placeholder="Tiêu đề"
-      :value="$blog->slug ?? ''" />
+  <div class="form-group col-sm-12">
+    <label>Slug : </label>
+     <input required type="text" id="slug" name="Slug" class="form-control"
+        placeholder="Slug">
   </div>
 </form>
 

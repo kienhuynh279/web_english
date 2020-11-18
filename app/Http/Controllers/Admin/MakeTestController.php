@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Form;
 use App\Models\FormCategory;
 use Illuminate\Http\Request;
+use App\Models\TestCategory;
 
 class MakeTestController extends Controller
 {
@@ -18,7 +19,7 @@ class MakeTestController extends Controller
     {
         $forms = Form::where(["del_flg" => "1"])->paginate(20);
         $formcate  = FormCategory::all();
-        return view('admin.page.make-test.index',[
+        return view('admin.page.make-test.index', [
             "forms" => $forms,
             "cate" => $formcate
         ]);
@@ -31,9 +32,18 @@ class MakeTestController extends Controller
      */
     public function create()
     {
-        $formcate  = FormCategory::all();
-        return view('admin.page.make-test.create',[
-            "cate" => $formcate
+        $TestCategoryData = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
+        foreach ($TestCategoryData as $item) {
+            $item->child = TestCategory::where(["del_flg" => "0", "parent_id" =>  $item->id])->get();
+        }
+
+
+        // $FormCategoryData = TestCategory::where(["del_flg" => "1", "parent_id" => "0"])->get();
+        // foreach ($FormCategoryData as $item) {
+        //     $item->child = TestCategory::where(["parent_id" =>  $item->id])->get();
+        // }
+        return view('admin.page.make-test.create', [
+            "FormCategoryData" => $TestCategoryData
         ]);
     }
 
@@ -50,11 +60,11 @@ class MakeTestController extends Controller
 
         $blog->title = $request->get("Title");
         $blog->title_en = $request->get("Title_en");
-        $blog->id_theforms_cat = $request->get("Cate_Id");
+        $blog->id_theforms_cat = $request->get("code");
         $blog->summary = $request->get("Summary");
         $blog->summary_en = $request->get("Summary_en");
         
-        $blog->content = json_encode(explode("-",$request->get("Content")));
+        $blog->content = json_encode(explode("-", $request->get("Content")));
         $blog->meta_description = $request->get("Meta_Desc");
         $blog->meta_title = $request->get("Meta_Title");
         $blog->del_flg = $request->get("Del_Flg");
@@ -63,7 +73,7 @@ class MakeTestController extends Controller
         $blog->slug = $request->get("Slug");
         $blog->position = $request->get("Position");
         $blog->avatar = $filename;
-        $request->Avatar->storeAs('public/upload/img/the_form',$filename);  
+        $request->Avatar->storeAs('public/upload/img/the_form', $filename);
         $blog->save();
 
         return back();
@@ -104,7 +114,7 @@ class MakeTestController extends Controller
      * @param  \App\Models\Form  $form
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $blog = Form::findOrFail($id);
 
@@ -116,7 +126,7 @@ class MakeTestController extends Controller
         $blog->id_theforms_cat = $request->get("Cate_Id");
         $blog->summary = $request->get("Summary");
         $blog->summary_en = $request->get("Summary_en");
-        $blog->content = $request->json_encode(explode("-",$request->get("Content")));
+        $blog->content = $request->json_encode(explode("-", $request->get("Content")));
        
      
         $blog->meta_description = $request->get("Meta_Desc");
@@ -127,7 +137,7 @@ class MakeTestController extends Controller
         $blog->slug = $request->get("Slug");
         $blog->position = $request->get("Position");
         $blog->avatar = $filename;
-        $request->Avatar->storeAs('public/upload/img/the_form',$filename);  
+        $request->Avatar->storeAs('public/upload/img/the_form', $filename);
         $blog->save();
     }
 

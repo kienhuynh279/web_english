@@ -26,44 +26,6 @@ Trang tạo bài kiểm tra
     CKEDITOR.replace('content', { height: '300px' });
     CKEDITOR.replace('content_en', { height: '300px' });
 
-
-    // Validate
-    let constraints = {
-        title: {
-            presence: {
-                allowEmpty: false,
-                message: "^Không được để trống!"
-            }
-        },
-        tittle_en: {
-            presence: {
-                allowEmpty: false,
-                message: "^Không được để trống!"
-            }
-        },
-        slug: {
-            presence: {
-                allowEmpty: false,
-                message: "^Không được để trống!"
-            }
-        },
-        code: {
-            presence: {
-                allowEmpty: false,
-                message: "^Không được để trống!"
-            }
-        },
-        answer: {
-            presence: {
-                allowEmpty: false,
-                message: "^Không được để trống!"
-            }
-        }
-    };
-
-    validateData('#main', constraints);
-    // End Validate
-
     function pushQuestionDataToSelectAnswer() {
         let html = `<option value="" aria-readonly="true">Ấn để chọn</option>`;
 

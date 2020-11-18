@@ -1,0 +1,17 @@
+{
+    "messages": [],
+    "activationTimes": {
+      "codeLoadingTime": 22276,
+      "activateCallTime": 136,
+      "activateResolvedTime": 65509,
+      "activationReason": {
+        "startup": false,
+        "extensionId": {
+          "value": "felixfbecker.php-intellisense",
+          "_lower": "felixfbecker.php-intellisense"
+        },
+        "activationEvent": "onLanguage:php"
+      }
+    },
+    "runtimeErrors": []
+  }
