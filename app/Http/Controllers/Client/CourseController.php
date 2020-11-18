@@ -50,11 +50,11 @@ class CourseController extends Controller
         $postcat = PostCats::where('slug', $slug2)->first();
         $post = Post::where(['id_thepost_cat' => $postcat->id])->get();
         
-        $formcat = TestCategory::where('slug', $slug1)->first();
-        if ($formcat == true) {
-            $cate = TestCategory::all();
-        }
-        $form = Form::all();
+        // $formcat = TestCategory::where('slug', $slug1)->first();
+        // if ($formcat == true) {
+        //     $cate = TestCategory::all();
+        // }
+        // $form = Form::all();
         
         // $id_theforms_cat = $form->get('id_theforms_cat');
         // dd($id_theforms_cat);
@@ -67,8 +67,8 @@ class CourseController extends Controller
             'data' => [
                 'postcat' => $postcat,
                 'post' => $post,
-                'formcat' => $cate,
-                'form' => $form,
+                // 'formcat' => $cate,
+                // 'form' => $form,
            ]
         ]);
     }
