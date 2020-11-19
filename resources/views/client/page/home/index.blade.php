@@ -1,14 +1,33 @@
-<section class="feature_area section_gap_top" >
-  {{-- style="background-image: url('dist/img/banner.jpg')" --}}
-      <div class="container border" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px;">
+<section class="home_banner_area">
+  <div class="banner_inner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="banner_content text-center">
+            <p class="text-uppercase">
+                Cùng học anh văn thật tốt với chúng tôi
+            </p>
+            <h2 class="text-uppercase mt-4 mb-5">
+              Tiếng anh mỗi ngày
+            </h2>
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feature_area section_gap_top">
+      <div class="container border" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px">
         <div class="container">
-        
           <div class="row justify-content-center">  
                   <div class="my-banner-title"><span>CHỨNG CHỈ</span></div>
           </div>
           <div class="row">
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 @if(!empty($banner))
                   @foreach($banner as $item )
                     @if($item->status == 1)
@@ -21,7 +40,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">TOEFL</p> --}}
                 @if(!empty($banner))
                   @foreach($banner as $item )
@@ -35,7 +54,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 @if(!empty($banner))
                   @foreach($banner as $item )
                     @if($item->status == 1)
@@ -73,7 +92,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 @if(!empty($banner))
                   @foreach($banner as $item )
                     @if($item->status == 1)
@@ -87,7 +106,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 @if(!empty($banner))
                   @foreach($banner as $item )
                     @if($item->status == 1)
@@ -110,7 +129,7 @@
           </div>
           <div class="row">
            <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
                 @if(!empty($banner))
                   @foreach($banner as $item )
@@ -124,7 +143,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
                 @if(!empty($banner))
                 @foreach($banner as $item )
@@ -138,7 +157,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
                 @if(!empty($banner))
                 @foreach($banner as $item )
@@ -160,7 +179,7 @@
           </div>
           <div class="row">
            <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
                 @if(!empty($banner))
                 @foreach($banner as $item )
@@ -174,7 +193,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
                 @if(!empty($banner))
                 @foreach($banner as $item )
@@ -188,7 +207,7 @@
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
                 @if(!empty($banner))
                 @foreach($banner as $item )
@@ -210,7 +229,7 @@
           </div>
           <div class="row">
            <div class="col-sm-3">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 @if(!empty($banner))
                 @foreach($banner as $item )
                   @if($item->status == 1)
@@ -224,7 +243,7 @@
               </a>
             </div>
             <div class="col-sm-3">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 @if(!empty($banner))
                 @foreach($banner as $item )
                   @if($item->status == 1)
@@ -238,7 +257,7 @@
               </a>
             </div>
             <div class="col-sm-3">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 @if(!empty($banner))
                 @foreach($banner as $item )
                   @if($item->status == 1)
@@ -252,7 +271,7 @@
               </a>
             </div>
             <div class="col-sm-3">
-              <a href="#">
+              <a href="{{ route('course') }}">
                 @if(!empty($banner))
                 @foreach($banner as $item )
                   @if($item->status == 1)
@@ -402,6 +421,11 @@
       </div>
     </section>
 
+    <section class="my-section-center">
+      <div class="container">
+          <img src="{{ asset('dist/img/docs/text-1.jpeg') }}" width="100%" height="100%">
+      </div>
+  </section>
 
 <section class="my-section">
 <div class="container">

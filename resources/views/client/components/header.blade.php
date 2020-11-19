@@ -38,12 +38,12 @@
                                 {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
                                     @if($cats->id==37)
                                         <a href="javascrip:void(0)">
-                                            <img src="{{Storage::url('/upload/img/postcats/'.$cats->avatar)}}" weight="20px" height="20px" alt="">
+                                           
                                             {{$cats->title}}
                                         </a>
                                     @else
                                         <a href="{{asset($cats->slug)}}">
-                                            <img src="{{Storage::url('/upload/img/postcats/'.$cats->avatar)}}" weight="20px" height="20px" alt="">
+                            
                                             {{$cats->title}}
                                         </a>
                                     @endif
@@ -53,7 +53,7 @@
                                 @if($cats->id == $child->vi_tri)
                                 <li>
                                     <a href="#">
-                                        <img src="{{Storage::url('/upload/img/postcats/'.$child->avatar)}}" weight="20px" height="20px" alt="">
+      
                                         {{$child->title}}
                                     </a>
                                     @endif
@@ -63,7 +63,7 @@
                                         <li>
                                             {{-- {{asset('danhmuc/'.$cats->id.'/'.$cats->slug.'/'.$child->slug.'/'.$child2->slug.'.html')}} --}}
                                             <a href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">
-                                                <img src="{{Storage::url('/upload/img/postcats/'.$child2->avatar)}}" weight="20px" height="20px" alt="">
+                                               
                                                 {{$child2->title}}
                                             </a>
                                         </li>

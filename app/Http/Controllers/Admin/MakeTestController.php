@@ -76,7 +76,7 @@ class MakeTestController extends Controller
         $request->Avatar->storeAs('public/upload/img/the_form', $filename);
         $blog->save();
 
-        return back();
+        return redirect()->route("adminMakeTest");
     }
 
     /**
@@ -139,6 +139,8 @@ class MakeTestController extends Controller
         $blog->avatar = $filename;
         $request->Avatar->storeAs('public/upload/img/the_form', $filename);
         $blog->save();
+
+        return redirect()->route("adminMakeTest");
     }
 
     /**
