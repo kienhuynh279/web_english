@@ -64,14 +64,29 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('adminNew') }}" class="nav-link">
-                        <i class="nav-icon fas fa-blog"></i>
-                        <p>
+                    <a href="javascript:void(0)" class="nav-link">
+                        <i class="nav-icon fas fa-question"></i>
+                        <p> 
                             Quản Lý Blogs
-                            {{-- <span class="right badge badge-danger">Admin</span> --}}
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('adminBlogCate') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Loại Bài Blogs</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('adminNew') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh Sách Blogs</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+
 
                 <li class="nav-item">
                     <a href="javascript:void(0)" class="nav-link">

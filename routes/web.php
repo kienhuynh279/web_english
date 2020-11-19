@@ -236,5 +236,25 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->name('adminFormCateDelete')
                 ->where(['id' => '[0-9]+']);
         });
+
+        Route::group(['prefix' => 'blog-category'], function () {
+            Route::get('/', 'BlogCategoryController@index')->name('adminBlogCate');
+    
+            Route::get('/add-form-category', 'BlogCategoryController@create')->name('adminBlogCateGetAdd');
+    
+            Route::post('/add', 'BlogCategoryController@store')->name('adminBlogCatePostAdd');
+
+            Route::get('/edit/{id}', 'BlogCategoryController@edit')
+                ->name('adminBlogCateGetEdit')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', 'BlogCategoryController@update')
+                ->name('adminBlogCatePutEdit')
+                ->where(['id' => '[0-9]+']);
+    
+            Route::post('/delete/{id}', 'BlogCategoryTestController@destroy')
+                ->name('adminBlogCateDelete')
+                ->where(['id' => '[0-9]+']);
+        });
     });
 });

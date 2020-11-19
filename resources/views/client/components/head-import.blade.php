@@ -25,6 +25,11 @@
 </style>
 
 <style>
+    .img-banner{
+        margin-left: auto;
+        margin-right:auto
+    }
+
     * {
         margin: 0;
         padding: 0;

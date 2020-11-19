@@ -32,7 +32,9 @@
                   @foreach($banner as $item )
                     @if($item->status == 1)
                       @if($item->id == 89)
+                      <div class="img-banner">
                         <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                      </div>
                       @endif
                     @endif
                   @endforeach

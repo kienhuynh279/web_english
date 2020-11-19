@@ -6022,3 +6022,8 @@ section {
 .banner {
     padding: 20px;
 }
+
+.img-banner {
+    margin-left: auto;
+    margin-right: auto
+}
