@@ -34,28 +34,19 @@
                         @foreach($postcats as $cats)
                         <li nav-item>
                             @if($cats->status == 1)
-<<<<<<< HEAD
                                 @if($cats->vi_tri == 0)
                                 {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
-                                    <a href="{{asset($cats->slug)}}">
-                                        <img src="{{Storage::url('/upload/img/postcats/'.$cats->avatar)}}" weight="20px" height="20px" alt="">
-                                        {{$cats->title}}
-                                    </a>
-=======
-                            @if($cats->vi_tri == 0)
-                        <a href="javascrip:void(0)">
-                            {{$cats->title}}
-                        </a>
-                        {{-- {{asset($cats->slug)}} --}}
-                        @endif
-                        <ul class="menu-sub">
-                            @foreach($postcats as $child)
-                            @if($cats->id == $child->vi_tri)
-                            <li class="nav-item dropdown">
-                                <a class="dropdown-item" href="#">
-                                    {{$child->title}}
-                                </a>
->>>>>>> 152d36fff8520cc4d3460d2de2ad6a3452fa79d1
+                                    @if($cats->id==37)
+                                        <a href="javascrip:void(0)">
+                                            <img src="{{Storage::url('/upload/img/postcats/'.$cats->avatar)}}" weight="20px" height="20px" alt="">
+                                            {{$cats->title}}
+                                        </a>
+                                    @else
+                                        <a href="{{asset($cats->slug)}}">
+                                            <img src="{{Storage::url('/upload/img/postcats/'.$cats->avatar)}}" weight="20px" height="20px" alt="">
+                                            {{$cats->title}}
+                                        </a>
+                                    @endif
                                 @endif
                             <ul class="menu-sub">
                                 @foreach($postcats as $child)

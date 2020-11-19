@@ -101,7 +101,7 @@
     </div>
 </section>
 
-<section class="my-section-center">
+{{-- <section class="my-section-center">
     <div class="container">
         <div class="row">
             <div class="col-sm-10">
@@ -112,17 +112,8 @@
             </div>
         </div>
         <div class="row">
-<<<<<<< HEAD
         @foreach($data['form'] as $item)
-        {{-- @foreach($data['formcat'] as $i)
-            @if(substr($item->id_theforms_cat,2,1) == $i->id) --}}
-=======
-        {{-- @foreach($data['form'] as $item)
-        @foreach($data['formcat'] as $i) --}}
-        {{-- @dd($i->id) --}}
-        {{-- @dd(substr($item->id_theforms_cat,1,2)) --}}
-            {{-- @if(substr($item->id_theforms_cat,2,1) == $i->id) --}}
->>>>>>> 152d36fff8520cc4d3460d2de2ad6a3452fa79d1
+    
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header bg-white">
@@ -142,20 +133,13 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-            {{-- @endif
-        @endforeach --}}
+
         @endforeach
-=======
-            {{-- @endif --}}
-        {{-- @endforeach
-        @endforeach --}}
->>>>>>> 152d36fff8520cc4d3460d2de2ad6a3452fa79d1
         </div>
     <div>
 </div>
 </div>
-</section>
+</section> --}}
 
     <section class="my-section-center">
         <div class="container">

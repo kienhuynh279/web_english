@@ -1,6 +1,8 @@
-<section class="feature_area section_gap_top">
-      <div class="container border" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px">
+<section class="feature_area section_gap_top" >
+  {{-- style="background-image: url('dist/img/banner.jpg')" --}}
+      <div class="container border" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px;background-image: url('dist/img/banner.jpg')">
         <div class="container">
+        
           <div class="row justify-content-center">  
                   <div class="my-banner-title"><span>CHỨNG CHỈ</span></div>
           </div>
@@ -57,11 +59,7 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-<<<<<<< HEAD
-              <a href="#">
-=======
               <a  href="{{ route('course') }}">
->>>>>>> 152d36fff8520cc4d3460d2de2ad6a3452fa79d1
                 @if(!empty($banner))
                   @foreach($banner as $item )
                     @if($item->status == 1)
