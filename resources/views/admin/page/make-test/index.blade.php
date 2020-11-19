@@ -20,7 +20,7 @@
             @forelse ($forms as $form)
                 <tr>
                     <th>{{ $form->title }}</th>
-                    <th>{{ $form->summary }}</th>
+                    <th>{!! $form->summary !!}</th>
                     <th>{{ $form->status }}</th>
                     <th>{{ $form->created_at }}</th>
                     <th>

@@ -1,3 +1,24 @@
+<section class="home_banner_area">
+  <div class="banner_inner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="banner_content text-center">
+            <p class="text-uppercase">
+                Cùng học anh văn thật tốt với chúng tôi
+            </p>
+            <h2 class="text-uppercase mt-4 mb-5">
+              Tiếng anh mỗi ngày
+            </h2>
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="feature_area section_gap_top">
       <div class="container border" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px">
         <div class="container">
@@ -400,6 +421,11 @@
       </div>
     </section>
 
+    <section class="my-section-center">
+      <div class="container">
+          <img src="{{ asset('dist/img/docs/text-1.jpeg') }}" width="100%" height="100%">
+      </div>
+  </section>
 
 <section class="my-section">
 <div class="container">

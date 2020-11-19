@@ -35,10 +35,10 @@
                         <li nav-item>
                             @if($cats->status == 1)
                             @if($cats->vi_tri == 0)
-                        <a href="javascrip:void(0)">
+                        <a href="{{asset($cats->slug)}}">
                             {{$cats->title}}
                         </a>
-                        {{-- {{asset($cats->slug)}} --}}
+                        
                         @endif
                         <ul class="menu-sub">
                             @foreach($postcats as $child)
