@@ -119,6 +119,7 @@ theme.
     h1 {
         font-size: 10px
     }
+
     p {
         font-size: 12px
     }
@@ -387,9 +388,11 @@ tr {
     from {
         visibility: hidden;
     }
+
     50% {
         visibility: hidden;
     }
+
     50% {
         visibility: visible;
     }
@@ -400,12 +403,15 @@ tr {
         width: 0;
         opacity: 1;
     }
+
     30% {
         width: 100%;
     }
+
     70% {
         width: 100%;
     }
+
     to {
         width: 1;
         opacity: 1;
@@ -1074,7 +1080,7 @@ button:focus {
 
 .home_banner_area {
     z-index: 1;
-    min-height: 900px;
+    min-height: 100vh;
     position: relative;
     background: url(../img/banner/home-banner.jpg) no-repeat center;
     background-size: cover;
@@ -1332,6 +1338,7 @@ button:focus {
     .socical {
         background-color: #ea695f;
     }
+
     .single_feature {
         padding: 40px 20px;
     }
@@ -1372,7 +1379,7 @@ button:focus {
     }
 }
 
-.popular_courses .owl-item {
+/* .popular_courses .owl-item {
     opacity: 0;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
@@ -1422,7 +1429,7 @@ button:focus {
     -ms-filter: grayscale(0%);
     -o-filter: grayscale(0%);
     filter: grayscale(0%);
-}
+} */
 
 .single_course {
     -webkit-transition: all 0.3s ease 0s;
@@ -2851,9 +2858,11 @@ button:focus {
     .comments-area .comment-list .single-comment h5 {
         font-size: 12px;
     }
+
     .comments-area .comment-list .single-comment .date {
         font-size: 11px;
     }
+
     .comments-area .comment-list .single-comment .comment {
         font-size: 10px;
     }
@@ -4738,21 +4747,25 @@ h6 {
 /*----------------------------------------------------*/
 
 @media (max-width: 1619px) {
+
     /* Main Menu Area css
 	============================================================================================ */
     .header_area .navbar .search {
         margin-left: 40px;
     }
+
     /* End Main Menu Area css
 	============================================================================================ */
 }
 
 @media (max-width: 1199px) {
+
     /* Main Menu Area css
 	============================================================================================ */
     .header_area .navbar .nav .nav-item {
         margin-right: 28px;
     }
+
     /* End Main Menu Area css
 	============================================================================================ */
     /* Home Banner Area css
@@ -4760,6 +4773,7 @@ h6 {
     .home_banner_area .banner_inner {
         padding: 100px 0px;
     }
+
     /* End Home Banner Area css
 	============================================================================================ */
     .header_area .navbar .tickets_btn {
@@ -4768,6 +4782,7 @@ h6 {
 }
 
 @media (max-width: 991px) {
+
     /* Main Menu Area css
 	============================================================================================ */
     .navbar-toggler {
@@ -4778,28 +4793,35 @@ h6 {
         margin-top: 27px;
         margin-bottom: 23px;
     }
+
     .header_area {
         position: absolute;
     }
+
     .header_area .navbar {
         background: #868686;
     }
+
     .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
         opacity: 1;
     }
+
     .navbar-toggler[aria-expanded="true"] span:nth-child(2) {
         opacity: 0;
     }
+
     .navbar-toggler[aria-expanded="true"] span:first-child {
         transform: rotate(-45deg);
         position: relative;
         top: 7.5px;
     }
+
     .navbar-toggler[aria-expanded="true"] span:last-child {
         transform: rotate(45deg);
         bottom: 6px;
         position: relative;
     }
+
     .navbar-toggler span {
         display: block;
         width: 25px;
@@ -4810,21 +4832,26 @@ h6 {
         transition: all 400ms linear;
         cursor: pointer;
     }
+
     .navbar .container {
         padding-left: 15px;
         padding-right: 15px;
     }
+
     .nav {
         padding: 0px 0px;
     }
+
     .header_area+section,
     .header_area+row,
     .header_area+div {
         margin-top: 117px;
     }
+
     .header_top .nav {
         padding: 0px;
     }
+
     .header_area .navbar .nav .nav-item .nav-link {
         line-height: 40px;
         margin-right: 0px;
@@ -4832,28 +4859,35 @@ h6 {
         border-bottom: 1px solid #ededed33;
         border-radius: 0px;
     }
+
     .header_area .navbar .search {
         margin-left: 0px;
     }
+
     .header_area .navbar-collapse {
         max-height: 340px;
         overflow-y: scroll;
     }
+
     .header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
         padding: 0px 15px;
     }
+
     .header_area .navbar .nav .nav-item {
         margin-right: 0px;
     }
+
     .header_area+section,
     .header_area+row,
     .header_area+div {
         margin-top: 0px;
         padding-top: 71px;
     }
+
     .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
         line-height: 40px;
     }
+
     /* End Main Menu Area css
 	============================================================================================ */
     /* Blog page Area css
@@ -4861,19 +4895,24 @@ h6 {
     .categories_post img {
         width: 100%;
     }
+
     .categories_post {
         max-width: 360px;
         margin: 0 auto;
     }
+
     .blog_categorie_area .col-lg-4 {
         margin-top: 30px;
     }
+
     .blog_area {
         padding-bottom: 80px;
     }
+
     .single-post-area .blog_right_sidebar {
         margin-top: 30px;
     }
+
     /* End Blog page Area css
 	============================================================================================ */
     /* Contact Page Area css
@@ -4881,26 +4920,31 @@ h6 {
     .contact_info {
         margin-bottom: 50px;
     }
+
     /* End Contact page Area css
 	============================================================================================ */
     .home_banner_area .donation_inner {
         margin-bottom: -30px;
     }
+
     .home_banner_area .dontation_item {
         max-width: 350px;
         margin: auto;
     }
+
     /* Footer Area css
 	============================================================================================ */
     .footer-area .col-sm-6 {
         background-color: #c72c41;
         margin-top: 10px;
     }
+
     /* End End Footer Area css
 	============================================================================================ */
     .header_area .navbar .tickets_btn {
         margin-left: 0px;
     }
+
     .home_banner_area {
         min-height: 700px;
     }
@@ -4910,38 +4954,46 @@ h6 {
     .home_banner_area .banner_inner .banner_content {
         margin-top: 0px;
     }
+
     /* Blog Page Area css
 	============================================================================================ */
     .blog_banner .banner_inner .blog_b_text h2 {
         font-size: 40px;
         line-height: 50px;
     }
+
     .blog_info.text-right {
         text-align: left !important;
         margin-bottom: 10px;
     }
+
     /* End Blog Page Area css
 	============================================================================================ */
     .home_banner_area .banner_inner .banner_content h3 {
         font-size: 30px;
     }
+
     .home_banner_area .banner_inner .banner_content p br {
         display: none;
     }
+
     .home_banner_area .banner_inner .banner_content h3 span {
         line-height: 45px;
         padding-bottom: 0px;
         padding-top: 0px;
     }
+
     /* Footer Area css
 	============================================================================================ */
     .footer-bottom {
         text-align: center;
     }
+
     .footer-bottom .footer-social {
         text-align: center;
         margin-top: 15px;
     }
+
     /* End End Footer Area css
 	============================================================================================ */
 }
@@ -4950,27 +5002,33 @@ h6 {
     .top_menu {
         display: none;
     }
+
     .header_area+section,
     .header_area+row,
     .header_area+div {
         margin-top: 0px;
         padding-top: 71px;
     }
+
     /* Home Banner Area css
 	============================================================================================ */
     .home_banner_area .banner_inner .banner_content h2 {
         font-size: 40px;
         line-height: 44px;
     }
+
     .blog_banner .banner_inner .blog_b_text {
         margin-top: 0px;
     }
+
     .home_banner_area .banner_inner .banner_content img {
         display: none;
     }
+
     .home_banner_area .banner_inner .banner_content h5 {
         margin-top: 0px;
     }
+
     /* End Home Banner Area css
 	============================================================================================ */
     /* Elements Area css
@@ -4978,9 +5036,11 @@ h6 {
     .sample-text-area {
         padding: 70px 0 70px 0;
     }
+
     .generic-blockquote {
         padding: 30px 15px 30px 30px;
     }
+
     /* End Elements Area css
 	============================================================================================ */
     /* Blog Page Area css
@@ -4989,10 +5049,12 @@ h6 {
         font-size: 20px;
         line-height: 30px;
     }
+
     .blog_banner .banner_inner .blog_b_text h2 {
         font-size: 28px;
         line-height: 38px;
     }
+
     /* End Blog Page Area css
 	============================================================================================ */
     /* Footer Area css
@@ -5000,6 +5062,7 @@ h6 {
     .footer-area {
         padding: 50px 0px;
     }
+
     /* End End Footer Area css
 	============================================================================================ */
     .single-footer-widget .sub-btn {
@@ -5008,11 +5071,13 @@ h6 {
 }
 
 @media (max-width: 480px) {
+
     /* Main Menu Area css
 	============================================================================================ */
     .header_area .navbar-collapse {
         max-height: 250px;
     }
+
     /* End Main Menu Area css
 	============================================================================================ */
     /* Home Banner Area css
@@ -5020,19 +5085,23 @@ h6 {
     .home_banner_area .banner_inner .banner_content {
         margin-top: 0px;
     }
+
     .home_banner_area .banner_inner .banner_content h3 {
         font-size: 24px;
     }
+
     /* End Home Banner Area css
 	============================================================================================ */
     .banner_area .banner_inner .banner_content h2 {
         font-size: 32px;
     }
+
     /* Blog Page Area css
 	============================================================================================ */
     .comments-area .thumb {
         margin-right: 10px;
     }
+
     /* End Blog Page Area css
 	============================================================================================ */
 }
@@ -5769,6 +5838,7 @@ h6 {
         -o-transform: scale(1) translate(0px);
         transform: scale(1) translate(0px);
     }
+
     to {
         -webkit-transform: scale(1.5) translate(50px);
         -moz-transform: scale(1.5) translate(50px);
@@ -5786,6 +5856,7 @@ h6 {
         -o-transform: scale(1);
         transform: scale(1);
     }
+
     to {
         -webkit-transform: scale(1.5);
         -moz-transform: scale(1.5);
@@ -5803,6 +5874,7 @@ h6 {
         -o-transform: scale(1);
         transform: scale(1);
     }
+
     to {
         -webkit-transform: scale(1.5);
         -moz-transform: scale(1.5);
@@ -5820,6 +5892,7 @@ h6 {
         -o-transform: scale(1);
         transform: scale(1);
     }
+
     to {
         -webkit-transform: scale(1.5);
         -moz-transform: scale(1.5);
@@ -5903,6 +5976,7 @@ h6 {
 /* Form thi */
 
 @import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
 .hero {
     font-family: 'Comfortaa', cursive;
     background-color: #fff;
@@ -6026,4 +6100,93 @@ section {
 .img-banner {
     margin-left: auto;
     margin-right: auto
+}
+
+* {
+    transition: .2s;
+    font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url("/dist/img/main/background.png") !important;
+}
+
+
+.nav-item a {
+    color: #c47e2e !important;
+}
+
+.nav-item-active {
+    border-bottom: #c47e2e solid 2px;
+    font-weight: bold;
+}
+
+/* nav menu */
+.menu-item>li {
+    border-bottom: #c47e2e00 solid 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.menu-item>li:hover {
+    border-bottom: #c47e2e solid 2px;
+}
+
+.menu-item>li a {
+    font-size: 14px;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu-item>li:last-child a {
+    border-right: 0;
+}
+
+.menu-item li {
+    position: relative;
+}
+
+.menu-item li .menu-sub {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    box-shadow: 0px 1px 8px -4px #333;
+    background-color: #c47e2e;
+    display: none;
+}
+
+.menu-item li .menu-sub ul {
+    top: 0;
+    left: 100%;
+}
+
+.menu-item li:hover>ul {
+    display: block;
+}
+
+/* .menu-item li:hover>a {
+    background: #b36c22;
+} */
+
+
+/* owl next & prev */
+.owl-prev,
+.owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.owl-prev {
+    left: -2rem;
+}
+
+.owl-next {
+    right: -2rem;
 }

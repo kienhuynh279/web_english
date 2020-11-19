@@ -7,10 +7,14 @@
 <link rel="stylesheet" href={{ asset('dist/css/bootstrap.css') }} />
 <link rel="stylesheet" href={{ asset('dist/css/flaticon.css') }} />
 <link rel="stylesheet" href={{ asset('dist/css/themify-icons.css') }} />
-<link rel="stylesheet" href={{ asset('dist/vendors/owl-carousel/owl.carousel.min.css') }} />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css" />
 <link rel="stylesheet" href={{ asset('dist/vendors/nice-select/css/nice-select.css') }} />
 {{-- fa --}}
 <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- main css -->
 <link rel="stylesheet" href={{ asset('dist/css/style.css') }} />
 
@@ -18,16 +22,16 @@
 
 <style>
     @media all and (max-width: 320px) {
-    body {
-       background: #e7e7e7;
+        body {
+            background: #e7e7e7;
+        }
     }
- }
 </style>
 
 <style>
-    .img-banner{
+    .img-banner {
         margin-left: auto;
-        margin-right:auto
+        margin-right: auto
     }
 
     * {
@@ -79,6 +83,14 @@
         box-shadow: 0px 1px 8px -4px #333;
         background-color: #c47e2e;
         display: none;
+    }
+
+    .menu-sub {
+        z-index: 999;
+    }
+
+    .menu-sub li a {
+        color: white !important;
     }
 
     .menu-hover li .menu-sub ul {

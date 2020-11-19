@@ -2,17 +2,17 @@
 <html lang="vi">
 
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="canonical" href="http://bdsnew.eso.vn/">
-     <link rel="shortcut icon" href="{{ asset('dist/img/favicon.png') }}" type="image/x-icon">
-     <title>Web English - @yield('title')</title>
-     @yield('head-import')
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="">
+    <link rel="shortcut icon" href="{{ asset('dist/img/favicon.png') }}" type="image/x-icon">
+    <title>Web English - @yield('title')</title>
+    @yield('head-import')
 </head>
 
 <body class="sidebar-mini layout-fixed pace-success">
-     @yield('main')
-     @yield('js-import')
+    @yield('main')
+    @yield('js-import')
 </body>
 
 </html>
