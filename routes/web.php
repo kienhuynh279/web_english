@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 //Home
 Route::get('/', 'App\Http\Controllers\Client\HomeController@index')->name('home');
 Route::get('/trang-chu', 'App\Http\Controllers\Client\HomeController@index')->name('home');
-//Ôn Thi 
+//Ôn Thi
 // Route::get('{slug}.html','App\Http\Controllers\Client\CourseController@getKET');
 
 //Course
-Route::get('/on-thi', 'App\Http\Controllers\Client\CourseController@list')->name('courseList');
+//Route::get('/on-thi', 'App\Http\Controllers\Client\CourseController@list')->name('courseList');
 // Route::get('/on-thi/{slug}', 'App\Http\Controllers\Client\CourseController@getOnthicc')->name('onthiccList');
 Route::get('/on-thi/{slug2}/{slug3}', 'App\Http\Controllers\Client\CourseController@getListPost')->name('onthiccList');
 
@@ -62,7 +62,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     Route::get('logout', 'HomeController@getLogout')->name('logout');
 
     Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedOut', 'middleware' => 'App\Http\Middleware\RequireAuth'], function () {
-
         Route::get('/', 'HomeController@getHome');
 
         Route::group(['prefix' => 'user'], function () {
@@ -78,7 +77,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
         });
 
         Route::group(['prefix' => 'test'], function () {
-
             Route::get('/', 'TestController@index')->name('adminTest');
 
             Route::get('/add', 'TestController@getAdd')->name('adminTestGetAdd');
@@ -99,7 +97,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
         });
 
         Route::group(['prefix' => 'test-category'], function () {
-
             Route::get('/', 'TestCategoryController@index')->name('adminTestCategory');
 
             Route::get('/add', 'TestCategoryController@getAdd')->name('adminTestCategoryGetAdd');
@@ -181,7 +178,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
         });
 
         Route::group(['prefix' => 'news'], function () {
-
             Route::get('/', 'BlogsController@index')->name('adminNew');
     
             Route::get('/add', 'BlogsController@getAdd')->name('adminNewGetAdd');
@@ -202,7 +198,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
         });
     
         Route::group(['prefix' => 'make-test'], function () {
-    
             Route::get('/', 'MakeTestController@index')->name('adminMakeTest');
     
             Route::get('/make-test', 'MakeTestController@create')->name('adminMakeTestGetAdd');
@@ -223,7 +218,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
         });
 
         Route::group(['prefix' => 'form-category'], function () {
-    
             Route::get('/', 'FormCategoryController@index')->name('adminFormCate');
     
             Route::get('/add-form-category', 'FormCategoryController@create')->name('adminFormCateGetAdd');
@@ -242,5 +236,5 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->name('adminFormCateDelete')
                 ->where(['id' => '[0-9]+']);
         });
-    }); 
+    });
 });

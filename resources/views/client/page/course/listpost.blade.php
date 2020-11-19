@@ -115,40 +115,42 @@
             </div>
         </div>
         <div class="row">
-        {{-- @foreach($data['form'] as $item) --}}
+        @foreach($data['form'] as $item)
+        {{-- @foreach($data['formcat'] as $i)
+            @if(substr($item->id_theforms_cat,2,1) == $i->id) --}}
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header bg-white">
                         <div class="media">
                             <div class="media-left media-middle">
                                 <a href="">
-                                    <img src="{{ asset('dist/img/courses/c1.jpg') }}" alt="Card image cap" width="100" class="rounded"> 
+                                    <img src="{{ Storage::url('/upload/img/the_form/'.$item->avatar) }}" alt="Card image cap" width="100" class="rounded"> 
                                 </a>
                             </div>
                             <div class="media-body media-middle">
-                                <h4 class="card-title"><a href="instructor-course-edit.html">Npm &amp; Gulp Advanced Workflow</a></h4>
+                            <h4 class="card-title"><a href="instructor-course-edit.html">{{ $item->title }}</a></h4>
                             </div>
                             <div class="media-right media-middle">
-                                <a href="instructor-course-edit.html" class="btn btn-sm btn-white">Làm bài</a>
+                                <a href="{{ route('test', $item->id) }}" class="btn btn-sm btn-white">Làm bài</a>
                             </div>  
                         </div>
                     </div>
                 </div>
             </div>
-        {{-- @endforeach --}}
+            {{-- @endif
+        @endforeach --}}
+        @endforeach
         </div>
     <div>
 </div>
 </div>
 </section>
 
-
-
     <section class="my-section-center">
         <div class="container">
             <div class="row">
                 <div class="col-sm-10">
-                    <h3 class="my-title">Tài Liệu  </h3>
+                    <h3 class="my-title">Tài Liệu </h3>
                 </div>
                 <div class="col-sm-2">
                     <a href="{{ route('course') }}" class="btn-arrow">
@@ -184,7 +186,7 @@
                 @endforeach
            
         </div>
-    </section>
+</section>
     <!-- Không cho copy hình -->
     <script type="text/javascript" src="https://sites.google.com/site/bituotblog/disable-copy.js"></script>
     <style>

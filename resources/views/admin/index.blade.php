@@ -59,7 +59,7 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>{{ $data['count']['user'] ?? '' }}</h3>
+                        <h3>{{ $data['count']['user'] ?? ''}}</h3>
 
                         <p>Tài khoản Admin</p>
                     </div>

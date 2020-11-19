@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Banner;
 use App\Models\Post;
 use App\Models\Blogs;
-
+use App\Models\TestCategory;
+use App\Models\Test;
 use App\Models\PostCats;
 use App\Models\Form;
 use App\Models\FormCategory;
@@ -45,25 +46,32 @@ class CourseController extends Controller
         ]);
     }
     
-    public function getListPost($slug1, $slug2)
+    public function getListPost($slug, $slug2)
     {
         $postcat = PostCats::where('slug', $slug2)->first();
         $post = Post::where(['id_thepost_cat' => $postcat->id])->get();
-
-        //test
-        // $formcat = FormCategory::where('slug', $slug1)->get();
-        // // dd($formcat);
-        // $form = Form::where(['id_theforms_cat' => $formcat->id])->get();
-        // dd($form);
+        
+        $formcat = TestCategory::where('slug', $slug)->first();
+        dd($formcat);
+        $form = Test::where(['code' => $formcat->id])->get();
+        if ($formcat == true) {
+            $cate = TestCategory::all();
+        }
+        $form = Form::all();
+        
+        // $id_theforms_cat = $form->get('id_theforms_cat');
+        
+        // dd($id_theforms_cat);
+        // $form = Form::where([substr($id_theforms_cat, 1, 2) => $formcat->id])->get();
+        
         return view('client.index', [
             'title' => 'Ôn thi Ket',
             'page' => 'course.listpost',
             'data' => [
                 'postcat' => $postcat,
                 'post' => $post,
-                // 'formcat' => $formcat,
-                // 'form' => $form,
-                
+                'formcat' => $cate,
+                'form' => $form,
            ]
         ]);
     }
