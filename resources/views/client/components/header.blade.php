@@ -14,13 +14,13 @@
             <div class="container" id="block-menu">
                 <a style="font-weight: bold; color:   #fdc632" class="navbar-brand logo_h" href="{{route('home') }}">
                     @if(!empty($banner))
-                    @foreach($banner as $item )
-                    @if($item->status == 1)
-                    @if($item->id == 106)
-                    <img src="http://tienganhmoingay.com.vn/storage//upload/img/banner/logo_new.png" weight="60px" height="60px" alt=""> <!-- {{Storage::url('/upload/img/banner/'.$item->avatar)}} -->
-                    @endif
-                    @endif
-                    @endforeach
+                        @foreach($banner as $item )
+                            @if($item->status == 1)
+                                @if($item->id == 106)
+                                    <img src="http://tienganhmoingay.com.vn/storage//upload/img/banner/logo_new.png" weight="60px" height="60px" alt=""> <!-- {{Storage::url('/upload/img/banner/'.$item->avatar)}} -->
+                                @endif
+                            @endif
+                        @endforeach
                     @endif
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
