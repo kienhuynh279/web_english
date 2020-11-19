@@ -34,34 +34,45 @@
                         @foreach($postcats as $cats)
                         <li nav-item>
                             @if($cats->status == 1)
-                            @if($cats->vi_tri == 0)
-                        <a href="{{asset($cats->slug)}}">
-                            {{$cats->title}}
-                        </a>
-                        
-                        @endif
-                        <ul class="menu-sub">
-                            @foreach($postcats as $child)
-                            @if($cats->id == $child->vi_tri)
-                            <li class="nav-item dropdown">
-                                <a class="dropdown-item" href="#">
-                                    {{$child->title}}
-                                </a>
-                                @endif
-                                <ul class="menu-sub nav-item dropdown">
-                                    @foreach( $postcats as $child2)
-                                    @if($child->id == $child2->vi_tri)
-                                    <li class="nav-item dropdown">
-                                        <a class="dropdown-item" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">
-                                            {{$child2->title}}
+                                @if($cats->vi_tri == 0)
+                                {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
+                                    @if($cats->id==37)
+                                        <a href="javascrip:void(0)">
+                                           
+                                            {{$cats->title}}
                                         </a>
-                                    </li>
+                                    @else
+                                        <a href="{{asset($cats->slug)}}">
+                            
+                                            {{$cats->title}}
+                                        </a>
                                     @endif
-                                    @endforeach
-                                </ul>
-                            </li>
-                            @endforeach
-                        </ul>
+                                @endif
+                            <ul class="menu-sub">
+                                @foreach($postcats as $child)
+                                @if($cats->id == $child->vi_tri)
+                                <li>
+                                    <a href="#">
+      
+                                        {{$child->title}}
+                                    </a>
+                                    @endif
+                                    <ul class="menu-sub">
+                                        @foreach( $postcats as $child2)
+                                        @if($child->id == $child2->vi_tri)
+                                        <li>
+                                            {{-- {{asset('danhmuc/'.$cats->id.'/'.$cats->slug.'/'.$child->slug.'/'.$child2->slug.'.html')}} --}}
+                                            <a href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">
+                                               
+                                                {{$child2->title}}
+                                            </a>
+                                        </li>
+                                        @endif
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                @endforeach
+                            </ul>
                         </li>
                         @endif
                         @endforeach

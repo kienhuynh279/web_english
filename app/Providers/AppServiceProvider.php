@@ -35,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
          $data['postcats'] = PostCats::all();
          view ()->share($data);
 
+
          $data['post'] = Post::all();
          view ()->share($data);
 

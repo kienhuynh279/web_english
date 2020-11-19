@@ -24,7 +24,7 @@ class EditUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'img'=>'image',
+
             'name'=>'unique:user,username,'.$this->segment(4).',id',
             'email'=>'unique:user,email,'.$this->segment(4).',id',
             'password'=>'unique:user,password,'.$this->segment(4).',id',

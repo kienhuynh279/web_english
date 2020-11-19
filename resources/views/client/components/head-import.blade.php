@@ -1,5 +1,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
 <link rel="icon" href={{ asset('dist/img/favicon.png') }} type="image/png" />
 
 <!-- Bootstrap CSS -->
@@ -14,6 +15,14 @@
 <link rel="stylesheet" href={{ asset('dist/css/style.css') }} />
 
 <link rel="stylesheet" href="{{asset("dist/css/responsive.css")}}">
+
+<style>
+    @media all and (max-width: 320px) {
+    body {
+       background: #e7e7e7;
+    }
+ }
+</style>
 
 <style>
     * {
