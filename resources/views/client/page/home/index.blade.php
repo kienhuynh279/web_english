@@ -23,7 +23,7 @@
     <div class="container border bg-light" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="my-banner-title"><span>CHỨNG CHỈ</span></div>
+                <div class="my-banner-title w-100 text-center"><span>CHỨNG CHỈ</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -75,7 +75,7 @@
 
         <div class="container">
             <div class="row justify-content-center">
-                <div class="my-banner-title"><span>ÔN THI LỚP 10</span></div>
+                <div class="my-banner-title w-100 text-center"><span>ÔN THI LỚP 10</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -126,7 +126,7 @@
 
         <div class="container">
             <div class="row justify-content-center">
-                <div class="my-banner-title"><span>Ôn thi THPT</span></div>
+                <div class="my-banner-title w-100 text-center"><span>Ôn thi THPT</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -176,7 +176,7 @@
 
         <div class="container">
             <div class="row justify-content-center">
-                <div class="my-banner-title"><span>Ôn thi Đại học</span></div>
+                <div class="my-banner-title w-100 text-center"><span>Ôn thi Đại học</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -226,7 +226,7 @@
 
         <div class="container">
             <div class="row justify-content-center">
-                <div class="my-banner-title"><span>Tiếng Anh Chuyên Nghành</span></div>
+                <div class="my-banner-title w-100 text-center"><span>Tiếng Anh Chuyên Nghành</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-3">
@@ -394,7 +394,7 @@
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/facebook.png') }}" width="15%" height="15%">
-                            <a style="color:#2d142c" href="">Account FB</a>
+                            <a style="color:#2d142c" href="#">Qua Facebook</a>
                     </div>
                 </div>
             </div>
@@ -404,7 +404,7 @@
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/instagram.png') }}" width="15%" height="15%">
-                            <a style="color:#2d142c" href="">Account Ins</a>
+                            <a style="color:#2d142c" href="#">Qua Instagram</a>
                     </div>
                 </div>
             </div>
@@ -414,7 +414,7 @@
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/telephone.png') }}" width="15%" height="15%">
-                            <a style="color:#2d142c" href=""> Account Mail</a>
+                            <a style="color:#2d142c" href="#">Qua Email</a>
                     </div>
                 </div>
             </div>

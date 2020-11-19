@@ -22,8 +22,7 @@
                             @foreach ($banner as $item)
                             @if ($item->status == 1)
                             @if ($item->id == 108)
-                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%"
-                                height="100%" alt="">
+                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%" height="100%" alt="">
                             @endif
                             @endif
                             @endforeach
@@ -36,8 +35,7 @@
                             @foreach ($banner as $item)
                             @if ($item->status == 1)
                             @if ($item->id == 109)
-                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%"
-                                height="100%" alt="">
+                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%" height="100%" alt="">
                             @endif
                             @endif
                             @endforeach
@@ -48,8 +46,7 @@
                             @foreach ($banner as $item)
                             @if ($item->status == 1)
                             @if ($item->id == 110)
-                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%"
-                                height="100%" alt="">
+                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%" height="100%" alt="">
                             @endif
                             @endif
                             @endforeach
@@ -119,32 +116,32 @@
             {{-- @dd($i->id) --}}
             {{-- @dd(substr($item->id_theforms_cat,1,2)) --}}
             {{-- @if(substr($item->id_theforms_cat,2,1) == $i->id) --}}
-            <div class="col-sm-6">
+            {{-- <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header bg-white">
                         <div class="media">
                             <div class="media-left media-middle">
                                 <a href="">
                                     <img src="{{ Storage::url('/upload/img/the_form/'.$item->avatar) }}"
-                                        alt="Card image cap" width="100" class="rounded">
-                                </a>
-                            </div>
-                            <div class="media-body media-middle">
-                                <h4 class="card-title"><a href="instructor-course-edit.html">{{ $item->title }}</a></h4>
-                            </div>
-                            <div class="media-right media-middle">
-                                <a href="{{ route('test', $item->id) }}" class="btn btn-sm btn-white">Làm bài</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- @endif --}}
-            {{-- @endforeach
+            alt="Card image cap" width="100" class="rounded">
+            </a>
+        </div>
+        <div class="media-body media-middle">
+            <h4 class="card-title"><a href="instructor-course-edit.html">{{ $item->title }}</a></h4>
+        </div>
+        <div class="media-right media-middle">
+            <a href="{{ route('test', $item->id) }}" class="btn btn-sm btn-white">Làm bài</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div> --}}
+    {{-- @endif --}}
+    {{-- @endforeach
         @endforeach --}}
-        </div>
-        <div>
-        </div>
+    </div>
+    <div>
+    </div>
     </div>
 </section>
 
@@ -310,8 +307,8 @@
 </style>
 <script type="text/JavaScript">
     var message="NoRightClicking"; function defeatIE() {if (document.all)
-        {(message);return false;}} function defeatNS(e) {if (document.layers||(document.getElementById&&!document.all)) { if (e.which==2||e.which==3) 
-        {(message);return false;}}} if (document.layers) {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=defeatNS;} 
+        {(message);return false;}} function defeatNS(e) {if (document.layers||(document.getElementById&&!document.all)) { if (e.which==2||e.which==3)
+        {(message);return false;}}} if (document.layers) {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=defeatNS;}
         else{document.onmouseup=defeatNS;document.oncontextmenu=defeatIE;} document.oncontextmenu=new Function("return false")
         // Select all tabs
 $('.nav-tabs a').click(function(){

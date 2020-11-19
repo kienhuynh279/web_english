@@ -65,12 +65,12 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="z-index: 10; background-color: white; border-top: #ff000073 solid 2px; box-shadow: 0px 6px 15px -15px;">
         <div class="container">
             <ul class="menu-item navbar-nav mr-auto">
-                <li class=" nav-item">
+                <li class=" nav-item nav-item-active">
                     <a class="nav-link" href="/">Trang chủ</a>
                 </li>
                 @if(!empty($postcats))
                 @foreach($postcats as $cats)
-                <li class="nav-item">
+                <li class="nav-item nav-item-active">
                     @if($cats->status == 1)
                     @if($cats->vi_tri == 0)
                     {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
@@ -79,7 +79,7 @@
                     {{$cats->title}}
                 </a>
                 @else
-                <a href="{{asset($cats->slug)}}" class="nav-link">
+                <a href="#" class="nav-link">
                     {{$cats->title}}
                 </a>
                 @endif
@@ -115,10 +115,10 @@
                 @endif
             </ul>
             <ul class="menu-item navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item nav-item-active">
                     <a class="nav-link" href="/tin-tuc">Tin tức</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item nav-item-active">
                     <a class="nav-link" href="/lien-he">Liên Hệ</a>
                 </li>
             </ul>
