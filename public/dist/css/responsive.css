@@ -1,0 +1,97 @@
+.menu-hover {
+    position: relative;
+    right: 0!important;
+    margin: 0!important;
+    margin-left: auto!important;
+    list-style: none;
+    background-color: #c47e2e;
+}
+
+@media (max-width: 991px) {
+    .header_area .navbar-collapse {
+        max-height: none;
+    }
+    @media screen and (min-width: 1197px) {
+        .overlay-mobile {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1197px) {
+        .overlay-mobile {
+            visibility: hidden;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            opacity: 0;
+            transition: all 300ms linear;
+        }
+        .overlay-mobile.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        #navbarSupportedContent {
+            overflow-y: inherit;
+            position: fixed;
+            width: 350px;
+            left: -100%;
+            top: 0;
+            height: 100vh;
+            transition: all 150ms ease-in-out;
+        }
+        #navbarSupportedContent.show {
+            left: 0;
+            height: 100%;
+        }
+        #navbarSupportedContent .menu-hover {
+            right: 0;
+            height: 100vh;
+            transition: all 300ms linear;
+        }
+        #navbarSupportedContent .menu-hover li .menu-sub {
+            position: initial;
+            width: 100%;
+            padding-left: 15px;
+            box-shadow: none;
+        }
+        #navbarSupportedContent .menu-hover li .menu-sub .nav-item {
+            position: initial;
+            width: 100%;
+            padding-left: 15px;
+            box-shadow: none;
+        }
+    }
+    @media screen and (max-width: 990px) {
+        .img-ratting {
+            margin-left: 5rem;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .img-ratting {
+            margin-left: 1rem;
+        }
+    }
+    @media screen and (max-width: 320px) {
+        #navbarSupportedContent {
+            max-width: 280px;
+        }
+    }
+    @keyframes hideToShow {
+        from {
+            left: -100%;
+        }
+        to {
+            left: 0;
+        }
+    }
+    @keyframes toOpacity {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}

@@ -51,7 +51,7 @@
     </div>
 
     <div class="form-group col-sm-12">
-        <label class="w-100" for="content" style="padding-top: 7px;">Nhập ID câu hỏi:</label>
+        <label class="w-100" for="content" style="padding-top: 7px;">Nhập ID câu hỏi (Cách nhau bởi dấu -):</label>
         <input data-type="form" class="form-control" type="text" name="Content" placeholder="Nhập ID câu hỏi">
     </div>
 

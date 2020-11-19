@@ -11,13 +11,13 @@
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
+            <div class="container" id="block-menu">
                 <a style="font-weight: bold; color:   #fdc632" class="navbar-brand logo_h" href="{{route('home') }}">
                     @if(!empty($banner))
                     @foreach($banner as $item )
                     @if($item->status == 1)
                     @if($item->id == 106)
-                    <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" weight="60px" height="60px" alt="">
+                    <img src="http://tienganhmoingay.com.vn/storage//upload/img/banner/logo_new.png" weight="60px" height="60px" alt=""> <!-- {{Storage::url('/upload/img/banner/'.$item->avatar)}} -->
                     @endif
                     @endif
                     @endforeach
@@ -27,19 +27,35 @@
                     <span class="icon-bar"></span> <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <div class="overlay-mobile"></div>
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-
                     <ul class="menu-hover clearfix navbar-nav">
                         @if(!empty($postcats))
                         @foreach($postcats as $cats)
                         <li nav-item>
                             @if($cats->status == 1)
+<<<<<<< HEAD
                                 @if($cats->vi_tri == 0)
                                 {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
                                     <a href="{{asset($cats->slug)}}">
                                         <img src="{{Storage::url('/upload/img/postcats/'.$cats->avatar)}}" weight="20px" height="20px" alt="">
                                         {{$cats->title}}
                                     </a>
+=======
+                            @if($cats->vi_tri == 0)
+                        <a href="javascrip:void(0)">
+                            {{$cats->title}}
+                        </a>
+                        {{-- {{asset($cats->slug)}} --}}
+                        @endif
+                        <ul class="menu-sub">
+                            @foreach($postcats as $child)
+                            @if($cats->id == $child->vi_tri)
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-item" href="#">
+                                    {{$child->title}}
+                                </a>
+>>>>>>> 152d36fff8520cc4d3460d2de2ad6a3452fa79d1
                                 @endif
                             <ul class="menu-sub">
                                 @foreach($postcats as $child)
@@ -103,3 +119,32 @@
         </nav>
     </div>
 </div>
+
+<script>
+    var isActive = false;
+    function mobileActive() {
+        let item = document.querySelector(".overlay-mobile");
+
+        isActive = !isActive;
+
+        if(isActive) {
+            item.classList.add("active");
+        }
+        else {
+            item.classList.remove("active");
+        }
+    }
+
+    // active, un-active overlay
+    document.querySelector(".navbar-toggler").addEventListener("click", () => {
+        mobileActive();
+    })
+
+    // click outside
+    document.querySelector("#block-menu").addEventListener("click", (e) => {
+        if((e.target.classList.contains("overlay-mobile")) || (e.target.getAttribute("id") === "search" && window.innerWidth < 991)) {
+            document.querySelector(".navbar-toggler").click();
+        }
+    })
+
+</script>

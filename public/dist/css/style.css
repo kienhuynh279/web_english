@@ -5845,8 +5845,6 @@ h6 {
     z-index: 2;
 }
 
-.cont_forms_active_login>.cont_form_login {}
-
 .cont_form_sign_up {
     position: absolute;
     width: 320px;
@@ -5919,9 +5917,10 @@ section {
 }
 
 .option {
+    padding-left: 1.5rem;
     border-radius: 5px;
+    /* padding: 0; */
     background: hsl(0, 0%, 100%);
-    padding: 15px;
     cursor: pointer;
     border-width: 2px;
     text-align: left;
@@ -5935,7 +5934,7 @@ section {
 .option span {
     border-radius: 5px;
     border: solid 1px hsl(171, 100%, 41%);
-    padding: 2.5px 10px;
+    padding: 2.5px 5px;
     margin-right: 10px;
     color: hsl(171, 100%, 41%);
     font-weight: 700;
@@ -6020,11 +6019,6 @@ section {
     text-decoration: none
 }
 
-
-/* ul.menu-sub li.nav-item.dropdown {
-    display: block;
-    width: 50%;
-    position: relative;
-    top: 20%;
-    left: 30%;
-} */
+.banner {
+    padding: 20px;
+}
