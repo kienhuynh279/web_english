@@ -1,6 +1,6 @@
 <section class="feature_area section_gap_top" >
   {{-- style="background-image: url('dist/img/banner.jpg')" --}}
-      <div class="container border" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px;background-image: url('dist/img/banner.jpg')">
+      <div class="container border" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px;">
         <div class="container">
         
           <div class="row justify-content-center">  
