@@ -112,6 +112,7 @@
                 {{-- @endif
                 @endforeach
                 @endif --}}
+
                     <li class="nav-item nav-item-active">
                         <a class="nav-link" href="/tin-tuc">Tin tức</a>
                     </li>
