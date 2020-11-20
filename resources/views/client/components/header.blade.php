@@ -86,7 +86,6 @@
                                     @endforeach
                                 </ul>
                             </li>
-                           
                         @endforeach                   
                     </ul>   
                 </li>
@@ -128,14 +127,6 @@
                     <a class="nav-link" href="/lien-he">Liên Hệ</a>
                 </li>
             </ul>
-            {{-- <ul class="menu-item navbar-nav ml-auto">
-                <li class="nav-item nav-item-active">
-                    <a class="nav-link" href="/tin-tuc">Tin tức</a>
-                </li>
-                <li class="nav-item nav-item-active">
-                    <a class="nav-link" href="/lien-he">Liên Hệ</a>
-                </li>
-            </ul> --}}
         </div>
     </nav>
 </header>

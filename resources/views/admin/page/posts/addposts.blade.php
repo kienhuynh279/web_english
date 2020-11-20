@@ -13,7 +13,7 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Thêm</button>
-                                        <a href="{{ asset('admin/posts') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+                                        <a href="{{ asset('admin/posts') }}" onclick="return confirm('Bạn có chắc chắn muốn hủy bỏ !')" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">

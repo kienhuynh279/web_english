@@ -154,9 +154,9 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Content English: </label>
-                                            <textarea required class="ckeditor" required name="content">{{$post->content_en}}</textarea>
+                                            <textarea required class="ckeditor" required name="content_en">{{$post->content_en}}</textarea>
                                             <script type="text/javascript">
-                                                var editor = CKEDITOR.replace('content', {
+                                                var editor = CKEDITOR.replace('content_en', {
                                                     language: 'vi',
                                                     filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
                                                     filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',

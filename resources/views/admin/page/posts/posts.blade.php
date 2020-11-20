@@ -17,7 +17,7 @@
                         <th>Dowload : </th>
                         <th>Status (Client) : </th>
                         <th>Del_Flag (Admin) : </th>
-                        <th>Nổi Bật : </th>
+                        {{-- <th>Nổi Bật : </th> --}}
                         <th>Tùy Chọn : </th>
                    </tr>
               </thead>
@@ -46,7 +46,7 @@
 
                         <td>{{$item->status}}</td>
                         <td>{{$item->del_flg}}</td>
-                        <td>{{$item->hight_flg}}</td>
+                        {{-- <td>{{$item->hight_flg}}</td> --}}
                         <td>
                              <a href="{{asset('admin/posts/edit/'.$item->id)}}" class="btn btn-warning"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Sửa</a>
                              <a onclick="return confirm('Bạn có chắc chắn muốn xóa !')" href="{{asset('admin/posts/delete/'.$item->id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
@@ -63,7 +63,7 @@
                          <th>Dowload : </th>
                          <th>Status (Client) : </th>
                          <th>Del_Flag (Admin) : </th>
-                         <th>Nổi Bật : </th>
+                         {{-- <th>Nổi Bật : </th> --}}
                          <th>Tùy Chọn : </th>
                    </tr>
               </tfoot>
