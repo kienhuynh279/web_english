@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title','Danh sách tin tuc')
+@section('title','Danh sách tin tức')
 @section('main')
 <div class="card">
     <div class="card-header">
@@ -14,15 +14,22 @@
                     <th>Nổi bật</th>
                     <th>Trạng thái</th>
                     <th>Ngày đăng</th>
-                    <th></th>
+                    <th>
+                        <button disabled class="btn btn-sm btn-secondary">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button disabled class="btn btn-sm btn-secondary">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </th>
                 </tr>
             </thead>
             <tbody>
-            @forelse ($blogs ?? [] as $blog)
+                @foreach ($blogs ?? [] as $blog)
                 <tr>
                     <th>{{ $blog->title }}</th>
-                     <td><img width="100px" src="{{Storage::url('upload/img/blog/'.$blog->avatar)}}" class="thumbnail"></td>
-                     <td class="text-{{ $blog->hight_flg == 1 ? "success" : "danger" }}">{{ $blog->hight_flg == 1 ? "Hiện" : "Ẩn" }}</td>
+                    <td><img width="100px" src="{{Storage::url('upload/img/blog/'.$blog->avatar)}}" class="thumbnail"></td>
+                    <td class="text-{{ $blog->hight_flg == 1 ? "success" : "danger" }}">{{ $blog->hight_flg == 1 ? "Hiện" : "Ẩn" }}</td>
                     <td class="text-{{ $blog->status == 1 ? "success" : "danger" }}">{{ $blog->status == 1 ? "Hiện" : "Ẩn" }}</td>
                     <th>{{ $blog->created_at }}</th>
                     <th>
@@ -36,15 +43,7 @@
                         </form>
                     </th>
                 </tr>
-            @empty 
-                <tr>
-                    <td colspan="12">
-                        <div class="alert alert-danger mb-0" role="alert">
-                            Không tìm thấy dữ liệu
-                        </div>
-                    </td>
-                </tr>
-            @endforelse
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -53,13 +52,17 @@
 <script>
     let table = $("#dataTable").DataTable({
         scrollX: true,
-        search: false,
-        paging: false,
-        searching: false,
+        // search: false,
+        // paging: false,
+        // searching: false,
+        aaSorting: [],
         bInfo : false,
+        // columnDefs: [
+        //     { className: "text-nowrap text-center", "targets": [ -1 ] }
+        // ],
         fixedColumns: {
-            rightColumns: 1,
             leftColumns: 0,
+            rightColumns: 1
         }
     });
 

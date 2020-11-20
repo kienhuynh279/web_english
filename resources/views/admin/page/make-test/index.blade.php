@@ -13,11 +13,18 @@
                     <th>Mô tả ngắn</th>
                     <th>Trạng thái</th>
                     <th>Ngày đăng</th>
-                    <th></th>
+                    <th>
+                        <button disabled class="btn btn-sm btn-secondary">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button disabled class="btn btn-sm btn-secondary">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </th>
                 </tr>
             </thead>
             <tbody>
-            @forelse ($forms as $form)
+                @foreach ($forms as $form)
                 <tr>
                     <th>{{ $form->title }}</th>
                     <th>{!! $form->summary !!}</th>
@@ -34,17 +41,28 @@
                         </form>
                     </th>
                 </tr>
-            @empty 
-                <tr>
-                    <td colspan="12">
-                        <div class="alert alert-danger mb-0" role="alert">
-                            Không tìm thấy dữ liệu
-                        </div>
-                    </td>
-                </tr>
-            @endforelse
+                @endforeach
             </tbody>
         </table>
     </div>
 </div>
+<script>
+    let table = $("#dataTable").DataTable({
+        scrollX: true,
+        // search: false,
+        // paging: false,
+        // searching: false,
+        aaSorting: [],
+        bInfo : false,
+        // columnDefs: [
+        //     { className: "text-nowrap text-center", "targets": [ -1 ] }
+        // ],
+        fixedColumns: {
+            leftColumns: 0,
+            rightColumns: 1
+        }
+    });
+
+    new ResizeSensor($("#dataTable"), () => table.draw());
+</script>
 @stop

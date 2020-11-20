@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('title')
-Trang sửa bài kiểm tra
+Sửa loại tin tức
 @endsection
 
 @section('main')
@@ -9,8 +9,7 @@ Trang sửa bài kiểm tra
 <form enctype="multipart/form-data" action="{{route("adminBlogCatePutEdit",$cates->id)}}" method="post">
     <div class="card">
         <div class="card-header">
-            <button class="btn btn-success" type="submit" name="submit"><i
-                    class="fas fa-save"></i>  Lưu thay đổi</button>
+            <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Lưu thay đổi</button>
             <a href="{{ route('adminBlogCate') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
         </div>
         <div class="card-body">
@@ -20,8 +19,8 @@ Trang sửa bài kiểm tra
             </div>
         </div>
     </div>
- </form>
-  <script>
+</form>
+<script>
     // CKEditor
     CKEDITOR.replace('summary', { height: '150px' });
     CKEDITOR.replace('summary_en', { height: '150px' });

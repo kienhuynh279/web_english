@@ -1,25 +1,24 @@
 @extends('admin.master')
 
 @section('title')
-Trang tạo loại Blogs
+Tạo loại tin tức
 @endsection
 
 @section('main')
 <form enctype="multipart/form-data" action="{{route("adminBlogCatePostAdd")}}" method="post">
     <div class="card">
         <div class="card-header">
-            <button class="btn btn-success" type="submit" name="submit"><i
-                    class="fas fa-save"></i> Lưu loại đề</button>
+            <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Lưu loại đề</button>
             <a href="{{ route('adminFormCate') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
         </div>
-            <div class="card-body d-flex flex-wrap">
-                {{ csrf_field() }}
-                @include("admin.page.blog-category.inc.form")
-            </div>
+        <div class="card-body d-flex flex-wrap">
+            {{ csrf_field() }}
+            @include("admin.page.blog-category.inc.form")
+        </div>
     </div>
- </form>
+</form>
 
- <script>
+<script>
     // CKEditor
     CKEDITOR.replace('summary', { height: '150px' });
     CKEDITOR.replace('summary_en', { height: '150px' });

@@ -62,10 +62,10 @@
 <script>
     let table = $("#dataTable").DataTable({
         scrollX: true,
-        search: false,
-        paging: false,
+        // search: false,
+        // paging: false,
         aaSorting: [],
-        searching: false,
+        // searching: false,
         bInfo : false,
         fixedColumns: {
             rightColumns: 1,
