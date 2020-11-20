@@ -29,12 +29,12 @@
                     @if($item->vi_tri == 0 )
                     <td>Không thuộc danh mục nào</td>
                     @else
-                    @foreach ($postcats as $sub_item)
-                    @if ($item->vi_tri == $sub_item->id)
-                    <td>{{ $sub_item->title }}</td>
-                    @break
-                    @endif
-                    @endforeach
+                        @foreach ($postcats as $sub_item)
+                            @if ($item->vi_tri == $sub_item->id)
+                                <td>{{ $sub_item->title }}</td>
+                                @break
+                            @endif
+                        @endforeach
                     @endif
                     <td>
                         <img width="100px" src="{{Storage::url('/upload/img/postcats/'.$item->avatar)}}" class="thumbnail">

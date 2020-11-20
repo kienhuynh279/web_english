@@ -27,14 +27,12 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 89)
-                        <div class="img-banner">
-                            <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
-                        </div>
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -42,13 +40,13 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">TOEFL</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 90)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -56,12 +54,12 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 91)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -79,12 +77,12 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 92)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="50%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -93,12 +91,12 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 93)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -107,12 +105,12 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 94)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -130,13 +128,13 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 95)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -144,13 +142,13 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 96)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -158,13 +156,13 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 97)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -180,13 +178,13 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 98)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -194,13 +192,13 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 99)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -208,13 +206,13 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 100)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -230,12 +228,12 @@
             </div>
             <div class="row">
                 <div class="col-sm-3">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 101)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -244,12 +242,12 @@
                     </a>
                 </div>
                 <div class="col-sm-3">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 102)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -258,12 +256,12 @@
                     </a>
                 </div>
                 <div class="col-sm-3">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 103)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach
@@ -272,12 +270,12 @@
                     </a>
                 </div>
                 <div class="col-sm-3">
-                    <a href="{{ route('course') }}">
+                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
                         @if($item->id == 104)
-                        <img class="banner" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" width="70%" alt="">
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
                         @endif
                         @endif
                         @endforeach

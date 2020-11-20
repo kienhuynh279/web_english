@@ -15,7 +15,7 @@
                 @endif
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4 class="text-center">Chứng chỉ</h4>
+                <h4 class="" style="font-weight: bold; color:white; font-size:18px">Chứng chỉ</h4>
                 {{-- @foreach($postcats) --}}
                 <ul>
                     @if(!empty($postcats))
@@ -27,8 +27,8 @@
                     @if($child->id ==41 )
                     @foreach( $postcats as $child2)
                     @if( $child2->vi_tri==41)
-                    <li class="text-center">
-                        <a style="color:#fff" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
+                    <li class="">
+                        <a style="color:black; font-weight: bold" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
                         </a>
                     </li>
                     @endif
@@ -44,7 +44,7 @@
                 </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4 class="text-center">Ôn thi lớp 10</h4>
+                <h4 class="text-center" style="font-weight: bold; color:white;font-size:18px">Ôn thi lớp 10</h4>
                 <ul>
                     @if(!empty($postcats))
 
@@ -56,7 +56,7 @@
                     @foreach( $postcats as $child2)
                     @if( $child2->vi_tri==42)
                     <li class="text-center">
-                        <a style="color:#fff" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
+                        <a style="color:black; font-weight: bold" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
                         </a>
                     </li>
                     @endif
@@ -71,7 +71,7 @@
                 </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4 class="text-center">Ôn thi THPT</h4>
+                <h4 class="text-center" style="font-weight: bold; color:white;font-size:18px">Ôn thi THPT</h4>
                 <ul>
                     @if(!empty($postcats))
 
@@ -83,7 +83,7 @@
                     @foreach( $postcats as $child2)
                     @if( $child2->vi_tri==43)
                     <li class="text-center">
-                        <a style="color:#fff" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
+                        <a style="color:black; font-weight: bold" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
                         </a>
                     </li>
                     @endif
@@ -98,7 +98,7 @@
                 </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4 class="text-center">Ôn thi đại học</h4>
+                <h4 class="text-center" style="font-weight: bold; color:white;font-size:18px">Ôn thi đại học</h4>
                 <ul>
                     @if(!empty($postcats))
 
@@ -110,7 +110,7 @@
                     @foreach( $postcats as $child2)
                     @if( $child2->vi_tri==44)
                     <li class="text-center">
-                        <a style="color:#fff" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
+                        <a style="color:black; font-weight: bold" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
                         </a>
                     </li>
                     @endif
@@ -125,7 +125,7 @@
                 </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4 class="text-center">Chuyên nghành</h4>
+                <h4 class="text-center" style="font-weight: bold; color:white;font-size:18px">Chuyên nghành</h4>
                 <ul>
                     @if(!empty($postcats))
 
@@ -137,7 +137,7 @@
                     @foreach( $postcats as $child2)
                     @if( $child2->vi_tri==45)
                     <li class="text-center">
-                        <a style="color:#fff" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
+                        <a style="color:black; font-weight: bold" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
                         </a>
                     </li>
                     @endif

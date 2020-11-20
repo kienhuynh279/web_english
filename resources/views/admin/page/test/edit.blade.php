@@ -127,7 +127,7 @@
                 </div>
                 <div class=" col-lg-12 messages text-danger"></div>
             </div>
-            <div class="form-group col-md-6 px-3">
+            <div class="form-group col-md-12 px-3">
                 <label class="w-100" for="content_en" style="padding-top: 7px;">Nội dung bằng tiếng anh</label>
                 <div class="md-form">
                     <textarea id="content_en" name="content_en" class="md-textarea form-control">{{ $data['content_en'] }}</textarea>
