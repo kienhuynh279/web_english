@@ -32,20 +32,13 @@ class MakeTestController extends Controller
      */
     public function create()
     {
-        // $TestCategoryData = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
-        // foreach ($TestCategoryData as $item) {
-        //     $item->child = TestCategory::where(["del_flg" => "0", "parent_id" =>  $item->id])->get();
-        // }
+        $blog = Form::all();
 
         $TestCategoryData = PostCats::where(["vi_tri" => "0"])->get();
         foreach ($TestCategoryData as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
-
-        // $FormCategoryData = TestCategory::where(["del_flg" => "1", "parent_id" => "0"])->get();
-        // foreach ($FormCategoryData as $item) {
-        //     $item->child = TestCategory::where(["parent_id" =>  $item->id])->get();
-        // }
         return view('admin.page.make-test.create', [
-            "FormCategoryData" => $TestCategoryData
+            "FormCategoryData" => $TestCategoryData,
+            "form" => $blog
         ]);
     }
 
@@ -67,11 +60,9 @@ class MakeTestController extends Controller
         $blog->summary_en = $request->get("Summary_en");
 
         $blog->content = json_encode(explode("-", $request->get("Content")));
-        $blog->meta_description = $request->get("Meta_Desc");
-        $blog->meta_title = $request->get("Meta_Title");
         $blog->del_flg = 0;
-        $blog->hight_flg = $request->get("Hight_Flg");
-        $blog->status = 1;
+        $blog->hight_flg = $request->get("Hight_flg");
+        $blog->status = $request->get("Status");
         $blog->slug = $request->get("Slug");
         $blog->position = $request->get("Position");
         $blog->avatar = $filename;
@@ -100,11 +91,12 @@ class MakeTestController extends Controller
      */
     public function edit($id)
     {
-        $cate = FormCategory::all();
+        $TestCategoryData = PostCats::where(["vi_tri" => "0"])->get();
+        foreach ($TestCategoryData as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
         $blog = Form::findOrFail($id);
 
         return view("admin.page.make-test.edit")->with([
-            "cate" => $cate,
+            "FormCategoryData" => $TestCategoryData,
             "form" => $blog
         ]);
     }
@@ -128,14 +120,11 @@ class MakeTestController extends Controller
         $blog->id_theforms_cat = $request->get("Cate_Id");
         $blog->summary = $request->get("Summary");
         $blog->summary_en = $request->get("Summary_en");
-        $blog->content = $request->json_encode(explode("-", $request->get("Content")));
-
-
+        $blog->content = $request->get("Content");
         $blog->meta_description = $request->get("Meta_Desc");
         $blog->meta_title = $request->get("Meta_Title");
-        // $blog->del_flg = $request->get("Del_Flg");
         $blog->hight_flg = $request->get("Hight_Flg");
-        $blog->status = 1;
+        $blog->status = $request->get("Status");
         $blog->slug = $request->get("Slug");
         $blog->position = $request->get("Position");
         $blog->avatar = $filename;

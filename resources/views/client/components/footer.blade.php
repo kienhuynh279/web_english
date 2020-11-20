@@ -1,171 +1,42 @@
-<footer class="pt-5 {{-- footer-areasection_gap_footer --}}" style="background-color:#c47e2e;">
+<footer class="footer-area section_gap_footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-2 row footer-bottom d-flex justify-content-between">
+            <div class="col-md-3 single-footer-widget">
                 @if(!empty($banner))
                 @foreach($banner as $item )
                 @if($item->status == 1)
                 @if($item->id == 107)
-                <a href="{{route('home') }}">
-                    <img src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" weight="60px" height="60px" alt="">
-                </a>
+                <img style="margin: 30% 0 0 30%" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}" weight="100px" height="100px" alt="">
                 @endif
                 @endif
                 @endforeach
                 @endif
             </div>
-            <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4 class="" style="font-weight: bold; color:white; font-size:18px">Chứng chỉ</h4>
-                {{-- @foreach($postcats) --}}
+            <div class="col-md-3 single-footer-widget">
+                <h4 class="text-center">Chứng chỉ</h4>
                 <ul>
-                    @if(!empty($postcats))
-
-                    @foreach($postcats as $cats)
-                    @if($cats->status == 1)
-                    @if($cats->id == 37)
-                    @foreach($postcats as $child)
-                    @if($child->id ==41 )
-                    @foreach( $postcats as $child2)
-                    @if( $child2->vi_tri==41)
-                    <li class="">
-                        <a style="color:black; font-weight: bold" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
-                        </a>
-                    </li>
-                    @endif
-                    @endforeach
-                    @endif
-                    @endforeach
-                    @endif
-                    @endif
-                    @endforeach
-
-                    @endif
-
+                    <li class="text-center"><a style="color:  #fff" href="#">KET</a></li>
+                    <li class="text-center"><a style="color:  #fff" href="#">PET</a></li>
+                    <li class="text-center"><a style="color:  #fff" href="#">Toeic</a></li>
+                    <li class="text-center"><a style="color:  #fff" href="#">Ielts</a></li>
                 </ul>
             </div>
-            <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4 class="text-center" style="font-weight: bold; color:white;font-size:18px">Ôn thi lớp 10</h4>
-                <ul>
-                    @if(!empty($postcats))
-
-                    @foreach($postcats as $cats)
-                    @if($cats->status == 1)
-                    @if($cats->id == 37)
-                    @foreach($postcats as $child)
-                    @if($child->id ==42 )
-                    @foreach( $postcats as $child2)
-                    @if( $child2->vi_tri==42)
-                    <li class="text-center">
-                        <a style="color:black; font-weight: bold" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
-                        </a>
-                    </li>
-                    @endif
-                    @endforeach
-                    @endif
-                    @endforeach
-                    @endif
-                    @endif
-                    @endforeach
-
-                    @endif
-                </ul>
+            <div class=" col-md-3 single-footer-widget">
+                <h4 class="text-center">Ôn thi vào lớp 10</h4>
+                <h4 class="text-center">Ôn thi THPT</h4>
+                <h4 class="text-center">Ôn thi Đại học</h4>
+                <h4 class="text-center">Tiếng anh chuyên nghành</h4>
             </div>
-            <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4 class="text-center" style="font-weight: bold; color:white;font-size:18px">Ôn thi THPT</h4>
-                <ul>
-                    @if(!empty($postcats))
-
-                    @foreach($postcats as $cats)
-                    @if($cats->status == 1)
-                    @if($cats->id == 37)
-                    @foreach($postcats as $child)
-                    @if($child->id ==43 )
-                    @foreach( $postcats as $child2)
-                    @if( $child2->vi_tri==43)
-                    <li class="text-center">
-                        <a style="color:black; font-weight: bold" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
-                        </a>
-                    </li>
-                    @endif
-                    @endforeach
-                    @endif
-                    @endforeach
-                    @endif
-                    @endif
-                    @endforeach
-
-                    @endif
-                </ul>
-            </div>
-            <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4 class="text-center" style="font-weight: bold; color:white;font-size:18px">Ôn thi đại học</h4>
-                <ul>
-                    @if(!empty($postcats))
-
-                    @foreach($postcats as $cats)
-                    @if($cats->status == 1)
-                    @if($cats->id == 37)
-                    @foreach($postcats as $child)
-                    @if($child->id ==44)
-                    @foreach( $postcats as $child2)
-                    @if( $child2->vi_tri==44)
-                    <li class="text-center">
-                        <a style="color:black; font-weight: bold" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
-                        </a>
-                    </li>
-                    @endif
-                    @endforeach
-                    @endif
-                    @endforeach
-                    @endif
-                    @endif
-                    @endforeach
-
-                    @endif
-                </ul>
-            </div>
-            <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4 class="text-center" style="font-weight: bold; color:white;font-size:18px">Chuyên nghành</h4>
-                <ul>
-                    @if(!empty($postcats))
-
-                    @foreach($postcats as $cats)
-                    @if($cats->status == 1)
-                    @if($cats->id == 37)
-                    @foreach($postcats as $child)
-                    @if($child->id ==45)
-                    @foreach( $postcats as $child2)
-                    @if( $child2->vi_tri==45)
-                    <li class="text-center">
-                        <a style="color:black; font-weight: bold" href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}"> {{$child2->title}}
-                        </a>
-                    </li>
-                    @endif
-                    @endforeach
-                    @endif
-                    @endforeach
-                    @endif
-                    @endif
-                    @endforeach
-                    @endif
-                </ul>
+            <div class="col-md-3 single-footer-widget">
+                <h2>Mrs. Tên GV</h2>
+                <p>Chức vụ</p>
+                <br>
+                <h4>Thông tin liên hệ</h4>
+                <div class="col-lg-12 col-sm-12 footer-social">
+                    <a href="#"><i style="color: #002663" class="fab fa-facebook-square fa-2x"></i></i></a>
+                    <a href="#"><i style="color: #002663" class="fab fa-instagram fa-2x"></i></i></a>
+                    <a href="#"><i style="color: #002663" class="fas fa-envelope fa-2x"></i></a>
+                  </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid mt-5" style="background-color: #795226;">
-        <div class="container text-light py-3 d-flex justify-content-between">
-            <span>Thiết kế bởi ...</span>
-            <ul class="my-0" style="display: flex; list-style: none; gap: 15px;">
-                <li>
-                    <a href="#"><i style="color: white;" class="fab fa-facebook-square"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i style="color: white;" class="fab fa-instagram"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i style="color: white;" class="fab fa-twitter"></i></a>
-                </li>
-            </ul>
-        </div>
-    </div>
 </footer>

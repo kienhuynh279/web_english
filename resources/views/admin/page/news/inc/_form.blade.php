@@ -1,6 +1,7 @@
 <div class="form-group col-sm-6">
-    <label>Tên tin tức : </label>
-    <input required type="text" id="title" name="Title" class="form-control" placeholder="Tên tin tức">
+    {{-- <label>Tên tin tức : </label>
+    <input type="text" id="title" name="Title" class="form-control" placeholder="Tên tin tức" value="{{ !old(title) ? $blog['title'] ?? "" ? $blog['title'] }}"> --}}
+    <x-input-form type="text" id="title" label="Tiêu đề:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề" :value="$blog->title ?? ''" />
 </div>
 <div class="form-group col-sm-6">
     <x-input-form type="text" id="title_en" label="Tiêu đề English:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề" :value="$blog->title_en ?? ''" />
@@ -91,9 +92,9 @@
     <x-input-form type="text" label="Chức vụ" name="Position" classGroup="col-md" class="" placeholder="Tiêu đề" :value="$blog->position ?? ''" />
 </div>
 
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-12">
     <label>Slug : </label>
-    <input required type="text" id="slug" name="Slug" class="form-control" placeholder="Slug...">
+    <input required type="text" id="slug" name="Slug" class="form-control" placeholder="Slug..." value="{{ $blog['slug'] }}"2>
 </div>
 </form>
 
@@ -150,7 +151,7 @@
         $('#answer').html(html);
     }
     // create slug
-        $('input#title').keyup(function(event) {
+        $('#title').keyup(function(event) {
             /* Act on the event */
             var title, slug;
             //Lấy text từ thẻ input title
@@ -181,6 +182,6 @@
             slug = '@' + slug + '@';
             slug = slug.replace(/\@\-|\-\@|\@/gi, '');
             //In slug ra textbox có id “slug”
-            $('input#slug').val(slug);
+            $('#slug').val(slug);
         });
 </script>

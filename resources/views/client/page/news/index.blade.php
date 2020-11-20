@@ -24,7 +24,7 @@
                             </div>
                             <div class="col-md-9">
                                 <div class="blog_post">
-                                    <img src="{{ asset('dist/img/blog/main-blog/m-blog-1.jpg') }}" alt="">
+                                    <img src="{{Storage::url('upload/img/blog/'.$item->avatar)}}" alt="">
                                     <div class="blog_details">
                                         <a href="{{ asset($item->slug) }}">
                                             <h2>{{ $item->title }}</h2>
