@@ -33,14 +33,12 @@
                 <tr>
                     <td>{{$item->id}}</td>
                     <td>{{$item->title}}</td>
-
                     @foreach ($postcatslist as $postcat)
                     @if ($postcat->id === $item->id_thepost_cat)
                     <td>{{$postcat->title}}</td>
                     @break
                     @endif
                     @endforeach
-
                     <td>
                         <img width="100px" src="{{Storage::url('upload/img/posts/'.$item->avatar)}}" class="thumbnail">
                     </td>

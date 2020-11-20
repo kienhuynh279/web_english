@@ -150,6 +150,15 @@
                                                     filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
                                                 });
 
+<<<<<<< HEAD
+                                            </script>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Content English: </label>
+                                            <textarea required class="ckeditor" required name="content_en">{{$post->content_en}}</textarea>
+                                            <script type="text/javascript">
+                                                var editor = CKEDITOR.replace('content_en', {
+=======
                                         </script>
                                     </div>
                                     <div class="form-group">
@@ -157,6 +166,7 @@
                                         <textarea required class="ckeditor" required name="content">{{$post->content_en}}</textarea>
                                         <script type="text/javascript">
                                             var editor = CKEDITOR.replace('content', {
+>>>>>>> 63aeb4163a663bc13de99f538241c731185b0efb
                                                     language: 'vi',
                                                     filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
                                                     filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',

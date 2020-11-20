@@ -286,9 +286,13 @@
                     </a>
                     @endif
                 </div>
+              
             </div>
+            <br>
+            <br>
         </div>
         @endforeach
+        
 
     </div>
 </section>

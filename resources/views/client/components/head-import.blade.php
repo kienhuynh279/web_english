@@ -51,7 +51,7 @@
         right: -25%;
         margin: 0 auto;
         list-style: none;
-        background-color: #c47e2e;
+        background-color: #ffffff;
     }
 
     .menu-hover>li {
@@ -63,7 +63,7 @@
         display: block;
         padding: 10px 15px;
         text-decoration: none;
-        color: #fff;
+        color: #b36c22;
     }
 
     .menu-hover>li:last-child a {
@@ -81,7 +81,7 @@
         left: 0;
         width: 200px;
         box-shadow: 0px 1px 8px -4px #333;
-        background-color: #c47e2e;
+        background-color:#fff;
         display: none;
     }
 
@@ -90,7 +90,7 @@
     }
 
     .menu-sub li a {
-        color: white !important;
+        color: #b36c22 !important;
     }
 
     .menu-hover li .menu-sub ul {
@@ -103,6 +103,6 @@
     }
 
     .menu-hover li:hover>a {
-        background: #b36c22;
+        background: #fff;
     }
 </style>
