@@ -50,7 +50,8 @@ class CourseController extends Controller
     {
         $postcat = PostCats::where('slug', $slug2)->first();
         $post = Post::where(['id_thepost_cat' => $postcat->id])->get();
-        
+        $form = Form::all();
+      
         
         return view('client.index', [
             'title' => 'Ôn thi Ket',
@@ -58,8 +59,7 @@ class CourseController extends Controller
             'data' => [
                 'postcat' => $postcat,
                 'post' => $post,
-                // 'formcat' => $cate,
-                // 'form' => $form,
+                'form' => $form,
            ]
         ]);
     }
