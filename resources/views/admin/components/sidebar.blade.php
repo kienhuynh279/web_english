@@ -75,27 +75,13 @@
 
 
                 <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link">
+                    <a href="{{ route('adminTest') }}" class="nav-link">
                         <i class="nav-icon fas fa-question"></i>
                         <p>
                             Quản Lý Câu Hỏi
-                            <i class="right fas fa-angle-left"></i>
+                            
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('adminTestCategory') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Loại Câu Hỏi</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('adminTest') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh Sách Câu Hỏi</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
                 <li class="nav-item">
