@@ -1,7 +1,7 @@
 <div style="padding-top: 80px" class="container">
     <div class="row">
         <section class="hero is-primary is-fullheight">
-            <div class="column is-half">
+            <div id="questionList" class="column is-half">
                 @foreach ($data['form'] as $item)
                 @foreach(json_decode($item->content) as $i)
                 @foreach($data['test'] as $test)
@@ -14,7 +14,7 @@
                         @foreach(json_decode($test->question) as $ques)
                         <div class="form-group">
                             <p class="option form-inline">
-                                <input type="radio" name="answer" value="{{ $item->answer }}">
+                                <input type="radio" data-id="{{ $test->id }}" data-answer="{{ $test->answer }}" name="answer" value="{{ $ques }}">
                                 {{$ques}}
                             </p>
                         </div>
@@ -29,8 +29,31 @@
                 @endforeach
             </div>
             <div>
-                <a style="margin-bottom: 1rem" href="javascript:void(0)" class="btn btn-success">Nộp bài</a>
+                <a id="submit" style="margin-bottom: 1rem" href="javascript:void(0)" class="btn btn-success">Nộp bài</a>
             </div>
         </section>
     </div>
 </div>
+<script>
+    let btnSubmit = document.getElementById('submit');
+
+    let totalQuestion = document.getElementById('questionList').childElementCount;
+    let checkedQuestion = 0;
+    let rightAnswer = 0;
+
+    btnSubmit.addEventListener('click', () => {
+        checkedQuestion = 0;
+        document.querySelectorAll('input[name=answer]').forEach(function(item) {
+            item.readOnly = true;
+            if (item.attributes['data-answer'].value == item.value) item.parentElement.classList.add('bg-success');
+        });
+
+        document.querySelectorAll('input[name=answer]:checked').forEach(function(item) {
+            checkedQuestion++;
+            if (item.attributes['data-answer'].value != item.value) item.parentElement.classList.add('bg-danger');
+            else rightAnswer++;
+        });
+
+       alert(`Số câu hỏi: ${totalQuestion}, Đã làm ${checkedQuestion}, Số câu đúng ${rightAnswer}`);
+    })
+</script>
