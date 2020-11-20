@@ -31,18 +31,11 @@ class TestController extends Controller
      */
     public function getAdd()
     {
-        // $TestCategoryData = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
-        // foreach ($TestCategoryData as $item) $item->child = TestCategory::where(["del_flg" => "0", "parent_id" =>  $item->id])->get();
-
-        // dd($TestCategoryData);
-
-        $TestCategoryParent = PostCats::where(["vi_tri" => "0"])->get();
-        $TestCategoryData = [];
-        foreach ($TestCategoryParent as $item) array_push($TestCategoryData, PostCats::where(["vi_tri" =>  $item->id])->get());
-        foreach ($TestCategoryData[0] as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
+        $TestCategoryData = PostCats::where(["vi_tri" => "0"])->get();
+        foreach ($TestCategoryData as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
 
         return view('admin.page.test.add', [
-            "TestCategoryData" => $TestCategoryData[0]
+            "TestCategoryData" => $TestCategoryData
         ]);
     }
 
@@ -79,20 +72,15 @@ class TestController extends Controller
      */
     public function getEdit($id)
     {
-        // $TestCategoryData = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
-        $TestCategoryParent = PostCats::where(["vi_tri" => "0"])->get();
-        $TestCategoryData = [];
-
+        $TestCategoryData = PostCats::where(["vi_tri" => "0"])->get();
         $testData = Test::find($id);
 
         if ($testData === null) return abort(404);
 
-        // foreach ($TestCategoryData as $item) $item->child = TestCategory::where(["del_flg" => "0", "parent_id" =>  $item->id])->get();
-        foreach ($TestCategoryParent as $item) array_push($TestCategoryData, PostCats::where(["vi_tri" =>  $item->id])->get());
-        foreach ($TestCategoryData[0] as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
+        foreach ($TestCategoryData as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
 
         return view('admin.page.test.edit', [
-            "TestCategoryData" => $TestCategoryData[0],
+            "TestCategoryData" => $TestCategoryData,
             "data" => $testData
         ]);
     }
