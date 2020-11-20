@@ -6,7 +6,7 @@ Trang sửa bài kiểm tra
 
 @section('main')
 
-<form enctype="multipart/form-data" action="{{route("adminBlogCatePutEdit",$cates->id)}}" method="post">
+<form enctype="multipart/form-data" action="{{route("adminBlogCatePutEdit",$data->id)}}" method="post">
     <div class="card">
         <div class="card-header">
             <button class="btn btn-success" type="submit" name="submit"><i

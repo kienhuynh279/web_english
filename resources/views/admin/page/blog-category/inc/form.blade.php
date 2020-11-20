@@ -1,18 +1,18 @@
 <div class="form-group col-sm-6">
     <label>Tên loại blog: </label>
-    <input required type="text" id="title" name="Title" class="form-control"
-    placeholder="Tên loại bài kiểm tra">
+    <input type="text" id="title" name="Title" class="form-control"
+    placeholder="Tên loại bài kiểm tra" value="{{ $data->title ?? old('title') }}">
   </div>
     <div class="form-group col-sm-6">
       <x-input-form type="text" id="title_en" label="Tiêu đề English:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề"
-        :value="$blog->title_en ?? ''" />
+        :value="$data->title_en ?? ''" />
     </div>
     <div class="form-group col-md-12 px-3">
       <label class="col-sm-2" for="ParentId" style="padding-top: 7px;">Danh mục cha</label>
       <div class="w-100">
         <select class="form-control" name="parent_id" id="ParentId">
           <option value="0" selected>Không thuộc danh mục nào</option>
-            @foreach ($cate_list as $cate)
+            @foreach ($cates as $cate)
               <option value="{{ $cate->id }}">{{ $cate->title }}</option>
             @endforeach
         </select>
@@ -29,7 +29,7 @@
       <div class="form-group col-sm-6 px-3">
         <label class="w-100" for="summary" style="padding-top: 7px;">Tóm tắt</label>
             <div class="md-form">
-              <textarea id="summary" name="Summary" class="md-textarea form-control">{{ $blog->summary ?? old('summary') }}</textarea>
+              <textarea id="summary" name="Summary" class="md-textarea form-control">{{ $data->summary ?? old('summary') }}</textarea>
             </div>
         <div class="col-lg-12 messages text-danger"></div>
       </div>
@@ -37,19 +37,19 @@
       <div class="form-group col-sm-6 px-3">
         <label class="w-100" for="summary" style="padding-top: 7px;">Tóm tắt bằng tiếng anh:</label>
             <div class="md-form">
-              <textarea id="summary_en" name="Summary_en" class="md-textarea form-control">{{ $blog->summary_en ?? old('summary_en') }}</textarea>
+              <textarea id="summary_en" name="Summary_en" class="md-textarea form-control">{{ $data->summary_en ?? old('summary_en') }}</textarea>
             </div>
         <div class="col-lg-12 messages text-danger"></div>
       </div>
   
     <div class="form-group col-sm-6">
       <x-input-form type="text" label="Description Meta:" name="Meta_Desc" classGroup="col-md" class="" placeholder="Checked"
-        :value="$blog->meta_description ?? ''" />
+        :value="$data->meta_description ?? ''" />
     </div>
   
     <div class="form-group col-sm-6">
       <x-input-form type="text" label="Title Meta:" name="Meta_Title" classGroup="col-md" class="" placeholder="Checked"
-        :value="$blog->meta_title ?? ''" />
+        :value="$data->meta_title ?? ''" />
     </div>
   
     <div class="form-group col-sm-6">
@@ -62,12 +62,12 @@
   
     <div class="form-group col-sm-3">
       <x-input-form type="text" label="Checked" name="vi-tri" classGroup="col-md" class="" placeholder="Checked"
-        :value="$blog->checked ?? ''" />
+        :value="$data->checked ?? ''" />
     </div>
   
     <div class="form-group col-sm-3">
       <x-input-form type="text" label="Chức vụ" name="Position" classGroup="col-md" class="" placeholder="Tiêu đề"
-        :value="$blog->position ?? ''" />
+        :value="$data->position ?? ''" />
     </div>
   
     <div class="form-group col-sm-12">
