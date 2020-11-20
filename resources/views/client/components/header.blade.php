@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff1e0">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <h2 class="py-0 mb-0 font-weight-medium"><img src="{{-- asset('image/src/Logo.png') --}}http://tienganhmoingay.com.vn/storage//upload/img/banner/logo_new.png" alt="Logo" height="60px"></h2>
+                <h2 class="py-0 mb-0 font-weight-medium"><img src="http://tienganhmoingay.com.vn/storage//upload/img/banner/logo_new.png" alt="Logo" height="60px"></h2>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
