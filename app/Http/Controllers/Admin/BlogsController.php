@@ -44,13 +44,10 @@ class BlogsController extends Controller
         $blog->content = $request->get("Content");
         $blog->content_en = $request->get("Content_en");
         $blog->checked = $request->get("Checked");
-        $blog->meta_description = $request->get("Meta_Desc");
-        $blog->meta_title = $request->get("Meta_Title");
         $blog->del_flg = 0;
-        $blog->hight_flg = $request->get("Hight_Flg");
-        $blog->status = 1;
+        $blog->hight_flg = $request->get("Hight_flg");
+        $blog->status = $request->get('status');
         $blog->slug = $request->get("Slug");
-        $blog->position = $request->get("Position");
         $blog->avatar = $filename;
         $request->Avatar->storeAs('public/upload/img/blog', $filename);
         $blog->save();
