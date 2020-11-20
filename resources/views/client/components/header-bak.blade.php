@@ -14,13 +14,13 @@
             <div class="container" id="block-menu">
                 <a style="font-weight: bold; color:#fdc632" class="navbar-brand logo_h" href="{{route('home') }}">
                     @if(!empty($banner))
-                    @foreach($banner as $item )
-                    @if($item->status == 1)
-                    @if($item->id == 106)
-                    <img src="http://tienganhmoingay.com.vn/storage//upload/img/banner/logo_new.png" weight="60px" height="60px" alt=""> <!-- {{Storage::url('/upload/img/banner/'.$item->avatar)}} -->
-                    @endif
-                    @endif
-                    @endforeach
+                        @foreach($banner as $item )
+                            @if($item->status == 1)
+                                @if($item->id == 106)
+                                    <img src="http://tienganhmoingay.com.vn/storage//upload/img/banner/logo_new.png" weight="60px" height="60px" alt=""> <!-- {{Storage::url('/upload/img/banner/'.$item->avatar)}} -->
+                                @endif
+                            @endif
+                        @endforeach
                     @endif
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,38 +31,35 @@
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="menu-hover clearfix navbar-nav">
                         @if(!empty($postcats))
-                        @foreach($postcats as $cats)
-                        <li class="nav-item">
-                            @if($cats->status == 1)
-                            @if($cats->vi_tri == 0)
-                            {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
-                        @if($cats->id==37)
-                        <a href="javascrip:void(0)">
-
-                            {{$cats->title}}
-                        </a>
-                        @else
-                        <a href="{{asset($cats->slug)}}">
-                            {{$cats->title}}
-                        </a>
-                        @endif
-                        @endif
+                            @foreach($postcats as $cats)
+                                <li class="nav-item">
+                                    @if($cats->status == 1)
+                                            @if($cats->vi_tri == 0)
+                                            {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
+                                        @if($cats->id==37)
+                                            <a href="javascrip:void(0)">
+                                                {{$cats->title}}
+                                            </a>
+                                            @else
+                                            <a href="{{asset($cats->slug)}}">
+                                                {{$cats->title}}
+                                            </a>
+                                        @endif
+                                     @endif
                         <ul class="menu-sub">
                             @foreach($postcats as $child)
                             @if($cats->id == $child->vi_tri)
-                            <li>
-                                <a href="#" style="color: white;">
-
-                                    {{$child->title}}
-                                </a>
-                                @endif
+                                <li>
+                                    <a href="#" style="color: white;">
+                                        {{$child->title}}
+                                    </a>
+                            @endif
                                 <ul class="menu-sub">
                                     @foreach( $postcats as $child2)
                                     @if($child->id == $child2->vi_tri)
                                     <li>
                                         {{-- {{asset('danhmuc/'.$cats->id.'/'.$cats->slug.'/'.$child->slug.'/'.$child2->slug.'.html')}} --}}
                                         <a href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">
-
                                             {{$child2->title}}
                                         </a>
                                     </li>
@@ -72,10 +69,11 @@
                             </li>
                             @endforeach
                         </ul>
-                        </li>
                         @endif
+                        </li>
                         @endforeach
                         @endif
+
                         <li>
                             <a href="#" id="search">
                                 <i class="ti-search"></i>
