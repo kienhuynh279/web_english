@@ -66,17 +66,39 @@
         <div class="container">
             <ul class="menu-item navbar-nav mr-auto">
                 <li class=" nav-item nav-item-active">
-                    <a class="nav-link" href="/">Trang chủ</a>
+                    <a class="nav-link" href="/">Trang Chủ</a>
                 </li>
-                @if(!empty($postcats))
+                <li class=" nav-item nav-item-active">
+                    <a class="nav-link" href="/">Ôn Thi</a>
+                    <ul class="menu-sub">
+                        @foreach($postcats as $cats)
+                            @if($cats->vi_tri == 0)
+                            <li>
+                                <a href="#">{{$cats->title}}</a>
+                            @endif
+                                <ul class="menu-sub">
+                                    @foreach( $postcats as $child2)
+                                        @if($cats->id == $child2->vi_tri)
+                                            <li>
+                                                <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}">{{$child2->title}}</a>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </li>
+                           
+                        @endforeach                   
+                    </ul>   
+                </li>
+                {{-- @if(!empty($postcats))
                 @foreach($postcats as $cats)
-                @if($cats->status == 1)
-                @if($cats->vi_tri == 0)
-                    <li class="nav-item nav-item-active">
+                @if($cats->status == 1) --}}
+                {{-- @if($cats->vi_tri == 0) --}}
+                    {{-- <li class="nav-item nav-item-active"> --}}
                             {{-- @if($cats->vi_tri == 0) --}}
-                                <a href="#" class="nav-link">{{$cats->title}}</a>
+                                {{-- <a href="#" class="nav-link">{{$cats->title}}</a> --}}
                             {{-- @endif --}}
-                        <ul class="menu-sub">
+                        {{-- <ul class="menu-sub">
                             @foreach($postcats as $child)
                             @if($cats->id == $child->vi_tri)
                             <li>
@@ -94,11 +116,11 @@
                             </li>
                             @endforeach
                         </ul>   
-                    </li>
-                @endif
-                @endif
+                    </li> --}}
+                {{-- @endif --}}
+                {{-- @endif
                 @endforeach
-                @endif
+                @endif --}}
                 <li class="nav-item nav-item-active">
                     <a class="nav-link" href="/tin-tuc">Tin tức</a>
                 </li>

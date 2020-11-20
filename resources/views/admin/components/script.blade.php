@@ -112,6 +112,6 @@ $(document).ready(function() {
     });
 </script>
 
-{{-- @if(Session::has("toastrInfo"))
+@if(Session::has("toastrInfo"))
 @include('errors.toastr')
-@endif --}}
+@endif
