@@ -159,24 +159,24 @@
 
     // Validate
     let constraints = {
-        title: {
-            presence: {
-                allowEmpty: false,
-                message: "^Không được để trống!"
-            }
-        },
-        tittle_en: {
-            presence: {
-                allowEmpty: false,
-                message: "^Không được để trống!"
-            }
-        },
-        slug: {
-            presence: {
-                allowEmpty: false,
-                message: "^Không được để trống!"
-            }
-        },
+        // title: {
+        //     presence: {
+        //         allowEmpty: false,
+        //         message: "^Không được để trống!"
+        //     }
+        // },
+        // tittle_en: {
+        //     presence: {
+        //         allowEmpty: false,
+        //         message: "^Không được để trống!"
+        //     }
+        // },
+        // slug: {
+        //     presence: {
+        //         allowEmpty: false,
+        //         message: "^Không được để trống!"
+        //     }
+        // },
         code: {
             presence: {
                 allowEmpty: false,

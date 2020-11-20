@@ -104,18 +104,11 @@
                                     @endforeach
                                 </ul>
                             </li>
-<<<<<<< HEAD
-                        @endforeach                   
-                    </ul>   
-                </li>
-                {{-- @if(!empty($postcats))
-=======
 
                             @endforeach
                         </ul>
                     </li>
                     {{-- @if(!empty($postcats))
->>>>>>> 63aeb4163a663bc13de99f538241c731185b0efb
                 @foreach($postcats as $cats)
                 @if($cats->status == 1) --}}
                     {{-- @if($cats->vi_tri == 0) --}}
@@ -152,9 +145,6 @@
                 <li class="nav-item nav-item-active">
                     <a class="nav-link" href="/lien-he">Liên Hệ</a>
                 </li>
-<<<<<<< HEAD
-            </ul>
-=======
                 </ul>
                 {{-- <ul class="menu-item navbar-nav ml-auto">
                 <li class="nav-item nav-item-active">
@@ -165,7 +155,6 @@
                 </li>
             </ul> --}}
             </div>
->>>>>>> 63aeb4163a663bc13de99f538241c731185b0efb
         </div>
     </nav>
 </header>
