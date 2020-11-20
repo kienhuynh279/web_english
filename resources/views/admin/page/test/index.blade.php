@@ -28,7 +28,7 @@
             <tbody>
                 @foreach ($data as $item)
                 <tr>
-                    <td>{{ $item['code'] }}</td>
+                    <td>{{ substr($item['code'], 5) }}</td>
                     <td>{{ $item['title'] }}</td>
                     <td>{!! $item['content'] !!}</td>
                     <td class="text-{{ $item['high_flg'] == 1 ? "success" : "danger" }}">{{ $item['high_flg'] == 1 ? "Có" : "Không" }}</td>
@@ -57,9 +57,9 @@
 <script>
     let table = $("#dataTable").DataTable({
         scrollX: true,
-        search: false,
-        paging: false,
-        searching: false,
+        // search: false,
+        // paging: false,
+        // searching: false,
         aaSorting: [],
         bInfo : false,
         columnDefs: [

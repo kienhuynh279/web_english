@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\BlogsRequest;
 use App\Models\Blogs;
 use App\Models\Blog_Cats;
+use App\Models\PostCats;
 
 class BlogsController extends Controller
 {
@@ -20,9 +21,11 @@ class BlogsController extends Controller
 
     public function getAdd()
     {
-        $cate = Blog_Cats::all();
+        $TestCategoryData = PostCats::where(["vi_tri" => "0"])->get();
+        foreach ($TestCategoryData as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
+
         return view("admin.page.news.createl",[
-            "cate" => $cate
+            "cate" => $TestCategoryData
         ]);
     }
 

@@ -10,8 +10,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $arr = [];
-        $blog = Blogs::Where($arr)->paginate(3);
+        $blog = Blogs::Where(['status' => 1])->paginate(4);
        return view('client.index',[
            'blog' => $blog,
            'title' => 'Tin Tức',

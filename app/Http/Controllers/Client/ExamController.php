@@ -15,13 +15,13 @@ class ExamController extends Controller
     {
         $form = Form::where('id', '=', $id)->get();
         $test = Test::all();
-        $formCate = FormCategory::all();
+       // $formCate = FormCategory::all();
         return view('client.index', [
             'title' => 'Test',
             'data' => [
                 'form' => $form,
                 'test' => $test,
-                'FormCate' => $formCate
+                //'FormCate' => $formCate
             ]
         ]);
     }

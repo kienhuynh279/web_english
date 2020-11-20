@@ -7,6 +7,7 @@ use App\Models\Form;
 use App\Models\FormCategory;
 use Illuminate\Http\Request;
 use App\Models\TestCategory;
+use App\Models\PostCats;
 
 class MakeTestController extends Controller
 {
@@ -18,10 +19,9 @@ class MakeTestController extends Controller
     public function index()
     {
         $forms = Form::where(["del_flg" => "1"])->paginate(20);
-        $formcate  = FormCategory::all();
+        // $formcate  = PostCats::all();
         return view('admin.page.make-test.index', [
             "forms" => $forms,
-            "cate" => $formcate
         ]);
     }
 
@@ -32,11 +32,13 @@ class MakeTestController extends Controller
      */
     public function create()
     {
-        $TestCategoryData = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
-        foreach ($TestCategoryData as $item) {
-            $item->child = TestCategory::where(["del_flg" => "0", "parent_id" =>  $item->id])->get();
-        }
+        // $TestCategoryData = TestCategory::where(["del_flg" => "0", "parent_id" => "0"])->get();
+        // foreach ($TestCategoryData as $item) {
+        //     $item->child = TestCategory::where(["del_flg" => "0", "parent_id" =>  $item->id])->get();
+        // }
 
+        $TestCategoryData = PostCats::where(["vi_tri" => "0"])->get();
+        foreach ($TestCategoryData as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
 
         // $FormCategoryData = TestCategory::where(["del_flg" => "1", "parent_id" => "0"])->get();
         // foreach ($FormCategoryData as $item) {
