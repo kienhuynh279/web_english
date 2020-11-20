@@ -63,13 +63,13 @@
                                         <input required type="text" name="meta_description" class="form-control" placeholder="Meta-Description ...">
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label>Del_flg (Admin)</label>
                                         <select required name="del_flg" class="form-control">
                                             <option value="1">Bật</option>
                                             <option value="0">Tắt</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="form-group">
                                         <label>Trạng thái (Client)</label>

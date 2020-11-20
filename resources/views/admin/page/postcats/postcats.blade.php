@@ -15,7 +15,7 @@
                     <th>Vị Trí (Danh Mục Con)</th>
                     <th>Ảnh</th>
                     <th>Status (Client)</th>
-                    <th>Del_Flag (Admin)</th>
+                    {{-- <th>Del_Flag (Admin)</th> --}}
                     <th>
                         <button disabled class="btn btn-sm btn-secondary">
                             <i class="fas fa-edit"></i>
@@ -32,7 +32,7 @@
                     <td>{{$item->id}}</td>
                     <td>{{$item->title}}</td>
 
-                    @if($item->vi_tri == 0 )
+                    @if($item->vi_tri == 0)
                     <td>Không thuộc danh mục nào</td>
                     @else
                     @foreach ($postcats as $sub_item)
@@ -47,7 +47,7 @@
                     </td>
 
                     <td>{{$item->status}}</td>
-                    <td>{{$item->del_flg}}</td>
+                    {{-- <td>{{$item->del_flg}}</td> --}}
                     <td>
                         <a href="{{asset('admin/postcats/edit/'.$item->id)}}" class="btn btn-sm btn-warning"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                         <a onclick="return confirm('Bạn có chắc chắn muốn xóa !')" href="{{asset('admin/postcats/delete/'.$item->id)}}" class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
@@ -62,7 +62,7 @@
     let table = $("#dataTable").DataTable({
         scrollX: true,
         // search: false,
-        // paging: false,
+        paging: false,
         // searching: false,
         aaSorting: [],
         bInfo : false,

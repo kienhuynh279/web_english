@@ -11,9 +11,9 @@
                 <tr>
                     <th>ID Banner</th>
                     <th>Têm Banner</th>
-                    <th>Ảnh : </th>
-                    <th>Status (Client)</th>
-                    <th>Del_Flag (Admin)</th>
+                    <th>Ảnh</th>
+                    <th>Trạng thái</th>
+                    {{-- <th>Del_Flag (Admin)</th> --}}
                     <th>
                         <button disabled class="btn btn-sm btn-secondary">
                             <i class="fas fa-edit"></i>
@@ -33,7 +33,7 @@
                         <img width="200px" src="{{Storage::url('upload/img/banner/'.$banner->avatar)}}" class="thumbnail">
                     </td>
                     <td>{{$banner->status}}</td>
-                    <td>{{$banner->del_flg}}</td>
+                    {{-- <td>{{$banner->del_flg}}</td> --}}
                     <td>
                         <a href="{{asset('admin/banner/edit/'.$banner->id)}}" class="btn btn-warning"><i class="fas btn-sm fa-pencil-alt" aria-hidden="true"></i></a>
                         <a onclick="return confirm('Bạn có chắc chắn muốn xóa !')" href="{{asset('admin/banner/delete/'.$banner->id)}}" class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
@@ -42,14 +42,16 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center mt-4">
+            {{ $bannerlist->links() }}
+        </div>
     </div>
 </div>
 <script>
     let table = $("#dataTable").DataTable({
         scrollX: true,
         // search: false,
-        // paging: false,
-        searching: false,
+        paging: false,
         aaSorting: [],
         bInfo : false,
         // columnDefs: [

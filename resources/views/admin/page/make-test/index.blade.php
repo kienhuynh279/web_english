@@ -44,13 +44,16 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center mt-4">
+            {{ $forms->links() }}
+        </div>
     </div>
 </div>
 <script>
     let table = $("#dataTable").DataTable({
         scrollX: true,
         // search: false,
-        // paging: false,
+        paging: false,
         // searching: false,
         aaSorting: [],
         bInfo : false,

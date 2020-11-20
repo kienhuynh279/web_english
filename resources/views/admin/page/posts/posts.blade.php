@@ -16,7 +16,7 @@
                     <th>Ảnh</th>
                     <th>Dowload</th>
                     <th>Status (Client)</th>
-                    <th>Del_Flag (Admin)</th>
+                    {{-- <th>Del_Flag (Admin)</th> --}}
                     <th>Nổi Bật</th>
                     <th>
                         <button disabled class="btn btn-sm btn-secondary">
@@ -52,7 +52,7 @@
                     @endif
 
                     <td>{{$item->status}}</td>
-                    <td>{{$item->del_flg}}</td>
+                    {{-- <td>{{$item->del_flg}}</td> --}}
                     <td>{{$item->hight_flg}}</td>
                     <td>
                         <a href="{{asset('admin/posts/edit/'.$item->id)}}" class="btn btn-sm btn-warning"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
@@ -62,13 +62,16 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center mt-4">
+            {{ $post->links() }}
+        </div>
     </div>
 </div>
 <script>
     let table = $("#dataTable").DataTable({
         scrollX: true,
         // search: false,
-        // paging: false,
+        paging: false,
         // searching: false,
         aaSorting: [],
         bInfo : false,

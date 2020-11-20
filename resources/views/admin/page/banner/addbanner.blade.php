@@ -33,16 +33,16 @@
                                         <input id="link" required type="text" name="link" class="form-control" placeholder="Link...">
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label>Del_flg (Admin)</label>
                                         <select required name="del_flg" class="form-control">
                                             <option value="1">Bật</option>
                                             <option value="0">Tắt</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="form-group">
-                                        <label>Trạng thái (Client)</label>
+                                        <label>Trạng thái</label>
                                         <select required name="status" class="form-control">
                                             <option value="1">Bật</option>
                                             <option value="0">Tắt</option>
