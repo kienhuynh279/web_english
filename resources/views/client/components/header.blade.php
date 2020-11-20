@@ -1,7 +1,8 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark d-lg-flex d-none" style="height: 30px; background-color: #c47e2e;">
+    {{-- <nav class="navbar navbar-expand-lg navbar-dark d-lg-flex d-none" style="height: 30px; background-color: #c47e2e;">
         <div class="container">
-            <span class="text-light navbar-nav font-weight-light" style="color: rgba(255,255,255,.8) !important;"> {{ date('\N\g\à\y d \T\h\á\n\g m \N\ă\m Y') }}</span>
+            <span class="text-light navbar-nav font-weight-light" style="color: rgba(255,255,255,.8) !important;">
+                {{ date('\N\g\à\y d \T\h\á\n\g m \N\ă\m Y') }}</span>
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -15,13 +16,16 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav> --}}
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff1e0">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <h2 class="py-0 mb-0 font-weight-medium"><img src="http://tienganhmoingay.com.vn/storage//upload/img/banner/logo_new.png" alt="Logo" height="60px"></h2>
+                <h2 class="py-0 mb-0 font-weight-medium"><img
+                        src="http://tienganhmoingay.com.vn/storage//upload/img/banner/logo_new.png" alt="Logo"
+                        height="60px"></h2>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarHeader">
@@ -38,16 +42,22 @@
                 <ul class="navbar-nav ml-auto">
                     @if (!Auth::check())
                     <li class="btn btn-light login-item mr-2" style="background-color: #c47e2e;">
-                        <a href="{{ route('login') }}" style="color: #fff;"><i class=" fas fa-sign-in-alt pr-2"></i> Đăng nhập</a>
+                        <a href="{{ route('login') }}" style="color: #fff;"><i class=" fas fa-sign-in-alt pr-2"></i>
+                            Đăng nhập</a>
                     </li>
                     <li class="btn btn-light login-item" style="background-color: #c47e2e;">
-                        <a href="{{ route('register') }}" style="color: #fff;"><i class=" fas fa-user-plus pr-2"></i> Đăng ký</a>
+                        <a href="{{ route('register') }}" style="color: #fff;"><i class=" fas fa-user-plus pr-2"></i>
+                            Đăng ký</a>
                     </li>
                     @else
                     <li class="dropdown">
-                        <span class="d-flex ouline-none text-light justify-content-center align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="d-flex ouline-none text-light justify-content-center align-items-center"
+                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             <a href="#">
-                                <img width="25px" src="{{Storage::url('upload/img/user/'.Auth::user()->avatar)}}" onerror="this.src='{{Storage::url('upload/img/user/male.jpg')}}'" class="img-circle elevation-2 rounded mr-2">
+                                <img width="25px" src="{{Storage::url('upload/img/user/'.Auth::user()->avatar)}}"
+                                    onerror="this.src='{{Storage::url('upload/img/user/male.jpg')}}'"
+                                    class="img-circle elevation-2 rounded mr-2">
                                 <span class="text-success font-weight-bold">{{ Auth::user()['username'] }}</span>
                             </a>
                         </span>
@@ -62,61 +72,69 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg navbar-light" style="z-index: 10; background-color: white; border-top: #ff000073 solid 2px; box-shadow: 0px 6px 15px -15px;">
+    <nav class="navbar navbar-expand-lg navbar-light"
+        style="z-index: 10; background-color: white; border-top: #ff000073 solid 2px; box-shadow: 0px 6px 15px -15px;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
         <div class="container">
-            <ul class="menu-item navbar-nav mr-auto">
-                <li class=" nav-item nav-item-active">
-                    <a class="nav-link" href="/">Trang Chủ</a>
-                </li>
-                <li class=" nav-item nav-item-active">
-                    <a class="nav-link" href="/">Ôn Thi</a>
-                    <ul class="menu-sub">
-                        @foreach($postcats as $cats)
+            <div class="overlay-mobile"></div>
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <ul class="menu-item navbar-nav mr-auto">
+                    <li class=" nav-item nav-item-active">
+                        <a class="nav-link" href="/">Trang Chủ</a>
+                    </li>
+                    <li class=" nav-item nav-item-active">
+                        <a class="nav-link" href="/">Ôn Thi</a>
+                        <ul class="menu-sub">
+                            @foreach($postcats as $cats)
                             @if($cats->vi_tri == 0)
                             <li>
                                 <a href="#">{{$cats->title}}</a>
-                            @endif
+                                @endif
                                 <ul class="menu-sub">
                                     @foreach( $postcats as $child2)
-                                        @if($cats->id == $child2->vi_tri)
-                                            <li>
-                                                <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}">{{$child2->title}}</a>
-                                            </li>
-                                        @endif
+                                    @if($cats->id == $child2->vi_tri)
+                                    <li>
+                                        <a
+                                            href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}">{{$child2->title}}</a>
+                                    </li>
+                                    @endif
                                     @endforeach
                                 </ul>
                             </li>
-                           
-                        @endforeach                   
-                    </ul>   
-                </li>
-                {{-- @if(!empty($postcats))
+
+                            @endforeach
+                        </ul>
+                    </li>
+                    {{-- @if(!empty($postcats))
                 @foreach($postcats as $cats)
                 @if($cats->status == 1) --}}
-                {{-- @if($cats->vi_tri == 0) --}}
+                    {{-- @if($cats->vi_tri == 0) --}}
                     {{-- <li class="nav-item nav-item-active"> --}}
-                            {{-- @if($cats->vi_tri == 0) --}}
-                                {{-- <a href="#" class="nav-link">{{$cats->title}}</a> --}}
-                            {{-- @endif --}}
-                        {{-- <ul class="menu-sub">
+                    {{-- @if($cats->vi_tri == 0) --}}
+                    {{-- <a href="#" class="nav-link">{{$cats->title}}</a> --}}
+                    {{-- @endif --}}
+                    {{-- <ul class="menu-sub">
                             @foreach($postcats as $child)
                             @if($cats->id == $child->vi_tri)
                             <li>
                                 <a href="#">{{$child->title}}</a>
-                            @endif
-                                <ul class="menu-sub">
-                                    @foreach( $postcats as $child2)
-                                        @if($child->id == $child2->vi_tri)
-                                            <li>
-                                                <a href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">{{$child2->title}}</a>
-                                            </li>
-                                        @endif
-                                    @endforeach
-                                </ul>
-                            </li>
-                            @endforeach
-                        </ul>   
-                    </li> --}}
+                    @endif
+                    <ul class="menu-sub">
+                        @foreach( $postcats as $child2)
+                        @if($child->id == $child2->vi_tri)
+                        <li>
+                            <a href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">{{$child2->title}}</a>
+                        </li>
+                        @endif
+                        @endforeach
+                    </ul>
+                    </li>
+                    @endforeach
+                </ul>
+                </li> --}}
                 {{-- @endif --}}
                 {{-- @endif
                 @endforeach
@@ -127,8 +145,8 @@
                 <li class="nav-item nav-item-active">
                     <a class="nav-link" href="/lien-he">Liên Hệ</a>
                 </li>
-            </ul>
-            {{-- <ul class="menu-item navbar-nav ml-auto">
+                </ul>
+                {{-- <ul class="menu-item navbar-nav ml-auto">
                 <li class="nav-item nav-item-active">
                     <a class="nav-link" href="/tin-tuc">Tin tức</a>
                 </li>
@@ -136,6 +154,7 @@
                     <a class="nav-link" href="/lien-he">Liên Hệ</a>
                 </li>
             </ul> --}}
+            </div>
         </div>
     </nav>
 </header>

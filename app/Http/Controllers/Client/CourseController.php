@@ -51,17 +51,6 @@ class CourseController extends Controller
         $postcat = PostCats::where('slug', $slug2)->first();
         $post = Post::where(['id_thepost_cat' => $postcat->id])->get();
         
-        // $formcat = TestCategory::where('slug', $slug)->first();
-        // $form = Test::where(['code' => $formcat->id])->get();
-        // if ($formcat == true) {
-        //     $cate = TestCategory::all();
-        // }
-        // $form = Form::all();
-        
-        // $id_theforms_cat = $form->get('id_theforms_cat');
-        
-        // dd($id_theforms_cat);
-        // $form = Form::where([substr($id_theforms_cat, 1, 2) => $formcat->id])->get();
         
         return view('client.index', [
             'title' => 'Ôn thi Ket',
