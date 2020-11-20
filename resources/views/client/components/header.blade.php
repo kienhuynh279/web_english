@@ -29,7 +29,9 @@
                 </button>
                 <div class="overlay-mobile"></div>
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                   
                     <ul class="menu-hover clearfix navbar-nav">
+                        <li nav-item><a href="#" >Trang Chủ</a></li>
                         @if(!empty($postcats))
                         @foreach($postcats as $cats)
                         <li nav-item>
@@ -37,35 +39,24 @@
                                 @if($cats->vi_tri == 0)
                                 {{-- <li><a href="#" class="nav-link">{{$cats->title}}</a></li> --}}
                                     @if($cats->id==37)
-                                        <a href="javascrip:void(0)">
-                                           
-                                            {{$cats->title}}
+                                        <a href="javascrip:void(0)">{{$cats->title}}
                                         </a>
                                     @else
-                                        <a href="{{asset($cats->slug)}}">
-                            
-                                            {{$cats->title}}
-                                        </a>
+                                        <a href="{{asset($cats->slug)}}">{{$cats->title}}</a>
                                     @endif
                                 @endif
                             <ul class="menu-sub">
                                 @foreach($postcats as $child)
                                 @if($cats->id == $child->vi_tri)
                                 <li>
-                                    <a href="#">
-      
-                                        {{$child->title}}
-                                    </a>
+                                    <a href="#">{{$child->title}}</a>
                                     @endif
                                     <ul class="menu-sub">
                                         @foreach( $postcats as $child2)
                                         @if($child->id == $child2->vi_tri)
                                         <li>
                                             {{-- {{asset('danhmuc/'.$cats->id.'/'.$cats->slug.'/'.$child->slug.'/'.$child2->slug.'.html')}} --}}
-                                            <a href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">
-                                               
-                                                {{$child2->title}}
-                                            </a>
+                                            <a href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">{{$child2->title}}</a>
                                         </li>
                                         @endif
                                         @endforeach
@@ -77,6 +68,8 @@
                         @endif
                         @endforeach
                         @endif
+                        <li nav-item><a href="#" >Tin Tức</a></li>
+                        <li nav-item><a href="#" >Liên Hệ</a></li>
                         <li>
                             <a href="#" id="search">
                                 <i class="ti-search"></i>
