@@ -6,7 +6,7 @@ Sửa loại tin tức
 
 @section('main')
 
-<form enctype="multipart/form-data" action="{{route("adminBlogCatePutEdit",$cates->id)}}" method="post">
+<form enctype="multipart/form-data" action="{{route("adminBlogCatePutEdit",$data->id)}}" method="post">
     <div class="card">
         <div class="card-header">
             <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Lưu thay đổi</button>

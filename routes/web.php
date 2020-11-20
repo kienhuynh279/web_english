@@ -252,7 +252,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->name('adminBlogCatePutEdit')
                 ->where(['id' => '[0-9]+']);
     
-            Route::post('/delete/{id}', 'BlogCategoryTestController@destroy')
+            Route::post('/delete/{id}', 'BlogCategoryController@destroy')
                 ->name('adminBlogCateDelete')
                 ->where(['id' => '[0-9]+']);
         });

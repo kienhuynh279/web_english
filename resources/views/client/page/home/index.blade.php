@@ -347,7 +347,7 @@
                         <div class="course_content">
                             <span class="tag mb-4 d-inline-block">Mẹo</span>
                             <h4 class="mb-3">
-                                <a href="{{ route('courseList') }}">{{ $item->title }}</a>
+                                <a href="">{{ $item->title }}</a>
                             </h4>
                             <p>{!! $item->summary !!}</p>
                             <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
