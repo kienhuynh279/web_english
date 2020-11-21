@@ -4,9 +4,10 @@
             <div class="row">
                 <div class="col-lg-8 posts-list">
                     <div class="single-post row">
+                      @foreach($blogs as $item)
                         <div class="col-lg-12">
                             <div class="feature-img">
-                                <img class="img-fluid" src="{{ asset('dist/img/blog/feature-img1.jpg') }}" alt="">
+                                <img class="img-fluid" src="{{ Storage::url('/upload/img/blog/'.$item->avatar) }}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-3  col-md-3">
@@ -32,25 +33,9 @@
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-9 blog_details">
-                            <h2>Astronomy Binoculars A Great Alternative</h2>
+                            <h2>{{$item->title}}</h2>
                             <p class="excert">
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you should have to spend money on boot camp when you can get the MCSE study
-                                materials yourself at a fraction.
-                            </p>
-                            <p>
-                                Boot camps have its supporters and its detractors. Some people do not understand why
-                                you should have to spend money on boot camp when you can get the MCSE study materials
-                                yourself at a fraction of the camp price. However, who has the willpower to actually
-                                sit through a self-imposed MCSE training. who has the willpower to actually sit through
-                                a self-imposed
-                            </p>
-                            <p>
-                                Boot camps have its supporters and its detractors. Some people do not understand why
-                                you should have to spend money on boot camp when you can get the MCSE study materials
-                                yourself at a fraction of the camp price. However, who has the willpower to actually
-                                sit through a self-imposed MCSE training. who has the willpower to actually sit through
-                                a self-imposed
+                              {!!$item->content!!}
                             </p>
                         </div>
                         <div class="col-lg-12">
@@ -68,30 +53,20 @@
                                     <img class="img-fluid" src="img/blog/post-img2.jpg" alt="">
                                 </div>
                                 <div class="col-lg-12 mt-25">
-                                    <p>
-                                        MCSE boot camps have its supporters and its detractors. Some people do not
-                                        understand why you should have to spend money on boot camp when you can get the
-                                        MCSE study materials yourself at a fraction of the camp price. However, who has
-                                        the willpower.
-                                    </p>
-                                    <p>
-                                        MCSE boot camps have its supporters and its detractors. Some people do not
-                                        understand why you should have to spend money on boot camp when you can get the
-                                        MCSE study materials yourself at a fraction of the camp price. However, who has
-                                        the willpower.
-                                    </p>
+                                    {{-- <p>{!!$item->$content!!}</p> --}}
                                 </div>
                             </div>
                         </div>
+                      @endforeach
                     </div>
                     <div class="navigation-area">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                                 <div class="thumb">
-                                    <a href="{{ route('newsDetail') }}"><img class="img-fluid" src="{{ asset('dist/img/blog/prev.jpg') }}" alt=""></a>
+                                    {{-- <a href="{{ route('newsDetail') }}"><img class="img-fluid" src="{{ asset('dist/img/blog/prev.jpg') }}" alt=""></a> --}}
                                 </div>
                                 <div class="arrow">
-                                    <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-left"></i></a>
+                                    {{-- <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-left"></i></a> --}}
                                 </div>
                                 <div class="detials">
                                     <p>Prev Post</p>
@@ -108,10 +83,10 @@
                                     </a>
                                 </div>
                                 <div class="arrow">
-                                    <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-right"></i></a>
+                                    {{-- <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-right"></i></a> --}}
                                 </div>
                                 <div class="thumb">
-                                    <a href="{{ route('newsDetail') }}"><img class="img-fluid" src="{{ asset('dist/img/blog/next.jpg') }}" alt=""></a>
+                                    {{-- <a href="{{ route('newsDetail') }}"><img class="img-fluid" src="{{ asset('dist/img/blog/next.jpg') }}" alt=""></a> --}}
                                 </div>
                             </div>
                         </div>
