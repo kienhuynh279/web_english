@@ -1,8 +1,9 @@
 <div class="form-group col-sm-6">
-    <label>Tên loại blog: </label>
-    <input required type="text" id="title" name="Title" class="form-control" placeholder="Tên loại bài kiểm tra">
+    {{-- <label>Tên loại blog: </label>
+    <input required type="text" id="title" name="Title" class="form-control" placeholder="Tên loại bài kiểm tra" value="$data->title_en ?? ''" /> --}}
+    <x-input-form type="text" id="title_en" label="Tiêu đề:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề" :value="$data->title ?? ''" />
 </div>
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-6"> 
     <x-input-form type="text" id="title_en" label="Tiêu đề English:" name="Title_en" classGroup="col-md" class="" placeholder="Tiêu đề" :value="$data->title_en ?? ''" />
 </div>
 <div class="form-group col-md-12 px-3">

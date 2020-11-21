@@ -41,7 +41,7 @@
     </nav> --}}
     <nav class="navbar navbar-expand-lg navbar-light"
         style="z-index: 10; background-color: white; border-top: #ff000073 solid 2px; box-shadow: 0px 6px 15px -15px;">
-        <div class="container">
+        <div id="block-menu" class="container">
             <a class="navbar-brand" href="/">
                 <h2 class="py-0 mb-0 font-weight-medium"><img
                         src="http://tienganhmoingay.com.vn/storage//upload/img/banner/logo_new.png" alt="Logo"
@@ -81,37 +81,6 @@
                             @endforeach
                         </ul>
                     </li>
-                    {{-- @if(!empty($postcats))
-                @foreach($postcats as $cats)
-                @if($cats->status == 1) --}}
-                    {{-- @if($cats->vi_tri == 0) --}}
-                    {{-- <li class="nav-item nav-item-active"> --}}
-                    {{-- @if($cats->vi_tri == 0) --}}
-                    {{-- <a href="#" class="nav-link">{{$cats->title}}</a> --}}
-                    {{-- @endif --}}
-                    {{-- <ul class="menu-sub">
-                            @foreach($postcats as $child)
-                            @if($cats->id == $child->vi_tri)
-                            <li>
-                                <a href="#">{{$child->title}}</a>
-                    @endif
-                    <ul class="menu-sub">
-                        @foreach( $postcats as $child2)
-                        @if($child->id == $child2->vi_tri)
-                        <li>
-                            <a href="{{asset($cats->slug.'/'.$child->slug.'/'.$child2->slug)}}">{{$child2->title}}</a>
-                        </li>
-                        @endif
-                        @endforeach
-                    </ul>
-                    </li>
-                    @endforeach
-                </ul>
-                </li> --}}
-                {{-- @endif --}}
-                {{-- @endif
-                @endforeach
-                @endif --}}
 
                 <li class="nav-item nav-item-active">
                     <a class="nav-link" href="/tin-tuc">Tin tức</a>
@@ -174,3 +143,27 @@
         </div>
     </nav>
 </header>
+
+<script>
+    var isActive = false;
+    function mobileActive() {
+        let item = document.querySelector(".overlay-mobile");
+        isActive = !isActive;
+        if(isActive) {
+            item.classList.add("active");
+        }
+        else {
+            item.classList.remove("active");
+        }
+    }
+    // active, un-active overlay
+    document.querySelector(".navbar-toggler").addEventListener("click", () => {
+        mobileActive();
+    })
+    // click outside
+    document.querySelector("#block-menu").addEventListener("click", (e) => {
+        if((e.target.classList.contains("overlay-mobile")) || (e.target.getAttribute("id") === "search" && window.innerWidth < 991)) {
+            document.querySelector(".navbar-toggler").click();
+        }
+    })
+</script>

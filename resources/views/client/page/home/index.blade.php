@@ -324,58 +324,53 @@
         </div>
     </div>
 </div>
-</div>
+
 
 <div class="popular_courses">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="main_title">
-                    <h2 class="mb-3">Mẹo & Tin Tức</h2>
+                    <h2 class="mb-3">Mẹo và tin tức</h2>
                 </div>
             </div>
         </div>
         <div class="row">
+
             <!-- single course -->
-            <div class="col-sm-12">
-                <div id="tips" class="owl-carousel owl-theme">
+            <div class="col-lg-12">
+                <div class="owl-carousel active_course">
                     @foreach($blog as $item)
-                    <div class="single_course mx-5">
+                    <div class="single_course">
                         <div class="course_head">
-                            <img class="img-fluid" style="height: 300px" src="{{Storage::url('upload/img/blog/'.$item->avatar)}}" alt="" />
+                            <img class="img-fluid" src="{{Storage::url('upload/img/blog/'.$item->avatar)}}" alt="" style="height:300px" />
                         </div>
                         <div class="course_content">
-                            <span class="tag mb-4 d-inline-block">Mẹo</span>
                             <h4 class="mb-3">
-                                <a href="">{{ $item->title }}</a>
+                                <a href="course-details.html">{{ $item->title }}</a>
                             </h4>
-                            <p>{!! $item->summary !!}</p>
-                            <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                                <div class="authr_meta">
-                                    <span class="d-inline-block ml-2">
-                                        <i class="ti-time mr-2">{{ $item->created_at->format('d/m/yy') }}</i>
-                                    </span>
-                                </div>
+                            <p>
+                                {!! $item->summary !!}
+                            </p>
+                            <div
+                                class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
                                 <div class="mt-lg-0 mt-3">
-                                    <span class="meta_info">
-                                        <a href="#"><i class="ti-heart mr-2"></i></a>
+                                    <span class="meta_info mr-4">
+                                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
                                     </span>
-                                    <span class="meta_info">
-                                        <a href="#"><i class="ti-comment mr-2"></i></a>
-                                    </span>
-                                    <span class="meta_info">
-                                        <a href="#"><i class="ti-share mr-2"></i></a>
-                                    </span>
+                                    <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     @endforeach
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!--================ End Popular Courses Area =================-->
 
 <section style="padding-top:0; padding-bottom:20px" class="feature_area section_gap">
     <div class="container">
@@ -443,7 +438,10 @@
                             <img class="rounded" src="{{ asset('dist/img/banner/banner-2.jpg') }}">
                         </div>
                         <div class="col-sm-9">
-                            <p class="ratting-content" style="font-size: 1.2rem">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus amet eveniet consequuntur officia exercitationem, earum totam maxime aut magnam sit qui expedita! Inventore, modi. Enim quam deserunt molestiae perspiciatis rem?</p>
+                            <p class="ratting-content" style="font-size: 1.2rem">Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Natus amet eveniet consequuntur officia exercitationem, earum totam
+                                maxime aut magnam sit qui expedita! Inventore, modi. Enim quam deserunt molestiae
+                                perspiciatis rem?</p>
                             <h6 class="ratting-name">Trung kiên</h6>
                         </div>
                     </div>
@@ -452,7 +450,12 @@
                             <img class="rounded" src="{{ asset('dist/img/banner/banner-2.jpg') }}">
                         </div>
                         <div class="col-sm-9">
-                            <p class="ratting-content" style="font-size: 1.2rem">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet expedita repudiandae earum. Sit illum ullam, quos tempore voluptatum maxime, et voluptates ipsum repellat placeat dicta, aliquam a commodi. Consectetur, eius. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus amet eveniet consequuntur officia exercitationem, earum totam maxime aut magnam sit qui expedita! Inventore, modi. Enim quam deserunt
+                            <p class="ratting-content" style="font-size: 1.2rem">Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Amet expedita repudiandae earum. Sit illum ullam, quos tempore
+                                voluptatum maxime, et voluptates ipsum repellat placeat dicta, aliquam a commodi.
+                                Consectetur, eius. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus amet
+                                eveniet consequuntur officia exercitationem, earum totam maxime aut magnam sit qui
+                                expedita! Inventore, modi. Enim quam deserunt
                                 molestiae perspiciatis rem?</p>
                             <h6 class="ratting-name">Trung kiên</h6>
                         </div>

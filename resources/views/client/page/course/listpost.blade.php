@@ -22,7 +22,8 @@
                             @foreach ($banner as $item)
                             @if ($item->status == 1)
                             @if ($item->id == 108)
-                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%" height="100%" alt="">
+                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%"
+                                height="100%" alt="">
                             @endif
                             @endif
                             @endforeach
@@ -35,7 +36,8 @@
                             @foreach ($banner as $item)
                             @if ($item->status == 1)
                             @if ($item->id == 109)
-                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%" height="100%" alt="">
+                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%"
+                                height="100%" alt="">
                             @endif
                             @endif
                             @endforeach
@@ -46,7 +48,8 @@
                             @foreach ($banner as $item)
                             @if ($item->status == 1)
                             @if ($item->id == 110)
-                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%" height="100%" alt="">
+                            <img src="{{ Storage::url('/upload/img/banner/' . $item->avatar) }}" width="100%"
+                                height="100%" alt="">
                             @endif
                             @endif
                             @endforeach
@@ -111,37 +114,33 @@
             </div>
         </div>
         <div class="row">
-            {{-- @foreach($data['form'] as $item)
-        @foreach($data['formcat'] as $i) --}}
-            {{-- @dd($i->id) --}}
-            {{-- @dd(substr($item->id_theforms_cat,1,2)) --}}
-            {{-- @if(substr($item->id_theforms_cat,2,1) == $i->id) --}}
-            {{-- <div class="col-sm-6">
+            @foreach($data['form'] as $item)
+            @if(substr($item->id_theforms_cat,3,2) == $data['postcat']->id)
+            <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header bg-white">
                         <div class="media">
                             <div class="media-left media-middle">
                                 <a href="">
                                     <img src="{{ Storage::url('/upload/img/the_form/'.$item->avatar) }}"
-            alt="Card image cap" width="100" class="rounded">
-            </a>
+                                        alt="Card image cap" width="100" class="rounded">
+                                </a>
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4 class="card-title"><a href="instructor-course-edit.html">{{ $item->title }}</a></h4>
+                            </div>
+                            <div class="media-right media-middle">
+                                <a href="{{ route('test', $item->id) }}" class="btn btn-sm btn-white">Làm bài</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
+            @endforeach
         </div>
-        <div class="media-body media-middle">
-            <h4 class="card-title"><a href="instructor-course-edit.html">{{ $item->title }}</a></h4>
+        <div>
         </div>
-        <div class="media-right media-middle">
-            <a href="{{ route('test', $item->id) }}" class="btn btn-sm btn-white">Làm bài</a>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div> --}}
-    {{-- @endif --}}
-    {{-- @endforeach
-        @endforeach --}}
-    </div>
-    <div>
-    </div>
     </div>
 </section>
 
@@ -286,13 +285,13 @@
                     </a>
                     @endif
                 </div>
-              
+
             </div>
             <br>
             <br>
         </div>
         @endforeach
-        
+
 
     </div>
 </section>
