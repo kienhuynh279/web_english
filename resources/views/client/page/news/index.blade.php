@@ -30,7 +30,7 @@
                                             <h2>{{ $item->title }}</h2>
                                         </a>
                                         <p>{!! $item->summary !!}</p>
-                                       <a href="{{ route('newsDetail') }}" class="btn-arrow"><div class="arrow"></div>View more</a>
+                                       <a href="{{ route('newsDetail', $item->slug) }}" class="btn-arrow"><div class="arrow"></div>View more</a>
                                     </div>
                                 </div>
                             </div>

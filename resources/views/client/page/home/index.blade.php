@@ -387,7 +387,7 @@
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/facebook.png') }}" width="15%" height="15%">
-                            <a style="color:#2d142c" href="#">Qua Facebook</a>
+                            <a style="color:#2d142c" href="#">Facebook</a>
                     </div>
                 </div>
             </div>
@@ -397,7 +397,7 @@
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/instagram.png') }}" width="15%" height="15%">
-                            <a style="color:#2d142c" href="#">Qua Instagram</a>
+                            <a style="color:#2d142c" href="#">Instagram</a>
                     </div>
                 </div>
             </div>
@@ -407,7 +407,7 @@
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/telephone.png') }}" width="15%" height="15%">
-                            <a style="color:#2d142c" href="#">Qua Email</a>
+                            <a style="color:#2d142c" href="#">Email</a>
                     </div>
                 </div>
             </div>
