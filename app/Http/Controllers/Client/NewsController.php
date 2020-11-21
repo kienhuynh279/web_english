@@ -18,11 +18,13 @@ class NewsController extends Controller
        ]);
     }
 
-    public function detail()
+    public function detail($slug)
     {
-       return view('client.index',[
-           'title' => 'Chi Tiết Tin Tức',
-           'page' => 'news.detail'
-       ]);
+        $blog = Blogs::where(['slug' => $slug])->first();
+        return view('client.index',[
+            'title' => 'Chi Tiết Tin Tức',
+            'page' => 'news.detail',
+            'blog' => $blog
+        ]);
     }
 }
