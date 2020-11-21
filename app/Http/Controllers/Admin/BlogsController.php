@@ -13,7 +13,7 @@ class BlogsController extends Controller
 {
     public function index()
     {
-        $blogs = Blogs::where(["del_flg" => "1"])->paginate(20);
+        $blogs = Blogs::where(["del_flg" => "0"])->orderBy("id", "desc")->paginate(10);
         return view('admin.page.news.index', [
             "blogs" => $blogs
         ]);
@@ -24,14 +24,14 @@ class BlogsController extends Controller
         $TestCategoryData = PostCats::where(["vi_tri" => "0"])->get();
         foreach ($TestCategoryData as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
 
-        return view("admin.page.news.createl",[
+        return view("admin.page.news.createl", [
             "cate" => $TestCategoryData
         ]);
     }
 
     public function postAdd(Request $request)
     {
-       
+
         $blog = new Blogs();
         $filename = $request->Avatar->getClientOriginalName();
 
@@ -45,13 +45,13 @@ class BlogsController extends Controller
         $blog->checked = $request->get("Checked");
         $blog->meta_description = $request->get("Meta_Desc");
         $blog->meta_title = $request->get("Meta_Title");
-        $blog->del_flg = $request->get("Del_Flg");
+        $blog->del_flg = 0;
         $blog->hight_flg = $request->get("Hight_Flg");
         $blog->status = 1;
         $blog->slug = $request->get("Slug");
         $blog->position = $request->get("Position");
         $blog->avatar = $filename;
-        $request->Avatar->storeAs('public/upload/img/blog',$filename);  
+        $request->Avatar->storeAs('public/upload/img/blog', $filename);
         $blog->save();
 
         return back();
@@ -68,7 +68,7 @@ class BlogsController extends Controller
         ]);
     }
 
-    public function putEdit(Request $request,$id)
+    public function putEdit(Request $request, $id)
     {
         $blog = Blogs::findOrFail($id);
 
@@ -84,7 +84,7 @@ class BlogsController extends Controller
         $blog->checked = $request->get("Checked");
         $blog->meta_description = $request->get("Meta_Desc");
         $blog->meta_title = $request->get("Meta_Title");
-        $blog->del_flg = $request->get("Del_Flg");
+        // $blog->del_flg = $request->get("Del_Flg");
         $blog->hight_flg = $request->get("Hight_Flg");
         $blog->status = 1;
         $blog->slug = $request->get("Slug");
@@ -99,7 +99,7 @@ class BlogsController extends Controller
     public function delete($id)
     {
         $blog = Blogs::find($id);
-        $blog->del_flg = 0;
+        $blog->del_flg = 1;
         $blog->save();
         return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Xóa thành công"]]);
     }

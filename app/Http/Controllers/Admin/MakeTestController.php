@@ -18,7 +18,7 @@ class MakeTestController extends Controller
      */
     public function index()
     {
-        $forms = Form::where(["del_flg" => "1"])->paginate(20);
+        $forms = Form::where(["del_flg" => "0"])->orderBy("id", "desc")->paginate(10);
         // $formcate  = PostCats::all();
         return view('admin.page.make-test.index', [
             "forms" => $forms,
@@ -65,11 +65,11 @@ class MakeTestController extends Controller
         $blog->id_theforms_cat = $request->get("code");
         $blog->summary = $request->get("Summary");
         $blog->summary_en = $request->get("Summary_en");
-        
+
         $blog->content = json_encode(explode("-", $request->get("Content")));
         $blog->meta_description = $request->get("Meta_Desc");
         $blog->meta_title = $request->get("Meta_Title");
-        $blog->del_flg = $request->get("Del_Flg");
+        $blog->del_flg = 0;
         $blog->hight_flg = $request->get("Hight_Flg");
         $blog->status = 1;
         $blog->slug = $request->get("Slug");
@@ -129,11 +129,11 @@ class MakeTestController extends Controller
         $blog->summary = $request->get("Summary");
         $blog->summary_en = $request->get("Summary_en");
         $blog->content = $request->json_encode(explode("-", $request->get("Content")));
-       
-     
+
+
         $blog->meta_description = $request->get("Meta_Desc");
         $blog->meta_title = $request->get("Meta_Title");
-        $blog->del_flg = $request->get("Del_Flg");
+        // $blog->del_flg = $request->get("Del_Flg");
         $blog->hight_flg = $request->get("Hight_Flg");
         $blog->status = 1;
         $blog->slug = $request->get("Slug");
@@ -154,7 +154,7 @@ class MakeTestController extends Controller
     public function destroy($id)
     {
         $blog = Form::find($id);
-        $blog->del_flg = 0;
+        $blog->del_flg = 1;
         $blog->save();
         return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Xóa thành công"]]);
     }

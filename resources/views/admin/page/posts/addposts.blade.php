@@ -121,6 +121,7 @@
                                             <textarea required class="ckeditor" required name="summary"></textarea>
                                             <script type="text/javascript">
                                                 var editor = CKEDITOR.replace('summary', {
+
                                                     language: 'vi',
                                                     filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
                                                     filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',

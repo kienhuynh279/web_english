@@ -95,3 +95,58 @@
         }
     }
 }
+
+
+/* ****************Search Box******************** */
+
+.search-box {
+    margin-right: auto;
+    position: absolute;
+    /* top: 70%;
+    left: 50%; */
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    /* height: 40px; */
+    border-radius: 40px;
+    border: 1px #c47e2e solid;
+    /* padding: 10px; */
+}
+
+.search-btn {
+    color: rgb(0, 0, 0);
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+}
+
+.search-btn i {
+    font-size: 1.5rem;
+    color: #c47e2e;
+    margin: 4px 0 0 10px;
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    /* float: left; */
+    padding: 0;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    transition: 200ms linear;
+    line-height: 40px;
+    width: 0px;
+}
+
+.search-box:hover>.search-txt {
+    width: 200px;
+}
+
+.search-box:hover>.search-btn {
+    background-color: white;
+    color: white;
+}

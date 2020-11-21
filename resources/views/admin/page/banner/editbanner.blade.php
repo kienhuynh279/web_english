@@ -33,13 +33,13 @@
                                         <input id="link" required type="text" name="link" class="form-control" value="{{$banner->link}}">
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label>Del_flg (Admin)</label>
                                         <select required name="del_flg" class="form-control">
                                             <option value="1" @if($banner->del_flg==1) selected @endif>Bật</option>
                                             <option value="0" @if($banner->del_flg==0) selected @endif>Tắt</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="form-group">
                                         <label>Trạng thái (Client)</label>

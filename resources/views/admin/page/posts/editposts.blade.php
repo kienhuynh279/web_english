@@ -57,13 +57,13 @@
                                         <input required type="text" name="meta_description" class="form-control" value="{{$post->meta_description}}">
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label>Del_flg (Admin)</label>
                                         <select required name="del_flg" class="form-control">
                                             <option value="1" @if($post->del_flg==1) selected @endif>Không Hiện</option>
                                             <option value="0" @if($post->del_flg==0) selected @endif>Hiện</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="form-group">
                                         <label>Trạng thái (Client)</label>

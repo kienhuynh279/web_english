@@ -58,7 +58,7 @@
     let table = $("#dataTable").DataTable({
         scrollX: true,
         // search: false,
-        // paging: false,
+        paging: false,
         // searching: false,
         aaSorting: [],
         bInfo : false,
