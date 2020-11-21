@@ -11,7 +11,7 @@
             <thead>
                 <tr>
                     <th>ID Tài Liệu</th>
-                    <th>Têm Tài Liệu</th>
+                    <th>Tên Tài Liệu</th>
                     <th>Thuộc Danh Mục</th>
                     <th>Ảnh</th>
                     <th>Dowload</th>

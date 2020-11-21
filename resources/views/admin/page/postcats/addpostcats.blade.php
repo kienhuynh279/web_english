@@ -41,8 +41,9 @@
                                     {{-- <div class="form-group">
                                             <label>Del_flg (Admin)</label>
                                             <select required name="del_flg" class="form-control">
-                                                <option value="1">Bật</option>
-                                                <option value="0">Tắt</option>
+                                                <option value="0">Hiện</option>
+                                                <option value="1">Không Hiện</option>
+                                                
                                             </select>
                                         </div> --}}
 

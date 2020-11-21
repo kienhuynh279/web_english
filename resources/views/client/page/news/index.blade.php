@@ -26,11 +26,11 @@
                                 <div class="blog_post">
                                     <img src="{{Storage::url('upload/img/blog/'.$item->avatar)}}" alt="">
                                     <div class="blog_details">
-                                        <a href="{{ asset($item->slug) }}">
+                                        <a href="{{asset('tin-tuc'.'/'.$item->slug)}}">
                                             <h2>{{ $item->title }}</h2>
                                         </a>
                                         <p>{!! $item->summary !!}</p>
-                                       <a href="{{ route('newsDetail', $item->slug) }}" class="btn-arrow"><div class="arrow"></div>View more</a>
+                                       <a href="{{ asset('tin-tuc'.'/'.$item->slug)}}" class="btn-arrow"><div class="arrow"></div>View more</a>
                                     </div>
                                 </div>
                             </div>

@@ -61,7 +61,7 @@ class TestController extends Controller
 
         $test->update(["code" => $test->code . $test->id]);
 
-        return redirect()->route("adminTest");
+        return back();
     }
 
     /**

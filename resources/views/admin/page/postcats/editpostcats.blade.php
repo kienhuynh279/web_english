@@ -43,8 +43,8 @@
                                     {{-- <div class="form-group">
                                             <label>Del_flg (Admin)</label>
                                             <select required name="del_flg" class="form-control">
-                                                <option value="1" @if($postcats->del_flg==1) selected @endif>Bật</option>
-											    <option value="0" @if($postcats->del_flg==0) selected @endif>Tắt</option>
+                                                <option value="1" @if($postcats->del_flg==1) selected @endif>Không Hiện</option>
+											    <option value="0" @if($postcats->del_flg==0) selected @endif>Hiện</option>
                                             </select>
                                         </div> --}}
 

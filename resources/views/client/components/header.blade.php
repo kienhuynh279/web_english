@@ -82,6 +82,14 @@
                         </ul>
                     </li>
 
+                <li class="nav-item nav-item-active">
+                    <a class="nav-link" href="/tin-tuc">Tin tức</a>
+                </li>
+                <li class="nav-item nav-item-active">
+                    <a class="nav-link" href="/lien-he">Liên Hệ</a>
+                </li>
+
+
                     <li class="nav-item nav-item-active">
                         <a class="nav-link" href="/tin-tuc">Tin tức</a>
                     </li>
@@ -98,6 +106,7 @@
                             <a class="search-btn" href="#"> <i class="fas fa-search"></i></a>
                         </div> 
                     </li>
+
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     @if (!Auth::check())
