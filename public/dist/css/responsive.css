@@ -108,7 +108,7 @@
     background: #ffffff;
     /* height: 40px; */
     border-radius: 40px;
-    border: 1px #c47e2e solid;
+    border: 1px #e44434 solid;
     /* padding: 10px; */
 }
 
@@ -125,7 +125,7 @@
 
 .search-btn i {
     font-size: 1.5rem;
-    color: #c47e2e;
+    color: #e44434;
     margin: 4px 0 0 10px;
 }
 

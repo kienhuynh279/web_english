@@ -1,7 +1,7 @@
 <div style="padding-top: 80px" class="container">
     <div class="row">
         <section class="hero is-primary is-fullheight">
-            <div id="questionList " class="column is-half">
+            <div id="questionList" class="column is-half">
                 @foreach ($data['form'] as $item)
                 @foreach(json_decode($item->content) as $i)
                 @foreach($data['test'] as $test)
@@ -9,12 +9,13 @@
                 @if($i == substr($test->code,5))
                 <div class="has-text-centered p-5">
                     <h4 class="subtitle has-text-centered is-uppercase is-7 navigation">{{ $test->title }}</h4>
-                    <h6 class="subtitle has-text-centered is-5">{!! $test->content !!}</h6>
+                    <h4 class="subtitle has-text-centered is-5">{!! $test->content !!}</h4>
                     <form action="#" method="GET">
                         @foreach(json_decode($test->question) as $ques)
                         <div class="form-group">
                             <p class="option form-inline">
-                                <input type="radio" data-id="{{ $test->id }}" data-answer="{{ $test->answer }}" name="answer" value="{{ $ques }}"> &nbsp;
+                                <input type="radio" data-id="{{ $test->id }}" data-answer="{{ $test->answer }}"
+                                    name="answer" value="{{ $ques }}"> &nbsp;
                                 {{$ques}}
                             </p>
                         </div>
@@ -27,6 +28,14 @@
                 @endforeach
                 @endforeach
                 @endforeach
+            </div>
+            <div class="co  l-sm-12">
+                <h3>Title</h3>
+                <p>Description</p>
+                <div class="input-container">
+                    <i class="fas fa-arrow-right icon"></i>
+                    <input class="input-field" type="text" placeholder="Nhập câu trả lời" name="">
+                  </div>
             </div>
             <div>
                 <a id="submit" style="margin-bottom: 1rem" href="javascript:void(0)" class="btn btn-success">Nộp bài</a>

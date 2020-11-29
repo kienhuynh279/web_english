@@ -40,7 +40,7 @@
         </div>
     </nav> --}}
     <nav class="navbar navbar-expand-lg navbar-light"
-        style="z-index: 10; background-color: white; border-top: #ff000073 solid 2px; box-shadow: 0px 6px 15px -15px;">
+        style="z-index: 10; background-color: white; border-top: #e44434 solid 2px; box-shadow: 0px 6px 15px -15px;">
         <div id="block-menu" class="container">
             <a class="navbar-brand" href="/">
                 <h2 class="py-0 mb-0 font-weight-medium"><img
@@ -110,11 +110,11 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     @if (!Auth::check())
-                    <li class="btn btn-light login-item mr-2" style="background-color: #c47e2e;">
+                    <li class="btn btn-light login-item mr-2" style="background-color:  #e44434;">
                         <a href="{{ route('login') }}" style="color: #fff;"><i class=" fas fa-sign-in-alt pr-2"></i>
                             Đăng nhập</a>
                     </li>
-                    <li class="btn btn-light login-item" style="background-color: #c47e2e;">
+                    <li class="btn btn-light login-item" style="background-color:  #e44434;">
                         <a href="{{ route('register') }}" style="color: #fff;"><i class=" fas fa-user-plus pr-2"></i>
                             Đăng ký</a>
                     </li>
