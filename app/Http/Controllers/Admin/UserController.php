@@ -25,7 +25,7 @@ class UserController extends Controller
     {
         $filename = $request->img->getClientOriginalName();
         $user = new User;
-        $user->username = $request->name;
+        $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->level = $request->level;
@@ -44,14 +44,14 @@ class UserController extends Controller
     public function postEditUser(EditUserRequest $request, $id)
     {
         $user = new User();
-        $arr['username'] = $request->username;
+        $arr['name'] = $request->username;
         $arr['email'] = $request->email;
         $arr['password'] = bcrypt($request->password);
         $arr['level'] = $request->level;
         if ($request->hasFile('img')) {
             $img = $request->img->getClientOriginalName();
             $arr['avatar'] = $img;
-            $request->img->storeAs('public/upload/img/user', $img);
+            $request->img->storeAs('public/upload/img/user',$img);
         }
         $user::where('id', $id)->update($arr);
         return redirect('admin/user');

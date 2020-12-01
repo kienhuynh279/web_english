@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UserTableSeeder extends Seeder
+class AddUser extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
                 'username'=>'Admin',
                 'avatar'=>'Ngọc Lập',
                 'password'=>bcrypt('123'),
-                'level'=>1
+                'level'=>2
             ]
             ];
             DB::table('users')->insert($data);

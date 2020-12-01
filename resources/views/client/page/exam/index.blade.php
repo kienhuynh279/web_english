@@ -7,7 +7,7 @@
                 @foreach($data['test'] as $test)
                 @if(substr($item->id_theforms_cat,0,5) == substr($test->code,0,5))
                 @if($i == substr($test->code,5))
-                <div class="has-text-centered p-5">
+                <div class="has-text-centered p-5"> 
                     <h4 class="subtitle has-text-centered is-uppercase is-7 navigation">{{ $test->title }}</h4>
                     <h4 class="subtitle has-text-centered is-5">{!! $test->content !!}</h4>
                     <form action="#" method="GET">

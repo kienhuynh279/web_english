@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nhập mật khẩu : </label>
-                                        <input required type="password" name="password" class="form-control" placeholder="Password user...">
+                                        <input required  id="password" type="password" name="password" class="form-control" placeholder="Password user...">
                                     </div>
                                     <div class="form-group">
                                         <label>Nhập lại mật khẩu: </label>
@@ -54,10 +54,11 @@
 </div>
 <!--/.row-->
 </div>
-@stop
 <script>
     $('#password').on('input',function(){
        // console.log(this.value);
        this.value=this.value.replace(/[^([a-zA-Z0-9)]+/g, '');
      });
 </script>
+@stop
+

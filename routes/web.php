@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 //Home
 Route::get('/', 'App\Http\Controllers\Client\HomeController@index')->name('home');
 Route::get('/trang-chu', 'App\Http\Controllers\Client\HomeController@index')->name('home');
+
 //Ôn Thi
 // Route::get('{slug}.html','App\Http\Controllers\Client\CourseController@getKET');
 
@@ -51,7 +53,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     });
 });
 
-
+//login facebook
+Route::get('/redirect/{provider}', 'App\Http\Controllers\FacebookController@redirect')->name('redirect');
+Route::get('/callback/{provider}', 'App\Http\Controllers\FacebookController@callback');
+//login google
+Route::get('/redirect', 'App\Http\Controllers\GoogleController@redirectToProvider')->name('redirectgg');
+Route::get('/callback', 'App\Http\Controllers\GoogleController@handleProviderCallback');
 //Admin
 Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     Route::group(['prefix' => 'login', 'middleware' => 'CheckLogedIn'], function () {
