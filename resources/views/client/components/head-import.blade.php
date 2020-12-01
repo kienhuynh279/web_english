@@ -17,6 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- main css -->
 <link rel="stylesheet" href={{ asset('dist/css/style.css') }} />
+<link rel="stylesheet" href={{ asset('dist/css/main.css') }} />
 
 <link rel="stylesheet" href="{{asset("dist/css/responsive.css")}}">
 
@@ -81,7 +82,7 @@
         left: 0;
         width: 200px;
         box-shadow: 0px 1px 8px -4px #333;
-        background-color:#fff;
+        background-color: #fff;
         display: none;
     }
 
