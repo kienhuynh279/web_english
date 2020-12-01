@@ -78,6 +78,7 @@
                     </div>
                     {{csrf_field()}}
                 </div>
+                
             </form>
 
             {{-- <div class="social-auth-links text-center">

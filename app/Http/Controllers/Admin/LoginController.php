@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
+// use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
@@ -28,4 +30,5 @@ class LoginController extends Controller
             return back()->withInput()->with('error', 'Email hoặc mật khẩu không đúng');
         }
     }
+ 
 }

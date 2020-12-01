@@ -1,13 +1,13 @@
 <div style="padding-top: 80px" class="container">
     <div class="row">
         <section class="hero is-primary is-fullheight">
-            <div id="questionList " class="column is-half">
+            <div id="questionList" class="column is-half">
                 @foreach ($data['form'] as $item)
                 @foreach(json_decode($item->content) as $i)
                 @foreach($data['test'] as $test)
                 @if(substr($item->id_theforms_cat,0,5) == substr($test->code,0,5))
                 @if($i == substr($test->code,5))
-                <div class="has-text-centered p-5">
+                <div class="has-text-centered p-5"> 
                     <h4 class="subtitle has-text-centered is-uppercase is-7 navigation">{{ $test->title }}</h4>
                     <h6 class="subtitle has-text-centered is-5">{!! $test->content !!}</h6>
                     <form action="#" method="GET">
