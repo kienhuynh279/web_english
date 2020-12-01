@@ -19,6 +19,7 @@ class Test extends Model
         'title',
         'tittle_en',
         'code',
+        'type',
         'summary',
         'summary_en',
         'content',
