@@ -64,7 +64,7 @@
             <div class="overlay-mobile"></div>
            
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                <ul class="menu-hover clearfix navbar-nav menu-item navbar-nav mr-auto">
+                <ul class="menu-hover clearfix navbar-nav menu-item navbar-nav navbar-left">
                     <li class="nav-item nav-item-active">
                         <a class="nav-link" href="/">Trang Chủ</a>
                     </li>
@@ -105,14 +105,10 @@
                     </li>
                     <li class="nav-item nav-item-active">
                         <a class="nav-link" href="/lien-he">Liên Hệ</a>
-<<<<<<< HEAD
+
                     </li>
                 {{-- </ul> --}}
-=======
-                    </li> --}}
-                </ul>
 
->>>>>>> f8809f72f9e762ce5d7f416b3c811a76ddec3d62
 
 
              
