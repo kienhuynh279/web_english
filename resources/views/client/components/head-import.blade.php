@@ -63,7 +63,7 @@
         display: block;
         padding: 10px 15px;
         text-decoration: none;
-        color: #b36c22;
+        color: #e44434;
     }
 
     .menu-hover>li:last-child a {
@@ -90,7 +90,7 @@
     }
 
     .menu-sub li a {
-        color: #b36c22 !important;
+        color:#e44434 !important;
     }
 
     .menu-hover li .menu-sub ul {
