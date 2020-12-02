@@ -28,7 +28,7 @@
                 @foreach ($userlist as $user)
                 <tr>
                     <td>{{$user->id}}</td>
-                    <td>{{$user->username}}</td>
+                    <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>
                         <img width="100px" src="{{Storage::url('upload/img/user/'.$user->avatar)}}" class="thumbnail">

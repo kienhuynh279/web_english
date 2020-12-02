@@ -24,6 +24,7 @@ function validateData(formSelector, constraints) {
 
 function handleFormSubmit(form, constraints) {
     var errors = validate(form, constraints);
+
     showErrors(form, errors || {});
     if (!errors) {
         form.submit();
@@ -31,7 +32,7 @@ function handleFormSubmit(form, constraints) {
 }
 
 function showErrors(form, errors) {
-    _.each(form.querySelectorAll("input[name], select[name]"), function (input) {
+    _.each(form.querySelectorAll("input[name], select[name], textarea[name]"), function (input) {
         showErrorsForInput(input, errors && errors[input.name]);
     });
 }
@@ -42,6 +43,7 @@ function showErrorsForInput(input, errors) {
     var messages = formGroup.querySelector(".messages");
 
     resetFormGroup(formGroup);
+
     if (errors) {
         input.classList.add("border-danger");
         _.each(errors, function (error) {

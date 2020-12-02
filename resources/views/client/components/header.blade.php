@@ -100,13 +100,19 @@
                     </li>
 
 
-                    <li class="nav-item nav-item-active">
+                    {{-- <li class="nav-item nav-item-active">
                         <a class="nav-link" href="/tin-tuc">Tin tức</a>
                     </li>
                     <li class="nav-item nav-item-active">
                         <a class="nav-link" href="/lien-he">Liên Hệ</a>
+<<<<<<< HEAD
                     </li>
                 {{-- </ul> --}}
+=======
+                    </li> --}}
+                </ul>
+
+>>>>>>> f8809f72f9e762ce5d7f416b3c811a76ddec3d62
 
 
              
@@ -132,7 +138,7 @@
                                 <img width="25px" src="{{Storage::url('upload/img/user/'.Auth::user()->avatar)}}"
                                     onerror="this.src='{{Storage::url('upload/img/user/male.jpg')}}'"
                                     class="img-circle elevation-2 rounded mr-2">
-                                <span class="text-success font-weight-bold">{{ Auth::user()['username'] }}</span>
+                                <span class="text-success font-weight-bold">{{ Auth::user()['name'] }}</span>
                             </a>
                         </span>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

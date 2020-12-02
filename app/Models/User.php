@@ -50,6 +50,8 @@ class User extends Authenticatable
         'makm',
         'username',
         'level',
+        'provider',
+        'provider_id'
     ];
 
     /**

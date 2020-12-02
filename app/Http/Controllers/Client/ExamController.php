@@ -13,16 +13,14 @@ class ExamController extends Controller
 {
     public function index($id)
     {
-        $form = Form::where('id', '=', $id)->get();
-        $test = Test::all();
-       // $formCate = FormCategory::all();
+        $exam = Form::find($id);
+
+        $question_list = json_decode($exam->content);
+        $exam->content = Test::find($question_list);
+
         return view('client.index', [
             'title' => 'Test',
-            'data' => [
-                'form' => $form,
-                'test' => $test,
-                //'FormCate' => $formCate
-            ]
+            'data' => $exam
         ]);
     }
 }

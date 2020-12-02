@@ -41,7 +41,9 @@
                                                 <div class="form-group">
                                                     <label>Hình đại diện :</label>
                                                     <input id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-                                                    <img id="avatar" class="thumbnail" width="100px" src="{{Storage::url('public/upload/img/user/'.$user->avatar)}}">
+                                                    <img id="avatar" class="thumbnail" width="200px" src="{{Storage::url('public/upload/img/user/'.$user->avatar)}}">
+                                                    
+                                                    
                                                 </div>
 
                                             </div>
@@ -57,4 +59,10 @@
     </div>
     <!--/.row-->
 </div>
+<script>
+     $('#password').on('input',function(){
+        // console.log(this.value);
+        this.value=this.value.replace(/[^([a-zA-Z0-9)]+/g, '');
+      });
+ </script>
 @stop

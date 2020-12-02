@@ -32,12 +32,20 @@
                                         <label>Vị trí : </label>
                                         <select required name="vi_tri" class="form-control">
                                             <option value="0">Không thuộc mục nào</option>
-                                            @foreach ($vtpostcats as $vt)
-                                            <option value="{{$vt->id}}">{{$vt->title}}</option>
+                                            @foreach ($vtpostcats as $item)
+                                                @if($item->vi_tri == 0)
+                                                <option value="{{$item->id}}" style="color: red; font-weight: bold">{{$item->title}}
+                                                    @foreach($vtpostcats as $item2)
+                                                        @if($item->id == $item2->vi_tri)
+                                                            <option value="{{$item->id}}">{{$item2->title}}</option>
+                                                        @endif
+                                                    @endforeach
+                                                </option>
+                                            @endif
                                             @endforeach
                                         </select>
                                     </div>
-
+                                    {{--  --}}
                                     {{-- <div class="form-group">
                                             <label>Del_flg (Admin)</label>
                                             <select required name="del_flg" class="form-control">
