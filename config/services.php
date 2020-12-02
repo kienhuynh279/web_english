@@ -44,5 +44,4 @@ return [
         'client_secret' => env('FACEBOOK_APP_SECRET'),
         'redirect' => 'https://127.0.0.1:8000/callback/facebook',
     ],
-
 ];
