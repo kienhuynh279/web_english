@@ -6155,6 +6155,7 @@ body {
 }
 
 .btn-home:hover {
+    color: green;
     background-color: #fff;
     border: green 1px solid;
 }
@@ -6167,4 +6168,16 @@ body {
 .btn-login:hover {
     background-color: #fff;
     border-radius: 15px;
+}
+
+.btn-reply {
+    color: #e44434;
+    background-color: #fff;
+    border: none;
+}
+
+.btn-reply:hover {
+    border: #e44434 1px solid;
+    padding: 5px;
+    border-radius: 10px;
 }

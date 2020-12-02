@@ -7,10 +7,10 @@
     <div class="row">
       <div class="col-lg-8 posts-list">
         <div class="single-post row">
-          @foreach($blogs as $item)
+          {{-- @foreach($blogs as $item) --}}
           <div class="col-lg-12">
             <div class="feature-img">
-              <img class="img-fluid" src="{{ Storage::url('/upload/img/blog/'.$item->avatar) }}" alt="">
+              <img class="img-fluid" src="{{ Storage::url('/upload/img/blog/'.$blog->avatar) }}" alt="">
             </div>
           </div>
           <div class="col-lg-3  col-md-3">
@@ -36,41 +36,42 @@
             </div>
           </div>
           <div class="col-lg-9 col-md-9 blog_details">
-            <h2>{{$item->title}}</h2>
+            <h2>{{$blog->title}}</h2>
             <p class="excert">
-              {!!$item->content!!}
+              {!!$blog->content!!}
             </p>
           </div>
           <div class="col-lg-12">
-            <div class="quotes">
+            {{-- <div class="quotes">
               Với chúng tối tiếng anh đã là 1 ngôn ngữ không thể thiếu hiện nay, nó như người bạn bên tôi, luôn trò
               truyện trong đầu tôi,
               tôi học hỏi từ "người bạn này rất nhiều, đã giúp ích cho tôi rất nhiều trên con đường thành công, không có
               tiếng anh
               thì tôi đã thất bại ".
-            </div>
+            </div> --}}
 
           </div>
-          @endforeach
+          {{-- @endforeach --}}
         </div>
 
         <div class="pt-5 mt-5">
           <h3 class="mb-5">{{ $data['count']['comment'] ?? ''}} bình luận</h3>
           </h3>
 
-          <ul class="comment-list">
+          <ul  class="comment-list">
             @foreach($comments as $item)
-            <li class="comment">
+            <li style="list-style:none" class="comment">
               <div class="comment-body">
-                <h3> <i class="fas fa-user-alt"></i> {{$item->com_name}}</h3>
+                <h3> <i  class="fas fa-user-alt"></i> {{$item->com_name}}</h3>
                 <p>{{$item->com_content}}</p>
                 <div class="meta">{{date('d/m/Y H:i',strtotime($item->created_at))}}</div>
 
                 <div id="one">
+                  
+                  <button class="btn-reply" onclick="javascript:showDiv();">Trả lời</button>
                   <div id="tow" style="display: none; ">
-                    <textarea type="text"></textarea>
+                    <textarea cols="1" rows="1" class="form-control mt-20" type="text"></textarea>
                   </div>
-                  <button onclick="javascript:showDiv();">Reply</button>
                 </div>
 
 
@@ -166,15 +167,16 @@
     <div class="row justify-content-center">
       <div class="col-lg-5">
         <div class="main_title">
-          <h2 class="mb-3">News - Tips Relate</h2>
+          <h2 class="mb-3 pb-5">Bài viết có liên quan</h2>
         </div>
       </div>
     </div>
     <div class="row">
       <!-- single course -->
-
-      <div class="col-lg-12">
+      
+      <div class="col-lg-12 height">
         <div class="owl-carousel active_course">
+          @forelse($blogs as $item)
           <div class="single_course">
             <div class="course_head">
               <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
@@ -182,10 +184,10 @@
             <div class="course_content">
               <span class="tag mb-4 d-inline-block">Tips</span>
               <h4 class="mb-3">
-                <a href="course-details.html">Learn English with 6 tip</a>
+              <a href="course-details.html">{{$item->title}}</a>
               </h4>
               <p>
-                Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
+                {!! $item->summary !!}
               </p>
               <div
                 class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
@@ -208,75 +210,9 @@
               </div>
             </div>
           </div>
-
-          <div class="single_course">
-            <div class="course_head">
-              <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
-            </div>
-            <div class="course_content">
-              <span class="tag mb-4 d-inline-block">News</span>
-              <h4 class="mb-3">
-                <a href="course-details.html">Learn English with 6 tip</a>
-              </h4>
-              <p>
-                Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
-              </p>
-              <div
-                class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                <div class="authr_meta">
-                  <span class="d-inline-block ml-2">
-                    <i class="ti-time mr-2">20/10</i>
-                  </span>
-                </div>
-                <div class="mt-lg-0 mt-3">
-                  <span class="meta_info">
-                    <a href="#"><i class="ti-heart mr-2"></i></a>
-                  </span>
-                  <span class="meta_info">
-                    <a href="#"><i class="ti-comment mr-2"></i></a>
-                  </span>
-                  <span class="meta_info">
-                    <a href="#"><i class="ti-share mr-2"></i></a>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="single_course">
-            <div class="course_head">
-              <img class="img-fluid" src="{{ asset('dist/img/courses/c1.jpg') }}" alt="" />
-            </div>
-            <div class="course_content">
-              <span class="tag mb-4 d-inline-block">News</span>
-              <h4 class="mb-3">
-                <a href="course-details.html">Test</a>
-              </h4>
-              <p>
-                Learn Now, Remember Later: 6 Tips for Improving Your English Effectively Right Now
-              </p>
-              <div
-                class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                <div class="authr_meta">
-                  <span class="d-inline-block ml-2">
-                    <i class="ti-time mr-2">20/10</i>
-                  </span>
-                </div>
-                <div class="mt-lg-0 mt-3">
-                  <span class="meta_info">
-                    <a href="#"><i class="ti-heart mr-2"></i></a>
-                  </span>
-                  <span class="meta_info">
-                    <a href="#"><i class="ti-comment mr-2"></i></a>
-                  </span>
-                  <span class="meta_info">
-                    <a href="#"><i class="ti-share mr-2"></i></a>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          @empty
+            <h1 class="text-center">Chưa có dữ liệu cho phần này</h1>
+          @endforelse
         </div>
       </div>
     </div>

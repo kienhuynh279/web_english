@@ -347,7 +347,7 @@
                         </div>
                         <div class="course_content">
                             <h4 class="mb-3">
-                                <a href="course-details.html">{{ $item->title }}</a>
+                                <a href="{{ asset('tin-tuc'.'/'.$item->slug)}}">{{ $item->title }}</a>
                             </h4>
                             <p>
                                 {!! $item->summary !!}
