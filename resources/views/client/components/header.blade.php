@@ -62,9 +62,9 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="overlay-mobile"></div>
-           
+
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                <ul class="menu-hover clearfix navbar-nav menu-item navbar-nav navbar-left">
+                <ul class="menu-hover clearfix navbar-nav menu-item navbar-nav ml-auto">
                     <li class="nav-item nav-item-active">
                         <a class="nav-link" href="/">Trang Chủ</a>
                     </li>
@@ -111,17 +111,17 @@
 
 
 
-             
-                {{-- <ul class="navbar-nav ml-auto"> --}}
+
+                    {{-- <ul class="navbar-nav ml-auto"> --}}
                     @if (!Auth::check())
 
-                    <li class="btn btn-light login-item mr-2 btn-login" >
+                    <li class="btn btn-light login-item mr-2 btn-login">
                         <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt pr-2"></i>
                             Đăng nhập</a>
                     </li>
 
 
-                    <li class="btn btn-light login-item btn-login" >
+                    <li class="btn btn-light login-item btn-login">
                         <a href="{{ route('register') }}"><i class="fas fa-user-plus pr-2"></i>
                             Đăng ký</a>
                     </li>
