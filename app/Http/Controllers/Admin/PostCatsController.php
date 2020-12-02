@@ -64,7 +64,7 @@ class PostCatsController extends Controller
         // $arr['del_flg'] = $request->del_flg;
         $arr['status'] = $request->status;
         $arr['position'] = $request->position;
-        $arr['meta_title'] = $request->meta_title;
+        $arr['meta_title'] = $request->meta_title; 
         $arr['meta_description'] = $request->meta_description;
         if ($request->hasFile('img')) {
             $img = $request->img->getClientOriginalName();

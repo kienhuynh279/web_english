@@ -38,6 +38,9 @@ Route::get('/lien-he', 'App\Http\Controllers\Client\ContactController@index')->n
 //News
 Route::get('/tin-tuc', 'App\Http\Controllers\Client\NewsController@index')->name('news');
 Route::get('/tin-tuc/{slug}', 'App\Http\Controllers\Client\NewsController@detail')->name('newsDetail');
+//Comment Tin Tức
+Route::post('/tin-tuc/{slug}', 'App\Http\Controllers\Client\NewsController@postCommentNews');
+
 
 //test
 Route::get('/test/{id}', 'App\Http\Controllers\client\ExamController@index')->name('test');
