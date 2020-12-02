@@ -6068,15 +6068,15 @@ section {
 }
 
 body {
-    background-image: url("/dist/img/main/background.png") !important;
+    /* background-image: url("/dist/img/main/background.png") !important; */
 }
 
 .nav-item a {
-    color: #c47e2e !important;
+    color: #e44434 !important;
 }
 
 .nav-item-active {
-    border-bottom: #c47e2e solid 2px;
+    border-bottom: #e44434 solid 2px;
     font-weight: bold;
 }
 
@@ -6092,7 +6092,7 @@ body {
 }
 
 .menu-item>li:hover {
-    border-bottom: #c47e2e solid 2px;
+    border-bottom: #e44434 solid 2px;
 }
 
 .menu-item>li a {
@@ -6152,4 +6152,19 @@ body {
 
 .owl-next {
     right: -2rem;
+}
+
+.btn-home:hover {
+    background-color: #fff;
+    border: green 1px solid;
+}
+
+.btn-login {
+    background-color: #e44434;
+    color: #fff
+}
+
+.btn-login:hover {
+    background-color: #fff;
+    border-radius: 15px;
 }

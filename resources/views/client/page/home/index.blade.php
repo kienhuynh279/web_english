@@ -316,7 +316,7 @@
                                 <p>Thời gian: 60 phút</p>
                             </div>
                         </div>
-                        <a href="{{ route('test', $i->id) }}" class="btn btn-success">Bắt đầu</a>
+                        <a href="{{ route('test', $i->id) }}" class="btn btn-success btn-home">Bắt đầu</a>
                     </div>
                 </div>
             </div>

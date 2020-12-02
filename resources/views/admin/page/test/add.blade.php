@@ -5,9 +5,17 @@
     @csrf
 
     <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex">
             <button class="btn btn-success" type="submit"><i class="fas fa-save"></i> Lưu</button>
-            <a href="{{ route('adminTest') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+            <a href="{{ route('adminTest') }}" class="btn btn-danger ml-2"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+            <div class="form-check">
+                <div class="form-control d-flex gap-2 align-items-center" style="gap: 5px;">
+                    <input type="radio" id="answer-type-tl" name="type" value="1" style="cursor: pointer;">
+                    <label class="form-check-label flex-grow-1 mr-3" for="answer-type-tl" style="cursor: pointer;">Tự Luận</label>
+                    <input type="radio" id="answer-type-tn" name="type" value="0" style="cursor: pointer;">
+                    <label class="form-check-label flex-grow-1" for="answer-type-tn" style="cursor: pointer;">Trắc Nghiệm</label>
+                </div>
+            </div>
         </div>
         <div class="card-body d-flex flex-wrap">
             <div class="form-group col-md-6 px-3">
@@ -51,37 +59,50 @@
             </div>
             <div class="form-group col-md-12 px-3">
                 <label class="w-100" for="status">Đáp án</label>
-                <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">A</div>
-                    </div>
-                    <input data-type="question-A" type="text" class="form-control">
+                <div id="answer-alert" class="alert alert-secondary" role="alert">
+                    <span>Hãy chọn loại đáp án (tự luận / trắc nghiệm) trước khi nhập phần này!</span>
                 </div>
-                <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">B</div>
+                <div id="answer-type-0" class="d-none">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">A</div>
+                        </div>
+                        <input data-type="question-A" type="text" class="form-control">
                     </div>
-                    <input data-type="question-B" type="text" class="form-control">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">B</div>
+                        </div>
+                        <input data-type="question-B" type="text" class="form-control">
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">C</div>
+                        </div>
+                        <input data-type="question-C" type="text" class="form-control">
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">D</div>
+                        </div>
+                        <input data-type="question-D" type="text" class="form-control">
+                    </div>
+                    <div class="input-group w-100">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Đáp án đúng</div>
+                        </div>
+                        <select class="form-control" name="answer" id="answer-0">
+                            <option value="" aria-readonly="true">Ấn để chọn (Bắt buộc)</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">C</div>
+                <div id="answer-type-1" class="d-none">
+                    <div class="form-group input-group w-100">
+                        <div class="md-form w-100">
+                            <textarea id="answer-1" name="answer" class="md-textarea form-control" rows="5" placeholder="Nhập đáp án! (Bắt buộc)"></textarea>
+                        </div>
+                        <div class="col-lg-12 messages text-danger"></div>
                     </div>
-                    <input data-type="question-C" type="text" class="form-control">
-                </div>
-                <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">D</div>
-                    </div>
-                    <input data-type="question-D" type="text" class="form-control">
-                </div>
-                <div class="input-group w-100">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">Đáp án đúng</div>
-                    </div>
-                    <select class="form-control" name="answer" id="answer">
-                        <option value="" aria-readonly="true">Ấn để chọn (Bắt buộc)</option>
-                    </select>
                 </div>
                 <input type="hidden" id="question" name="question" value="[]">
             </div>
@@ -159,24 +180,24 @@
 
     // Validate
     let constraints = {
-        // title: {
-        //     presence: {
-        //         allowEmpty: false,
-        //         message: "^Không được để trống!"
-        //     }
-        // },
-        // tittle_en: {
-        //     presence: {
-        //         allowEmpty: false,
-        //         message: "^Không được để trống!"
-        //     }
-        // },
-        // slug: {
-        //     presence: {
-        //         allowEmpty: false,
-        //         message: "^Không được để trống!"
-        //     }
-        // },
+        title: {
+            presence: {
+                allowEmpty: false,
+                message: "^Không được để trống!"
+            }
+        },
+        tittle_en: {
+            presence: {
+                allowEmpty: false,
+                message: "^Không được để trống!"
+            }
+        },
+        slug: {
+            presence: {
+                allowEmpty: false,
+                message: "^Không được để trống!"
+            }
+        },
         code: {
             presence: {
                 allowEmpty: false,
@@ -188,7 +209,7 @@
                 allowEmpty: false,
                 message: "^Không được để trống!"
             }
-        }
+        },
     };
 
     validateData('#main', constraints);
@@ -223,9 +244,48 @@
 
         question.map(i => html += `<option value="${i.content}">${i.content}</option>`)
 
-        $('#answer').html(html);
+        $('#answer-0').html(html);
     }
     // End Q&A
+
+    // Answer Type
+    let answerType = document.querySelectorAll('input[name=type]');
+    let answerAlert = document.getElementById('answer-alert');
+
+    let tuLuan = document.getElementById('answer-type-1');
+    let inputTuLuan = document.getElementById('answer-1');
+
+    let tracNghiem = document.getElementById('answer-type-0');
+    let inputTracNghiem = document.getElementById('answer-0');
+
+    answerType.forEach(i => i.addEventListener('change', () => {
+        let nameAttr = document.createAttribute('name');
+        nameAttr.value = 'answer';
+
+        if (i.checked) {
+            answerAlert.classList.add('d-none');
+            validateData('#main', constraints);
+
+            if (i.value == 0) {
+                tracNghiem.classList.remove('d-none');
+                inputTracNghiem.disabled = false;
+                inputTracNghiem.attributes.setNamedItem(nameAttr);
+
+                inputTuLuan.disabled = true;
+                tuLuan.classList.add('d-none');
+                inputTuLuan.attributes.removeNamedItem('name')
+            } else {
+                tracNghiem.classList.add('d-none');
+                inputTracNghiem.disabled = true;
+                inputTracNghiem.attributes.removeNamedItem('name')
+
+                inputTuLuan.disabled = false;
+                tuLuan.classList.remove('d-none');
+                inputTuLuan.attributes.setNamedItem(nameAttr);
+            }
+        }
+    }));
+    // End Question Type
 
 </script>
 @stop

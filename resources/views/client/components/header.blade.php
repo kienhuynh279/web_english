@@ -39,6 +39,15 @@
     {{-- </div>
         </div>
     </nav> --}}
+    <div class="search_input" id="search_input_box">
+        <div class="container">
+            <form class="d-flex justify-content-between" method="" action="">
+                <input type="text" class="form-control" id="search_input" placeholder="Search Here" />
+                <button type="submit" class="btn"></button>
+                <span class="ti-close" id="close_search" title="Close Search"></span>
+            </form>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light"
         style="z-index: 10; background-color: white; border-top: #e44434 solid 2px; box-shadow: 0px 6px 15px -15px;">
         <div id="block-menu" class="container">
@@ -53,8 +62,9 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="overlay-mobile"></div>
+
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                <ul class="menu-hover clearfix navbar-nav menu-item navbar-nav mr-auto">
+                <ul class="menu-hover clearfix navbar-nav menu-item navbar-nav ml-auto">
                     <li class="nav-item nav-item-active">
                         <a class="nav-link" href="/">Trang Chủ</a>
                     </li>
@@ -82,12 +92,12 @@
                         </ul>
                     </li>
 
-                <li class="nav-item nav-item-active">
-                    <a class="nav-link" href="/tin-tuc">Tin tức</a>
-                </li>
-                <li class="nav-item nav-item-active">
-                    <a class="nav-link" href="/lien-he">Liên Hệ</a>
-                </li>
+                    <li class="nav-item nav-item-active">
+                        <a style="color: #e44434" class="nav-link" href="/tin-tuc">Tin tức</a>
+                    </li>
+                    <li class="nav-item nav-item-active">
+                        <a class="nav-link" href="/lien-he">Liên Hệ</a>
+                    </li>
 
 
                     {{-- <li class="nav-item nav-item-active">
@@ -95,27 +105,24 @@
                     </li>
                     <li class="nav-item nav-item-active">
                         <a class="nav-link" href="/lien-he">Liên Hệ</a>
-                    </li> --}}
-                </ul>
 
-
-                <ul class="navbar-nav flex-grow-1 ml-auto">
-                    <li class="w-25 ml-auto">
-                        <div class="search-box">
-                            <input class="search-txt" type="text" name="" placeholder="Tìm kiếm">
-                            <a class="search-btn" href="#"> <i class="fas fa-search"></i></a>
-                        </div> 
                     </li>
+                {{-- </ul> --}}
 
-                </ul>
-                <ul class="navbar-nav ml-auto">
+
+
+
+                    {{-- <ul class="navbar-nav ml-auto"> --}}
                     @if (!Auth::check())
-                    <li class="btn btn-light login-item mr-2" style="background-color:  #e44434;">
-                        <a href="{{ route('login') }}" style="color: #fff;"><i class=" fas fa-sign-in-alt pr-2"></i>
+
+                    <li class="btn btn-light login-item mr-2 btn-login">
+                        <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt pr-2"></i>
                             Đăng nhập</a>
                     </li>
-                    <li class="btn btn-light login-item" style="background-color:  #e44434;">
-                        <a href="{{ route('register') }}" style="color: #fff;"><i class=" fas fa-user-plus pr-2"></i>
+
+
+                    <li class="btn btn-light login-item btn-login">
+                        <a href="{{ route('register') }}"><i class="fas fa-user-plus pr-2"></i>
                             Đăng ký</a>
                     </li>
                     @else
@@ -137,6 +144,11 @@
                         </div>
                     </li>
                     @endif
+                    <li class="nav-item text-center">
+                        <a href="#" class="nav-link search" id="search">
+                            <i class="ti-search"></i>
+                        </a>
+                    </li>
                 </ul>
 
             </div>
