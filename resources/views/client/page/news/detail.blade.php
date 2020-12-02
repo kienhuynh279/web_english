@@ -70,7 +70,7 @@
                   <div id="tow" style="display: none; ">
                     <textarea type="text"></textarea>
                   </div>
-                  <button onclick="javascript:showDiv();">Click to show div</button>
+                  <button onclick="javascript:showDiv();">Reply</button>
                 </div>
 
 
