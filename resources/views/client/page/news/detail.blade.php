@@ -1,4 +1,7 @@
 <!--================Blog Area =================-->
+
+ 
+ 
 <section class="blog_area single-post-area section_gap">
   <div class="container">
     <div class="row">
@@ -62,10 +65,15 @@
                 <h3> <i class="fas fa-user-alt"></i> {{$item->com_name}}</h3>
                 <p>{{$item->com_content}}</p>
                 <div class="meta">{{date('d/m/Y H:i',strtotime($item->created_at))}}</div>
-                <p>
-                  <a href="" id="reply" class="reply">Reply</a>
 
-                </p>
+                <div id="one">
+                  <div id="tow" style="display: none; ">
+                    <textarea type="text"></textarea>
+                  </div>
+                  <button onclick="javascript:showDiv();">Click to show div</button>
+                </div>
+
+
               </div>
             </li>
             <hr>
@@ -120,7 +128,7 @@
 
             </div>
             <div class="arrow">
-              <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-left"></i></a>
+              {{-- <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-left"></i></a> --}}
             </div>
 
             <div class="detials">
@@ -139,11 +147,11 @@
             </a>
           </div>
           <div class="arrow">
-            <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-right"></i></a>
+            {{-- <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-right"></i></a> --}}
           </div>
           <div class="thumb">
-            <a href="{{ route('newsDetail') }}"><img class="img-fluid" src="{{ asset('dist/img/blog/next.jpg') }}"
-                alt=""></a>
+            {{-- <a href="{{ route('newsDetail') }}"><img class="img-fluid" src="{{ asset('dist/img/blog/next.jpg') }}"
+              alt=""></a> --}}
           </div>
         </div>
       </div>
@@ -151,7 +159,6 @@
 
   </div>
   </div>
-
 </section>
 
 <div class="popular_courses">
@@ -275,3 +282,12 @@
     </div>
   </div>
 </div>
+
+
+
+<script>
+  function showDiv() {
+    div = document.getElementById('tow');
+    div.style.display = "block";
+}
+</script>

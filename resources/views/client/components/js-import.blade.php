@@ -9,6 +9,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src={{ asset('dist/js/gmaps.min.js') }}></script>
 <script src={{ asset('dist/js/theme.js') }}></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script>
     $(document).ready(function () {
