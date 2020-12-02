@@ -82,7 +82,7 @@
                             <div class="input-group-text">Đáp án đúng</div>
                         </div>
                         <select class="form-control" name="answer" id="answer">
-                            <option value="" aria-readonly="true">Ấn để chọn (Bắt buộc)</option>
+                            <option value="">Ấn để chọn (Bắt buộc)</option>
                         </select>
                     </div>
                 </div>
@@ -249,7 +249,7 @@
         loadQuestionDataToSelectAnswer();
 
         function loadQuestionDataToSelectAnswer() {
-            let html = `<option value="" aria-readonly="true">Ấn để chọn</option>`;
+            let html = `<option value="">Ấn để chọn</option>`;
 
             question.map(i => html += `<option value="${i.content}" ${('{!! $data['type'] == 0 ? $data['answer']  : "" !!}' == i.content) ? "selected" : ""}>${i.content}</option>`)
 

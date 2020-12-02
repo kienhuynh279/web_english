@@ -112,8 +112,11 @@ class MakeTestController extends Controller
     {
         $blog = Form::findOrFail($id);
 
-
-        $filename = $request->Avatar->getClientOriginalName();
+        if ($request->has('Avatar')) {
+            $filename = $request->Avatar->getClientOriginalName();
+            $request->Avatar->storeAs('public/upload/img/the_form', $filename);
+            $blog->avatar = $filename;
+        }
 
         $blog->title = $request->get("Title");
         $blog->title_en = $request->get("Title_en");
@@ -127,8 +130,6 @@ class MakeTestController extends Controller
         $blog->status = $request->get("Status");
         $blog->slug = $request->get("Slug");
         $blog->position = $request->get("Position");
-        $blog->avatar = $filename;
-        $request->Avatar->storeAs('public/upload/img/the_form', $filename);
         $blog->save();
 
         return redirect()->route("adminMakeTest");
