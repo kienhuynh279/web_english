@@ -2,6 +2,11 @@
     <div class="row">
         <section class="hero is-primary is-fullheight mb-5 pt-5">
             <h2>{{ $data->title }}</h2>
+            <p>Thời gian làm bài: {{ $data->time }} phút</p>
+            <p id="timeLeft">Thời gian còn lại: 00 phút</p>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
             <div id="questionList" class="column is-half">
                 @foreach($data->content as $question_number => $test)
                 @if(substr($data->id_theforms_cat,0,5) == substr($test->code,0,5))
@@ -55,6 +60,15 @@
     let checkedQuestion = 0;
     let rightAnswer = 0;
 
+    let totalTime = 60 * {!! $data->time !!};
+    let countTime = totalTime;
+
+    let timeCountDown = setInterval(() => {
+        countTime--;
+        document.querySelector('#timeLeft').textContent = `Thời gian còn lại ${Math.ceil(countTime / 60) >= 0 ? Math.ceil(countTime / 60) : 0} phút`;
+        document.querySelector('.progress .progress-bar').style.width = `${countTime / totalTime * 100}%`;
+    } , 1000)
+
     btnSubmit.addEventListener('click', function () {
         this.disabled = true;
         this.textContent = "Đã nộp bài!";
@@ -97,10 +111,12 @@
                 else rightAnswer++;
         });
 
+        clearInterval(timeCountDown);
+
         Swal.fire({
             title: 'Kết quả làm bài!',
             icon: 'info',
-            html: `Số câu hỏi đã làm: <b class="text-info">${checkedQuestion}/${totalQuestion}</b><br/>Số câu đúng: <b class="text-info">${rightAnswer}/${totalQuestion}</b>`,
+            html: `Thời gian làm bài: <b class="text-info">${Math.ceil((totalTime / 60) - (countTime / 60))} phút</b> ${(Math.ceil((totalTime / 60) - (countTime / 60)) - Math.ceil(countTime / 60)) > Math.ceil(countTime / 60) ? `(<b class="text-danger">Quá giờ nộp</b>)` : ''}<br/>Số câu hỏi đã làm: <b class="text-info">${checkedQuestion}/${totalQuestion}</b><br/>Số câu đúng: <b class="text-info">${rightAnswer}/${totalQuestion}</b>`,
             showCloseButton: true,
             focusConfirm: false,
             confirmButtonText: '<i class="fa fa-check-circle"></i> Okay!'

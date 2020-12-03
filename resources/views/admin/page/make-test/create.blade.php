@@ -19,9 +19,7 @@
                         @foreach ($FormCategoryData as $item)
                         <optgroup label="{{ $item->title }}">
                             @foreach($item->child as $child_item)
-                            <option
-                                value="1{{ ($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id)}}"
-                                {{ $child_item->id === ($item->id ?? '') ? 'selected' : '' }}>
+                            <option value="1{{ ($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id)}}" {{ $child_item->id === ($item->id ?? '') ? 'selected' : '' }}>
                                 {{ $child_item->title }}</option>
                             @endforeach
                         </optgroup>
@@ -31,14 +29,21 @@
                 </div>
                 <div class="col-lg-12 messages text-danger"></div>
             </div>
-            <div class="form-group col-sm-6">
+            <div class="form-group col-sm-3">
                 <label>Ảnh Đại Diện: </label>
-                <input required id="img" type="file" name="Avatar" class="form-control hidden" onchange="changeImg(this)">
-                <img id="avatar" class="thumbnail" width="200px" src="{{ asset('/dist/img/imgdefault.png') }}">
+                <div class="custom-file">
+                    <label class="custom-file-label" for="img">Ảnh Đại Diện: </label>
+                    <input required id="img" type="file" name="Avatar" class="custom-file-input" onchange="changeImg(this)">
+                </div>
+                <img id="avatar" class="thumbnail" width="100%" src="{{ asset('/dist/img/imgdefault.png') }}">
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="w-100" for="time" style="padding-top: 7px;">Thời gian làm bài</label>
+                <input id="time" data-type="form" class="form-control" type="number" name="time" min="1" max="100" value="60" required />
             </div>
             <div class="form-group col-sm-12">
                 <label class="w-100" for="content" style="padding-top: 7px;">Nhập ID câu hỏi (Cách nhau bởi dấu -):</label>
-                <input data-type="form" class="form-control" type="text" name="Content" placeholder="Nhập ID câu hỏi"/>
+                <input data-type="form" class="form-control" type="text" name="Content" placeholder="Nhập ID câu hỏi" />
             </div>
             <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="title">Title</label>
@@ -50,8 +55,7 @@
             <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="tittle_en">Title English</label>
                 <div class="w-100">
-                    <input type="text" id="tittle_en" name="Tittle_en" class="form-control"
-                        placeholder="Tiêu đề bằng tiếng anh">
+                    <input type="text" id="tittle_en" name="Tittle_en" class="form-control" placeholder="Tiêu đề bằng tiếng anh">
                 </div>
                 <div class="col-lg-12 messages text-danger"></div>
             </div>
