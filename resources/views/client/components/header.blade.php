@@ -1,44 +1,5 @@
 <header>
-    {{-- <nav class="navbar navbar-expand-lg navbar-dark d-lg-flex d-none" style="height: 30px; background-color: #c47e2e;">
-        <div class="container">
-            <span class="text-light navbar-nav font-weight-light" style="color: rgba(255,255,255,.8) !important;">
-                {{ date('\N\g\à\y d \T\h\á\n\g m \N\ă\m Y') }}</span>
 
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="#"><i style="color: white;" class="fab fa-facebook-square"></i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#"><i style="color: white;" class="fab fa-instagram"></i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#"><i style="color: white;" class="fab fa-twitter"></i></a>
-        </li>
-    </ul>
-    </div>
-    </nav> --}}
-    {{-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff1e0">
-        <div class="container">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
-                aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarHeader">
-                {{-- <ul class="navbar-nav flex-grow-1 mx-auto">
-                    <li class="w-50 mx-auto">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-search"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                    </li>
-                </ul> --}}
-
-    {{-- </div>
-        </div>
-    </nav> --}}
     <div class="search_input" id="search_input_box">
         <div class="container">
             <form class="d-flex justify-content-between" method="" action="">
@@ -48,7 +9,7 @@
             </form>
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light"
+    <nav class="navbar navbar-expand-lg navbar-light sticky"
         style="z-index: 10; background-color: white; border-top: #e44434 solid 2px; box-shadow: 0px 6px 15px -15px;">
         <div id="block-menu" class="container">
             <a class="navbar-brand" href="/">
@@ -115,13 +76,13 @@
                     {{-- <ul class="navbar-nav ml-auto"> --}}
                     @if (!Auth::check())
 
-                    <li class="btn btn-light login-item mr-2 btn-login">
+                    <li class="btn-login login-item mr-2 ">
                         <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt pr-2"></i>
                             Đăng nhập</a>
                     </li>
 
 
-                    <li class="btn btn-light login-item btn-login">
+                    <li class="btn-login login-item">
                         <a href="{{ route('register') }}"><i class="fas fa-user-plus pr-2"></i>
                             Đăng ký</a>
                     </li>
@@ -146,7 +107,7 @@
                     @endif
                     <li class="nav-item text-center">
                         <a href="#" class="nav-link search" id="search">
-                            <i class="ti-search"></i>
+                            <i class="fas fa-search fa-2x"></i>
                         </a>
                     </li>
                 </ul>

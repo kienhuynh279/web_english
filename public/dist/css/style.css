@@ -6161,14 +6161,56 @@ body {
 }
 
 .btn-login {
+<<<<<<< HEAD
     background-color: #e44434;
     color: #fff;
+=======
+    color: #e44434;
+    border: 1px solid #fff;
+    transition: .3s all;
+}
+
+.btn-login:before,
+.btn-login:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    background: #e44434;
+    color: #fff;
+    transition: .3s all;
+    z-index: -1;
+}
+
+.btn-login:before {
+    left: 0;
+}
+
+.btn-login:after {
+    right: 0;
+>>>>>>> 887434efde8b35b3b14250a573cb92b016a6523a
 }
 
 .btn-login:hover {
-    background-color: #fff;
-    border-radius: 15px;
+    color: #e44434;
+    font-weight: bold;
 }
+
+.btn-login:hover:before {
+    box-shadow: inset 0 0 0 10em rgb(190, 22, 67);
+}
+
+.btn-login:hover:after,
+.btn-login:hover:before {
+    width: 50%;
+}
+
+
+/* 
+.btn-login:hover {                     
+    border-radius: 15px;
+} */
 
 .btn-reply {
     color: #e44434;
@@ -6181,3 +6223,127 @@ body {
     padding: 5px;
     border-radius: 10px;
 }
+
+
+/* học viên ưu tú */
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-1 {
+    flex: 1;
+    flex-basis: 300px;
+    flex-grow: 0;
+    height: 440px;
+    background: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+    overflow: hidden;
+    position: relative;
+}
+
+.card-1 img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.descriptions {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, .7);
+    width: 100%;
+    height: 100%;
+    transition: all .7s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    clip-path: circle(0% at 100% 100%);
+}
+
+.card-1:hover .descriptions {
+    left: 0px;
+    transition: all .7s ease-in-out;
+    clip-path: circle(75%);
+}
+
+.card-1:hover {
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, .3);
+    transform: scale(.97);
+}
+
+.card-1:hover img {
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+    transform: scale(1.6) rotate(20deg);
+    filter: blur(3px);
+}
+
+.card-1 h1 {
+    color: #ff3838;
+    letter-spacing: 1px;
+    margin: 0px;
+}
+
+.card-1 p {
+    line-height: 24px;
+    height: 70%;
+}
+
+.card-1 button {
+    width: fit-content;
+    height: 40px;
+    cursor: pointer;
+    border-style: none;
+    background-color: #ff3838;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, .4);
+    transition: all .5s ease-in-out;
+}
+
+.card-1 button:hover {
+    transform: scale(.95) translateX(-5px);
+    transition: all .5s ease-in-out;
+}
+
+
+/* frame  */
+
+.responsive-media>* {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .responsive-media {
+        position: relative;
+        height: 0;
+        padding-bottom: 56.25%;
+        width: 100%;
+        overflow: hidden;
+    }
+    .responsive-media>* {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+;

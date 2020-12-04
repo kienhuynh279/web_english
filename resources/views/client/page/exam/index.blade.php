@@ -1,5 +1,6 @@
 <div style="padding-top: 80px" class="container">
     <div class="row">
+
         <section class="hero is-primary is-fullheight mb-5 pt-5">
             <h2>{{ $data->title }}</h2>
             <p>Thời gian làm bài: {{ $data->time }} phút</p>
@@ -8,47 +9,34 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div id="questionList" class="column is-half">
-                @foreach($data->content as $question_number => $test)
-                @if(substr($data->id_theforms_cat,0,5) == substr($test->code,0,5))
-                <div class="p-5">
-                    {{-- <h4 class="subtitle has-text-centered is-uppercase is-7 navigation">{{ $test->title }}</h4>
-                    <h4 class="subtitle is-5">{!! $test->content !!}</h4> --}}
-                    <h4 class="pb-4 text-left">{{ $test->title }}</h4>
-                    <h5 class="text-left ml-3 mb-4">Question {{ $question_number + 1 }}</h5>
-                    <div class="question-content">{!! $test->content !!}</div>
-                    <div class="form-check p-0 gap-2 d-flex flex-column mt-5" style="gap: 5px;">
-                        @if($test->type == 0)
-                        @foreach(json_decode($test->question) as $index => $ques)
-                        <div class="form-control">
-                            <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
-                                <input type="radio" id="answer-{{ $test->id.$index }}" data-id="{{ $test->id }}" data-answer="{{ $test->answer }}" name="answer-{{ $test->id }}" value="{{ $ques }}" style="cursor: pointer;">
-                                <label class="flex-grow-1 form-check-label flex-grow-1 mr-3" for="answer-{{ $test->id.$index }}" style="cursor: pointer;">{{$ques}}</label>
-                            </div>
+                @foreach ($data['form'] as $item)
+                @foreach(json_decode($item->content) as $i)
+                @foreach($data['test'] as $test)
+                @if(substr($item->id_theforms_cat,0,5) == substr($test->code,0,5))
+                @if($i == substr($test->code,5))
+                <div class="has-text-centered p-5">
+                    <h4 class="subtitle has-text-centered is-uppercase is-7 navigation">{{ $test->title }}</h4>
+                    <h6 class="subtitle has-text-centered is-5">{!! $test->content !!}</h6>
+                    <form action="#" method="GET">
+                        @foreach(json_decode($test->question) as $ques)
+                        <div class="form-group">
+                            <p class="option form-inline">
+                                <input type="radio" data-id="{{ $test->id }}" data-answer="{{ $test->answer }}" name="answer" value="{{ $ques }}"> &nbsp;
+                                {{$ques}}
+                            </p>
                         </div>
                         @endforeach
-                        @elseif ($test->type == 1)
-                        <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
-                            <div class="input-container">
-                                {{-- <i class="fas fa-arrow-right icon"></i> --}}
-                                <textarea id="answer-{{ $test->id.$index }}" data-id="{{ $test->id }}" data-answer="{{ $test->answer }}" name="answer-{{ $test->id }}" rows="5" class="input-field p-3" type="text" placeholder="Nhập câu trả lời"></textarea>
-                            </div>
-                        </div>
-                        @endif
-                    </div>
+                    </form>
+                    <hr>
                 </div>
                 @endif
+                @endif
+                @endforeach
+                @endforeach
                 @endforeach
             </div>
-            {{-- <div class="co  l-sm-12">
-                <h3>Title</h3>
-                <p>Description</p>
-                <div class="input-container">
-                    <i class="fas fa-arrow-right icon"></i>
-                    <input class="input-field" type="text" placeholder="Nhập câu trả lời" name="">
-                </div>
-            </div> --}}
             <div>
-                <button id="submit" style="margin-bottom: 1rem" class="btn btn-success text-light font-weight-bold"><i class="fa fa-check-circle"></i> Nộp bài</button>
+                <a id="submit" style="margin-bottom: 1rem" href="javascript:void(0)" class="btn btn-success">Nộp bài</a>
             </div>
         </section>
     </div>
@@ -59,6 +47,7 @@
     let totalQuestion = document.getElementById('questionList').childElementCount;
     let checkedQuestion = 0;
     let rightAnswer = 0;
+
 
     let totalTime = 60 * {!! $data->time !!};
     let countTime = totalTime;
@@ -73,19 +62,19 @@
         this.disabled = true;
         this.textContent = "Đã nộp bài!";
 
-        checkedQuestion = 0;
 
-        // Ckeck trắc nghiệm
-        document.querySelectorAll('input[name^=answer-]').forEach(function(item) {
-            item.disabled = true;
-            if (item.attributes['data-answer'].value == item.value) item.parentElement.parentElement.classList.add('alert-success');
+        checkedQuestion = 0;
+        document.querySelectorAll('input[name=answer]').forEach(function(item) {
+            item.readOnly = true;
+            if (item.attributes['data-answer'].value == item.value) item.parentElement.classList.add('bg-success');
         });
 
-        document.querySelectorAll('input[name^=answer-]:checked').forEach(function(item) {
+        document.querySelectorAll('input[name=answer]:checked').forEach(function(item) {
             checkedQuestion++;
-            if (item.attributes['data-answer'].value != item.value) item.parentElement.parentElement.classList.add('alert-danger');
+            if (item.attributes['data-answer'].value != item.value) item.parentElement.classList.add('bg-danger');
             else rightAnswer++;
         });
+
 
         // Check Tự luận
         document.querySelectorAll('textarea[name^=answer-]').forEach(function(item) {

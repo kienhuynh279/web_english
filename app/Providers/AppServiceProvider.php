@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Banner;
 use App\Models\Blogs;
+use App\Models\Student;
 use Illuminate\Pagination\Paginator;
 use App\Models\PostCats;
 use App\Models\Post;
@@ -37,6 +38,9 @@ class AppServiceProvider extends ServiceProvider
         view ()->share($data);
 
         $data['post'] = Post::all();
+        view ()->share($data);
+
+        $data['student'] = Student::all();
         view ()->share($data);
         
         $data['blogs'] = Blogs::all();
