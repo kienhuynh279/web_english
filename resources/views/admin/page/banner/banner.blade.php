@@ -35,8 +35,9 @@
                     <td>{{$banner->status}}</td>
                     {{-- <td>{{$banner->del_flg}}</td> --}}
                     <td>
-                        <a href="{{asset('admin/banner/edit/'.$banner->id)}}" class="btn btn-warning"><i class="fas btn-sm fa-pencil-alt" aria-hidden="true"></i></a>
-                        <a onclick="return confirm('Bạn có chắc chắn muốn xóa !')" href="{{asset('admin/banner/delete/'.$banner->id)}}" class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        <a href="{{asset('admin/banner/edit/'.$banner->id)}}" class="btn btn-sm btn-warning"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+
+                        {{-- <a onclick="return confirm('Bạn có chắc chắn muốn xóa !')" href="{{asset('admin/banner/delete/'.$banner->id)}}" class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a> --}}
                     </td>
                 </tr>
                 @endforeach

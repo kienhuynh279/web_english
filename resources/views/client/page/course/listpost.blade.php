@@ -87,7 +87,21 @@
                 <div class="social-share">
                     <div class="social-share-item facebook">
                         <i class="ti-facebook social-share-icon"></i>
-                        <span class="social-share-text">Login with Facebook</span>
+                        <a href="{{route('redirect',['facebook'])}}" >
+                            <span class="social-share-text">Login with Facebook</span>
+                        </a>
+                        {{-- <a href="{{route('redirect',['facebook'])}}" class="btn btn-block btn-primary">
+                            <i class="fab fa-facebook mr-2"></i> Đăng nhập bằng Facebook
+                          </a>
+                          <a href="{{route('redirectgg')}}" class="btn btn-block btn-danger">
+                            <i class="fab fa-google-plus mr-2"></i> Đăng nhập bằng Google+
+                          </a> --}}
+                    </div>
+                    <div class="social-share-item facebook">
+                        <i class="ti-google social-share-icon"></i>
+                        <a href="{{route('redirectgg')}}" >
+                            <span class="social-share-text">Login with Google</span>
+                        </a>
                     </div>
                 </div>
             </div>

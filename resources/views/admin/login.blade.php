@@ -68,15 +68,15 @@
 
                 </form>
 
-                {{-- <div class="social-auth-links text-center mb-3">
+                <div class="social-auth-links text-center mb-3">
         <p>- HOẶC -</p>
-        <a href="#" class="btn btn-block btn-primary">
+        <a href="{{route('redirect',['facebook'])}}" class="btn btn-block btn-primary">
           <i class="fab fa-facebook mr-2"></i> Đăng nhập bằng Facebook
         </a>
-        <a href="#" class="btn btn-block btn-danger">
+        <a href="{{route('redirectgg')}}" class="btn btn-block btn-danger">
           <i class="fab fa-google-plus mr-2"></i> Đăng nhập bằng Google+
         </a>
-      </div> --}}
+      </div>
                 <!-- /.social-auth-links -->
 
                 {{-- <p class="mb-1">
