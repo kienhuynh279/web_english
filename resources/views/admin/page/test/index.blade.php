@@ -12,7 +12,6 @@
                     <th>Mã Câu hỏi</th>
                     <th>Tiêu đề</th>
                     <th>Nội dung</th>
-                    <th>Loại Câu hỏi</th>
                     <th>Nổi Bật</th>
                     <th>Độ Khó</th>
                     <th>Trạng thái</th>
@@ -32,7 +31,6 @@
                     <td>{{ substr($item['code'], 5) }}</td>
                     <td>{{ $item['title'] }}</td>
                     <td>{!! $item['content'] !!}</td>
-                    <td>{{ $item['type'] == 0 ? "Trắc Nghiệm" : "Tự Luận"}}</td>
                     <td class="text-{{ $item['high_flg'] == 1 ? "success" : "danger" }}">{{ $item['high_flg'] == 1 ? "Có" : "Không" }}</td>
                     <td>{{ $item['rank'] }}</td>
                     <td class="text-{{ $item['status'] == 1 ? "success" : "danger" }}">{{ $item['status'] == 1 ? "Hiện" : "Ẩn" }}</td>
@@ -65,7 +63,7 @@
         aaSorting: [],
         bInfo : false,
         columnDefs: [
-            { className: "text-nowrap text-center", "targets": [ 0, 3, 4, 5, 6 ] }
+            { className: "text-nowrap text-center", "targets": [ 0, 3, 4, 5 ] }
         ],
         fixedColumns: {
             leftColumns: 0,

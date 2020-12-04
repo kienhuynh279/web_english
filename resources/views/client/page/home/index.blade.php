@@ -19,7 +19,7 @@
     </div>
 </section>
 
-<section class="feature_area section_gap_top">
+<section class="pt-5 pb-5">
     <div class="container border bg-light" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px">
         <div class="container">
             <div class="row justify-content-center">
@@ -293,12 +293,12 @@
 
 
 <!--================ Start Popular Courses Area =================-->
-<div class="popular_courses">
+<div  class="popular_courses" style=" background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_960/https://namvietad.com/wp-content/uploads/2019/11/pngtree-ppt-minimalistic-geometric-background-backgroundppt-template-backgroundsimplecool-image_54790.jpg')">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="main_title">
-                    <h2 class="mb-3">Đề Thi Mới Nhất</h2>
+                    <h2 class="mb-3 pt-5">Đề Thi Mới Nhất</h2>
                 </div>
             </div>
         </div>
@@ -307,7 +307,7 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title"><span class="badge badge-primary">Kiểm tra</span> {{ $i->title }}</h4>
+                        <h4><span class="badge badge-primary">Kiểm tra</span> {{ $i->title }}</h4>
                         <div class="row">
                             <div class="col-sm-6">
                                 <p>Số câu: 40 câu</p>
@@ -316,7 +316,7 @@
                                 <p>Thời gian: 60 phút</p>
                             </div>
                         </div>
-                        <a href="{{ route('test', $i->id) }}" class="btn btn-success btn-home">Bắt đầu</a>
+                        <a href="{{ route('test', $i->id) }}" class="btn btn-success">Bắt đầu</a>
                     </div>
                 </div>
             </div>
@@ -331,7 +331,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="main_title">
-                    <h2 class="mb-3">Mẹo và tin tức</h2>
+                    <h2 class="m-3">Mẹo và tin tức</h2>
                 </div>
             </div>
         </div>
@@ -343,11 +343,12 @@
                     @foreach($blog as $item)
                     <div class="single_course">
                         <div class="course_head">
-                            <img class="img-fluid" src="{{Storage::url('upload/img/blog/'.$item->avatar)}}" alt="" style="height:300px" />
+                            <img class="img-fluid" src="{{Storage::url('upload/img/blog/'.$item->avatar)}}" alt=""
+                                style="height:300px" />
                         </div>
                         <div class="course_content">
-                            <h4 class="mb-3">
-                                <a href="{{ asset('tin-tuc'.'/'.$item->slug)}}">{{ $item->title }}</a>
+                            <h4 class="mb-3 ">
+                                <a class="card-title" href="">{{ $item->title }}</a>
                             </h4>
                             <p>
                                 {!! $item->summary !!}
@@ -377,7 +378,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="main_title">
-                    <h3 class="mb-3">Liên hệ</h3>
+                    <h2 class="mb-3">Liên hệ</h2>
                 </div>
             </div>
         </div>
@@ -426,43 +427,64 @@
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="main_title">
-                    <h2 class="mb-3">Đánh giá</h2>
+                    <h2 class="mb-3">Học viên ưu tú</h2>
                 </div>
             </div>
         </div>
         <div class="row mb-5">
-            <div class="col-sm-12">
-                <div id="rating" class="owl-carousel owl-theme">
-                    <div class="row px-5">
-                        <div class="col-sm-3 text-center text-md-none">
-                            <img class="rounded" src="{{ asset('dist/img/banner/banner-2.jpg') }}">
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="ratting-content" style="font-size: 1.2rem">Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Natus amet eveniet consequuntur officia exercitationem, earum totam
-                                maxime aut magnam sit qui expedita! Inventore, modi. Enim quam deserunt molestiae
-                                perspiciatis rem?</p>
-                            <h6 class="ratting-name">Trung kiên</h6>
-                        </div>
+            <div class="col-sm-4 p-4">
+                <div class="card-1">
+                    <img src="https://i.pinimg.com/originals/19/b8/d6/19b8d6e9b13eef23ec9c746968bb88b1.jpg" alt="">
+                    <div class="descriptions">
+                        <h1>Name</h1>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat aspernatur dolore quod repudiandae suscipit consequuntur soluta, qui corrupti labore provident saepe eos accusamus necessitatibus molestias ducimus rem aperiam sunt reiciendis.
+                        </p>
+                       
                     </div>
-                    <div class="row px-5">
-                        <div class="col-sm-3 text-center text-md-none">
-                            <img class="rounded" src="{{ asset('dist/img/banner/banner-2.jpg') }}">
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="ratting-content" style="font-size: 1.2rem">Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Amet expedita repudiandae earum. Sit illum ullam, quos tempore
-                                voluptatum maxime, et voluptates ipsum repellat placeat dicta, aliquam a commodi.
-                                Consectetur, eius. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus amet
-                                eveniet consequuntur officia exercitationem, earum totam maxime aut magnam sit qui
-                                expedita! Inventore, modi. Enim quam deserunt
-                                molestiae perspiciatis rem?</p>
-                            <h6 class="ratting-name">Trung kiên</h6>
-                        </div>
-                    </div>
+                </div>
+               
+            </div>
 
+            <div class="col-sm-4 p-4">
+                <div class="card-1">
+                    <img src="https://i.pinimg.com/originals/19/b8/d6/19b8d6e9b13eef23ec9c746968bb88b1.jpg" alt="">
+                    <div class="descriptions">
+                        <h1>Name</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi ut nulla dolor sint dolores quibusdam voluptatibus tenetur, accusamus debitis ullam. Aperiam voluptates cumque molestiae sapiente facere alias adipisci iste error.</p>
+                       
+                    </div>
+                </div>
+               
+            </div>
+
+            <div class="col-sm-4 p-4">
+                <div class="card-1">
+                    <img src="https://i.pinimg.com/originals/19/b8/d6/19b8d6e9b13eef23ec9c746968bb88b1.jpg" alt="">
+                    <div class="descriptions">
+                        <h1>Name</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptatem aut sequi deleniti, eaque ex quo tenetur, illum numquam impedit provident eligendi placeat saepe dolores ipsa alias, unde sint vero.
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="my-section-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="main_title">
+                    <h2 class="mb-3">Giới thiệu</h2>
                 </div>
             </div>
         </div>
+        <div class="responsive-media">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zRdHnseM0PE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
     </div>
 </section>

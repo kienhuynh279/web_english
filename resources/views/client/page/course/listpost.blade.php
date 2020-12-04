@@ -281,7 +281,7 @@
                     </a>
                     @else
                     <a class="" href="">
-                        <button disabled class="download-form-submit bg-secondary" style="background-color: #b0ada7 !important;">Tải về</button>
+                        <button disabled class="download-form-submit">Tải về</button>
                     </a>
                     @endif
                 </div>

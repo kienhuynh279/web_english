@@ -33,21 +33,10 @@
                                         <label>Thuộc Danh Mục : </label>
                                         {{-- <input id="vi_tri" required type="text" name="vi_tri" class="form-control" value="{{$postcats->vi_tri}}"> --}}
                                         <select required name="id_thepost_cat" class="form-control">
-<<<<<<< HEAD
                                             <option value="{{$post->id_thepost_cat}}">Không thuộc mục nào</option>
-                                            
                                             @foreach ($listpostcats as $vt)
-                                            @if($vt->vi_tri>0)
                                             <option value="{{$vt->id}}" @if($post->id_thepost_cat == $vt->id) selected @endif >{{$vt->title}}</option>
-                                            @endif
                                             @endforeach
-                                            
-=======
-                                                <option value="{{$post->id_thepost_cat}}">Không thuộc mục nào</option>
-                                                @foreach ($listpostcats as $vt)
-                                                <option value="{{$vt->id}}" @if($post->id_thepost_cat == $vt->id) selected @endif >{{$vt->title}}</option>
-                                                @endforeach
->>>>>>> 9043f882fc34635120f6ff494beebab6121a58cd
                                         </select>
                                     </div>
                                     <div class="form-group">

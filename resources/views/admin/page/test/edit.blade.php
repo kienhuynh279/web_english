@@ -50,52 +50,39 @@
                 <div class="col-lg-12 messages text-danger"></div>
             </div>
             <div class="form-group col-md-12 px-3">
-                <label class="w-100" for="status">Đáp án ({{ $data['type'] ? 'Tự Luận' : 'Trắc Nghiệm' }})</label>
-                @if (!$data['type'])
-                <div>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">A</div>
-                        </div>
-                        <input data-type="question-A" type="text" class="form-control">
+                <label class="w-100" for="status">Đáp án</label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">A</div>
                     </div>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">B</div>
-                        </div>
-                        <input data-type="question-B" type="text" class="form-control">
-                    </div>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">C</div>
-                        </div>
-                        <input data-type="question-C" type="text" class="form-control">
-                    </div>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">D</div>
-                        </div>
-                        <input data-type="question-D" type="text" class="form-control">
-                    </div>
-                    <div class="input-group w-100">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">Đáp án đúng</div>
-                        </div>
-                        <select class="form-control" name="answer" id="answer">
-                            <option value="">Ấn để chọn (Bắt buộc)</option>
-                        </select>
-                    </div>
+                    <input data-type="question-A" type="text" class="form-control">
                 </div>
-                @else
-                <div id="answer-type-1">
-                    <div class="form-group input-group w-100">
-                        <div class="md-form w-100">
-                            <textarea id="answer-1" name="answer" class="md-textarea form-control" rows="5" placeholder="Nhập đáp án! (Bắt buộc)">{{ $data['answer'] }}</textarea>
-                        </div>
-                        <div class="col-lg-12 messages text-danger"></div>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">B</div>
                     </div>
+                    <input data-type="question-B" type="text" class="form-control">
                 </div>
-                @endif
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">C</div>
+                    </div>
+                    <input data-type="question-C" type="text" class="form-control">
+                </div>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">D</div>
+                    </div>
+                    <input data-type="question-D" type="text" class="form-control">
+                </div>
+                <div class="input-group w-100">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Đáp án đúng</div>
+                    </div>
+                    <select class="form-control" name="answer" id="answer">
+                        <option value="" aria-readonly="true">Ấn để chọn (Bắt buộc)</option>
+                    </select>
+                </div>
                 <input type="hidden" id="question" name="question" value="{{ $data['question'] }}">
             </div>
             <div class="form-group col-md-6 px-3">
@@ -159,11 +146,6 @@
 </form>
 <script>
     // CKEditor
-    CKEDITOR.editorConfig = function(config) {
-        config.enterMode = CKEDITOR.ENTER_BR;
-        config.autoParagraph = false;
-        config.fillEmptyBlocks = false;
-    };
     CKEDITOR.replace('summary', { height: '150px' });
     CKEDITOR.replace('summary_en', { height: '150px' });
     CKEDITOR.replace('content', { height: '300px' });
@@ -213,56 +195,56 @@
     // End Validate
 
     // Q&A
-        let question = [
-            { id: "question-A", content: "" },
-            { id: "question-B", content: "" },
-            { id: "question-C", content: "" },
-            { id: "question-D", content: "" },
-        ]
+    let question = [
+        { id: "question-A", content: "" },
+        { id: "question-B", content: "" },
+        { id: "question-C", content: "" },
+        { id: "question-D", content: "" },
+    ]
 
-        let questionData = JSON.parse(`{!! $data['type'] == 0 ? $data['question'] : '[]' !!}`);
+    let questionData = JSON.parse(`{!! $data['question'] !!}`);
 
-        questionData.forEach((item, index) => {
-            question[index].content = item;
+    questionData.forEach((item, index) => {
+        question[index].content = item;
+    });
+
+    pushQuestionDataToSelectAnswer();
+
+    // get all question input
+    $('input[data-type^="question-"]').each(function (index, item) {
+        item.value = question[index].content;
+
+        item.addEventListener("input", function() {
+            let id = this.attributes['data-type'].value;
+
+            question.forEach(i => { if (i.id == id) i.content = this.value; });
+
+            let questionArr = [];
+            question.map(i => questionArr.push(i.content));
+
+            $('#question').val(JSON.stringify(questionArr));
+
+            pushQuestionDataToSelectAnswer();
         });
+    });
 
-        pushQuestionDataToSelectAnswer();
+    loadQuestionDataToSelectAnswer();
 
-        // get all question input
-        $('input[data-type^="question-"]').each(function (index, item) {
-            item.value = question[index].content;
+    function loadQuestionDataToSelectAnswer() {
+        let html = `<option value="" aria-readonly="true">Ấn để chọn</option>`;
 
-            item.addEventListener("input", function() {
-                let id = this.attributes['data-type'].value;
+        question.map(i => html += `<option value="${i.content}" ${('{!! $data['answer'] !!}' == i.content) ? "selected" : ""}>${i.content}</option>`)
 
-                question.forEach(i => { if (i.id == id) i.content = this.value; });
+        $('#answer').html(html);
+    }
 
-                let questionArr = [];
-                question.map(i => questionArr.push(i.content));
+    function pushQuestionDataToSelectAnswer() {
+        let html = `<option value="" aria-readonly="true">Ấn để chọn</option>`;
 
-                $('#question').val(JSON.stringify(questionArr));
+        question.map(i => html += `<option value="${i.content}">${i.content}</option>`)
 
-                pushQuestionDataToSelectAnswer();
-            });
-        });
-
-        loadQuestionDataToSelectAnswer();
-
-        function loadQuestionDataToSelectAnswer() {
-            let html = `<option value="">Ấn để chọn</option>`;
-
-            question.map(i => html += `<option value="${i.content}" ${('{!! $data['type'] == 0 ? $data['answer']  : "" !!}' == i.content) ? "selected" : ""}>${i.content}</option>`)
-
-            $('#answer').html(html);
-        }
-
-        function pushQuestionDataToSelectAnswer() {
-            let html = `<option value="" aria-readonly="true">Ấn để chọn</option>`;
-
-            question.map(i => html += `<option value="${i.content}">${i.content}</option>`)
-
-            $('#answer').html(html);
-        }
+        $('#answer').html(html);
+    }
     // End Q&A
 
 </script>
