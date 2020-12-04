@@ -51,11 +51,16 @@ class MakeTestController extends Controller
     public function store(Request $request)
     {
         $blog = new Form();
-        $filename = $request->Avatar->getClientOriginalName();
+
+        if ($request->has('Avatar')) {
+            $filename = $request->Avatar->getClientOriginalName();
+            $request->Avatar->storeAs('public/upload/img/the_form', $filename);
+            $blog->avatar = $filename;
+        }
 
         $blog->title = $request->get("Title");
         $blog->title_en = $request->get("Title_en");
-        $blog->id_theforms_cat = $request->get("code");
+        $blog->id_theforms_cat = $request->get("Cate_Id");
         $blog->summary = $request->get("Summary");
         $blog->summary_en = $request->get("Summary_en");
 
@@ -65,8 +70,7 @@ class MakeTestController extends Controller
         $blog->status = $request->get("Status");
         $blog->slug = $request->get("Slug");
         $blog->position = $request->get("Position");
-        $blog->avatar = $filename;
-        $request->Avatar->storeAs('public/upload/img/the_form', $filename);
+        $blog->time = $request->get('time');
         $blog->save();
 
         return redirect()->route("adminMakeTest");

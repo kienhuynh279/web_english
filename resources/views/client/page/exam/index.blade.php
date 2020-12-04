@@ -1,6 +1,13 @@
 <div style="padding-top: 80px" class="container">
     <div class="row">
-        <section class="hero is-primary is-fullheight">
+
+        <section class="hero is-primary is-fullheight mb-5 pt-5">
+            <h2>{{ $data->title }}</h2>
+            <p>Thời gian làm bài: {{ $data->time }} phút</p>
+            <p id="timeLeft">Thời gian còn lại: 00 phút</p>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
             <div id="questionList" class="column is-half">
                 @foreach ($data['form'] as $item)
                 @foreach(json_decode($item->content) as $i)
@@ -41,7 +48,21 @@
     let checkedQuestion = 0;
     let rightAnswer = 0;
 
-    btnSubmit.addEventListener('click', () => {
+
+    let totalTime = 60 * {!! $data->time !!};
+    let countTime = totalTime;
+
+    let timeCountDown = setInterval(() => {
+        countTime--;
+        document.querySelector('#timeLeft').textContent = `Thời gian còn lại ${Math.ceil(countTime / 60) >= 0 ? Math.ceil(countTime / 60) : 0} phút`;
+        document.querySelector('.progress .progress-bar').style.width = `${countTime / totalTime * 100}%`;
+    } , 1000)
+
+    btnSubmit.addEventListener('click', function () {
+        this.disabled = true;
+        this.textContent = "Đã nộp bài!";
+
+
         checkedQuestion = 0;
         document.querySelectorAll('input[name=answer]').forEach(function(item) {
             item.readOnly = true;
@@ -54,6 +75,40 @@
             else rightAnswer++;
         });
 
-       alert(`Số câu hỏi: ${totalQuestion}, Đã làm ${checkedQuestion}, Số câu đúng ${rightAnswer}`);
+
+        // Check Tự luận
+        document.querySelectorAll('textarea[name^=answer-]').forEach(function(item) {
+            item.disabled = true;
+            if (item.attributes['data-answer'].value.toLowerCase() == item.value.toLowerCase()) item.classList.add('border-success', 'text-info');
+        });
+
+        document.querySelectorAll('textarea[name^=answer-]').forEach(function(item) {
+            if(item.value) checkedQuestion++;
+
+            if (item.attributes['data-answer'].value.toLowerCase() != item.value.toLowerCase()) {
+                    item.classList.add('border-danger', 'text-danger');
+
+                    let rightAnswerElement = `<div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
+                        <div class="input-container">
+                            <textarea disabled rows="5" class="text-success border-success input-field p-3" type="text">${item.attributes['data-answer'].value}</textarea>
+                        </div>
+                    </div>`;
+
+                    $(item.parentElement.parentElement.parentElement).append($(rightAnswerElement));
+
+                }
+                else rightAnswer++;
+        });
+
+        clearInterval(timeCountDown);
+
+        Swal.fire({
+            title: 'Kết quả làm bài!',
+            icon: 'info',
+            html: `Thời gian làm bài: <b class="text-info">${Math.ceil((totalTime / 60) - (countTime / 60))} phút</b> ${(Math.ceil((totalTime / 60) - (countTime / 60)) - Math.ceil(countTime / 60)) > Math.ceil(countTime / 60) ? `(<b class="text-danger">Quá giờ nộp</b>)` : ''}<br/>Số câu hỏi đã làm: <b class="text-info">${checkedQuestion}/${totalQuestion}</b><br/>Số câu đúng: <b class="text-info">${rightAnswer}/${totalQuestion}</b>`,
+            showCloseButton: true,
+            focusConfirm: false,
+            confirmButtonText: '<i class="fa fa-check-circle"></i> Okay!'
+        })
     })
 </script>
