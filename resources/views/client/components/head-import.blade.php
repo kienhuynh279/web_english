@@ -3,7 +3,7 @@
 
 {{-- Quản trị comment Facebook --}}
 <meta property="fb:app_id" content="{3702010183197434}" />
-<meta property="fb:admins" content="{3702010183197434}"/>
+<meta property="fb:admins" content="{3702010183197434}" />
 <link rel="icon" href={{ asset('dist/img/favicon.png') }} type="image/png" />
 
 <!-- Bootstrap CSS -->
@@ -20,6 +20,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- main css -->
 <link rel="stylesheet" href={{ asset('dist/css/style.css') }} />
+<link rel="stylesheet" href={{ asset('dist/css/main.css') }} />
+{{-- sweet alert --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.10.4/sweetalert2.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.10.4/sweetalert2.all.min.js"></script>
 
 <link rel="stylesheet" href="{{asset("dist/css/responsive.css")}}">
 
@@ -84,7 +88,7 @@
         left: 0;
         width: 200px;
         box-shadow: 0px 1px 8px -4px #333;
-        background-color:#fff;
+        background-color: #fff;
         display: none;
     }
 
@@ -93,7 +97,7 @@
     }
 
     .menu-sub li a {
-        color:#e44434 !important;
+        color: #e44434 !important;
     }
 
     .menu-hover li .menu-sub ul {
