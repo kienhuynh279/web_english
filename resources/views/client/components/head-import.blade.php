@@ -1,6 +1,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+{{-- Quản trị comment Facebook --}}
+<meta property="fb:app_id" content="{3702010183197434}" />
+<meta property="fb:admins" content="{3702010183197434}"/>
 <link rel="icon" href={{ asset('dist/img/favicon.png') }} type="image/png" />
 
 <!-- Bootstrap CSS -->

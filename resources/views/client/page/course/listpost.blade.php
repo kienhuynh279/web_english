@@ -291,7 +291,9 @@
             <br>
         </div>
         @endforeach
-
+      
+        {{-- Comment Document --}}
+        <div class="fb-comments" data-href="http://127.0.0.1:8000/on-thi/on-thi-chung-chi/ket" data-numposts="5" data-width=""></div>
 
     </div>
 </section>

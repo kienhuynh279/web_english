@@ -10,6 +10,9 @@
 <script src={{ asset('dist/js/gmaps.min.js') }}></script>
 <script src={{ asset('dist/js/theme.js') }}></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+{{-- Script Comment--}}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0&appId=3702010183197434&autoLogAppEvents=1" nonce="fA6Fqud9"></script>
 
 <script>
     $(document).ready(function () {

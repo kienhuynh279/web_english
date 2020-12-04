@@ -11,10 +11,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{Storage::url('/upload/img/user/'.Auth::user()->avatar)}}" class="img-circle elevation-2" alt="User Image">
+                {{-- <img src="{{Storage::url('/upload/img/user/'.Auth::user()->avatar)}}" class="img-circle elevation-2" alt="User Image"> --}}
             </div>
             <div class="info">
-                <a class="d-block"> {{Auth::user()->username}}</a>
+                <a class="d-block" style="font-size: 20px"> {{Auth::user()->username}}</a>
             </div>
         </div>
 
@@ -90,6 +90,15 @@
                         <p> 
                             Quản Lý Bài Kiểm Tra
                          
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('adminStudent') }}" class="nav-link">
+                        <i class="nav-icon fas fa-user-graduate"> </i>
+                        <p> 
+                            Quản Lý Học Viên
+
                         </p>
                     </a>
                 </li>

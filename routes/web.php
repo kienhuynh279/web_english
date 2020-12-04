@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Clear cache
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    return "view is cleared";
+});
 
 //Home
 Route::get('/', 'App\Http\Controllers\Client\HomeController@index')->name('home');
@@ -38,8 +45,8 @@ Route::get('/lien-he', 'App\Http\Controllers\Client\ContactController@index')->n
 //News
 Route::get('/tin-tuc', 'App\Http\Controllers\Client\NewsController@index')->name('news');
 Route::get('/tin-tuc/{slug}', 'App\Http\Controllers\Client\NewsController@detail');
-//Comment Tin Tức
-Route::post('/tin-tuc/{slug}', 'App\Http\Controllers\Client\NewsController@postCommentNews');
+
+
 
 
 //test
@@ -264,6 +271,27 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     
             Route::post('/delete/{id}', 'BlogCategoryController@destroy')
                 ->name('adminBlogCateDelete')
+                ->where(['id' => '[0-9]+']);
+        });
+
+        Route::group(['prefix' => 'student'], function () {
+            Route::get('/', 'StudentController@getStudent')->name('adminStudent');
+    
+            Route::get('/add', 'StudentController@getAddStudent')
+                ->name('adminStudentGetAdd');
+            Route::post('/add', 'StudentController@postAddStudent')
+                ->name('adminStudentPostAdd');
+    
+            Route::get('/edit/{id}', 'StudentController@getEditStudent')
+                ->name('adminStudentGetEdit')
+                ->where(['id' => '[0-9]+']);
+    
+            Route::post('/edit/{id}', 'StudentController@postEditStudent')
+                ->name('adminStudentPostEdit')
+                ->where(['id' => '[0-9]+']);
+    
+            Route::get('/delete/{id}', 'StudentController@getDeleteStudent')
+                ->name('adminStudentDelete')
                 ->where(['id' => '[0-9]+']);
         });
     });

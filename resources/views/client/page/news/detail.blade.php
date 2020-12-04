@@ -1,7 +1,7 @@
 <!--================Blog Area =================-->
 
  
- 
+
 <section class="blog_area single-post-area section_gap">
   <div class="container">
     <div class="row">
@@ -55,54 +55,10 @@
         </div>
 
         <div class="pt-5 mt-5">
-          <h3 class="mb-5">{{ $data['count']['comment'] ?? ''}} bình luận</h3>
-          </h3>
+          {{-- //Comment Facebook --}}
+          <div class="fb-comments" data-href="http://127.0.0.1:8000/tin-tuc/lam-cach-nao-hoc-tieng-anh-hieu-qua-moi-ngay-khi-hoc-dai-hoc?page=1" data-numposts="5" data-width="730"></div>
+       
 
-          <ul  class="comment-list">
-            @foreach($comments as $item)
-            <li style="list-style:none" class="comment">
-              <div class="comment-body">
-                <h3> <i  class="fas fa-user-alt"></i> {{$item->com_name}}</h3>
-                <p>{{$item->com_content}}</p>
-                <div class="meta">{{date('d/m/Y H:i',strtotime($item->created_at))}}</div>
-
-                <div id="one">
-                  
-                  <button class="btn-reply" onclick="javascript:showDiv();">Trả lời</button>
-                  <div id="tow" style="display: none; ">
-                    <textarea cols="1" rows="1" class="form-control mt-20" type="text"></textarea>
-                  </div>
-                </div>
-
-
-              </div>
-            </li>
-            <hr>
-            @endforeach
-          </ul>
-          {{$comments->links()}}
-
-          <div class="comment-form-wrap pt-5">
-            <form method="post" class="p-5 bg-light">
-              <div class="form-group">
-                <label for="email">Email của bạn :</label>
-                <textarea name="email" id="email" cols="1" rows="1" class="form-control"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="name">Họ và tên của bạn :</label>
-                <textarea name="name" id="name" cols="1" rows="1" class="form-control"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="message">Bình luận đánh giá :</label>
-                <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
-              </div>
-              <div class="form-group">
-                {{-- <input type="submit" value="Gửi" class="btn py-3 px-4 btn-primary"> --}}
-                <button type="submit" class="btn py-2 px-3 btn-primary">Gửi</button>
-              </div>
-              {{csrf_field()}}
-            </form>
-          </div>
         </div>
       </div>
 
