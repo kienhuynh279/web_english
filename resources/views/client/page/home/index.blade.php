@@ -293,7 +293,7 @@
 
 
 <!--================ Start Popular Courses Area =================-->
-<div  class="popular_courses" style=" background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_960/https://namvietad.com/wp-content/uploads/2019/11/pngtree-ppt-minimalistic-geometric-background-backgroundppt-template-backgroundsimplecool-image_54790.jpg')">
+<div  class="popular_courses" style="background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_960/https://namvietad.com/wp-content/uploads/2019/11/pngtree-ppt-minimalistic-geometric-background-backgroundppt-template-backgroundsimplecool-image_54790.jpg')">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
@@ -316,7 +316,7 @@
                                 <p>Thời gian: 60 phút</p>
                             </div>
                         </div>
-                        <a href="{{ route('test', $i->id) }}" class="my-btn">Bắt đầu</a>
+                        <a href="{{ route('test', $i->id) }}" class="btn btn-success">Bắt đầu</a>
                     </div>
                 </div>
             </div>
@@ -459,8 +459,8 @@
                 </div>
             </div>
         </div>
-        <div class="responsive-media">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/zRdHnseM0PE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+        <div class="row mb-5">
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quasi et assumenda beatae laudantium in exercitationem maxime, magnam asperiores ratione obcaecati doloremque suscipit impedit excepturi nisi omnis illo eos esse.</h4>
+        </div>
     </div>
 </section>
