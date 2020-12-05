@@ -6161,10 +6161,6 @@ body {
 }
 
 .btn-login {
-<<<<<<< HEAD
-    background-color: #e44434;
-    color: #fff;
-=======
     color: #e44434;
     border: 1px solid #fff;
     transition: .3s all;
@@ -6189,7 +6185,6 @@ body {
 
 .btn-login:after {
     right: 0;
->>>>>>> 887434efde8b35b3b14250a573cb92b016a6523a
 }
 
 .btn-login:hover {

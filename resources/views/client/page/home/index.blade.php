@@ -27,17 +27,19 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
+                   
                     <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         @if(!empty($banner))
-                        @foreach($banner as $item )
-                        @if($item->status == 1)
-                        @if($item->id == 89)
-                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
-                        @endif
-                        @endif
-                        @endforeach
+                            @foreach($banner as $item )
+                                @if($item->status == 1)
+                                @if($item->id == 89)
+                                <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
+                                @endif
+                                @endif
+                            @endforeach
                         @endif
                     </a>
+                    
                 </div>
                 <div class="col-sm-4">
                     <a href="{{ route('course') }}" class="d-flex justify-content-center">
