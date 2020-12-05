@@ -31,7 +31,7 @@ class AddStudent extends FormRequest
     public function messages()
     {
         return[
-            'title.unique'=>' Tên Học Viên đã tồn tại, vui lòng nhập một tên khác hoặc thêm kí tự để phân biệt nếu giống tên',
+            'name.unique'=>' Tên Học Viên đã tồn tại, vui lòng nhập một tên khác hoặc thêm kí tự để phân biệt nếu giống tên',
         ];        
     }
 }
