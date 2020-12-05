@@ -23,7 +23,7 @@
     <div class="container border bg-light" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="my-banner-title w-100 text-center"><span>CHỨNG CHỈ</span></div>
+                <div style="background-color: #f20544;" class="my-banner-title w-100 text-center"><span>CHỨNG CHỈ</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -73,7 +73,7 @@
 
         <div class="container">
             <div class="row justify-content-center">
-                <div class="my-banner-title w-100 text-center"><span>ÔN THI LỚP 10</span></div>
+                <div style="background-color: #f25c78;" class="my-banner-title w-100 text-center"><span>ÔN THI LỚP 10</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -124,7 +124,7 @@
 
         <div class="container">
             <div class="row justify-content-center">
-                <div class="my-banner-title w-100 text-center"><span>Ôn thi THPT</span></div>
+                <div style="background-color: #f2c6c2;" class="my-banner-title w-100 text-center"><span>Ôn thi THPT</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -174,7 +174,7 @@
 
         <div class="container">
             <div class="row justify-content-center">
-                <div class="my-banner-title w-100 text-center"><span>Ôn thi Đại học</span></div>
+                <div style="background-color: #bbf2e2;" class="my-banner-title w-100 text-center"><span>Ôn thi Đại học</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -224,7 +224,7 @@
 
         <div class="container">
             <div class="row justify-content-center">
-                <div class="my-banner-title w-100 text-center"><span>Tiếng Anh Chuyên Nghành</span></div>
+                <div style="background-color: #77d9bd;" class="my-banner-title w-100 text-center"><span>Tiếng Anh Chuyên Nghành</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-3">
@@ -316,7 +316,7 @@
                                 <p>Thời gian: 60 phút</p>
                             </div>
                         </div>
-                        <a href="{{ route('test', $i->id) }}" class="btn btn-success">Bắt đầu</a>
+                        <a href="{{ route('test', $i->id) }}" class="my-btn">Bắt đầu</a>
                     </div>
                 </div>
             </div>
@@ -437,7 +437,7 @@
                 <div class="card-1">
                     <img src="{{ Storage::url('/upload/img/student/'.$item->avatar) }}" alt="" />
                     <div class="descriptions">
-                        <h1>{{$item->name}}</h1>
+                        <h1 class="title">{{$item->name}}</h1>
                         <p>
                            {!!$item->content!!}
                         </p>
