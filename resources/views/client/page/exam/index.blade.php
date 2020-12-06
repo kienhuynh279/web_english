@@ -48,11 +48,11 @@
 <script>
     let btnSubmit = document.getElementById('submit');
 
-    let totalQuestion = document.getElementById('questionList').childElementCount;
+    let totalQuestion = document.getElementById('questionList').childElementCount - 1;
     let checkedQuestion = 0;
     let rightAnswer = 0;
 
-    let totalTime = 60 * {!! $data-> time!!};
+    let totalTime = 60 * {!! $data->time !!};
     let countTime = totalTime;
 
     let timeCountDown = setInterval(() => {
