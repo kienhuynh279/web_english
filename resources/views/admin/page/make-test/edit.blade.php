@@ -34,7 +34,7 @@
                     <label class="custom-file-label" for="img">Click vào để chọn ảnh</label>
                     <input required id="img" type="file" name="Avatar" class="custom-file-input" onchange="changeImg(this)">
                 </div>
-                <img id="avatar" class="thumbnail" width="100%" src="{{ asset('/dist/img/imgdefault.png') }}">
+                <img id="avatar" class="thumbnail" width="100%" src="{{ $form->avatar ? Storage::url('/upload/img/the_form/'.$form->avatar) : asset('/dist/img/imgdefault.png') }}">
             </div>
             <div class="form-group col-sm-3">
                 <label class="w-100" for="time">Thời gian làm bài</label>
