@@ -30,20 +30,16 @@
                 <div class="col-lg-12 messages text-danger"></div>
             </div>
             <div class="form-group col-sm-3">
-                <label>Ảnh Đại Diện: </label>
+                <label>Ảnh Đại Diện </label>
                 <div class="custom-file">
-                    <label class="custom-file-label" for="img">Ảnh Đại Diện: </label>
+                    <label class="custom-file-label" for="img">Click vào để chọn ảnh </label>
                     <input required id="img" type="file" name="Avatar" class="custom-file-input" onchange="changeImg(this)">
                 </div>
                 <img id="avatar" class="thumbnail" width="100%" src="{{ asset('/dist/img/imgdefault.png') }}">
             </div>
             <div class="form-group col-sm-3">
-                <label class="w-100" for="time" style="padding-top: 7px;">Thời gian làm bài</label>
-                <input id="time" data-type="form" class="form-control" type="number" name="time" min="1" max="100" value="60" required />
-            </div>
-            <div class="form-group col-sm-12">
-                <label class="w-100" for="content" style="padding-top: 7px;">Nhập ID câu hỏi (Cách nhau bởi dấu -):</label>
-                <input data-type="form" class="form-control" type="text" name="Content" placeholder="Nhập ID câu hỏi" />
+                <label class="w-100" for="time">Thời gian làm bài</label>
+                <input id="time" data-type="form" class="form-control" type="number" name="time" min="1" max="999" value="60" required />
             </div>
             <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="title">Title</label>
@@ -95,61 +91,59 @@
                 </div>
                 <div class=" col-lg-12 messages text-danger"></div>
             </div>
+            <div class="form-group col-sm-6 px-3">
+                <label class="w-100" for="content" style="padding-top: 7px;">Nhập ID câu hỏi (Cách nhau bởi dấu -):</label>
+                <input data-type="form" class="form-control" type="text" name="Content" placeholder="Nhập ID câu hỏi" />
+            </div>
+            {{--
+            <div class="form-group col-sm-6 px-3">
+                <label class="w-100" for="content" style="padding-top: 7px;">Tìm câu hỏi</label>
+                <div class="input-group">
+                    <input data-type="form" class="form-control" type="text" placeholder="Nhập tiêu đề câu hỏi" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">$</span>
+                        <span class="input-group-text">0.00</span>
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <p>asdasd</p>
+                </div> --}}
         </div>
+    </div>
     </div>
 </form>
 <script>
     // CKEditor
     CKEDITOR.replace('summary', { height: '150px' });
     CKEDITOR.replace('summary_en', { height: '150px' });
-    CKEDITOR.replace('content', { height: '300px' });
-    CKEDITOR.replace('content_en', { height: '300px' });
-    CKEDITOR.replace('result', { height: '300px' });
-    // let summaryEditor = CKEDITOR.instances.summary;
-    // let summaryEnEditor = CKEDITOR.instances.summary_en;
-    // let contentEditor = CKEDITOR.instances.content;
     // end CKEditor
 
 
     // Validate
-    // let constraints = {
-    //     title: {
-    //         presence: {
-    //             allowEmpty: false,
-    //             message: "^Không được để trống!"
-    //         }
-    //     },
-    //     tittle_en: {
-    //         presence: {
-    //             allowEmpty: false,
-    //             message: "^Không được để trống!"
-    //         }
-    //     },
-    //     slug: {
-    //         presence: {
-    //             allowEmpty: false,
-    //             message: "^Không được để trống!"
-    //         }
-    //     },
-    //     code: {
-    //         presence: {
-    //             allowEmpty: false,
-    //             message: "^Không được để trống!"
-    //         }
-    //     },
-    //     answer: {
-    //         presence: {
-    //             allowEmpty: false,
-    //             message: "^Không được để trống!"
-    //         }
-    //     }
-    // };
+    let constraints = {
+        Title: {
+            presence: {
+                allowEmpty: false,
+                message: "^Không được để trống!"
+            }
+        },
+        Slug: {
+            presence: {
+                allowEmpty: false,
+                message: "^Không được để trống!"
+            }
+        },
+        Cate_Id: {
+            presence: {
+                allowEmpty: false,
+                message: "^Không được để trống!"
+            }
+        },
+    };
 
-    // validateData('#main', constraints);
+    validateData('#main', constraints);
     // End Validate
-
-    // Q&A
-
 
 </script>
 @stop

@@ -3,31 +3,12 @@
 @section('main')
 <form enctype="multipart/form-data" id="main" action="{{ route('adminMakeTestPutEdit', $form['id']) }}" method="POST" novalidate>
     @csrf
-
     <div class="card">
         <div class="card-header">
             <button class="btn btn-success" type="submit"><i class="fas fa-save"></i> Lưu</button>
-            <a href="{{ route('adminTest') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+            <a href="{{ route('adminMakeTest') }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
         </div>
         <div class="card-body d-flex flex-wrap">
-            {{-- <div class="form-group col-md-6 px-3">
-                <label class="w-100" for="code">Loại câu hỏi</label>
-                <div class="w-100">
-                    <select class="form-control" name="code" id="code">
-                        <option value="" aria-readonly="true">Ấn để chọn</option>
-                        @isset($TestCategoryData)
-                        @foreach ($TestCategoryData as $item)
-                        <optgroup label="{{ $item->title }}">
-                            @foreach($item->child as $child_item)
-                            <option value="1{{ ($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id).$form->id }}" {{ ("1".($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id).$form->id == $form['id_theforms_cat']) ? "selected" : "" }}>{{ $child_item->title }}</option>
-                            @endforeach
-                        </optgroup>
-                        @endforeach
-                        @endisset
-                    </select>
-                </div>
-                <div class="col-lg-12 messages text-danger"></div>
-            </div> --}}
             <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="code">Loại đề thi</label>
                 <div class="w-100">
@@ -37,9 +18,7 @@
                         @foreach ($FormCategoryData as $item)
                         <optgroup label="{{ $item->title }}">
                             @foreach($item->child as $child_item)
-                            <option
-                                value="1{{ ($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id)}}"
-                                {{ $child_item->id === ($item->id ?? '') ? 'selected' : '' }}>
+                            <option value="1{{ ($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id) }}" {{ ("1".($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id) == $form['id_theforms_cat']) ? "selected" : "" }}>
                                 {{ $child_item->title }}</option>
                             @endforeach
                         </optgroup>
@@ -49,23 +28,18 @@
                 </div>
                 <div class="col-lg-12 messages text-danger"></div>
             </div>
-            <div class="form-group col-sm-6">
-                <label>Ảnh Đại Diện: </label>
-                <input required id="img" type="file" name="Avatar" class="form-control hidden" onchange="changeImg(this)">
-                <img id="avatar" class="thumbnail" width="200px" src="{{ asset('/dist/img/imgdefault.png') }}">
+            <div class="form-group col-sm-3">
+                <label>Ảnh Đại Diện </label>
+                <div class="custom-file">
+                    <label class="custom-file-label" for="img">Click vào để chọn ảnh</label>
+                    <input required id="img" type="file" name="Avatar" class="custom-file-input" onchange="changeImg(this)">
+                </div>
+                <img id="avatar" class="thumbnail" width="100%" src="{{ asset('/dist/img/imgdefault.png') }}">
             </div>
-
-            {{-- <div class="form-group">
-                <label>Thuộc Danh Mục : </label>
-                {{-- <input id="vi_tri" required type="text" name="vi_tri" class="form-control" value="{{$postcats->vi_tri}}"> --}}
-                {{-- <select required name="id_thepost_cat" class="form-control">
-                    <option value="0">Không thuộc mục nào</option>
-                    @foreach ($TestCategoryData as $item)
-                    <option value="{{$item->id}}" @if($post->id_thforms_cat == $vt->id) selected @endif >{{$vt->title}}</option>
-                    @endforeach
-                </select>
-            </div> --}}
-         
+            <div class="form-group col-sm-3">
+                <label class="w-100" for="time">Thời gian làm bài</label>
+                <input id="time" data-type="form" class="form-control" type="number" name="time" min="1" max="999" value="60" required />
+            </div>
             <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="title">Title</label>
                 <div class="w-100">
@@ -82,8 +56,7 @@
             </div>
             <div class="form-group col-sm-12">
                 <label class="w-100" for="content" style="padding-top: 7px;">Nhập ID câu hỏi (Cách nhau bởi dấu -):</label>
-                <input data-type="form" class="form-control" type="text" name="Content" placeholder="Nhập ID câu hỏi"
-                    value="{{ $form['content'] }}">
+                <input data-type="form" class="form-control" type="text" name="Content" placeholder="Nhập ID câu hỏi" value="{{ $form['content'] }}">
             </div>
             <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="slug">Slug</label>
@@ -120,7 +93,7 @@
                 </div>
                 <div class=" col-lg-12 messages text-danger"></div>
             </div>
-           
+
         </div>
     </div>
 </form>
@@ -128,50 +101,32 @@
     // CKEditor
     CKEDITOR.replace('summary', { height: '150px' });
     CKEDITOR.replace('summary_en', { height: '150px' });
-    CKEDITOR.replace('content', { height: '300px' });
-    CKEDITOR.replace('content_en', { height: '300px' });
-    CKEDITOR.replace('result', { height: '300px' });
-    // let summaryEditor = CKEDITOR.instances.summary;
-    // let summaryEnEditor = CKEDITOR.instances.summary_en;
-    // let contentEditor = CKEDITOR.instances.content;
     // end CKEditor
 
 
     // Validate
-    // let constraints = {
-    //     title: {
-    //         presence: {
-    //             allowEmpty: false,
-    //             message: "^Không được để trống!"
-    //         }
-    //     },
-    //     tittle_en: {
-    //         presence: {
-    //             allowEmpty: false,
-    //             message: "^Không được để trống!"
-    //         }
-    //     },
-    //     slug: {
-    //         presence: {
-    //             allowEmpty: false,
-    //             message: "^Không được để trống!"
-    //         }
-    //     },
-    //     code: {
-    //         presence: {
-    //             allowEmpty: false,
-    //             message: "^Không được để trống!"
-    //         }
-    //     },
-    //     answer: {
-    //         presence: {
-    //             allowEmpty: false,
-    //             message: "^Không được để trống!"
-    //         }
-    //     }
-    // };
+    let constraints = {
+        Title: {
+            presence: {
+                allowEmpty: false,
+                message: "^Không được để trống!"
+            }
+        },
+        Slug: {
+            presence: {
+                allowEmpty: false,
+                message: "^Không được để trống!"
+            }
+        },
+        Cate_Id: {
+            presence: {
+                allowEmpty: false,
+                message: "^Không được để trống!"
+            }
+        },
+    };
 
-    // validateData('#main', constraints);
+    validateData('#main', constraints);
     // End Validate
 
 </script>
