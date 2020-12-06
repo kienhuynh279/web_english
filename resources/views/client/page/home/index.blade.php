@@ -19,27 +19,30 @@
     </div>
 </section>
 
-<section class="pt-5 pb-5">
-    <div class="container border bg-light" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px">
-        <div class="container">
+<section class="pt-5 pb-5 ftco-section">
+    <div class="container border bg-light "  style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px">
+        <div class="container wow fadeInUp" data-wow-duration=".3" data-wow-delay=".3s">
             <div class="row justify-content-center">
-                <div style="background-color: #f20544;" class="my-banner-title w-100 text-center"><span>CHỨNG CHỈ</span></div>
+                <div style="background-color: #f20544;" class="my-banner-title w-100 text-center"><span>CHỨNG CHỈ</span>
+                </div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
-                        @if(!empty($banner))
-                        @foreach($banner as $item )
-                        @if($item->status == 1)
-                        @if($item->id == 89)
-                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
-                        @endif
-                        @endif
-                        @endforeach
-                        @endif
-                    </a>
+                    <div class="" data-wow-duration=".3" data-wow-delay=".3s">
+                        <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                            @if(!empty($banner))
+                            @foreach($banner as $item )
+                            @if($item->status == 1)
+                            @if($item->id == 89)
+                            <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
+                            @endif
+                            @endif
+                            @endforeach
+                            @endif
+                        </a>
+                    </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 ">
                     <a href="{{ route('course') }}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">TOEFL</p> --}}
                         @if(!empty($banner))
@@ -71,9 +74,10 @@
         </div>
 
 
-        <div class="container">
+        <div class="container wow fadeInUp" data-wow-duration=".3" data-wow-delay=".3s">
             <div class="row justify-content-center">
-                <div style="background-color: #f25c78;" class="my-banner-title w-100 text-center"><span>ÔN THI LỚP 10</span></div>
+                <div style="background-color: #f25c78;" class="my-banner-title w-100 text-center"><span>ÔN THI LỚP
+                        10</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -122,9 +126,10 @@
 
         </div>
 
-        <div class="container">
+        <div class="container  wow fadeInUp" data-wow-duration=".3" data-wow-delay=".3s">
             <div class="row justify-content-center">
-                <div style="background-color: #f2c6c2;" class="my-banner-title w-100 text-center"><span>Ôn thi THPT</span></div>
+                <div style="background-color: #f2c6c2;" class="my-banner-title w-100 text-center"><span>Ôn thi
+                        THPT</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -172,9 +177,10 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container wow fadeInUp" data-wow-duration=".3" data-wow-delay=".3s">
             <div class="row justify-content-center">
-                <div style="background-color: #bbf2e2;" class="my-banner-title w-100 text-center"><span>Ôn thi Đại học</span></div>
+                <div style="background-color: #bbf2e2;" class="my-banner-title w-100 text-center"><span>Ôn thi Đại
+                        học</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -222,9 +228,10 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container wow fadeInUp" data-wow-duration=".3" data-wow-delay=".3s">
             <div class="row justify-content-center">
-                <div style="background-color: #77d9bd;" class="my-banner-title w-100 text-center"><span>Tiếng Anh Chuyên Nghành</span></div>
+                <div style="background-color: #77d9bd;" class="my-banner-title w-100 text-center"><span>Tiếng Anh Chuyên
+                        Nghành</span></div>
             </div>
             <div class="row">
                 <div class="col-sm-3">
@@ -293,7 +300,8 @@
 
 
 <!--================ Start Popular Courses Area =================-->
-<div  class="popular_courses" style="background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_960/https://namvietad.com/wp-content/uploads/2019/11/pngtree-ppt-minimalistic-geometric-background-backgroundppt-template-backgroundsimplecool-image_54790.jpg')">
+<div class="popular_courses"
+    style="background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_960/https://namvietad.com/wp-content/uploads/2019/11/pngtree-ppt-minimalistic-geometric-background-backgroundppt-template-backgroundsimplecool-image_54790.jpg')">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
@@ -316,7 +324,11 @@
                                 <p>Thời gian: 60 phút</p>
                             </div>
                         </div>
-                        <a href="{{ route('test', $i->id) }}" class="btn btn-success">Bắt đầu</a>
+                        <div class="row">
+                            <div class="col-3">
+                                <a href="{{ route('test', $i->id) }}" class="btn btn-success">Bắt đầu</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -439,7 +451,7 @@
                     <div class="descriptions">
                         <h1 class="title">{{$item->name}}</h1>
                         <p>
-                           {!!$item->content!!}
+                            {!!$item->content!!}
                         </p>
                     </div>
                 </div>
@@ -460,7 +472,9 @@
             </div>
         </div>
         <div class="row mb-5">
-            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quasi et assumenda beatae laudantium in exercitationem maxime, magnam asperiores ratione obcaecati doloremque suscipit impedit excepturi nisi omnis illo eos esse.</h4>
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quasi et assumenda beatae laudantium in
+                exercitationem maxime, magnam asperiores ratione obcaecati doloremque suscipit impedit excepturi nisi
+                omnis illo eos esse.</h4>
         </div>
     </div>
 </section>
