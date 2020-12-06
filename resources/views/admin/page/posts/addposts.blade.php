@@ -36,7 +36,10 @@
                                             <select required name="id_thepost_cat" class="form-control">
                                                 <option value="">Chọn danh mục tài liệu</option>
                                                 @foreach ($postcatslist as $list)
-                                                    <option value="{{$list->id}}">{{$list->title}}</option>
+                                                    @if($list->vi_tri>0)
+                                                        <option value="{{$list->id}}">{{$list->title}}</option>
+                                                    @endif
+                                                    {{-- <option value="{{$list->id}}">{{$list->title}}</option> --}}
                                                 @endforeach
                                             </select>
                                         </div>

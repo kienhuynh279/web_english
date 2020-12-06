@@ -35,7 +35,9 @@
                                         <select required name="id_thepost_cat" class="form-control">
                                             <option value="{{$post->id_thepost_cat}}">Không thuộc mục nào</option>
                                             @foreach ($listpostcats as $vt)
-                                            <option value="{{$vt->id}}" @if($post->id_thepost_cat == $vt->id) selected @endif >{{$vt->title}}</option>
+                                            @if($vt->vi_tri>0)
+                                                <option value="{{$vt->id}}" @if($post->id_thepost_cat == $vt->id) selected @endif >{{$vt->title}}</option>
+                                            @endif
                                             @endforeach
                                         </select>
                                     </div>

@@ -57,4 +57,10 @@
     </div>
     <!--/.row-->
 </div>
+<script>
+     $('#password').on('input',function(){
+        // console.log(this.value);
+        this.value=this.value.replace(/[^([a-zA-Z0-9)]+/g, '');
+      });
+ </script>
 @stop
