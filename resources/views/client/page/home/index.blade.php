@@ -28,22 +28,22 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="" data-wow-duration=".3" data-wow-delay=".3s">
-                        <a href="{{ route('course') }}" class="d-flex justify-content-center">
-                            @if(!empty($banner))
+                   
+                    <a href="#" class="d-flex justify-content-center">
+                        @if(!empty($banner))
                             @foreach($banner as $item )
-                            @if($item->status == 1)
-                            @if($item->id == 89)
-                            <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
-                            @endif
-                            @endif
+                                @if($item->status == 1)
+                                @if($item->id == 89)
+                                <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
+                                @endif
+                                @endif
                             @endforeach
-                            @endif
-                        </a>
-                    </div>
+                        @endif
+                    </a>
+                    
                 </div>
-                <div class="col-sm-4 ">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                <div class="col-sm-4">
+                    <a href="#" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">TOEFL</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -57,7 +57,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
@@ -81,7 +81,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
@@ -95,7 +95,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
@@ -109,7 +109,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
@@ -133,7 +133,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -147,7 +147,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -161,7 +161,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -184,7 +184,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -198,7 +198,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -212,7 +212,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -235,7 +235,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-3">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
@@ -249,7 +249,7 @@
                     </a>
                 </div>
                 <div class="col-sm-3">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
@@ -263,7 +263,7 @@
                     </a>
                 </div>
                 <div class="col-sm-3">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
@@ -277,7 +277,7 @@
                     </a>
                 </div>
                 <div class="col-sm-3">
-                    <a href="{{ route('course') }}" class="d-flex justify-content-center">
+                    <a href="#" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
