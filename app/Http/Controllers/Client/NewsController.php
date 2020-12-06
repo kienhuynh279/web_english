@@ -20,7 +20,6 @@ class NewsController extends Controller
 
     public function detail($slug)
     {
-
         $blog = Blogs::where(['slug' => $slug])->first();
         return view('client.index',[
             'title' => 'Chi Tiết Tin Tức',
@@ -28,14 +27,4 @@ class NewsController extends Controller
             'blog' => $blog,
         ]);
     }
-
-    // public function postCommentNews(Request $request, $slug){
-    //     $comment = new CommentNews();
-    //     $comment->com_name = $request->name;
-    //     $comment->com_email = $request->email;
-    //     $comment->com_content = $request->content;
-    //     $comment->com_news= $slug;
-    //     $comment->save();
-    //     return back();
-    // }
 }

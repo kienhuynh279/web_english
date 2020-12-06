@@ -20,7 +20,7 @@
 </section>
 
 <section class="pt-5 pb-5 ftco-section">
-    <div class="container border bg-light "  style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px">
+    <div class="container border bg-light " style="box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 11px 0px;border-radius: 20px">
         <div class="container wow fadeInUp" data-wow-duration=".3" data-wow-delay=".3s">
             <div class="row justify-content-center">
                 <div style="background-color: #f20544;" class="my-banner-title w-100 text-center"><span>CHỨNG CHỈ</span>
@@ -28,19 +28,19 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                   
+
                     <a href="#" class="d-flex justify-content-center">
                         @if(!empty($banner))
-                            @foreach($banner as $item )
-                                @if($item->status == 1)
-                                @if($item->id == 89)
-                                <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
-                                @endif
-                                @endif
-                            @endforeach
+                        @foreach($banner as $item )
+                        @if($item->status == 1)
+                        @if($item->id == 89)
+                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
+                        @endif
+                        @endif
+                        @endforeach
                         @endif
                     </a>
-                    
+
                 </div>
                 <div class="col-sm-4">
                     <a href="#" class="d-flex justify-content-center">
@@ -326,7 +326,7 @@
                         </div>
                         <div class="row">
                             <div class="col-3">
-                                <a href="{{ route('test', $i->id) }}" class="btn btn-success">Bắt đầu</a>
+                                <a href="{{ route('test', $i->id) }}" class="my-btn">Bắt đầu</a>
                             </div>
                         </div>
                     </div>
@@ -360,7 +360,7 @@
                         </div>
                         <div class="course_content">
                             <h4 class="mb-3 ">
-                                <a class="card-title" href="">{{ $item->title }}</a>
+                                <a class="card-title" href="{{asset('tin-tuc'.'/'.$item->slug)}}">{{ $item->title }}</a>
                             </h4>
                             <p>
                                 {!! $item->summary !!}
@@ -383,7 +383,6 @@
         </div>
     </div>
 </div>
-<!--================ End Popular Courses Area =================-->
 
 <section style="padding-top:0; padding-bottom:20px" class="feature_area section_gap">
     <div class="container">
@@ -449,8 +448,8 @@
                 <div class="card-1">
                     <img src="{{ Storage::url('/upload/img/student/'.$item->avatar) }}" alt="" />
                     <div class="descriptions">
-                        <h1 class="title">{{$item->name}}</h1>
-                        <p>
+                        <h3 class="title p-4 text-danger">{{$item->name}}</h3>
+                        <p class=" text-center">
                             {!!$item->content!!}
                         </p>
                     </div>
