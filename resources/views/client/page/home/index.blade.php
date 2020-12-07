@@ -301,7 +301,7 @@
 
 <!--================ Start Popular Courses Area =================-->
 <div class="popular_courses"
-    style="background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_960/https://namvietad.com/wp-content/uploads/2019/11/pngtree-ppt-minimalistic-geometric-background-backgroundppt-template-backgroundsimplecool-image_54790.jpg')">
+    {{-- style="background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_960/https://namvietad.com/wp-content/uploads/2019/11/pngtree-ppt-minimalistic-geometric-background-backgroundppt-template-backgroundsimplecool-image_54790.jpg')" --}}>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
@@ -338,6 +338,8 @@
 </div>
 
 
+
+
 <div class="popular_courses">
     <div class="container">
         <div class="row justify-content-center">
@@ -347,42 +349,37 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-
-            <!-- single course -->
-            <div class="col-lg-12">
-                <div class="owl-carousel active_course">
-                    @foreach($blog as $item)
-                    <div class="single_course">
-                        <div class="course_head">
-                            <img class="img-fluid" src="{{Storage::url('upload/img/blog/'.$item->avatar)}}" alt=""
-                                style="height:300px" />
-                        </div>
-                        <div class="course_content">
-                            <h4 class="mb-3 ">
-                                <a class="card-title" href="{{asset('tin-tuc'.'/'.$item->slug)}}">{{ $item->title }}</a>
-                            </h4>
-                            <p>
-                                {!! $item->summary !!}
-                            </p>
-                            <div
-                                class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                                <div class="mt-lg-0 mt-3">
-                                    <span class="meta_info mr-4">
-                                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                    </span>
-                                    <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
-                                </div>
+        <!-- single course -->
+        <div class="col-lg-12">
+            <div class="owl-carousel active_course">
+                @foreach($blog as $item)
+                <div class="single_course">
+                    <div class="course_head">
+                        <img class="img-fluid" src="{{Storage::url('upload/img/blog/'.$item->avatar)}}" alt=""
+                            style="height:300px" />
+                    </div>
+                    <div class="course_content">
+                        <h4 class="mb-3 "><a class="card-title"
+                                href="{{asset('tin-tuc'.'/'.$item->slug)}}">{{ $item->title }}</a></h4>
+                        <p>{!! $item->summary !!}</p>
+                        <div
+                            class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                            <div class="mt-lg-0 mt-3">
+                                <span class="meta_info mr-4">
+                                    <a href="#"> <i class="ti-user mr-2"></i>25 </a>
+                                </span>
+                                <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35
+                                    </a></span>
                             </div>
                         </div>
                     </div>
-                    @endforeach
-
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
 </div>
+
 
 <section style="padding-top:0; padding-bottom:20px" class="feature_area section_gap">
     <div class="container">
@@ -471,8 +468,10 @@
             </div>
         </div>
         <div class="row mb-5">
-            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quasi et assumenda beatae laudantium in
-                exercitationem maxime, magnam asperiores ratione obcaecati doloremque suscipit impedit excepturi nisi
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quasi et assumenda beatae
+                laudantium in
+                exercitationem maxime, magnam asperiores ratione obcaecati doloremque suscipit impedit excepturi
+                nisi
                 omnis illo eos esse.</h4>
         </div>
     </div>

@@ -2,11 +2,12 @@
 <script src={{ asset('dist/js/popper.js') }}></script>
 <script src={{ asset('dist/js/bootstrap.min.js') }}></script>
 <script src={{ asset('dist/vendors/nice-select/js/jquery.nice-select.min.js') }}></script>
-<script src={{ asset('dist/js/owl-carousel-thumb.min.js') }}></script>
+<script src={{ asset('dist/js/owl.carousel.min.js') }}></script>
 <script src={{ asset('dist/js/jquery.ajaxchimp.min.js') }}></script>
 <script src={{ asset('dist/js/mail-script.js') }}></script>
 <script src={{ asset('dist/js/gmaps.min.js') }}></script>
 <script src={{ asset('dist/js/theme.js') }}></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
   integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
   crossorigin="anonymous"></script>
@@ -20,6 +21,10 @@
   nonce="fA6Fqud9"></script>
 
 <script>
+
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel();
+});
 
   // Wow
 var Wow = function() {
