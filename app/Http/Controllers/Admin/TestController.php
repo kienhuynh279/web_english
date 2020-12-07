@@ -17,7 +17,6 @@ class TestController extends Controller
      */
     public function index(Request $request)
     {
-
         $condition = ["del_flg" => "0"];
 
         $CategoryData = PostCats::where(["vi_tri" => "0"])->get();
@@ -29,11 +28,16 @@ class TestController extends Controller
             $CategoryData->selected = $request->query('cate');
         }
 
+        if ($request->filled('k')) {
+            array_push($condition, ['title', 'LIKE', '%' . $request->query('k') . '%']);
+        }
+
         $data = Test::where($condition)->orderBy("id", "desc")->paginate(10);
 
         return view('admin.page.test.index', [
             "data" => $data,
-            "CategoryData" => $CategoryData
+            "CategoryData" => $CategoryData,
+            "filter" => $request->query()
         ]);
     }
 

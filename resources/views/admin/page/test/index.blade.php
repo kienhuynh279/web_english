@@ -10,7 +10,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Loại Câu hỏi</span>
                 </div>
-                <select id="cate-input" class="form-control" name="cate">
+                <select id="cate-input" class="form-control input-group-prepend" name="cate">
                     <option value="" aria-readonly="true">Tất cả</option>
                     @isset($CategoryData)
                     @foreach ($CategoryData as $item)
@@ -23,6 +23,8 @@
                     @endforeach
                     @endisset
                 </select>
+                <input type="text" class="input-group-prepend form-control" name="k" id="search-input" placeholder="Từ khóa tìm kiếm theo tiêu đề" value="{{ $filter['k'] ?? '' }}">
+                <input type="submit" class="btn btn-info" value="Tìm kiếm">
             </div>
         </form>
     </div>
@@ -80,11 +82,7 @@
             </tbody>
         </table>
         <div class="d-flex justify-content-center mt-4">
-            @if($CategoryData->selected)
-            {{ $data->appends(['cate' => $CategoryData->selected])->links() }}
-            @else
-            {{ $data->links() }}
-            @endif
+            {{ $data->appends($filter)->links() }}
         </div>
     </div>
 </div>
@@ -115,13 +113,5 @@
     });
 
     new ResizeSensor($("#dataTable"), () => table.draw());
-
-    // filter
-    let cateInput = document.getElementById('cate-input');
-    let cateForm = document.getElementById('cate-form');
-
-    cateInput.addEventListener('change', function() {
-        cateForm.submit();
-    })
 </script>
 @stop
