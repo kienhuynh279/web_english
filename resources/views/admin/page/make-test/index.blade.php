@@ -31,6 +31,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Tên Bài Kiểm Tra</th>
+                    <th>Loại bài</th>
                     <th>Trạng thái</th>
                     <th>
                         <button disabled class="btn btn-sm btn-secondary">
@@ -47,6 +48,15 @@
                 <tr>
                     <th>{{ $form->id }}</th>
                     <th>{{ $form->title }}</th>
+                    <th>
+                        @isset($CategoryData)
+                        @foreach ($CategoryData as $cate_item)
+                        @foreach($cate_item->child as $child_item)
+                        {{ $child_item->id == substr($form->id_theforms_cat ?? '', 3) ? $child_item->title : '' }}
+                        @endforeach
+                        @endforeach
+                        @endisset
+                    </th>
                     <td class="text-{{ $form['status'] == 1 ? "success" : "danger" }}">{{ $form['status'] == 1 ? "Hiện" : "Ẩn" }}</td>
                     <th>
                         <a href="{{ route('adminMakeTestGetEdit', $form->id) }}" class="btn btn-sm btn-primary">
