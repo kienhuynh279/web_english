@@ -34,8 +34,8 @@
                     <th>Tiêu đề</th>
                     <th>Nội dung</th>
                     <th>Loại Câu hỏi</th>
+                    <th>Loại Bài</th>
                     <th>Nổi Bật</th>
-                    <th>Độ Khó</th>
                     <th>Trạng thái</th>
                     <th>
                         <button disabled class="btn btn-sm btn-secondary">
@@ -54,8 +54,16 @@
                     <td>{{ $item['title'] }}</td>
                     <td>{!! $item['content'] !!}</td>
                     <td>{{ $item['type'] == 0 ? "Trắc Nghiệm" : "Tự Luận"}}</td>
+                    <td>
+                        @isset($CategoryData)
+                        @foreach ($CategoryData as $cate_item)
+                        @foreach($cate_item->child as $child_item)
+                        {{ $child_item->id == substr($item->code ?? '', 3, 2) ? $child_item->title : '' }}
+                        @endforeach
+                        @endforeach
+                        @endisset
+                    </td>
                     <td class="text-{{ $item['high_flg'] == 1 ? "success" : "danger" }}">{{ $item['high_flg'] == 1 ? "Có" : "Không" }}</td>
-                    <td>{{ $item['rank'] }}</td>
                     <td class="text-{{ $item['status'] == 1 ? "success" : "danger" }}">{{ $item['status'] == 1 ? "Hiện" : "Ẩn" }}</td>
                     <td>
                         <a href="{{ route('adminTestGetEdit', $item['id']) }}" class="btn btn-sm btn-primary">
@@ -90,7 +98,15 @@
         aaSorting: [],
         bInfo : false,
         columnDefs: [
-            { className: "text-nowrap text-center", "targets": [ 0, 3, 4, 5, 6 ] }
+            { className: "text-nowrap text-center", "targets": [ 0, 3, 4, 5, 6 ] },
+            { className: "ckeditor-content", "targets": 2 },
+            {
+                className: "ckeditor-content",
+                "render": function ( data, type, row ) {
+                    return `<p>${data}</p>`;
+                },
+                "targets": 1
+            }
         ],
         fixedColumns: {
             leftColumns: 0,

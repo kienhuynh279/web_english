@@ -179,12 +179,6 @@
                 message: "^Không được để trống!"
             }
         },
-        slug: {
-            presence: {
-                allowEmpty: false,
-                message: "^Không được để trống!"
-            }
-        },
         code: {
             presence: {
                 allowEmpty: false,
