@@ -1,9 +1,30 @@
 @extends('admin.master')
 @section('title','Danh sách câu hỏi')
 @section('main')
+
 <div class="card">
-    <div class="card-header">
-        <a href="{{ route('adminTestGetAdd') }}" class="btn btn-sm btn-success"><i class="fas fa-plus"></i>&nbsp;&nbsp;Thêm câu hỏi</a>
+    <div class="card-header d-flex align-items-center" style="gap: 15px;">
+        <a href="{{ route('adminTestGetAdd') }}" class="btn btn-success"><i class="fas fa-plus"></i>&nbsp;&nbsp;Thêm câu hỏi</a>
+        <form id="cate-form" action="{{ route('adminTest') }}" method="get">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Loại Câu hỏi</span>
+                </div>
+                <select id="cate-input" class="form-control" name="cate">
+                    <option value="" aria-readonly="true">Tất cả</option>
+                    @isset($CategoryData)
+                    @foreach ($CategoryData as $item)
+                    <optgroup label="{{ $item->title }}">
+                        @foreach($item->child as $child_item)
+                        <option value="1{{ ($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id)}}" {{ $child_item->id == substr($CategoryData->selected ?? '', 3) ? 'selected' : '' }}>
+                            {{ $child_item->title }}</option>
+                        @endforeach
+                    </optgroup>
+                    @endforeach
+                    @endisset
+                </select>
+            </div>
+        </form>
     </div>
     <div class="card-body">
         <table id="dataTable" class="table table-striped table-bordered" style="width:100%">
@@ -51,7 +72,11 @@
             </tbody>
         </table>
         <div class="d-flex justify-content-center mt-4">
+            @if($CategoryData->selected)
+            {{ $data->appends(['cate' => $CategoryData->selected])->links() }}
+            @else
             {{ $data->links() }}
+            @endif
         </div>
     </div>
 </div>
@@ -74,5 +99,13 @@
     });
 
     new ResizeSensor($("#dataTable"), () => table.draw());
+
+    // filter
+    let cateInput = document.getElementById('cate-input');
+    let cateForm = document.getElementById('cate-form');
+
+    cateInput.addEventListener('change', function() {
+        cateForm.submit();
+    })
 </script>
 @stop

@@ -63,7 +63,11 @@
             </tbody>
         </table>
         <div class="d-flex justify-content-center mt-4">
+            @if($CategoryData->selected)
+            {{ $forms->appends(['cate' => $CategoryData->selected])->links() }}
+            @else
             {{ $forms->links() }}
+            @endif
         </div>
     </div>
 </div>
@@ -91,8 +95,6 @@
     let cateForm = document.getElementById('cate-form');
 
     cateInput.addEventListener('change', function() {
-        // cateForm.action = `${cateForm.attributes['data-base-url'].value}?cate=${this.value}`;
-        // console.log(cateForm.action);
         cateForm.submit();
     })
 </script>
