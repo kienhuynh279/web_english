@@ -348,7 +348,6 @@
             </div>
         </div>
         <div class="row">
-
             <!-- single course -->
             <div class="col-lg-12">
                 <div class="owl-carousel active_course">
@@ -377,7 +376,6 @@
                         </div>
                     </div>
                     @endforeach
-
                 </div>
             </div>
         </div>
