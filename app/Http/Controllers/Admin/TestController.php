@@ -15,12 +15,29 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Test::where(["del_flg" => "0"])->orderBy("id", "desc")->paginate(10);
+        $condition = ["del_flg" => "0"];
+
+        $CategoryData = PostCats::where(["vi_tri" => "0"])->get();
+        $CategoryData->selected = null;
+        foreach ($CategoryData as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
+
+        if ($request->filled('cate')) {
+            array_push($condition, ['code', 'LIKE', $request->query('cate') . '%']);
+            $CategoryData->selected = $request->query('cate');
+        }
+
+        if ($request->filled('k')) {
+            array_push($condition, ['title', 'LIKE', '%' . $request->query('k') . '%']);
+        }
+
+        $data = Test::where($condition)->orderBy("id", "desc")->paginate(10);
 
         return view('admin.page.test.index', [
-            "data" => $data
+            "data" => $data,
+            "CategoryData" => $CategoryData,
+            "filter" => $request->query()
         ]);
     }
 

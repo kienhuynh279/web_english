@@ -37,25 +37,53 @@
                 <div class="col-lg-12 messages text-danger"></div>
             </div>
             <div class="form-group col-md-6 px-3">
+                <label class="w-100" for="slug">Slug</label>
+                <div class="w-100">
+                    <input type="text" id="slug" name="slug" class="form-control" placeholder="Slug">
+                </div>
+                <div class="col-lg-12 messages text-danger"></div>
+            </div>
+            <div class="form-check col-md-3 px-3">
+                <label class="w-100" for="status">Trạng thái</label>
+                <div class="form-control d-flex gap-2 align-items-center" style="gap: 5px;">
+                    <input type="checkbox" id="status" name="status" checked>
+                    <label class="form-check-label flex-grow-1" for="status">Hiện</label>
+                </div>
+            </div>
+            <div class="form-check col-md-3 px-3">
+                <label class="w-100" for="high_flg">Nổi bật</label>
+                <div class="form-control d-flex gap-2 align-items-center" style="gap: 5px;">
+                    <input type="checkbox" id="high_flg" name="high_flg">
+                    <label class="form-check-label flex-grow-1" for="high_flg">Có</label>
+                </div>
+            </div>
+            <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="rank">Độ Khó</label>
                 <div class="w-100">
                     <input type="text" id="rank" name="rank" class="form-control" placeholder="Độ khó">
                 </div>
                 <div class="col-lg-12 messages text-danger"></div>
             </div>
-            <div class="form-group col-md-6 px-3">
+            <div class="form-group col-md-12 px-3">
                 <label class="w-100" for="title">Title</label>
                 <div class="w-100">
                     <input type="text" id="title" name="title" class="form-control" placeholder="Tiêu đề">
                 </div>
                 <div class="col-lg-12 messages text-danger"></div>
             </div>
-            <div class="form-group col-md-6 px-3">
+            {{-- <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="tittle_en">Title English</label>
                 <div class="w-100">
                     <input type="text" id="tittle_en" name="tittle_en" class="form-control" placeholder="Tiêu đề bằng tiếng anh">
                 </div>
                 <div class="col-lg-12 messages text-danger"></div>
+            </div> --}}
+            <div class="form-group col-md-12 px-3">
+                <label class="w-100" for="content" style="padding-top: 7px;">Yêu cầu, dữ kiện của câu hỏi</label>
+                <div class="md-form">
+                    <textarea id="content" name="content" class="md-textarea form-control"></textarea>
+                </div>
+                <div class=" col-lg-12 messages text-danger"></div>
             </div>
             <div class="form-group col-md-12 px-3">
                 <label class="w-100" for="status">Đáp án</label>
@@ -106,28 +134,7 @@
                 </div>
                 <input type="hidden" id="question" name="question" value="[]">
             </div>
-            <div class="form-group col-md-6 px-3">
-                <label class="w-100" for="slug">Slug</label>
-                <div class="w-100">
-                    <input type="text" id="slug" name="slug" class="form-control" placeholder="Slug">
-                </div>
-                <div class="col-lg-12 messages text-danger"></div>
-            </div>
-            <div class="form-check col-md-3 px-3">
-                <label class="w-100" for="status">Trạng thái</label>
-                <div class="form-control d-flex gap-2 align-items-center" style="gap: 5px;">
-                    <input type="checkbox" id="status" name="status" checked>
-                    <label class="form-check-label flex-grow-1" for="status">Hiện</label>
-                </div>
-            </div>
-            <div class="form-check col-md-3 px-3">
-                <label class="w-100" for="high_flg">Nổi bật</label>
-                <div class="form-control d-flex gap-2 align-items-center" style="gap: 5px;">
-                    <input type="checkbox" id="high_flg" name="high_flg">
-                    <label class="form-check-label flex-grow-1" for="high_flg">Có</label>
-                </div>
-            </div>
-            <div class="form-group col-md-6 px-3">
+            {{-- <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="summary" style="padding-top: 7px;">Tóm tắt</label>
                 <div class="md-form">
                     <textarea id="summary" name="summary" class="md-textarea form-control"></textarea>
@@ -140,28 +147,21 @@
                     <textarea id="summary_en" name="summary_en" class="md-textarea form-control"></textarea>
                 </div>
                 <div class=" col-lg-12 messages text-danger"></div>
-            </div>
-            <div class="form-group col-md-12 px-3">
-                <label class="w-100" for="content" style="padding-top: 7px;">Nội dung</label>
-                <div class="md-form">
-                    <textarea id="content" name="content" class="md-textarea form-control"></textarea>
-                </div>
-                <div class=" col-lg-12 messages text-danger"></div>
-            </div>
-            <div class="form-group col-md-12 px-3">
+            </div> --}}
+            {{-- <div class="form-group col-md-12 px-3">
                 <label class="w-100" for="content_en" style="padding-top: 7px;">Nội dung bằng tiếng anh</label>
                 <div class="md-form">
                     <textarea id="content_en" name="content_en" class="md-textarea form-control"></textarea>
                 </div>
                 <div class=" col-lg-12 messages text-danger"></div>
-            </div>
-            <div class="form-group col-md-12 px-3">
+            </div> --}}
+            {{-- <div class="form-group col-md-12 px-3">
                 <label class="w-100" for="result" style="padding-top: 7px;">Kết quả</label>
                 <div class="md-form">
                     <textarea id="result" name="result" class="md-textarea form-control"></textarea>
                 </div>
                 <div class=" col-lg-12 messages text-danger"></div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </form>
@@ -173,21 +173,15 @@
         config.fillEmptyBlocks = false;
     };
 
-    CKEDITOR.replace('summary', { height: '150px' });
-    CKEDITOR.replace('summary_en', { height: '150px' });
-    CKEDITOR.replace('content', { height: '300px' });
-    CKEDITOR.replace('content_en', { height: '300px' });
-    CKEDITOR.replace('result', { height: '300px' });
+    // CKEDITOR.replace('summary', { height: '150px' });
+    // CKEDITOR.replace('summary_en', { height: '150px' });
+    CKEDITOR.replace('content');
+    // CKEDITOR.replace('content_en', { height: '300px' });
+    // CKEDITOR.replace('result', { height: '300px' });
 
     // Validate
     let constraints = {
         title: {
-            presence: {
-                allowEmpty: false,
-                message: "^Không được để trống!"
-            }
-        },
-        slug: {
             presence: {
                 allowEmpty: false,
                 message: "^Không được để trống!"

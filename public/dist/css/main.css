@@ -5,3 +5,15 @@ table thead th {
 table tr td {
     max-width: 500px;
 }
+
+.ckeditor-content {
+    overflow: hidden;
+}
+
+.ckeditor-content p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}

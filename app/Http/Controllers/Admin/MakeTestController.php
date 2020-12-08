@@ -16,12 +16,24 @@ class MakeTestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $forms = Form::where(["del_flg" => "0"])->orderBy("id", "desc")->paginate(10);
-        // $formcate  = PostCats::all();
+        $condition = ["del_flg" => "0"];
+
+        $CategoryData = PostCats::where(["vi_tri" => "0"])->get();
+        $CategoryData->selected = null;
+        foreach ($CategoryData as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
+
+        if ($request->filled('cate')) {
+            array_push($condition, ['id_theforms_cat', $request->query('cate')]);
+            $CategoryData->selected = $request->query('cate');
+        }
+
+        $forms = Form::where($condition)->orderBy("id", "desc")->paginate(10);
+
         return view('admin.page.make-test.index', [
             "forms" => $forms,
+            "CategoryData" => $CategoryData
         ]);
     }
 
@@ -67,7 +79,7 @@ class MakeTestController extends Controller
         $blog->content = json_encode(explode("-", $request->get("Content")));
         $blog->del_flg = 0;
         $blog->hight_flg = $request->get("Hight_flg");
-        $blog->status = $request->get("Status");
+        $blog->status = $request->get("Status") ? 1 : 0;
         $blog->slug = $request->get("Slug");
         $blog->position = $request->get("Position");
         $blog->time = $request->get('time');
@@ -131,7 +143,7 @@ class MakeTestController extends Controller
         $blog->meta_description = $request->get("Meta_Desc");
         $blog->meta_title = $request->get("Meta_Title");
         $blog->hight_flg = $request->get("Hight_Flg");
-        $blog->status = $request->get("Status");
+        $blog->status = $request->get("Status") ? 1 : 0;
         $blog->slug = $request->get("Slug");
         $blog->position = $request->get("Position");
         $blog->save();

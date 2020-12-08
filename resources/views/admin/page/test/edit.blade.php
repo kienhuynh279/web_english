@@ -29,76 +29,6 @@
                 <div class="col-lg-12 messages text-danger"></div>
             </div>
             <div class="form-group col-md-6 px-3">
-                <label class="w-100" for="rank">Độ Khó</label>
-                <div class="w-100">
-                    <input type="text" id="rank" name="rank" class="form-control" placeholder="Độ khó" value="{{ $data['rank'] }}">
-                </div>
-                <div class="col-lg-12 messages text-danger"></div>
-            </div>
-            <div class="form-group col-md-6 px-3">
-                <label class="w-100" for="title">Title</label>
-                <div class="w-100">
-                    <input type="text" id="title" name="title" class="form-control" placeholder="Tiêu đề" value="{{ $data['title'] }}">
-                </div>
-                <div class="col-lg-12 messages text-danger"></div>
-            </div>
-            <div class="form-group col-md-6 px-3">
-                <label class="w-100" for="tittle_en">Title English</label>
-                <div class="w-100">
-                    <input type="text" id="tittle_en" name="tittle_en" class="form-control" placeholder="Tiêu đề bằng tiếng anh" value="{{ $data['tittle_en'] }}">
-                </div>
-                <div class="col-lg-12 messages text-danger"></div>
-            </div>
-            <div class="form-group col-md-12 px-3">
-                <label class="w-100" for="status">Đáp án ({{ $data['type'] ? 'Tự Luận' : 'Trắc Nghiệm' }})</label>
-                @if (!$data['type'])
-                <div>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">A</div>
-                        </div>
-                        <input data-type="question-A" type="text" class="form-control">
-                    </div>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">B</div>
-                        </div>
-                        <input data-type="question-B" type="text" class="form-control">
-                    </div>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">C</div>
-                        </div>
-                        <input data-type="question-C" type="text" class="form-control">
-                    </div>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">D</div>
-                        </div>
-                        <input data-type="question-D" type="text" class="form-control">
-                    </div>
-                    <div class="input-group w-100">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">Đáp án đúng</div>
-                        </div>
-                        <select class="form-control" name="answer" id="answer">
-                            <option value="">Ấn để chọn (Bắt buộc)</option>
-                        </select>
-                    </div>
-                </div>
-                @else
-                <div id="answer-type-1">
-                    <div class="form-group input-group w-100">
-                        <div class="md-form w-100">
-                            <textarea id="answer-1" name="answer" class="md-textarea form-control" rows="5" placeholder="Nhập đáp án! (Bắt buộc)">{{ $data['answer'] }}</textarea>
-                        </div>
-                        <div class="col-lg-12 messages text-danger"></div>
-                    </div>
-                </div>
-                @endif
-                <input type="hidden" id="question" name="question" value="{{ $data['question'] }}">
-            </div>
-            <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="slug">Slug</label>
                 <div class="w-100">
                     <input type="text" id="slug" name="slug" class="form-control" placeholder="Slug" value="{{ $data['slug'] }}">
@@ -120,41 +50,111 @@
                 </div>
             </div>
             <div class="form-group col-md-6 px-3">
+                <label class="w-100" for="rank">Độ Khó</label>
+                <div class="w-100">
+                    <input type="text" id="rank" name="rank" class="form-control" placeholder="Độ khó" value="{{ $data['rank'] }}">
+                </div>
+                <div class="col-lg-12 messages text-danger"></div>
+            </div>
+            <div class="form-group col-md-12 px-3">
+                <label class="w-100" for="title">Title</label>
+                <div class="w-100">
+                    <input type="text" id="title" name="title" class="form-control" placeholder="Tiêu đề" value="{{ $data['title'] }}">
+                </div>
+                <div class="col-lg-12 messages text-danger"></div>
+            </div>
+            {{-- <div class="form-group col-md-6 px-3">
+                <label class="w-100" for="tittle_en">Title English</label>
+                <div class="w-100">
+                    <input type="text" id="tittle_en" name="tittle_en" class="form-control" placeholder="Tiêu đề bằng tiếng anh" value="{{ $data['tittle_en'] }}">
+        </div>
+        <div class="col-lg-12 messages text-danger"></div>
+    </div> --}}
+    {{-- <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="summary" style="padding-top: 7px;">Tóm tắt</label>
                 <div class="md-form">
                     <textarea id="summary" name="summary" class="md-textarea form-control">{{ $data['summary'] }}</textarea>
+    </div>
+    <div class=" col-lg-12 messages text-danger"></div>
+    </div>
+    <div class="form-group col-md-6 px-3">
+        <label class="w-100" for="summary_en" style="padding-top: 7px;">Tóm tắt bằng tiếng anh</label>
+        <div class="md-form">
+            <textarea id="summary_en" name="summary_en" class="md-textarea form-control">{{ $data['summary_en'] }}</textarea>
+        </div>
+        <div class=" col-lg-12 messages text-danger"></div>
+    </div> --}}
+    <div class="form-group col-md-12 px-3">
+        <label class="w-100" for="content" style="padding-top: 7px;">Yêu cầu, dữ kiện của câu hỏi</label>
+        <div class="md-form">
+            <textarea id="content" name="content" class="md-textarea form-control">{{ $data['content'] }}</textarea>
+        </div>
+        <div class=" col-lg-12 messages text-danger"></div>
+    </div>
+    <div class="form-group col-md-12 px-3">
+        <label class="w-100" for="status">Đáp án ({{ $data['type'] ? 'Tự Luận' : 'Trắc Nghiệm' }})</label>
+        @if (!$data['type'])
+        <div>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">A</div>
                 </div>
-                <div class=" col-lg-12 messages text-danger"></div>
+                <input data-type="question-A" type="text" class="form-control">
             </div>
-            <div class="form-group col-md-6 px-3">
-                <label class="w-100" for="summary_en" style="padding-top: 7px;">Tóm tắt bằng tiếng anh</label>
-                <div class="md-form">
-                    <textarea id="summary_en" name="summary_en" class="md-textarea form-control">{{ $data['summary_en'] }}</textarea>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">B</div>
                 </div>
-                <div class=" col-lg-12 messages text-danger"></div>
+                <input data-type="question-B" type="text" class="form-control">
             </div>
-            <div class="form-group col-md-12 px-3">
-                <label class="w-100" for="content" style="padding-top: 7px;">Nội dung</label>
-                <div class="md-form">
-                    <textarea id="content" name="content" class="md-textarea form-control">{{ $data['content'] }}</textarea>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">C</div>
                 </div>
-                <div class=" col-lg-12 messages text-danger"></div>
+                <input data-type="question-C" type="text" class="form-control">
             </div>
-            <div class="form-group col-md-12 px-3">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">D</div>
+                </div>
+                <input data-type="question-D" type="text" class="form-control">
+            </div>
+            <div class="input-group w-100">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Đáp án đúng</div>
+                </div>
+                <select class="form-control" name="answer" id="answer">
+                    <option value="">Ấn để chọn (Bắt buộc)</option>
+                </select>
+            </div>
+        </div>
+        @else
+        <div id="answer-type-1">
+            <div class="form-group input-group w-100">
+                <div class="md-form w-100">
+                    <textarea id="answer-1" name="answer" class="md-textarea form-control" rows="5" placeholder="Nhập đáp án! (Bắt buộc)">{{ $data['answer'] }}</textarea>
+                </div>
+                <div class="col-lg-12 messages text-danger"></div>
+            </div>
+        </div>
+        @endif
+        <input type="hidden" id="question" name="question" value="{{ $data['question'] }}">
+    </div>
+    {{-- <div class="form-group col-md-12 px-3">
                 <label class="w-100" for="content_en" style="padding-top: 7px;">Nội dung bằng tiếng anh</label>
                 <div class="md-form">
                     <textarea id="content_en" name="content_en" class="md-textarea form-control">{{ $data['content_en'] }}</textarea>
-                </div>
-                <div class=" col-lg-12 messages text-danger"></div>
-            </div>
-            <div class="form-group col-md-12 px-3">
-                <label class="w-100" for="result" style="padding-top: 7px;">Kết quả</label>
-                <div class="md-form">
-                    <textarea id="result" name="result" class="md-textarea form-control">{{ $data['result'] }}</textarea>
-                </div>
-                <div class=" col-lg-12 messages text-danger"></div>
-            </div>
+    </div>
+    <div class=" col-lg-12 messages text-danger"></div>
+    </div>
+    <div class="form-group col-md-12 px-3">
+        <label class="w-100" for="result" style="padding-top: 7px;">Kết quả</label>
+        <div class="md-form">
+            <textarea id="result" name="result" class="md-textarea form-control">{{ $data['result'] }}</textarea>
         </div>
+        <div class=" col-lg-12 messages text-danger"></div>
+    </div> --}}
+    </div>
     </div>
 </form>
 <script>
@@ -174,12 +174,6 @@
     // Validate
     let constraints = {
         title: {
-            presence: {
-                allowEmpty: false,
-                message: "^Không được để trống!"
-            }
-        },
-        slug: {
             presence: {
                 allowEmpty: false,
                 message: "^Không được để trống!"
