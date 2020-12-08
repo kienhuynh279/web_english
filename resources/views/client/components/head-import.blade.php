@@ -61,7 +61,7 @@
         right: -25%;
         margin: 0 auto;
         list-style: none;
-        background-color: #ffffff;
+        background-color: none ;
     }
 
     .menu-hover>li {
@@ -107,13 +107,4 @@
         top: 0;
         left: 100%;
     }
-
-    /* .menu-hover li:hover>ul {
-        display: block;
-        background: #e44434;
-    }
-
-    .menu-hover li:hover>a {
-        background: #e44434;
-    } */
 </style>

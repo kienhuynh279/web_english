@@ -7,25 +7,37 @@
 <script src={{ asset('dist/js/mail-script.js') }}></script>
 <script src={{ asset('dist/js/gmaps.min.js') }}></script>
 <script src={{ asset('dist/js/theme.js') }}></script>
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
   integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
   crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 {{-- Script Comment--}}
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
   src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0&appId=3702010183197434&autoLogAppEvents=1"
-  nonce="fA6Fqud9"></script>
-
+  nonce="fA6Fqud9">
+</script>
+{{-- header --}}
 <script>
-
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel();
-});
-
+  (new IntersectionObserver(function(e,o){
+    if (e[0].intersectionRatio > 0){
+        document.documentElement.removeAttribute('class');
+    } else {
+        document.documentElement.setAttribute('class','stuck');
+    };
+})).observe(document.querySelector('.trigger'));
+</script>
+ {{-- libary carousel --}}
+<script>
+  $(".owl-carousel").owlCarousel({
+    navigation : true
+  });
+</script>
+{{-- libary wow js --}}
+<script>
   // Wow
 var Wow = function() {
     // "use strict";
@@ -52,6 +64,8 @@ $(document).ready(function() {
     Wow.init();
 });
 </script>
+
+
 
 <script>
   $(document).ready(function () {
