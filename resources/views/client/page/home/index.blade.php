@@ -300,8 +300,8 @@
 
 
 <!--================ Start Popular Courses Area =================-->
-<section class="section_gap">
-    
+<section class="popular_courses">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="main_title">
