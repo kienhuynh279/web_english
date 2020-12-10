@@ -90,7 +90,7 @@
         aaSorting: [],
         bInfo : false,
         columnDefs: [
-            { className: "text-nowrap text-center", "targets": [ 0, 2 ] }
+            { className: "text-nowrap text-center", "targets": [ 0, 3 ] }
         ],
         fixedColumns: {
             leftColumns: 0,

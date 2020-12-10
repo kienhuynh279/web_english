@@ -16,9 +16,12 @@ class TestResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'code' => $this->code,
+            'type' => $this->type,
             'title' => $this->title,
             'content' => $this->content,
-            'question' => $this->question
+            'question' => $this->question,
+            'answer' => $this->answer
         ];
     }
 }

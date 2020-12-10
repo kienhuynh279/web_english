@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\TestResource;
 use App\Models\Form;
 use App\Models\FormCategory;
 use Illuminate\Http\Request;
 use App\Models\TestCategory;
 use App\Models\PostCats;
+use App\Models\Test;
 
 class MakeTestController extends Controller
 {
@@ -75,8 +77,7 @@ class MakeTestController extends Controller
         $blog->id_theforms_cat = $request->get("Cate_Id");
         $blog->summary = $request->get("Summary");
         $blog->summary_en = $request->get("Summary_en");
-
-        $blog->content = json_encode(explode("-", $request->get("Content")));
+        $blog->content = $request->get("Content");
         $blog->del_flg = 0;
         $blog->hight_flg = $request->get("Hight_flg");
         $blog->status = $request->get("Status") ? 1 : 0;
@@ -111,9 +112,25 @@ class MakeTestController extends Controller
         foreach ($TestCategoryData as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
         $blog = Form::findOrFail($id);
 
+        // lấy questtionData
+        $question = str_replace("\\", "", $blog->content);
+        $questionData = "[]";
+        $questionList = json_decode($question, true);
+
+        if (!empty($questionList)) {
+            $allQuestion = [];
+            foreach ($questionList as $part) {
+                $allQuestion = array_merge($allQuestion, $part["questionList"]);
+            }
+
+            $questionData = json_encode(TestResource::collection(Test::find($allQuestion)));
+            $questionData = str_replace("\\", "\\\\", $questionData);
+        }
+
         return view("admin.page.make-test.edit")->with([
             "FormCategoryData" => $TestCategoryData,
-            "form" => $blog
+            "form" => $blog,
+            "questionData" => $questionData
         ]);
     }
 
