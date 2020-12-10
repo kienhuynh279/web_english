@@ -165,11 +165,11 @@
         config.fillEmptyBlocks = false;
     };
 
-    CKEDITOR.replace('summary', { height: '150px' });
-    CKEDITOR.replace('summary_en', { height: '150px' });
+    // CKEDITOR.replace('summary', { height: '150px' });
+    // CKEDITOR.replace('summary_en', { height: '150px' });
     CKEDITOR.replace('content', { height: '300px' });
-    CKEDITOR.replace('content_en', { height: '300px' });
-    CKEDITOR.replace('result', { height: '300px' });
+    // CKEDITOR.replace('content_en', { height: '300px' });
+    // CKEDITOR.replace('result', { height: '300px' });
 
     // Validate
     let constraints = {
@@ -241,9 +241,9 @@
     }
 
     function pushQuestionDataToSelectAnswer() {
-        let html = `< option value = "" aria - readonly="true" > Ấn để chọn</option > `;
+        let html = `<option value="" aria-readonly="true">Ấn để chọn</option>`;
 
-        question.map(i => html += `< option value = "${i.content}" > ${ i.content }</option >`)
+        question.map(i => html += `<option value="${i.content}">${ i.content }</option>`)
 
         $('#answer').html(html);
     }
