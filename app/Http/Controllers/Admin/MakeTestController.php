@@ -112,19 +112,24 @@ class MakeTestController extends Controller
         foreach ($TestCategoryData as $item) $item->child = PostCats::where(["vi_tri" =>  $item->id])->get();
         $blog = Form::findOrFail($id);
 
+        if (!isset(json_decode($blog->content, true)[0]['title'])) $blog->content = "[]";
+
         // lấy questtionData
         $question = str_replace("\\", "", $blog->content);
         $questionData = "[]";
         $questionList = json_decode($question, true);
 
-        if (!empty($questionList)) {
-            $allQuestion = [];
-            foreach ($questionList as $part) {
-                $allQuestion = array_merge($allQuestion, $part["questionList"]);
-            }
 
-            $questionData = json_encode(TestResource::collection(Test::find($allQuestion)));
-            $questionData = str_replace("\\", "\\\\", $questionData);
+        if (!empty($questionList)) {
+            if (isset($questionList[0]['title'])) {
+                $allQuestion = [];
+                foreach ($questionList as $part) {
+                    $allQuestion = array_merge($allQuestion, $part["questionList"]);
+                }
+
+                $questionData = json_encode(TestResource::collection(Test::find($allQuestion)));
+                $questionData = str_replace("\\", "\\\\", $questionData);
+            }
         }
 
         return view("admin.page.make-test.edit")->with([
