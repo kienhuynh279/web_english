@@ -477,6 +477,14 @@
     </div>
 </section>
 
+<div class="container">
+    <div class="modal">
+      <p class="warning"><strong>This only works in the <a href="http://nightly.webkit.org/">Webkit Nightlies</a>!</strong></p>
+      <p>The background image should be pleasantly blurred under this box, <a href="https://i.imgur.com/z7s7uf6.png">like so</a>.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quae distinctio magnam, laborum iusto itaque autem! Molestiae enim distinctio molestias, dolores ea quasi magni nisi aspernatur magnam, voluptate eum fuga.</p>
+    </div>
+  </div>
+
 <script>
     swal("Welcome to SWAL","Is'nt this pretty!!");
 </script>
