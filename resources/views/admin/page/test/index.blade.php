@@ -43,7 +43,7 @@
                         <button disabled class="btn btn-sm btn-secondary">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button disabled class="btn btn-sm btn-secondary">
+                        <button  disabled class="btn btn-sm btn-secondary">
                             <i class="fas fa-trash"></i>
                         </button>
                     </th>
@@ -73,7 +73,7 @@
                         </a>
                         <form class="d-inline" action={{ route('adminTestDelete', $item['id']) }} method="POST">
                             @csrf
-                            <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i>
+                            <button onclick="return confirm('Bạn có chắc chắn muốn xóa !')" type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i>
                             </button>
                         </form>
                     </td>

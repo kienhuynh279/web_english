@@ -36,7 +36,16 @@
                                             <select required name="id_thepost_cat" class="form-control">
                                                 <option value="">Chọn danh mục tài liệu</option>
                                                 @foreach ($postcatslist as $list)
-                                                    <option value="{{$list->id}}">{{$list->title}}</option>
+                                                    @if($list->vi_tri==0)
+                                                        <optgroup label="{{ $list->title }}">
+                                                        @foreach($postcatslist as $list2)
+                                                            @if($list->id == $list2->vi_tri)
+                                                                <option value="{{$list2->id}}">{{$list2->title}}</option>
+                                                            @endif
+                                                        @endforeach
+                                                    </optgroup>
+                                                    @endif
+                                                    {{-- <option value="{{$list->id}}">{{$list->title}}</option> --}}
                                                 @endforeach
                                             </select>
                                         </div>
@@ -94,17 +103,17 @@
                                         
                                         <div class="form-group">
                                             <label>Position : </label>
-                                            <input id="position" required type="text" name="position" class="form-control"
+                                            <input id="position" required type="number" name="position" class="form-control"
                                                 placeholder="Position...">
                                         </div>
                                         <div class="form-group">
                                             <label>Rating : </label>
-                                            <input id="rating" required type="text" name="rating" class="form-control"
+                                            <input id="rating" required type="number" name="rating" class="form-control"
                                                 placeholder="Rating...">
                                         </div>
                                         <div class="form-group">
                                             <label>Giảm Giá : </label>
-                                            <input id="discount" required type="text" name="discount" class="form-control"
+                                            <input id="discount" required type="number" name="discount" class="form-control"
                                                 placeholder="Discount...">
                                         </div>
 

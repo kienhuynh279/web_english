@@ -33,8 +33,17 @@
                                         {{-- <input id="vi_tri" required type="text" name="vi_tri" class="form-control" value="{{$postcats->vi_tri}}"> --}}
                                         <select required name="vi_tri" class="form-control">
                                             <option value="{{$postcats->vi_tri}}">Không thuộc mục nào</option>
-                                            @foreach ($vtpostcats as $vt)
-                                            <option value="{{$vt->id}}" @if($postcats->vi_tri == $vt->id) selected @endif >{{$vt->title}}</option>
+                                            @foreach ($vtpostcats as $item)
+                                                @if($item->vi_tri==0)
+                                                    <option value="{{$item->id}}" @if($postcats->vi_tri == $item->id) selected @endif  style="color: red; font-weight: bold">{{$item->title}}
+                                                        @foreach($vtpostcats as $item2)
+                                                            @if($item->id == $item2->vi_tri)
+                                                                <option value="{{$item->id}}" @if($postcats->vi_tri == $item2->id) selected @endif >{{$item2->title}}</option>
+                                                            @endif
+                                                        @endforeach
+                                                    </option>
+                                                    {{-- <option value="{{$vt->id}}" @if($postcats->vi_tri == $vt->id) selected @endif >{{$vt->title}}</option> --}}
+                                                @endif
                                             @endforeach
 
                                         </select>

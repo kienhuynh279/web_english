@@ -38,7 +38,7 @@
                         </a>
                         <form class="d-inline" action={{ route('adminNewDelete',$blog->id) }} method="POST">
                             @csrf
-                            <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i>
+                            <button onclick="return confirm('Bạn có chắc chắn muốn xóa !')" type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i>
                             </button>
                         </form>
                     </th>

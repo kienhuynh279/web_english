@@ -31,11 +31,17 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Thuộc Danh Mục : </label>
-                                        {{-- <input id="vi_tri" required type="text" name="vi_tri" class="form-control" value="{{$postcats->vi_tri}}"> --}}
                                         <select required name="id_thepost_cat" class="form-control">
-                                            <option value="{{$post->id_thepost_cat}}">Không thuộc mục nào</option>
-                                            @foreach ($listpostcats as $vt)
-                                            <option value="{{$vt->id}}" @if($post->id_thepost_cat == $vt->id) selected @endif >{{$vt->title}}</option>
+                                            @foreach ($listpostcats as $list)
+                                                @if($list->vi_tri==0)
+                                                    <optgroup label="{{ $list->title }}">
+                                                    @foreach($listpostcats as $list2)
+                                                        @if($list->id == $list2->vi_tri)
+                                                            <option value="{{$list2->id}}"@if($post->id_thepost_cat == $list2->id) selected @endif >{{$list2->title}}</option>
+                                                        @endif
+                                                    @endforeach
+                                                </optgroup>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </div>

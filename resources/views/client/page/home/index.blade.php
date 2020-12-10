@@ -300,8 +300,7 @@
 
 
 <!--================ Start Popular Courses Area =================-->
-<div class="popular_courses"
-    {{-- style="background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_960/https://namvietad.com/wp-content/uploads/2019/11/pngtree-ppt-minimalistic-geometric-background-backgroundppt-template-backgroundsimplecool-image_54790.jpg')" --}}>
+<section class="popular_courses">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
@@ -335,7 +334,7 @@
             @endforeach
         </div>
     </div>
-</div>
+</section>
 
 
 
@@ -392,7 +391,7 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <div style="background-color:#fff" class="single_feature text-center rounded">
+                <div style="background-color:#fff" class="single_feature text-center rounded wow ">
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/facebook.png') }}" width="15%" height="15%">
@@ -468,11 +467,16 @@
             </div>
         </div>
         <div class="row mb-5">
-            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quasi et assumenda beatae
-                laudantium in
-                exercitationem maxime, magnam asperiores ratione obcaecati doloremque suscipit impedit excepturi
-                nisi
-                omnis illo eos esse.</h4>
+            <h4><i class="fas fa-arrow-alt-circle-right"></i> Nếu bạn đã quá chán nản vì học tiếng Anh, đã thử nhiều
+                phương pháp, tốn rất nhiều tiền rồi mà không dùng được <br>
+                Bạn đã học nhiều chứng chỉ nhưng trình độ Tiếng Anh vẫn không
+                cải thiện <br>
+                Bạn cần gấp TOEIC + khả năng giao tiếp Tiếng Anh để nhảy
+                việc sau Tết?</h4>
         </div>
     </div>
 </section>
+
+<script>
+    swal("Welcome to SWAL","Is'nt this pretty!!");
+</script>

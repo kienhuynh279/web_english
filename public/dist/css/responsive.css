@@ -4,7 +4,7 @@
     margin: 0!important;
     margin-left: auto!important;
     list-style: none;
-    background-color: #c47e2e;
+    /* background-color: #c47e2e; */
 }
 
 @media (max-width: 991px) {
@@ -20,7 +20,7 @@
         .overlay-mobile {
             visibility: hidden;
             position: fixed;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(255, 255, 255);
             top: 0;
             left: 0;
             width: 100%;
