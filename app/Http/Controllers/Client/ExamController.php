@@ -15,8 +15,13 @@ class ExamController extends Controller
     {
         $exam = Form::find($id);
 
-        $question_list = json_decode($exam->content);
-        $exam->content = Test::find($question_list);
+        $question_list = json_decode($exam->content, true);
+
+        foreach ($question_list as &$part) {
+            $part['questionList'] = Test::find($part["questionList"]);
+        }
+
+        $exam->content = $question_list;
 
         return view('client.index', [
             'title' => 'Test',

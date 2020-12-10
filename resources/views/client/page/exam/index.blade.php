@@ -1,3 +1,6 @@
+@php
+$question_number = 0;
+@endphp
 <div style="padding-top: 80px" class="container">
     <div class="row">
         <section class="hero is-primary is-fullheight mb-5 pt-5">
@@ -8,35 +11,35 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div id="questionList" class="column is-half">
-                @foreach($data->content as $question_number => $test)
-                @if(substr($data->id_theforms_cat,0,5) == substr($test->code,0,5))
-                <div class="p-5">
-                    {{-- <h4 class="subtitle has-text-centered is-uppercase is-7 navigation">{{ $test->title }}</h4>
-                    <h4 class="subtitle is-5">{!! $test->content !!}</h4> --}}
-                    <h4 class="pb-4 text-left">{{ $test->title }}</h4>
-                    <h5 class="text-left ml-3 mb-4">Question {{ $question_number + 1 }}</h5>
-                    <div class="question-content">{!! $test->content !!}</div>
-                    <div class="form-check p-0 gap-2 d-flex flex-column mt-5" style="gap: 5px;">
-                        @if($test->type == 0)
-                        @foreach(json_decode($test->question) as $index => $ques)
+                @foreach ($data->content as $part)
+                <h4 class="mx-3 p-4 pb-2 text-left font-weight-bold"><i>{{ $part['title'] }}</i></h4>
+                @foreach($part['questionList'] as $question)
+                @php
+                $question_number++;
+                @endphp
+                <div class="px-5 pb-5">
+                    <h5 class="text-left mx-3 font-weight-bold">Question {{ $question_number }}</h5>
+                    <div class="question-content">{!! $question->content !!}</div>
+                    <div class="form-check p-0 gap-2 d-flex flex-column mt-3" style="gap: 5px;">
+                        @if($question->type == 0)
+                        @foreach(json_decode($question->question) as $index => $ques)
                         <div class="form-control">
                             <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
-                                <input type="radio" id="answer-{{ $test->id.$index }}" data-id="{{ $test->id }}" data-answer="{{ $test->answer }}" name="answer-{{ $test->id }}" value="{{ $ques }}" style="cursor: pointer;">
-                                <label class="flex-grow-1 form-check-label flex-grow-1 mr-3" for="answer-{{ $test->id.$index }}" style="cursor: pointer;">{{$ques}}</label>
+                                <input type="radio" id="answer-{{ $question->id.$index }}" data-id="{{ $question->id }}" data-answer="{{ $question->answer }}" name="answer-{{ $question->id }}" value="{{ $ques }}" style="cursor: pointer;">
+                                <label class="flex-grow-1 form-check-label flex-grow-1 mr-3" for="answer-{{ $question->id.$index }}" style="cursor: pointer;">{{$ques}}</label>
                             </div>
                         </div>
                         @endforeach
-                        @elseif ($test->type == 1)
+                        @elseif ($question->type == 1)
                         <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
                             <div class="input-container">
-                                {{-- <i class="fas fa-arrow-right icon"></i> --}}
-                                <textarea id="answer-{{ $test->id.$index }}" data-id="{{ $test->id }}" data-answer="{{ $test->answer }}" name="answer-{{ $test->id }}" rows="5" class="input-field p-3" type="text" placeholder="Nhập câu trả lời"></textarea>
+                                <textarea id="answer-{{ $question->id.$index }}" data-id="{{ $question->id }}" data-answer="{{ $question->answer }}" name="answer-{{ $question->id }}" rows="5" class="input-field p-3" type="text" placeholder="Nhập câu trả lời"></textarea>
                             </div>
                         </div>
                         @endif
                     </div>
                 </div>
-                @endif
+                @endforeach
                 @endforeach
                 <div>
                     <button id="submit" style="margin-bottom: 1rem" class="btn btn-success text-light font-weight-bold"><i class="fa fa-check-circle"></i> Nộp Bài</button>
@@ -48,7 +51,7 @@
 <script>
     let btnSubmit = document.getElementById('submit');
 
-    let totalQuestion = document.getElementById('questionList').childElementCount - 1;
+    let totalQuestion = document.querySelectorAll('#questionList > div > h5').length;
     let checkedQuestion = 0;
     let rightAnswer = 0;
 
