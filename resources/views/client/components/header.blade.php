@@ -12,7 +12,7 @@
     
     <span class="position-absolute trigger"></span>
     <nav class="navbar navbar-expand-lg navbar-light sticky sticky-top"
-        style="z-index: 10; background-color: none; border-top: #e44434 solid 2px; box-shadow: 0px 6px 15px -15px;">
+        style="z-index: 10; background-color: none; border-top: #e44434 solid 2px;">
         <div id="block-menu" class="container">
             <a class="navbar-brand" href="/">
                 <h2 class="py-0 mb-0 font-weight-medium"><img
@@ -117,7 +117,8 @@
             </div>
         </div>
     </nav>
-</header>
+
+
 
 <script>
     var isActive = false;
