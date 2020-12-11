@@ -300,18 +300,18 @@
 
 
 <!--================ Start Popular Courses Area =================-->
-<section class="popular_courses">
+<section class="popular_courses" style="background: url({{ asset("dist/img/main_banner.jpg")}})">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="main_title">
-                    <h2 class="mb-3 pt-5">Đề Thi Mới Nhất</h2>
+                    <h2 class="mb-3 pt-5" style="color: #fff">Đề Thi Mới Nhất</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             @foreach($form as $i)
-            <div class="col-sm-6">
+            <div class="col-sm-6 pt-1">
                 <div class="card">
                     <div class="card-body">
                         <h4><span class="badge badge-primary">Kiểm tra</span> {{ $i->title }}</h4>
@@ -476,7 +476,38 @@
         </div>
     </div>
 </section>
+{{-- 
+<section class="my-section-center">
+    <div class="container">
+
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Chào mừng bạn đến với Tiếng Anh Mỗi Ngày
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://i1.wp.com/ritajms.com/wp-content/uploads/2019/11/52351011-english-british-england-language-education-concept.jpg"
+                            height="340px" alt="">
+                        <h4>Cùng tôi học thật tốt tiếng anh mỗi ngày</h4>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <script>
     swal("Welcome to SWAL","Is'nt this pretty!!");
-</script>
+</script> --}}
