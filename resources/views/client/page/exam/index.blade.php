@@ -18,8 +18,9 @@ $question_number = 0;
                 $question_number++;
                 @endphp
                 <div class="px-5 pb-5">
-                    <h5 class="text-left mx-3 font-weight-bold">Question {{ $question_number }}</h5>
+                  
                     <div class="question-content">{!! $question->content !!}</div>
+                    <h5 class="text-left mx-3 font-weight-bold">Question {{ $question_number }}</h5>
                     <div class="form-check p-0 gap-2 d-flex flex-column mt-3" style="gap: 5px;">
                         @if($question->type == 0)
                         @foreach(json_decode($question->question) as $index => $ques)

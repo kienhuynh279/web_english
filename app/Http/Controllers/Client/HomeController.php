@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         $blog = Blogs::where('status', 1)->get();
-        $form = Form::where(['del_flg'=>1])->get();
+        $form = Form::where(['status'=>1])->get();
         $data['banner'] = Banner::where('status', 1)->get();
         $datacats['postcats'] = PostCats::where('status', 1)->get();
         return view('client.index', [

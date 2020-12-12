@@ -16,7 +16,7 @@
         <div id="block-menu" class="container">
             <a class="navbar-brand" href="/">
                 <h2 class="py-0 mb-0 font-weight-medium"><img
-                        src="http://tienganhmoingay.com.vn/storage//upload/img/banner/logo_new.png" alt="Logo"
+                        src="http://127.0.0.1:8000/storage//upload/img/banner/logo_new.png" alt="Logo"
                         height="60px"></h2>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
