@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner_content text-center">
-                        <p class="text-uppercase">
+                        <p class="text-uppercase wow fadeInLeftBig" data-wow-duration=".2" data-wow-delay=".2s">
                             Cùng học anh văn thật tốt với chúng tôi
                         </p>
-                        <h2 class="text-uppercase mt-4 mb-5">
+                        <h2 class="text-uppercase mt-4 mb-5 wow fadeInRightBig" data-wow-duration=".2" data-wow-delay=".2s">
                             Tiếng anh mỗi ngày
                         </h2>
                         <div>
@@ -395,21 +395,21 @@
 
 
 <!--================ Start Popular Courses Area =================-->
-<section class="popular_courses" style="background: url({{ asset("dist/img/main_banner.jpg")}})">
+<section class="popular_courses" style="background: url({{ asset("dist/img/main_banner.jpg")}}) center center/cover">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
-                <div class="main_title">
+                <div class="main_title wow fadeInLeftBig" data-wow-duration=".2" data-wow-delay=".2s">
                     <h2 class="mb-3 pt-5" style="color: #fff">Đề Thi Mới Nhất</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             @foreach($form as $i)
-            <div class="col-sm-6 pt-1">
+            <div class="col-sm-6 pt-1 wow fadeInUpBig" data-wow-duration=".2" data-wow-delay=".2.5s">
                 <div class="card">
                     <div class="card-body">
-                        <h4><span class="badge badge-primary">Kiểm tra</span> {{ $i->title }}</h4>
+                        <h5 class="text-lg">{{ $i->title }}</h5>
                         <div class="row">
                             <div class="col-sm-6">
                                 <p>Số câu: 40 câu</p>
@@ -438,7 +438,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
-                <div class="main_title">
+                <div class="main_title wow fadeInLeftBig" data-wow-duration=".2" data-wow-delay=".2s">
                     <h2 class="m-3">Mẹo và tin tức</h2>
                 </div>
             </div>
@@ -448,7 +448,7 @@
             <div class="owl-carousel active_course">
                 @foreach($blog as $item)
                 <div class="single_course">
-                    <div class="course_head">
+                    <div class="course_head wow zoomIn" data-wow-duration=".2" data-wow-delay=".2.5s">
                         <img class="img-fluid" src="{{Storage::url('upload/img/blog/'.$item->avatar)}}" alt=""
                             style="height:300px" />
                     </div>
@@ -479,14 +479,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
-                <div class="main_title">
+                <div class="main_title wow fadeInLeftBig" data-wow-duration=".2" data-wow-delay=".2s">
                     <h2 class="mb-3">Liên hệ</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <div style="background-color:#fff" class="single_feature text-center rounded wow ">
+                <div style="background-color:#fff" class="single_feature text-center rounded wow zoomIn" data-wow-duration=".2" data-wow-delay=".2.5s">
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/facebook.png') }}" width="15%" height="15%">
@@ -496,7 +496,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div style="background-color:#fff" class="single_feature text-center rounded">
+                <div style="background-color:#fff" class="single_feature text-center rounded wow zoomIn" data-wow-duration=".2" data-wow-delay=".2.5s">
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/instagram.png') }}" width="15%" height="15%">
@@ -506,7 +506,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div style="background-color:#fff" class="single_feature text-center rounded">
+                <div style="background-color:#fff" class="single_feature text-center rounded wow zoomIn" data-wow-duration=".2" data-wow-delay=".2.5s">
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/telephone.png') }}" width="15%" height="15%">
@@ -519,7 +519,7 @@
 </section>
 
 <section class="my-section-center">
-    <div class="container">
+    <div class="container wow zoomIn" data-wow-duration=".2" data-wow-delay=".2s">
         <img src="{{ asset('dist/img/docs/text-1.jpeg') }}" width="100%" height="100%">
     </div>
 </section>
@@ -529,17 +529,17 @@
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="main_title">
-                    <h2 class="mb-3">Học viên ưu tú</h2>
+                    <h2 class="mb-3 wow fadeInLeft" data-wow-duration=".2" data-wow-delay=".2s">Học viên ưu tú</h2>
                 </div>
             </div>
         </div>
         <div class="row mb-5">
             @foreach($student as $item)
-            <div class="col-sm-4 p-4">
+            <div class="col-sm-4 p-4 wow zoomInDown" data-wow-duration=".2" data-wow-delay=".2.5s">
                 <div class="card-1">
                     <img src="{{ Storage::url('/upload/img/student/'.$item->avatar) }}" alt="" />
                     <div class="descriptions">
-                        <h3 class="title p-4 text-danger">{{$item->name}}</h3>
+                        <h3 class="title text-danger">{{$item->name}}</h3>
                         <p class=" text-center">
                             {!!$item->content!!}
                         </p>
@@ -556,12 +556,12 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
-                <div class="main_title">
+                <div class="main_title wow fadeInLeftBig" data-wow-duration=".2" data-wow-delay=".2s">
                     <h2 class="mb-3">Giới thiệu</h2>
                 </div>
             </div>
         </div>
-        <div class="row mb-5">
+        <div class="row mb-5 wow" data-wow-duration=".2" data-wow-delay=".2s">
             <h4><i class="fas fa-arrow-alt-circle-right"></i> Nếu bạn đã quá chán nản vì học tiếng Anh, đã thử nhiều
                 phương pháp, tốn rất nhiều tiền rồi mà không dùng được <br>
                 Bạn đã học nhiều chứng chỉ nhưng trình độ Tiếng Anh vẫn không
