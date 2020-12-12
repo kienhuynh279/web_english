@@ -7,7 +7,8 @@
                         <p class="text-uppercase wow fadeInLeftBig" data-wow-duration=".2" data-wow-delay=".2s">
                             Cùng học anh văn thật tốt với chúng tôi
                         </p>
-                        <h2 class="text-uppercase mt-4 mb-5 wow fadeInRightBig" data-wow-duration=".2" data-wow-delay=".2s">
+                        <h2 class="text-uppercase mt-4 mb-5 wow fadeInRightBig" data-wow-duration=".2"
+                            data-wow-delay=".2s">
                             Tiếng anh mỗi ngày
                         </h2>
                         <div>
@@ -391,7 +392,8 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <div style="background-color:#fff" class="single_feature text-center rounded wow zoomIn" data-wow-duration=".2" data-wow-delay=".2.5s">
+                <div style="background-color:#fff" class="single_feature text-center rounded wow zoomIn"
+                    data-wow-duration=".2" data-wow-delay=".2.5s">
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/facebook.png') }}" width="15%" height="15%">
@@ -401,7 +403,8 @@
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div style="background-color:#fff" class="single_feature text-center rounded wow zoomIn" data-wow-duration=".2" data-wow-delay=".2.5s">
+                <div style="background-color:#fff" class="single_feature text-center rounded wow zoomIn"
+                    data-wow-duration=".2" data-wow-delay=".2.5s">
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/instagram.png') }}" width="15%" height="15%">
@@ -411,7 +414,8 @@
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div style="background-color:#fff" class="single_feature text-center rounded wow zoomIn" data-wow-duration=".2" data-wow-delay=".2.5s">
+                <div style="background-color:#fff" class="single_feature text-center rounded wow zoomIn"
+                    data-wow-duration=".2" data-wow-delay=".2.5s">
                     <div class="icon">
                         <span>
                             <img src="{{ asset('dist/img/social/telephone.png') }}" width="15%" height="15%">
@@ -476,38 +480,22 @@
         </div>
     </div>
 </section>
-{{-- 
-<section class="my-section-center">
-    <div class="container">
 
-
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-            Launch demo modal
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Chào mừng bạn đến với Tiếng Anh Mỗi Ngày
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="https://i1.wp.com/ritajms.com/wp-content/uploads/2019/11/52351011-english-british-england-language-education-concept.jpg"
-                            height="340px" alt="">
-                        <h4>Cùng tôi học thật tốt tiếng anh mỗi ngày</h4>   
-                    </div>
-                </div>
+{{-- <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-    </div>
-</section>
 
-<script>
-    swal("Welcome to SWAL","Is'nt this pretty!!");
-</script> --}}
+    </div>
+</div> --}}

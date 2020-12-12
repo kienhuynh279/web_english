@@ -30,6 +30,7 @@
 
 <link rel="stylesheet" href="{{asset("dist/css/responsive.css")}}">
 
+
 <style>
     @media all and (max-width: 320px) {
         body {

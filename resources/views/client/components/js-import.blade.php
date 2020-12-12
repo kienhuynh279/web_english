@@ -1,3 +1,4 @@
+
 <script src={{ asset('dist/js/jquery-3.2.1.min.js') }}></script>
 <script src={{ asset('dist/js/popper.js') }}></script>
 <script src={{ asset('dist/js/bootstrap.min.js') }}></script>
@@ -14,6 +15,13 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+{{-- <script>
+  $(window).load(function(){        
+ $('.myModal').modal('show');
+  }); 
+</script> --}}
+
 {{-- Script Comment--}}
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
@@ -32,7 +40,7 @@
 </script>
  {{-- libary carousel --}}
 <script>
-  $(".owl-carousel").owlCarousel({
+  $("#owl-carousel").owlCarousel({
     navigation : true
   });
 </script>
@@ -145,3 +153,4 @@ $(document).ready(function() {
   });
 })
 </script>
+
