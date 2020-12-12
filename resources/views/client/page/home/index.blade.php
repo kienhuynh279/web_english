@@ -28,22 +28,33 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 41)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==49)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         @if(!empty($banner))
-                        @foreach($banner as $item )
-                        @if($item->status == 1)
-                        @if($item->id == 89)
-                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
-                        @endif
-                        @endif
-                        @endforeach
+                            @foreach($banner as $item )
+                                @if($item->status == 1)
+                                    @if($item->id == 89)
+                                        <img class="banner w-75" src="{{Storage::url('/upload/img/banner/'.$item->avatar)}}">
+                                    @endif
+                                @endif
+                            @endforeach
                         @endif
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
 
                 </div>
                 <div class="col-sm-4">
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 41)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==48)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">TOEFL</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -55,9 +66,17 @@
                         @endforeach
                         @endif
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
                 </div>
                 <div class="col-sm-4">
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 41)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==50)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
@@ -69,6 +88,10 @@
                         @endif
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#42f54e; text-align:center; font-size: 36px">IELTS</p> --}}
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -81,7 +104,11 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 42)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==51)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
@@ -93,9 +120,17 @@
                         @endif
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
                 </div>
                 <div class="col-sm-4">
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 42)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==52)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
@@ -107,9 +142,17 @@
                         @endif
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
                 </div>
                 <div class="col-sm-4">
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 42)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==53)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         @if(!empty($banner))
                         @foreach($banner as $item )
                         @if($item->status == 1)
@@ -121,6 +164,10 @@
                         @endif
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
                 </div>
             </div>
 
@@ -133,7 +180,11 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 43)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==54)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -145,9 +196,17 @@
                         @endforeach
                         @endif
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
                 </div>
                 <div class="col-sm-4">
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 43)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==55)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -159,9 +218,17 @@
                         @endforeach
                         @endif
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
                 </div>
                 <div class="col-sm-4">
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 43)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==56)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -173,6 +240,10 @@
                         @endforeach
                         @endif
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -184,7 +255,11 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 44)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==57)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo dạng bài</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -196,9 +271,17 @@
                         @endforeach
                         @endif
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
                 </div>
                 <div class="col-sm-4">
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 44)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==58)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo đề thi</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -210,9 +293,17 @@
                         @endforeach
                         @endif
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
                 </div>
                 <div class="col-sm-4">
-                    <a href="#" class="d-flex justify-content-center">
+                    @foreach($postcats as $cats)
+                    @if($cats->id == 44)
+                    @foreach( $postcats as $child2)
+                    @if($child2->id==59)
+                    <a href="{{asset('on-thi'.'/'.$cats->slug.'/'.$child2->slug)}}" class="d-flex justify-content-center">
                         {{-- <p style="font-weight: bold; margin-top: 20px;color:#00d0ff; text-align:center; font-size: 36px">Theo chuyên đề</p> --}}
                         @if(!empty($banner))
                         @foreach($banner as $item )
@@ -224,6 +315,10 @@
                         @endforeach
                         @endif
                     </a>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
                 </div>
             </div>
         </div>
