@@ -108,6 +108,11 @@
 </form>
 <script>
     // CKEditor
+    CKEDITOR.editorConfig = function(config) {
+        config.enterMode = CKEDITOR.ENTER_BR;
+        config.autoParagraph = false;
+        config.fillEmptyBlocks = false;
+    };
     CKEDITOR.replace('summary', { height: '150px' });
     CKEDITOR.replace('summary_en', { height: '150px' });
     // end CKEditor

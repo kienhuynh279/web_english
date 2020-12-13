@@ -1,8 +1,15 @@
 
     <!--================ End Home Banner Area =================-->
-
+    <div class="container" style="padding-top: 90px">
+        <nav aria-label="breadcrumb" style="background: none">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                <li class="breadcrumb-item active" aria-current="page">Tin tức</li>
+            </ol>
+        </nav>
+    </div>
     <!--================Blog Area =================-->
-    <section class="blog_area section_gap">
+    <section class="blog_area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -130,50 +137,20 @@
                         </aside>
                        
                         <aside class="single_sidebar_widget post_category_widget">
-                            <h4 class="widget_title">Post Catgories</h4>
+                            <h4 class="widget_title">Danh mục tin tức</h4>
                             <ul class="list cat-list">
+                                @forelse($cate as $i)
                                 <li>
                                     <a href="#" class="d-flex justify-content-between">
-                                        <p>Technology</p>
-                                        <p>37</p>
+                                        <p>{{ $i->title}}</p>
+                                        {{-- <p>{{ $i->count() }}</p> --}}
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Lifestyle</p>
-                                        <p>24</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Fashion</p>
-                                        <p>59</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Art</p>
-                                        <p>29</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Food</p>
-                                        <p>15</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Architecture</p>
-                                        <p>09</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Adventure</p>
-                                        <p>44</p>
-                                    </a>
-                                </li>
+                                @empty
+                                <div class="text-center">
+                                    <h3>Không có dữ liệu</h3>
+                                </div>
+                                @endforelse
                             </ul>
                             <div class="br"></div>
                         </aside>

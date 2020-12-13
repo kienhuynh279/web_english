@@ -17,7 +17,8 @@
                     @foreach ($cate as $item)
                     <optgroup label="{{ $item->title }}">
                         @foreach($item->child as $child_item)
-                        <option value="1{{ ($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id)}}">
+                        <option
+                            value="1{{ ($item->id > 9 ? $item->id : "0".$item->id).($child_item->id > 9 ? $child_item->id : "0".$child_item->id)}}">
                             {{ $child_item->title }}</option>
                         @endforeach
                     </optgroup>
@@ -35,17 +36,19 @@
             <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="tittle_en">Title English</label>
                 <div class="w-100">
-                    <input type="text" id="title_en" name="Title_en" class="form-control" placeholder="Tiêu đề bằng tiếng anh">
+                    <input type="text" id="title_en" name="Title_en" class="form-control"
+                        placeholder="Tiêu đề bằng tiếng anh">
                 </div>
                 <div class="col-lg-12 messages text-danger"></div>
             </div>
 
             <div class="form-group col-sm-6">
                 <label>Ảnh Đại Diện :</label>
-                <input required id="img" type="file" name="Avatar" class="form-control hidden" onchange="changeImg(this)">
+                <input required id="img" type="file" name="Avatar" class="form-control hidden"
+                    onchange="changeImg(this)">
                 <img id="avatar" class="thumbnail" width="200px" src="{{ asset('/dist/img/imgdefault.png') }}">
             </div>
-           
+
             <div class="form-group col-md-6 px-3">
                 <label class="w-100" for="slug">Slug</label>
                 <div class="w-100">
@@ -99,6 +102,11 @@
     </div>
 </form>
 <script>
+    CKEDITOR.editorConfig = function(config) {
+        config.enterMode = CKEDITOR.ENTER_BR;
+        config.autoParagraph = false;
+        config.fillEmptyBlocks = false;
+    };
     // CKEditor
     CKEDITOR.replace('summary', { height: '150px' });
     CKEDITOR.replace('summary_en', { height: '150px' });

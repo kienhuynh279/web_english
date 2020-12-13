@@ -1,14 +1,13 @@
-<section class="my-section">
-  <div class="container">
-    <div class="col-sm-12">
-      <div class="row">
-        <a href="#">
-          <p style="color:black">Trang chủ \ Ôn Thi THPT \ Theo dạng đề</p>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+{{-- <div class="container" style="padding-top: 90px">
+  <nav aria-label="breadcrumb" style="background: none">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+          <li class="breadcrumb-item"><a href="javascrip:void(0)">Ôn thi</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('course') }}">{{ $data['brum']->title }}</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ $data['postcat']->title }}</li>
+      </ol>
+  </nav>
+</div> --}}
 <section class="my-section-center">
   <div class="container">
     <div class="row">

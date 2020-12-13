@@ -4859,8 +4859,10 @@ input[type=submit].btn-block {
     padding: .75rem 1rem;
     margin-bottom: 1rem;
     list-style: none;
-    background-color: #e9ecef;
-    border-radius: .25rem
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+    /* background-color: #e9ecef; */
+    /* border-radius: .25rem */
 }
 
 .breadcrumb-item+.breadcrumb-item {
@@ -4871,7 +4873,7 @@ input[type=submit].btn-block {
     display: inline-block;
     padding-right: .5rem;
     color: #6c757d;
-    content: "/"
+    content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+) !important;
 }
 
 .breadcrumb-item+.breadcrumb-item:hover::before {
@@ -9234,8 +9236,8 @@ a.text-dark:hover {
 
 @media print {
     *,
-    ::after,
-    ::before {
+     ::after,
+     ::before {
         text-shadow: none !important;
         box-shadow: none !important
     }
@@ -9310,5 +9312,6 @@ a.text-dark:hover {
         border-color: #dee2e6
     }
 }
+
 
 /*# sourceMappingURL=bootstrap.min.css.map */

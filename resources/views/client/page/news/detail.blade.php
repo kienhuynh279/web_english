@@ -1,13 +1,18 @@
-<!--================Blog Area =================-->
+<div class="container" style="padding-top: 90px">
+  <nav aria-label="breadcrumb" style="background: none">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li class="breadcrumb-item"><a href="/tin-tuc">Tin tức</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ $blog->title }}</li>
+    </ol>
+  </nav>
+</div>
 
- 
-
-<section class="blog_area single-post-area section_gap">
+<section class="blog_area single-post-area">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 posts-list">
         <div class="single-post row">
-          {{-- @foreach($blogs as $item) --}}
           <div class="col-lg-12">
             <div class="feature-img">
               <img class="img-fluid" src="{{ Storage::url('/upload/img/blog/'.$blog->avatar) }}" alt="">
@@ -41,24 +46,13 @@
               {!!$blog->content!!}
             </p>
           </div>
-          <div class="col-lg-12">
-            {{-- <div class="quotes">
-              Với chúng tối tiếng anh đã là 1 ngôn ngữ không thể thiếu hiện nay, nó như người bạn bên tôi, luôn trò
-              truyện trong đầu tôi,
-              tôi học hỏi từ "người bạn này rất nhiều, đã giúp ích cho tôi rất nhiều trên con đường thành công, không có
-              tiếng anh
-              thì tôi đã thất bại ".
-            </div> --}}
-
-          </div>
-          {{-- @endforeach --}}
         </div>
 
         <div class="pt-5 mt-5">
           {{-- //Comment Facebook --}}
-          <div class="fb-comments" data-href="http://127.0.0.1:8000/tin-tuc/lam-cach-nao-hoc-tieng-anh-hieu-qua-moi-ngay-khi-hoc-dai-hoc?page=1" data-numposts="5" data-width="730"></div>
-       
-
+          <div class="fb-comments"
+            data-href="http://127.0.0.1:8000/tin-tuc/lam-cach-nao-hoc-tieng-anh-hieu-qua-moi-ngay-khi-hoc-dai-hoc?page=1"
+            data-numposts="5" data-width="730"></div>
         </div>
       </div>
 
@@ -74,7 +68,7 @@
             <div class="br"></div>
           </aside>
           <aside class="single_sidebar_widget author_widget">
-            <img class="author_img rounded-circle" src="img/blog/author.png" alt="">
+            <img class="author_img rounded-circle" src="{{ asset('dist/img/blog/author.png') }}" alt="">
             <h4>Charlie Barber</h4>
             <p>Senior blog writer</p>
             <div class="social_icon">
@@ -82,27 +76,10 @@
               <a href="#"><i class="ti-twitter"></i></a>
               <a href="#"><i class="ti-github"></i></a>
               <a href="#"><i class="ti-linkedin"></i></a>
-
             </div>
-            <div class="arrow">
-              {{-- <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-left"></i></a> --}}
-            </div>
-
-            <div class="detials">
-              <p>Prev Post</p>
-              <a href="">
-                <h4>Space The Final Frontier</h4>
-              </a>
-
-            </div>
+          </aside>
         </div>
         <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-          <div class="detials">
-            <p>Next Post</p>
-            <a href="">
-              <h4>Telescopes 101</h4>
-            </a>
-          </div>
           <div class="arrow">
             {{-- <a href="{{ route('newsDetail') }}"><i class="text-white ti-arrow-right"></i></a> --}}
           </div>
@@ -129,7 +106,7 @@
     </div>
     <div class="row">
       <!-- single course -->
-      
+
       <div class="col-lg-12 height">
         <div class="owl-carousel active_course">
           @forelse($blogs as $item)
@@ -140,7 +117,7 @@
             <div class="course_content">
               <span class="tag mb-4 d-inline-block">Tips</span>
               <h4 class="mb-3">
-              <a href="course-details.html">{{$item->title}}</a>
+                <a href="course-details.html">{{$item->title}}</a>
               </h4>
               <p>
                 {!! $item->summary !!}
@@ -167,7 +144,7 @@
             </div>
           </div>
           @empty
-            <h1 class="text-center">Chưa có dữ liệu cho phần này</h1>
+          <h1 class="text-center">Chưa có dữ liệu cho phần này</h1>
           @endforelse
         </div>
       </div>
