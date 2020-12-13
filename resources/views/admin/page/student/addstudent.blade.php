@@ -51,4 +51,11 @@
 </div>
 <!--/.row-->
 </div>
+<script>
+CKEDITOR.editorConfig = function (config) {
+    config.enterMode = CKEDITOR.ENTER_BR;
+    config.autoParagraph = false;
+    config.fillEmptyBlocks = false;
+};
+</script>
 @stop
