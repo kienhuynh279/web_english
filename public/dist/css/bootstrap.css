@@ -1620,16 +1620,16 @@ pre code {
 .table th {
     padding: .75rem;
     vertical-align: top;
-    border-top: 1px solid #dee2e6
+    /* border-top: 1px solid #dee2e6 */
 }
 
 .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6
+    /* border-bottom: 2px solid #dee2e6 */
 }
 
 .table tbody+tbody {
-    border-top: 2px solid #dee2e6
+    /* border-top: 2px solid #dee2e6 */
 }
 
 .table .table {
@@ -1659,7 +1659,8 @@ pre code {
 .table-borderless td,
 .table-borderless th,
 .table-borderless thead th {
-    border: 0
+    border: 0;
+    padding: 10px;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
@@ -9296,7 +9297,7 @@ a.text-dark:hover {
     }
     .table-bordered td,
     .table-bordered th {
-        border: 1px solid #dee2e6 !important
+        /* border: 0px solid #dee2e6 !important */
     }
     .table-dark {
         color: inherit

@@ -199,7 +199,7 @@ h6 {
 }
 
 .amount {
-    color: #2d142c;
+    color: #f20544;
 }
 
 th,
@@ -1743,7 +1743,7 @@ button:focus {
 
 .registration_area {
     padding: 30px;
-    background: #e44434;
+    /* background: #e44434; */
 }
 
 .clock_sec {
@@ -1762,7 +1762,7 @@ button:focus {
 }
 
 .clock_sec .clockinner {
-    background: #e44434;
+    background: #77d9bd;
     padding: 35px 20px;
     margin-right: 15px;
     text-align: center;
@@ -6424,4 +6424,58 @@ body {
     background-color: rgb(252, 252, 252) !important;
     padding-top: 3px !important;
     padding-bottom: 3px !important;
+}
+
+
+/* bảng xếp hạng */
+
+.chart {
+    background-color: #bbf2e2;
+    padding: 20px;
+    border: 10px solid #77d9bd;
+    border-radius: 20px;
+}
+
+.recent-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.recent-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5rem;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.recent-info {
+    margin-left: 1.5rem;
+}
+
+.recent-author,
+.recent-change {
+    display: block;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 100;
+}
+
+.recent-position,
+.recent-time {
+    font-size: 1.2rem;
+    color: #999;
+}
+
+.recent-meta {
+    margin-left: auto;
+}
+
+.recent-change.increase {
+    color: var(--secondary);
+}
+
+.recent-change.decrease {
+    color: var(--danger);
 }
