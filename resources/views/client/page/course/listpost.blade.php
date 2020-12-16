@@ -122,20 +122,20 @@ height="100%" alt="">
                 <h2 class="my-title">{{ $data['postcat']->title }}</h2>
             </div>
         </div>
-    </div>
-    <div class="row">
-        @foreach($data['form'] as $item)
-        @if(substr($item->id_theforms_cat,3,2) == $data['postcat']->id)
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-header bg-white">
-                    <div class="media">
-                        <div class="media-left media-middle">
+
+        <div class="row">
+            @foreach($data['form'] as $item)
+            @if(substr($item->id_theforms_cat,3,2) == $data['postcat']->id)
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <div class="media">
+                            {{-- <div class="media-left media-middle">
                             <a href="">
                                 <img src="{{ Storage::url('/upload/img/the_form/'.$item->avatar) }}"
-                                    alt="Card image cap" width="100" class="rounded">
+                            alt="Card image cap" width="100" class="rounded">
                             </a>
-                        </div>
+                        </div> --}}
                         <div class="media-body media-middle">
                             <h4 class="card-title"><a href="instructor-course-edit.html">{{ $item->title }}</a></h4>
                         </div>
@@ -148,9 +148,6 @@ height="100%" alt="">
         </div>
         @endif
         @endforeach
-    </div>
-    <div>
-    </div>
     </div>
 </section>
 
@@ -191,123 +188,63 @@ height="100%" alt="">
                 <h2 class="text-center mb-3">Bảng xếp hạng</h2>
 
                 <div class="recent-item">
-                    <img src="https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-9/119450595_1453844138142212_3986977393684187827_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=W8LrmhPxXJcAX87mYG4&_nc_ht=scontent.fsgn5-1.fna&oh=111d66a3c00f5e49dcc8698745a72359&oe=5FFCC97F" alt="" class="recent-image" />
+                    <img src="https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-9/119450595_1453844138142212_3986977393684187827_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=W8LrmhPxXJcAX87mYG4&_nc_ht=scontent.fsgn5-1.fna&oh=111d66a3c00f5e49dcc8698745a72359&oe=5FFCC97F"
+                        alt="" class="recent-image" />
                     <div class="recent-info">
                         <h3 class="recent-author">Nguyễn Văn A</h3>
-                       
                     </div>
                     <div class="recent-meta">
                         <span class="recent-change increase">Hạng 1</span>
-                      
+
                     </div>
                 </div>
                 <div class="recent-item">
-                    <img src="https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-9/119450595_1453844138142212_3986977393684187827_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=W8LrmhPxXJcAX87mYG4&_nc_ht=scontent.fsgn5-1.fna&oh=111d66a3c00f5e49dcc8698745a72359&oe=5FFCC97F" alt="" class="recent-image" />
+                    <img src="https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-9/119450595_1453844138142212_3986977393684187827_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=W8LrmhPxXJcAX87mYG4&_nc_ht=scontent.fsgn5-1.fna&oh=111d66a3c00f5e49dcc8698745a72359&oe=5FFCC97F"
+                        alt="" class="recent-image" />
                     <div class="recent-info">
                         <h3 class="recent-author">Nguyễn Văn B</h3>
-                      
+
                     </div>
                     <div class="recent-meta">
                         <span class="recent-change increase">Hạng 2</span>
-                        
+
                     </div>
                 </div>
                 <div class="recent-item">
-                    <img src="https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-9/119450595_1453844138142212_3986977393684187827_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=W8LrmhPxXJcAX87mYG4&_nc_ht=scontent.fsgn5-1.fna&oh=111d66a3c00f5e49dcc8698745a72359&oe=5FFCC97F" alt="" class="recent-image" />
+                    <img src="https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-9/119450595_1453844138142212_3986977393684187827_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=W8LrmhPxXJcAX87mYG4&_nc_ht=scontent.fsgn5-1.fna&oh=111d66a3c00f5e49dcc8698745a72359&oe=5FFCC97F"
+                        alt="" class="recent-image" />
                     <div class="recent-info">
                         <h3 class="recent-author">Nguyễn Văn C</h3>
-                        
+
                     </div>
                     <div class="recent-meta">
                         <span class="recent-change increase">Hạng 3</span>
-                       
+
                     </div>
                 </div>
                 <div class="recent-item">
-                    <img src="https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-9/119450595_1453844138142212_3986977393684187827_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=W8LrmhPxXJcAX87mYG4&_nc_ht=scontent.fsgn5-1.fna&oh=111d66a3c00f5e49dcc8698745a72359&oe=5FFCC97F" alt="" class="recent-image" />
+                    <img src="https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-9/119450595_1453844138142212_3986977393684187827_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=W8LrmhPxXJcAX87mYG4&_nc_ht=scontent.fsgn5-1.fna&oh=111d66a3c00f5e49dcc8698745a72359&oe=5FFCC97F"
+                        alt="" class="recent-image" />
                     <div class="recent-info">
                         <h3 class="recent-author">Nguyễn Văn D</h3>
-                      
+
                     </div>
                     <div class="recent-meta">
                         <span class="recent-change increase">Hạng 4</span>
-                       
+
                     </div>
                 </div>
                 <div class="recent-item">
-                    <img src="https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-9/119450595_1453844138142212_3986977393684187827_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=W8LrmhPxXJcAX87mYG4&_nc_ht=scontent.fsgn5-1.fna&oh=111d66a3c00f5e49dcc8698745a72359&oe=5FFCC97F" alt="" class="recent-image" />
+                    <img src="https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-9/119450595_1453844138142212_3986977393684187827_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=W8LrmhPxXJcAX87mYG4&_nc_ht=scontent.fsgn5-1.fna&oh=111d66a3c00f5e49dcc8698745a72359&oe=5FFCC97F"
+                        alt="" class="recent-image" />
                     <div class="recent-info">
                         <h3 class="recent-author">Nguyễn Văn E</h3>
                     </div>
                     <div class="recent-meta">
                         <span class="recent-change increase">Hạng 5</span>
-                     
+
                     </div>
                 </div>
-                {{-- <br>
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#week">Tuần</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#month">Tháng</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#year">Năm</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="week" class="container tab-pane active"><br>
-                            <table id="example" class="table table-hover table-bordered" style="width:100%">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 80px">Hạng</th>
-                                        <th class="text-center">Họ và Tên</th>
-                                       
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr style="background-color: #bbf2e2">
-                                        <td>1</td>
-                                        <td>Nguyễn Văn A</td>
-                                       
-                                    </tr>
-                                    <tr style="background-color:#bbf2e2">
-                                        <td>2</td>
-                                        <td>Nguyễn Văn B</td>
-                                       
-                                    </tr>
-                                    <tr style="background-color: #bbf2e2">
-                                        <td>3</td>
-                                        <td>Nguyễn Văn C</td>
-                                    </tr>
-                                    <tr style="background-color: #bbf2e2">
-                                        <td>4</td>
-                                        <td>Nguyễn Văn D</td>
-                                       
-                                    </tr>
-                                    <tr style="background-color: #bbf2e2">
-                                        <td>5</td>
-                                        <td>Nguyễn Văn E</td>
-                                        
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="month" class="container tab-pane fade"><br>
-                            <table id="example" class="table table-striped table-bordered" style="width:100%">
-
-                            </table>
-                        </div>
-                        <div id="year" class="container tab-pane fade"><br>
-                            <table id="example" class="table table-striped table-bordered" style="width:100%">
-
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
             </div>
         </div>
     </div>

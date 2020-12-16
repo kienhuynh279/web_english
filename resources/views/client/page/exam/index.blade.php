@@ -61,188 +61,46 @@ $question_number = 0;
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-3">
-            <button id="test" class="btn btn-success text-light font-weight-bold">Câu hỏi</button>
-            <div id="test_form" style="display: none; ">
-                <input type="radio" style="cursor: pointer;">
-                <label class="flex-grow-1 form-check-label flex-grow-1 mr-3" style="cursor: pointer;">Test 1</label>
-            </div>
+    <div class="col-12">
+        <h4 class="text-center question-content">
+            The warming ot the Earth is caused by exhaust gas from automobile engines, factories
+
+            and power (8) ________. Carbon dioxide goes up into the atmosphere, and it form a kind of
+
+            screen that keeps or allows the sunshine in but stop the Earth heat (9) _______ getting out. It
+
+            works like a greenhouse, that’s why we call (10) ________ the Green House effect.
+
+            Because ot this effect, the Earth is getting warmer alt the time. This (11) ________ in
+
+            temperature will cause big changes to the world’s climate. The sea level will increase as the
+
+            ice (12) _______ the poles will melt.</h4>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openTest(event, 'test_1')">Test 1</button>
+            <button class="tablinks" onclick="openTest(event, 'test_2')">Test 2</button>
+            <button class="tablinks" onclick="openTest(event, 'test_3')">Test 3</button>
         </div>
-        <div class="col-3">
-            <button id="test" class="btn btn-success text-light font-weight-bold">Câu hỏi</button>
-            <div id="test_form" style="display: none; ">
-                <input type="radio" style="cursor: pointer;">
-                <label class="flex-grow-1 form-check-label flex-grow-1 mr-3" style="cursor: pointer;">Test 1</label>
-            </div>
+
+        <div id="test_1" class="tabcontent">
+            <h4 class="mx-3 text-left font-weight-bold"><i>Câu hỏi</i></h4>
+            <input type="radio" style="cursor: pointer;">
+            <label class="flex-grow-1 form-check-label flex-grow-1 mr-3" style="cursor: pointer;">Test 1</label>
         </div>
-        <div class="col-3">
-            <button id="test" class="btn btn-success text-light font-weight-bold">Câu hỏi</button>
-            <div id="test_form" style="display: none; ">
-                <input type="radio" style="cursor: pointer;">
-                <label class="flex-grow-1 form-check-label flex-grow-1 mr-3" style="cursor: pointer;">Test 1</label>
-            </div>
+
+        <div id="test_2" class="tabcontent">
+            <h4 class="mx-3 text-left font-weight-bold"><i>Câu hỏi</i></h4>
+            <input type="radio" style="cursor: pointer;">
+            <label class="flex-grow-1 form-check-label flex-grow-1 mr-3" style="cursor: pointer;">Test 2</label>
         </div>
-           <div class="col-3">
-            <button id="test" class="btn btn-success text-light font-weight-bold">Câu hỏi</button>
-            <div id="test_form" style="display: none; ">
-                <input type="radio" style="cursor: pointer;">
-                <label class="flex-grow-1 form-check-label flex-grow-1 mr-3" style="cursor: pointer;">Test 1</label>
-            </div>
+
+        <div id="test_3" class="tabcontent">
+            <h4 class="mx-3 text-left font-weight-bold"><i>Câu hỏi</i></h4>
+            <input type="radio" style="cursor: pointer;">
+            <label class="flex-grow-1 form-check-label flex-grow-1 mr-3" style="cursor: pointer;">Test 3</label>
         </div>
     </div>
-</div>
-
-{{-- 
-<div class="container-fluid" style="padding-top: 80px; overflow:hidden;">
-    <div class="row">
-            <div class="col-lg-6 split" style="overflow: scroll; height: 700px;">
-                <div class=" split-item">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fuga, sapiente, cum mollitia
-                        quaerat
-                        esse id magni praesentium cumque numquam quidem pariatur sunt fugit tempora aspernatur dicta!
-                        Quibusdam, suscipit molestias.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio cum commodi fugit,
-                        dignissimos
-                        quasi molestias voluptatibus sit optio? Et cum nihil itaque praesentium necessitatibus veniam
-                        quae
-                        ratione temporibus maxime optio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aperiam illum distinctio
-                        culpa
-                        hic laborum voluptates, voluptate explicabo porro nesciunt eligendi? Veniam obcaecati commodi
-                        laboriosam nihil, nulla maxime modi architecto.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fuga, sapiente, cum mollitia
-                        quaerat
-                        esse id magni praesentium cumque numquam quidem pariatur sunt fugit tempora aspernatur dicta!
-                        Quibusdam, suscipit molestias.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio cum commodi fugit,
-                        dignissimos
-                        quasi molestias voluptatibus sit optio? Et cum nihil itaque praesentium necessitatibus veniam
-                        quae
-                        ratione temporibus maxime optio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aperiam illum distinctio
-                        culpa
-                        hic laborum voluptates, voluptate explicabo porro nesciunt eligendi? Veniam obcaecati commodi
-                        laboriosam nihil, nulla maxime modi architecto.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fuga, sapiente, cum mollitia
-                        quaerat
-                        esse id magni praesentium cumque numquam quidem pariatur sunt fugit tempora aspernatur dicta!
-                        Quibusdam, suscipit molestias.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio cum commodi fugit,
-                        dignissimos
-                        quasi molestias voluptatibus sit optio? Et cum nihil itaque praesentium necessitatibus veniam
-                        quae
-                        ratione temporibus maxime optio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aperiam illum distinctio
-                        culpa
-                        hic laborum voluptates, voluptate explicabo porro nesciunt eligendi? Veniam obcaecati commodi
-                        laboriosam nihil, nulla maxime modi architecto.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fuga, sapiente, cum mollitia
-                        quaerat
-                        esse id magni praesentium cumque numquam quidem pariatur sunt fugit tempora aspernatur dicta!
-                        Quibusdam, suscipit molestias.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio cum commodi fugit,
-                        dignissimos
-                        quasi molestias voluptatibus sit optio? Et cum nihil itaque praesentium necessitatibus veniam
-                        quae
-                        ratione temporibus maxime optio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aperiam illum distinctio
-                        culpa
-                        hic laborum voluptates, voluptate explicabo porro nesciunt eligendi? Veniam obcaecati commodi
-                        laboriosam nihil, nulla maxime modi architecto.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fuga, sapiente, cum mollitia
-                        quaerat
-                        esse id magni praesentium cumque numquam quidem pariatur sunt fugit tempora aspernatur dicta!
-                        Quibusdam, suscipit molestias.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio cum commodi fugit,
-                        dignissimos
-                        quasi molestias voluptatibus sit optio? Et cum nihil itaque praesentium necessitatibus veniam
-                        quae
-                        ratione temporibus maxime optio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aperiam illum distinctio
-                        culpa
-                        hic laborum voluptates, voluptate explicabo porro nesciunt eligendi? Veniam obcaecati commodi
-                        laboriosam nihil, nulla maxime modi architecto.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fuga, sapiente, cum mollitia
-                        quaerat
-                        esse id magni praesentium cumque numquam quidem pariatur sunt fugit tempora aspernatur dicta!
-                        Quibusdam, suscipit molestias.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio cum commodi fugit,
-                        dignissimos
-                        quasi molestias voluptatibus sit optio? Et cum nihil itaque praesentium necessitatibus veniam
-                        quae
-                        ratione temporibus maxime optio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aperiam illum distinctio
-                        culpa
-                        hic laborum voluptates, voluptate explicabo porro nesciunt eligendi? Veniam obcaecati commodi
-                        laboriosam nihil, nulla maxime modi architecto.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fuga, sapiente, cum mollitia
-                        quaerat
-                        esse id magni praesentium cumque numquam quidem pariatur sunt fugit tempora aspernatur dicta!
-                        Quibusdam, suscipit molestias.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio cum commodi fugit,
-                        dignissimos
-                        quasi molestias voluptatibus sit optio? Et cum nihil itaque praesentium necessitatibus veniam
-                        quae
-                        ratione temporibus maxime optio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aperiam illum distinctio
-                        culpa
-                        hic laborum voluptates, voluptate explicabo porro nesciunt eligendi? Veniam obcaecati commodi
-                        laboriosam nihil, nulla maxime modi architecto.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fuga, sapiente, cum mollitia
-                        quaerat
-                        esse id magni praesentium cumque numquam quidem pariatur sunt fugit tempora aspernatur dicta!
-                        Quibusdam, suscipit molestias.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio cum commodi fugit,
-                        dignissimos
-                        quasi molestias voluptatibus sit optio? Et cum nihil itaque praesentium necessitatibus veniam
-                        quae
-                        ratione temporibus maxime optio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aperiam illum distinctio
-                        culpa
-                        hic laborum voluptates, voluptate explicabo porro nesciunt eligendi? Veniam obcaecati commodi
-                        laboriosam nihil, nulla maxime modi architecto.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fuga, sapiente, cum mollitia
-                        quaerat
-                        esse id magni praesentium cumque numquam quidem pariatur sunt fugit tempora aspernatur dicta!
-                        Quibusdam, suscipit molestias.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio cum commodi fugit,
-                        dignissimos
-                        quasi molestias voluptatibus sit optio? Et cum nihil itaque praesentium necessitatibus veniam
-                        quae
-                        ratione temporibus maxime optio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aperiam illum distinctio
-                        culpa
-                        hic laborum voluptates, voluptate explicabo porro nesciunt eligendi? Veniam obcaecati commodi
-                        laboriosam nihil, nulla maxime modi architecto.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fuga, sapiente, cum mollitia
-                        quaerat
-                        esse id magni praesentium cumque numquam quidem pariatur sunt fugit tempora aspernatur dicta!
-                        Quibusdam, suscipit molestias.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio cum commodi fugit,
-                        dignissimos
-                        quasi molestias voluptatibus sit optio? Et cum nihil itaque praesentium necessitatibus veniam
-                        quae
-                        ratione temporibus maxime optio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aperiam illum distinctio
-                        culpa
-                        hic laborum voluptates, voluptate explicabo porro nesciunt eligendi? Veniam obcaecati commodi
-                        laboriosam nihil, nulla maxime modi architecto.</p>
-                        <hr>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="scroll-smooth" style="overflow: scroll; height: 700px">
-                    <h1>Mục 2</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eaque culpa dolorem unde earum
-                        eveniet
-                        deserunt odit hic quaerat reiciendis veritatis illum, possimus quam ipsam tempore nam
-                        perspiciatis
-                        incidunt rem!</p>
-                </div>
-            </div>
-       
-    </div> --}}
 </div>
 <script>
     let btnSubmit = document.getElementById('submit');
@@ -315,10 +173,19 @@ $question_number = 0;
             confirmButtonText: '<i class="fa fa-check-circle"></i> Okay!'
         })
     })
+    
 
-    btnTest.addEventListener('click', function () {
-        this.disabled = true;
-        test = document.getElementById('test_form');
-        test.style.display = "block";
-    })
+    function openTest(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
 </script>
