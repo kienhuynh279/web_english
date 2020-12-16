@@ -49,7 +49,8 @@ class CourseController extends Controller
     public function getListPost($slug, $slug2)
     {
         $postcat = PostCats::where('slug', $slug2)->first();
-        $post = Post::where(['id_thepost_cat' => $postcat->id])->get();
+        $post = Post::where(['id_thepost_cat' => $postcat->id])->paginate(3);
+        
         $form = Form::all();
         $brum = PostCats::where('slug', $slug)->first();
         

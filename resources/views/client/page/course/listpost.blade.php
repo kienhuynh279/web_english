@@ -302,13 +302,20 @@
                     </a>
                     @endif
                 </div>
-
             </div>
             <br>
             <br>
+           
         </div>
         @endforeach
-
+ 
+        <div class="row">
+            <div class="col-sm-2">
+                <p>{{$data['post']->links()}}</p>
+            </div>
+        </div>
+            
+        
         {{-- Comment Document --}}
         <div class="fb-comments" data-href="http://127.0.0.1:8000/on-thi/on-thi-chung-chi/ket" data-numposts="5"
             data-width=""></div>
