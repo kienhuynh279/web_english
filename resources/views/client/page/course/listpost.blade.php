@@ -294,18 +294,20 @@ height="100%" alt="">
             <br>
         </div>
         @endforeach
+    </div>
 
-        <div class="row pb-5">
-            <div class="col-4">
-                <p>{{$data['post']->links()}}</p>
-            </div>
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-2 text-center">
+            <p>{{$data['post']->links()}}</p>
         </div>
+    </div>
 
-        <div class="row">
-            {{-- Comment Document --}}
-            <div class="fb-comments" data-href="http://127.0.0.1:8000/on-thi/on-thi-chung-chi/ket" data-numposts="5"
-                data-width=""></div>
-        </div>
+    <div class="row">
+        {{-- Comment Document --}}
+        <div class="fb-comments" data-href="http://127.0.0.1:8000/on-thi/on-thi-chung-chi/ket" data-numposts="5"
+            data-width=""></div>
+    </div>
     </div>
 </section>
 <!-- Không cho copy hình -->
