@@ -148,6 +148,13 @@ height="100%" alt="">
         </div>
         @endif
         @endforeach
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="text-center">
+                    <p>{{$data['form']->links()}}</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -258,11 +265,6 @@ height="100%" alt="">
             <div class="col-sm-10">
                 <h3 class="my-title">Tài Liệu </h3>
             </div>
-            <div class="col-sm-2">
-                <a href="{{ route('course') }}" class="btn-arrow">
-                    <div class="arrow"></div>Xem thêm
-                </a>
-            </div>
         </div>
         <div class="row">
             @foreach($data['post'] as $item)
@@ -290,21 +292,20 @@ height="100%" alt="">
             </div>
             <br>
             <br>
-           
         </div>
         @endforeach
- 
-        <div class="row">
-            <div class="col-sm-2">
+
+        <div class="row pb-5">
+            <div class="col-4">
                 <p>{{$data['post']->links()}}</p>
             </div>
         </div>
-            
-        
-        {{-- Comment Document --}}
-        <div class="fb-comments" data-href="http://127.0.0.1:8000/on-thi/on-thi-chung-chi/ket" data-numposts="5"
-            data-width=""></div>
 
+        <div class="row">
+            {{-- Comment Document --}}
+            <div class="fb-comments" data-href="http://127.0.0.1:8000/on-thi/on-thi-chung-chi/ket" data-numposts="5"
+                data-width=""></div>
+        </div>
     </div>
 </section>
 <!-- Không cho copy hình -->

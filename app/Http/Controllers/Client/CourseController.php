@@ -51,11 +51,11 @@ class CourseController extends Controller
         $postcat = PostCats::where('slug', $slug2)->first();
         $post = Post::where(['id_thepost_cat' => $postcat->id])->paginate(3);
         
-        $form = Form::all();
+        $form = Form::where(['status' => 1])->paginate(12);
         $brum = PostCats::where('slug', $slug)->first();
         
         return view('client.index', [
-            'title' => 'Ôn thi Ket',
+            'title' => 'Ôn thi',
             'page' => 'course.listpost',
             'data' => [
                 'postcat' => $postcat,

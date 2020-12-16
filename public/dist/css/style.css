@@ -6527,3 +6527,26 @@ body {
     /* border: 1px solid #ccc; */
     border-top: none;
 }
+
+.pagi {
+    display: flex;
+    justify-content: center;
+}
+
+.pagi-item {
+    margin: 0 1.5rem;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.pagi-item.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagi-item:hover,
+.pagi-item.is-active {
+    color: var(--primary);
+}
