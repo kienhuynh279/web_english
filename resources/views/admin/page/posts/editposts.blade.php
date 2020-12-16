@@ -231,6 +231,5 @@
             //In slug ra textbox có id “slug”
             $('input#slug').val(slug);
         });
-
 </script>
 @stop
