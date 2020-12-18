@@ -25,7 +25,7 @@ $question_number = 0;
                         @if($question->type == 0)
                         @foreach(json_decode($question->question) as $index => $ques)
                         <div class="form-control">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
                                     <input type="radio" id="answer-{{ $question->id.$index }}"
                                         data-id="{{ $question->id }}" data-answer="{{ $question->answer }}"
@@ -57,6 +57,125 @@ $question_number = 0;
                 </div>
             </div>
         </section>
+    </div>
+</div>
+<div class="container">
+    <h1 class="text-center mb-15">UI Test New</h1>
+    <div class="row mb-20">
+        <div class="col-6">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit numquam doloribus similique voluptatibus eius iusto dolores quas! Explicabo odio consectetur reprehenderit aliquid ea quia recusandae voluptatem dolor quasi aut?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa rem iure ex omnis magni distinctio, possimus dolores suscipit assumenda quas voluptas, provident et consectetur nemo, maiores quo nobis fugiat hic?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore atque sunt quos optio nemo placeat suscipit veritatis dolor dolorem quasi perferendis hic a necessitatibus eligendi aliquam repellat, voluptates delectus? Perspiciatis!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi quaerat dicta magnam amet provident velit atque harum porro et ex pariatur, reiciendis nam odio non sit unde fuga voluptatibus quo?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate suscipit quidem assumenda dolor maxime, perferendis ad modi saepe ab dolores repellat fugit impedit cumque nostrum, dolorum nihil. Error, nulla deserunt.
+            </p>
+        </div>
+        <div class="col-6">
+            <div class="question-content">Câu hỏi</div>
+            <h5 class="text-left mx-3 font-weight-bold">Question 1</h5>
+            <div class="form-check p-0 gap-2 d-flex flex-column mt-3" style="gap: 5px;">
+                <div class="form-control">
+                    <div class="col-12">
+                        <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
+                            <input type="radio" id="answer-{{ $question->id.$index }}"
+                                data-id="{{ $question->id }}" data-answer="{{ $question->answer }}"
+                                name="answer-{{ $question->id }}" value="{{ $ques }}" style="cursor: pointer;">
+                            <label class="flex-grow-1 form-check-label flex-grow-1 mr-3"
+                                for="answer-{{ $question->id.$index }}"
+                                style="cursor: pointer;">Đáp án 4</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <div class="col-12">
+                        <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
+                            <input type="radio" id="answer-{{ $question->id.$index }}"
+                                data-id="{{ $question->id }}" data-answer="{{ $question->answer }}"
+                                name="answer-{{ $question->id }}" value="{{ $ques }}" style="cursor: pointer;">
+                            <label class="flex-grow-1 form-check-label flex-grow-1 mr-3"
+                                for="answer-{{ $question->id.$index }}"
+                                style="cursor: pointer;">Đáp án 3</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <div class="col-12">
+                        <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
+                            <input type="radio" id="answer-{{ $question->id.$index }}"
+                                data-id="{{ $question->id }}" data-answer="{{ $question->answer }}"
+                                name="answer-{{ $question->id }}" value="{{ $ques }}" style="cursor: pointer;">
+                            <label class="flex-grow-1 form-check-label flex-grow-1 mr-3"
+                                for="answer-{{ $question->id.$index }}"
+                                style="cursor: pointer;">Đáp án 2</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <div class="col-12">
+                        <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
+                            <input type="radio" id="answer-{{ $question->id.$index }}"
+                                data-id="{{ $question->id }}" data-answer="{{ $question->answer }}"
+                                name="answer-{{ $question->id }}" value="{{ $ques }}" style="cursor: pointer;">
+                            <label class="flex-grow-1 form-check-label flex-grow-1 mr-3"
+                                for="answer-{{ $question->id.$index }}"
+                                style="cursor: pointer;">Đáp án 1</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="question-content">Câu hỏi</div>
+            <h5 class="text-left mx-3 font-weight-bold">Question 1</h5>
+            <div class="form-check p-0 gap-2 d-flex flex-column mt-3" style="gap: 5px;">
+                <div class="form-control">
+                    <div class="col-12">
+                        <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
+                            <input type="radio" id="answer-{{ $question->id.$index }}"
+                                data-id="{{ $question->id }}" data-answer="{{ $question->answer }}"
+                                name="answer-{{ $question->id }}" value="{{ $ques }}" style="cursor: pointer;">
+                            <label class="flex-grow-1 form-check-label flex-grow-1 mr-3"
+                                for="answer-{{ $question->id.$index }}"
+                                style="cursor: pointer;">Đáp án 4</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <div class="col-12">
+                        <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
+                            <input type="radio" id="answer-{{ $question->id.$index }}"
+                                data-id="{{ $question->id }}" data-answer="{{ $question->answer }}"
+                                name="answer-{{ $question->id }}" value="{{ $ques }}" style="cursor: pointer;">
+                            <label class="flex-grow-1 form-check-label flex-grow-1 mr-3"
+                                for="answer-{{ $question->id.$index }}"
+                                style="cursor: pointer;">Đáp án 3</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <div class="col-12">
+                        <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
+                            <input type="radio" id="answer-{{ $question->id.$index }}"
+                                data-id="{{ $question->id }}" data-answer="{{ $question->answer }}"
+                                name="answer-{{ $question->id }}" value="{{ $ques }}" style="cursor: pointer;">
+                            <label class="flex-grow-1 form-check-label flex-grow-1 mr-3"
+                                for="answer-{{ $question->id.$index }}"
+                                style="cursor: pointer;">Đáp án 2</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <div class="col-12">
+                        <div class="form-group text-left d-flex align-items-center" style="gap: 10px;">
+                            <input type="radio" id="answer-{{ $question->id.$index }}"
+                                data-id="{{ $question->id }}" data-answer="{{ $question->answer }}"
+                                name="answer-{{ $question->id }}" value="{{ $ques }}" style="cursor: pointer;">
+                            <label class="flex-grow-1 form-check-label flex-grow-1 mr-3"
+                                for="answer-{{ $question->id.$index }}"
+                                style="cursor: pointer;">Đáp án 1</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

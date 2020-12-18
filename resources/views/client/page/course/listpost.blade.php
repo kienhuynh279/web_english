@@ -149,7 +149,8 @@ height="100%" alt="">
         @endif
         @endforeach
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-5"></div>
+            <div class="col-2">
                 <div class="text-center">
                     <p>{{$data['form']->links()}}</p>
                 </div>
